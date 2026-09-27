@@ -1,0 +1,7 @@
+Hook       0.00s ->   4.00s
+Muscles    4.00s ->   8.00s
+Step 1     8.00s ->  12.60s
+Step 2    12.60s ->  17.40s
+Step 3    17.40s ->  26.40s
+Step 4    26.40s ->  31.50s
+Summary   31.50s ->  37.50s
