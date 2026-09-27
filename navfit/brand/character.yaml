@@ -1,0 +1,22 @@
+# The recurring NavFit character (same in every video).
+# Colors are sRGB hex. The logo is traced from the PNG into geometry, so its
+# proportions are exact; only its size on the chest is set here.
+hoodie_color: "#1CB8E8"       # sky-blue hoodie (hood up)
+hoodie_trim_color: "#159FCB"  # hem, cuffs, pocket
+hood_inside_color: "#0B6F92"
+pants_color: "#1E2B4F"        # navy sweatpants
+skin_color: "#D7A98A"
+shoe_color: "#F4F6F8"
+sole_color: "#2B303A"
+drawstring_color: "#F4F6F8"
+
+logo_on_hoodie: assets/logo-white.png   # path relative to brand/
+logo_color: "#FFFFFF"
+logo_width_m: 0.20                      # printed width on the chest (height follows the logo ratio)
+logo_height_on_chest: 0.155             # metres above the waist line
+
+privacy:
+  face_blur: true          # always on; the mask follows the head in 3D, every frame
+  blur_strength: 38        # gaussian sigma in px at 1080 wide
+  pixelate: 14             # block size before blur (0 = off)
+  mask_scale: 1.18         # multiple of the head radius

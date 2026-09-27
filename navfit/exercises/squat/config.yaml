@@ -1,0 +1,20 @@
+# ====== Video settings you are expected to edit ======
+exercise: squat                 # motion generator (navfit/motion.py -> MOTIONS)
+title:
+  ar: السكوات بوزن الجسم
+  en: Bodyweight Squat
+
+language: ar                    # ar | en
+aspect: "9:16"                  # "9:16" | "16:9" | "both"
+target_duration: 50             # seconds; scene holds are scaled (±25%) to approach it
+quality: final                  # draft (half resolution, fast) | final (1080p)
+fps: 30
+
+logo: assets/logo.png           # end card / watermark (relative to brand/)
+logo_on_hoodie: assets/logo-white.png
+
+reference:
+  url: ""                       # optional YouTube link, see: python -m navfit ref <url> --exercise squat
+  notes: ../../references/squat.md
+
+sfx: true                       # light whooshes/pops; a clean (silent) file is always exported too

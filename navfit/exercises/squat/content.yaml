@@ -1,0 +1,71 @@
+# Every on-screen claim lives here with its review status.
+#   status: verified      -> widely established coaching / biomechanics guidance
+#           needs_review  -> reasonable default, but coaches choose different cues or it
+#                            depends on the person; a coach must confirm before publishing
+# `basis` records WHY we think it is right (not shown on screen).
+# `python -m navfit check squat` lists everything that still needs review.
+
+hook.title:     {ar: "السكوات", en: "The Squat", status: verified}
+hook.sub:       {ar: "الطريقة الصحيحة خطوة بخطوة", en: "Step-by-step technique", status: verified}
+
+muscles.title:  {ar: "العضلات المستهدفة", en: "Muscles worked", status: verified}
+muscles.quads:  {ar: "عضلات الفخذ الأمامية", en: "Quadriceps", status: verified,
+                 basis: "Knee extensors are prime movers of the squat (standard exercise anatomy)."}
+muscles.glutes: {ar: "عضلات المؤخرة", en: "Glutes", status: verified,
+                 basis: "Gluteus maximus extends the hip on the way up."}
+muscles.adductors: {ar: "العضلات المقرّبة", en: "Adductors", status: verified,
+                 basis: "Adductor magnus assists hip extension in deep flexion."}
+muscles.core:   {ar: "عضلات الجذع للثبات", en: "Core (stability)", status: verified}
+
+setup.title:    {ar: "وضعية البداية", en: "Set-up", status: verified}
+setup.stance:   {ar: "القدمان بعرض الكتفين تقريبًا", en: "Feet about shoulder-width", status: needs_review,
+                 basis: "Common default; comfortable stance width varies with hip anatomy.",
+                 review_note: "Confirm the stance width you teach (shoulder-width vs slightly wider)."}
+setup.toes:     {ar: "أصابع القدم للخارج قليلًا", en: "Toes turned out slightly", status: needs_review,
+                 basis: "Typical 15–30° toe-out; individual.",
+                 review_note: "Confirm preferred toe angle; the model uses 20°."}
+setup.chest:    {ar: "صدرك مرفوع وظهرك محايد", en: "Chest up, neutral spine", status: verified}
+
+down.title:     {ar: "النزول", en: "The descent", status: verified}
+down.hips:      {ar: "ادفع الورك للخلف واثنِ الركبتين معًا", en: "Sit the hips back and bend the knees together", status: verified}
+down.knees:     {ar: "الركبتان باتجاه أصابع القدم", en: "Knees track over the toes", status: verified,
+                 basis: "Knee in line with the foot avoids dynamic valgus."}
+down.balance:   {ar: "وزنك فوق منتصف القدم", en: "Weight over mid-foot", status: verified,
+                 basis: "Balance requires the centre of mass over the base of support; the model solves this each frame."}
+
+depth.title:    {ar: "العمق", en: "Depth", status: verified}
+depth.parallel: {ar: "انزل حتى يوازي الفخذ الأرض تقريبًا", en: "Lower until thighs are about parallel", status: needs_review,
+                 basis: "Common teaching target; appropriate depth depends on mobility and goals.",
+                 review_note: "Confirm the depth cue for your audience."}
+depth.mobility: {ar: "أو إلى العمق اللي تحافظ فيه على ظهرك", en: "or as deep as you can keep a neutral back", status: verified}
+
+up.title:       {ar: "الصعود", en: "The ascent", status: verified}
+up.push:        {ar: "ادفع الأرض بقدمك كاملة", en: "Drive through the whole foot", status: verified}
+up.heels:       {ar: "الكعب ثابت على الأرض", en: "Heels stay down", status: verified}
+
+mistakes.title: {ar: "أخطاء شائعة", en: "Common mistakes", status: verified}
+err.valgus:     {ar: "الركبتان تدخلان للداخل", en: "Knees caving in", status: verified}
+fix.valgus:     {ar: "ادفع ركبتيك للخارج باتجاه أصابع القدم", en: "Push the knees out over the toes", status: verified}
+err.heels:      {ar: "الكعب يرتفع عن الأرض", en: "Heels lifting", status: verified}
+fix.heels:      {ar: "وزّع وزنك على القدم كاملة", en: "Keep weight over the whole foot", status: verified}
+err.back:       {ar: "الظهر ينحني", en: "Rounding the back", status: verified}
+fix.back:       {ar: "صدر مرفوع وبطن مشدود", en: "Chest up, brace the core", status: verified}
+
+summary.title:  {ar: "الخلاصة", en: "Recap", status: verified}
+summary.1:      {ar: "قدمان بعرض الكتفين", en: "Shoulder-width stance", status: needs_review}
+summary.2:      {ar: "ورك للخلف وركبة مع أصابع القدم", en: "Hips back, knees over toes", status: verified}
+summary.3:      {ar: "الفخذ موازٍ للأرض تقريبًا", en: "Thighs about parallel", status: needs_review}
+summary.4:      {ar: "ادفع بالقدم كاملة والكعب ثابت", en: "Drive through the whole foot", status: verified}
+end.cta:        {ar: "احفظ المقطع وطبّقه في تمرينك الجاي", en: "Save this for your next workout", status: verified}
+
+# Voice-over lines (exported to VOICEOVER.md with scene timings; not burned into the video)
+vo.hook:     {ar: "السكوات من أهم التمارين، خلّنا نضبطه خطوة بخطوة.", en: "The squat is a fundamental — let's nail it step by step.", status: verified}
+vo.muscles:  {ar: "يشتغل على عضلات الفخذ الأمامية والمؤخرة والعضلات المقرّبة، والجذع يثبّتك.", en: "It trains the quads, glutes and adductors, with your core stabilising.", status: verified}
+vo.setup:    {ar: "وقّف والقدمين تقريبًا بعرض الكتفين، أصابع القدم للخارج شوي، والصدر مرفوع.", en: "Stand with feet about shoulder-width, toes slightly out, chest up.", status: needs_review}
+vo.down:     {ar: "ادفع الورك للخلف واثنِ الركبتين مع بعض، والركبة تمشي باتجاه أصابع القدم.", en: "Push the hips back and bend the knees together, knees tracking your toes.", status: verified}
+vo.depth:    {ar: "انزل لين يوازي الفخذ الأرض تقريبًا، أو للعمق اللي تحافظ فيه على ظهرك.", en: "Go down to about parallel, or as deep as you can keep your back neutral.", status: needs_review}
+vo.up:       {ar: "واطلع وأنت تدفع الأرض بقدمك كاملة، والكعب ثابت.", en: "Drive up through the whole foot, heels down.", status: verified}
+vo.valgus:   {ar: "أول خطأ: الركب تدخل للداخل. ادفعها للخارج باتجاه أصابع القدم.", en: "Mistake one: knees caving in. Push them out over your toes.", status: verified}
+vo.heels:    {ar: "ثاني خطأ: الكعب يرتفع. خلّ وزنك على القدم كاملة.", en: "Mistake two: heels lifting. Keep your weight over the whole foot.", status: verified}
+vo.back:     {ar: "ثالث خطأ: الظهر ينحني. ارفع صدرك وشد بطنك.", en: "Mistake three: rounding the back. Chest up and brace.", status: verified}
+vo.summary:  {ar: "الخلاصة: وقفة صحيحة، ورك للخلف، عمق مناسب، ودفع بالقدم كاملة.", en: "Recap: solid stance, hips back, good depth, drive through the whole foot.", status: verified}

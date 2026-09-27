@@ -1,0 +1,9 @@
+bpy==5.0.1
+numpy==1.26.4
+opencv-python-headless==4.10.0.84
+opencv-contrib-python==4.10.0.84
+mediapipe==0.10.14
+Pillow>=10.0      # needs libraqm for Arabic shaping (PIL.features.check('raqm'))
+PyYAML>=6.0
+youtube-transcript-api>=1.0
+imageio-ffmpeg>=0.5   # fallback if ffmpeg is not on PATH

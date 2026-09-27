@@ -1,0 +1,21 @@
+# Studio set + camera presets shared by all exercises.
+set:
+  studio_light: outdoor.sl
+  exposure: 0.75
+  floor_color: "#F1F4F8"
+  wall_color: "#EAF0F5"
+  platform_color: "#15213B"
+  accent_color: "#1CB8E8"
+  aa: "8"
+
+# azimuth: 0 = front, 90 = her right side (she faces image-right), 35 = three-quarter.
+# coverage: metres of scene that fit the frame height (16:9 uses coverage*0.86);
+# target_v / coverage_v: framing for 9:16 (subject kept above the caption zone). shift_x_16x9 moves the
+# subject left in 16:9 so the text column fits on the right.
+cameras:
+  front:      {azimuth: 0,  elevation: 6,  target: [0, 0, 0.92], coverage: 2.25, target_v: [0, 0, 0.74], coverage_v: 2.8, focal: 60, shift_x_16x9: 0.32}
+  side:       {azimuth: 90, elevation: 4,  target: [0, 0.05, 0.92], coverage: 2.25, target_v: [0, 0.05, 0.74], coverage_v: 2.8, focal: 60, shift_x_16x9: 0.32}
+  threeq:     {azimuth: 35, elevation: 9,  target: [0, 0, 0.92], coverage: 2.25, target_v: [0, 0, 0.74], coverage_v: 2.8, focal: 55, shift_x_16x9: 0.32}
+  side_low:   {azimuth: 90, elevation: 3,  target: [0, 0.0, 0.42], coverage: 1.25, target_v: [0, 0.0, 0.25], coverage_v: 1.3, focal: 70, shift_x_16x9: 0.32}
+  front_legs: {azimuth: 0,  elevation: 4,  target: [0, 0, 0.55], coverage: 1.45, target_v: [0, 0, 0.33], coverage_v: 1.6, focal: 70, shift_x_16x9: 0.32}
+  hero:       {azimuth: 28, elevation: 14, target: [0, 0, 0.88], coverage: 2.1,  target_v: [0, 0, 0.8], coverage_v: 2.55,  focal: 45, shift_x_16x9: 0.32}

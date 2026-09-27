@@ -1,0 +1,154 @@
+# Scene list for the squat video.
+# motion pieces:  [play, t_start, t_end, speed]  |  [freeze, t, seconds]
+#   t is time inside one repetition of the motion (squat: down 0–2.0 s, bottom pause
+#   2.0–2.35 s, up 2.35–3.75 s, stand 3.75–4.25 s). speed 0.5 = half-speed slow motion.
+# camera: a preset from brand/studio.yaml, or {orbit: [az_start, az_end], base: <preset>}
+# visible-side joints: the side camera sees her RIGHT side (*_R).
+# Text values are keys from content.yaml.
+
+scenes:
+  - id: hook
+    camera: hero
+    variant: correct
+    motion: [[play, 0.3, 3.5, 1.0]]
+    zoom: [1.06, 1.0]
+    vo: vo.hook
+    overlays:
+      - {type: title, text: hook.title, sub: hook.sub}
+
+  - id: muscles
+    camera: {orbit: [18, 150], base: threeq}
+    variant: correct
+    motion: [[play, 0.0, 2.7, 0.5]]
+    vo: vo.muscles
+    overlays:
+      - {type: header, text: muscles.title}
+      - {type: muscle, anchor: quads_R, text: muscles.quads, start: 0.5, end: 3.0, side: right}
+      - {type: muscle, anchor: adductor_L, text: muscles.adductors, start: 1.2, end: 3.1, side: left}
+      - {type: muscle, anchor: core, text: muscles.core, start: 1.9, end: 3.1, side: right, small: true}
+      - {type: muscle, anchor: glute_R, text: muscles.glutes, start: 3.3, end: 5.4, side: left}
+
+  - id: setup
+    camera: front
+    variant: correct
+    motion: [[freeze, 0.0, 5.0]]
+    zoom: [1.0, 1.04]
+    step: 1
+    vo: vo.setup
+    overlays:
+      - {type: step, n: 1, text: setup.title}
+      - {type: shoulder_width, start: 0.5}
+      - {type: toe_angle, start: 1.3}
+      - {type: bullets, items: [setup.stance, setup.toes, setup.chest], start: 0.7, gap: 0.8}
+
+  - id: descent
+    camera: side
+    variant: correct
+    motion: [[play, 0.0, 2.35, 0.45], [freeze, 2.35, 0.5]]
+    step: 2
+    vo: vo.down
+    overlays:
+      - {type: step, n: 2, text: down.title}
+      - {type: trail, joint: hip_R, start: 0.2}
+      - {type: arrow3d, joint: hip_R, vec: [0, 0.2, -0.16], start: 0.4, end: 2.6}
+      - {type: knee_toe, side: R, start: 2.4}
+      - {type: plumb, start: 3.2}
+      - {type: bullets, items: [down.hips, down.knees, down.balance], start: 0.6, gap: 1.6}
+
+  - id: depth
+    camera: side
+    variant: correct
+    motion: [[freeze, 2.1, 4.2]]
+    zoom: [1.0, 1.08]
+    zoom_center: [0.5, 0.62]
+    step: 3
+    vo: vo.depth
+    overlays:
+      - {type: step, n: 3, text: depth.title}
+      - {type: parallel, hip: hip_R, knee: knee_R, start: 0.3}
+      - {type: rings, joints: [hip_R, knee_R, ankle_R], start: 0.2}
+      - {type: bullets, items: [depth.parallel, depth.mobility], start: 0.8, gap: 1.0}
+
+  - id: ascent
+    camera: threeq
+    variant: correct
+    motion: [[play, 2.35, 3.9, 0.4], [freeze, 3.9, 0.4]]
+    step: 4
+    vo: vo.up
+    overlays:
+      - {type: step, n: 4, text: up.title}
+      - {type: arrow3d, joint: pelvis, vec: [0, -0.02, 0.3], start: 0.2, end: 3.2}
+      - {type: rings, joints: [heel_L, heel_R, ball_L, ball_R], start: 0.6, color: good}
+      - {type: bullets, items: [up.push, up.heels], start: 0.5, gap: 1.2}
+
+  - id: valgus_bad
+    camera: front_legs
+    variant: knees_cave
+    motion: [[play, 0.9, 2.1, 0.5], [freeze, 2.1, 0.8]]
+    vo: vo.valgus
+    overlays:
+      - {type: section, text: mistakes.title}
+      - {type: chains, chains: [[hip_L, knee_L, ankle_L], [hip_R, knee_R, ankle_R]], color: bad, start: 0.3}
+      - {type: badge, kind: bad, text: err.valgus, start: 0.5}
+
+  - id: valgus_good
+    transition: cut
+    camera: front_legs
+    variant: correct
+    motion: [[play, 0.9, 2.1, 0.5], [freeze, 2.1, 0.8]]
+    overlays:
+      - {type: chains, chains: [[hip_L, knee_L, ankle_L], [hip_R, knee_R, ankle_R]], color: good, start: 0.2}
+      - {type: badge, kind: good, text: fix.valgus, start: 0.3}
+
+  - id: heels_bad
+    camera: side_low
+    variant: heels_lift
+    motion: [[play, 0.9, 2.1, 0.5], [freeze, 2.1, 0.8]]
+    vo: vo.heels
+    overlays:
+      - {type: section, text: mistakes.title}
+      - {type: heel_gap, side: R, color: bad, start: 0.4}
+      - {type: badge, kind: bad, text: err.heels, start: 0.5}
+
+  - id: heels_good
+    transition: cut
+    camera: side_low
+    variant: correct
+    motion: [[play, 0.9, 2.1, 0.5], [freeze, 2.1, 0.8]]
+    overlays:
+      - {type: heel_gap, side: R, color: good, start: 0.2}
+      - {type: badge, kind: good, text: fix.heels, start: 0.3}
+
+  - id: back_bad
+    camera: side
+    variant: rounded_back
+    motion: [[play, 0.9, 2.1, 0.5], [freeze, 2.1, 0.8]]
+    vo: vo.back
+    overlays:
+      - {type: section, text: mistakes.title}
+      - {type: spine, color: bad, start: 0.3}
+      - {type: badge, kind: bad, text: err.back, start: 0.5}
+
+  - id: back_good
+    transition: cut
+    camera: side
+    variant: correct
+    motion: [[play, 0.9, 2.1, 0.5], [freeze, 2.1, 0.8]]
+    overlays:
+      - {type: spine, color: good, start: 0.2}
+      - {type: badge, kind: good, text: fix.back, start: 0.3}
+
+  - id: summary
+    camera: hero
+    variant: correct
+    motion: [[play, 0.0, 4.25, 1.0], [play, 0.0, 1.3, 1.0]]
+    vo: vo.summary
+    overlays:
+      - {type: checklist, title: summary.title, items: [summary.1, summary.2, summary.3, summary.4], start: 0.3}
+
+  - id: end
+    camera: hero
+    variant: correct
+    motion: [[freeze, 0.0, 2.4]]
+    overlays:
+      - {type: endcard, text: end.cta}

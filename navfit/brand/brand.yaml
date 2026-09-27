@@ -1,0 +1,29 @@
+# Nav Coaching visual identity used by every video.
+# Colors sampled from brand/assets/logo.png: sky #1CB8E8, navy #104490.
+name: Nav Coaching
+logo: assets/logo.png              # full-colour logo (end card, watermark)
+logo_light: assets/logo-white.png  # white version (on dark / sky backgrounds)
+
+colors:
+  sky: "#1CB8E8"
+  navy: "#104490"
+  deep: "#0A1B33"        # dark panels behind text
+  white: "#FFFFFF"
+  good: "#2BD67B"        # correct technique
+  bad: "#FF4D5E"         # mistakes
+  guide: "#FFFFFF"       # reference lines
+
+fonts:
+  ar_black: fonts/Tajawal-900.ttf
+  ar_bold: fonts/Tajawal-800.ttf
+  ar_regular: fonts/Tajawal-500.ttf
+  en_black: fonts/Montserrat-900.ttf
+  en_bold: fonts/Montserrat-800.ttf
+
+# Signature shapes: parallelogram labels skewed like the diagonal strokes of the NAV mark,
+# and a two-band diagonal wipe between scenes.
+style:
+  skew_deg: 14
+  corner_radius: 10
+  wipe_frames: 12
+  watermark: true
