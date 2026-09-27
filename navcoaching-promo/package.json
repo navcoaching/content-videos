@@ -1,0 +1,25 @@
+{
+  "name": "navcoaching-promo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Nav Coaching 20s vertical promo — Remotion",
+  "scripts": {
+    "studio": "remotion studio",
+    "audio": "python3 audio/generate.py",
+    "stills": "node scripts/stills.mjs",
+    "render": "remotion render NavPromo out/navcoaching-promo.mp4 --codec h264 --crf 16 --audio-bitrate 320k"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-sans-arabic": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/readex-pro": "^5.3.0",
+    "@remotion/cli": "^4.0.529",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "remotion": "^4.0.529"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}
