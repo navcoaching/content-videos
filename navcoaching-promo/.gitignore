@@ -3,3 +3,5 @@ out
 .remotion
 audio/stems
 stills
+capture/.session*
+capture/.code*

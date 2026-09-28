@@ -1,0 +1,655 @@
+{
+ "device": {
+  "w": 390,
+  "h": 844,
+  "dpr": 3
+ },
+ "pages": {
+  "home": {
+   "tiles": [
+    {
+     "src": "tut/home/tile0.jpg",
+     "y": 0,
+     "h": 1300
+    },
+    {
+     "src": "tut/home/tile1.jpg",
+     "y": 1300,
+     "h": 1300
+    },
+    {
+     "src": "tut/home/tile2.jpg",
+     "y": 2600,
+     "h": 1300
+    },
+    {
+     "src": "tut/home/tile3.jpg",
+     "y": 3900,
+     "h": 1300
+    },
+    {
+     "src": "tut/home/tile4.jpg",
+     "y": 5200,
+     "h": 1300
+    },
+    {
+     "src": "tut/home/tile5.jpg",
+     "y": 6500,
+     "h": 1300
+    },
+    {
+     "src": "tut/home/tile6.jpg",
+     "y": 7800,
+     "h": 1300
+    },
+    {
+     "src": "tut/home/tile7.jpg",
+     "y": 9100,
+     "h": 1300
+    },
+    {
+     "src": "tut/home/tile8.jpg",
+     "y": 10400,
+     "h": 1300
+    },
+    {
+     "src": "tut/home/tile9.jpg",
+     "y": 11700,
+     "h": 1300
+    },
+    {
+     "src": "tut/home/tile10.jpg",
+     "y": 13000,
+     "h": 1116
+    }
+   ],
+   "height": 14116,
+   "header": "tut/home/header.jpg",
+   "rects": {
+    "menu": {
+     "x": 16,
+     "y": 10,
+     "w": 48,
+     "h": 48
+    },
+    "heroCta": {
+     "x": 215,
+     "y": 380,
+     "w": 159,
+     "h": 50
+    },
+    "heroQuiz": {
+     "x": 37,
+     "y": 380,
+     "w": 166,
+     "h": 50
+    },
+    "why": {
+     "x": 16,
+     "y": 1117,
+     "w": 358,
+     "h": 68
+    },
+    "programs": {
+     "x": 16,
+     "y": 1926,
+     "w": 358,
+     "h": 68
+    },
+    "gamers": {
+     "x": 39,
+     "y": 4004,
+     "w": 312,
+     "h": 68
+    },
+    "inside": {
+     "x": 16,
+     "y": 4877,
+     "w": 358,
+     "h": 34
+    },
+    "how": {
+     "x": 16,
+     "y": 7150,
+     "w": 358,
+     "h": 34
+    },
+    "coach": {
+     "x": 16,
+     "y": 8059,
+     "w": 358,
+     "h": 34
+    },
+    "reviews": {
+     "x": 16,
+     "y": 8805,
+     "w": 358,
+     "h": 34
+    },
+    "faq": {
+     "x": 16,
+     "y": 11285,
+     "w": 358,
+     "h": 34
+    },
+    "calc": {
+     "x": 16,
+     "y": 12070,
+     "w": 358,
+     "h": 34
+    }
+   }
+  },
+  "programs": {
+   "tiles": [
+    {
+     "src": "tut/programs/tile0.jpg",
+     "y": 0,
+     "h": 1300
+    },
+    {
+     "src": "tut/programs/tile1.jpg",
+     "y": 1300,
+     "h": 1300
+    },
+    {
+     "src": "tut/programs/tile2.jpg",
+     "y": 2600,
+     "h": 1300
+    },
+    {
+     "src": "tut/programs/tile3.jpg",
+     "y": 3900,
+     "h": 1180
+    }
+   ],
+   "height": 5080,
+   "header": "tut/programs/header.jpg",
+   "rects": {
+    "quizBtn": {
+     "x": 63,
+     "y": 278,
+     "w": 311,
+     "h": 50
+    },
+    "tabs": {
+     "x": 273,
+     "y": 413,
+     "w": 96,
+     "h": 49
+    },
+    "tabFiles": {
+     "x": 116,
+     "y": 413,
+     "w": 151,
+     "h": 49
+    },
+    "tabConsult": {
+     "x": 13,
+     "y": 413,
+     "w": 97,
+     "h": 49
+    },
+    "intensive": {
+     "x": 16,
+     "y": 491,
+     "w": 358,
+     "h": 326
+    },
+    "compare": {
+     "x": 16,
+     "y": 2228,
+     "w": 358,
+     "h": 34
+    },
+    "quiz": {
+     "x": 16,
+     "y": 3242,
+     "w": 358,
+     "h": 68
+    }
+   }
+  },
+  "detail": {
+   "tiles": [
+    {
+     "src": "tut/detail/tile0.jpg",
+     "y": 0,
+     "h": 1300
+    },
+    {
+     "src": "tut/detail/tile1.jpg",
+     "y": 1300,
+     "h": 1300
+    },
+    {
+     "src": "tut/detail/tile2.jpg",
+     "y": 2600,
+     "h": 730
+    }
+   ],
+   "height": 3330,
+   "header": "tut/detail/header.jpg",
+   "rects": {
+    "subscribe": {
+     "x": 52,
+     "y": 2264,
+     "w": 286,
+     "h": 50
+    }
+   }
+  },
+  "calculator": {
+   "tiles": [
+    {
+     "src": "tut/calculator/tile0.jpg",
+     "y": 0,
+     "h": 1300
+    },
+    {
+     "src": "tut/calculator/tile1.jpg",
+     "y": 1300,
+     "h": 1300
+    },
+    {
+     "src": "tut/calculator/tile2.jpg",
+     "y": 2600,
+     "h": 1300
+    },
+    {
+     "src": "tut/calculator/tile3.jpg",
+     "y": 3900,
+     "h": 656
+    }
+   ],
+   "height": 4556,
+   "header": "tut/calculator/header.jpg",
+   "rects": {
+    "form": {
+     "x": 16,
+     "y": 429,
+     "w": 358,
+     "h": 34
+    },
+    "submit": {
+     "x": 35,
+     "y": 1628,
+     "w": 320,
+     "h": 50
+    }
+   }
+  },
+  "freePlans": {
+   "tiles": [
+    {
+     "src": "tut/freePlans/tile0.jpg",
+     "y": 0,
+     "h": 1300
+    },
+    {
+     "src": "tut/freePlans/tile1.jpg",
+     "y": 1300,
+     "h": 110
+    }
+   ],
+   "height": 1410,
+   "header": "tut/freePlans/header.jpg",
+   "rects": {}
+  },
+  "reviews": {
+   "tiles": [
+    {
+     "src": "tut/reviews/tile0.jpg",
+     "y": 0,
+     "h": 1300
+    },
+    {
+     "src": "tut/reviews/tile1.jpg",
+     "y": 1300,
+     "h": 1300
+    },
+    {
+     "src": "tut/reviews/tile2.jpg",
+     "y": 2600,
+     "h": 1300
+    },
+    {
+     "src": "tut/reviews/tile3.jpg",
+     "y": 3900,
+     "h": 1300
+    },
+    {
+     "src": "tut/reviews/tile4.jpg",
+     "y": 5200,
+     "h": 1300
+    },
+    {
+     "src": "tut/reviews/tile5.jpg",
+     "y": 6500,
+     "h": 1300
+    },
+    {
+     "src": "tut/reviews/tile6.jpg",
+     "y": 7800,
+     "h": 1080
+    }
+   ],
+   "height": 8880,
+   "header": "tut/reviews/header.jpg",
+   "rects": {}
+  },
+  "faq": {
+   "tiles": [
+    {
+     "src": "tut/faq/tile0.jpg",
+     "y": 0,
+     "h": 1300
+    },
+    {
+     "src": "tut/faq/tile1.jpg",
+     "y": 1300,
+     "h": 1131
+    }
+   ],
+   "height": 2431,
+   "header": "tut/faq/header.jpg",
+   "rects": {
+    "first": {
+     "x": 17,
+     "y": 270,
+     "w": 356,
+     "h": 79
+    }
+   }
+  },
+  "about": {
+   "tiles": [
+    {
+     "src": "tut/about/tile0.jpg",
+     "y": 0,
+     "h": 1300
+    },
+    {
+     "src": "tut/about/tile1.jpg",
+     "y": 1300,
+     "h": 1300
+    },
+    {
+     "src": "tut/about/tile2.jpg",
+     "y": 2600,
+     "h": 1300
+    },
+    {
+     "src": "tut/about/tile3.jpg",
+     "y": 3900,
+     "h": 261
+    }
+   ],
+   "height": 4161,
+   "header": "tut/about/header.jpg",
+   "rects": {}
+  },
+  "install": {
+   "tiles": [
+    {
+     "src": "tut/install/tile0.jpg",
+     "y": 0,
+     "h": 1300
+    },
+    {
+     "src": "tut/install/tile1.jpg",
+     "y": 1300,
+     "h": 1300
+    },
+    {
+     "src": "tut/install/tile2.jpg",
+     "y": 2600,
+     "h": 1300
+    },
+    {
+     "src": "tut/install/tile3.jpg",
+     "y": 3900,
+     "h": 606
+    }
+   ],
+   "height": 4506,
+   "header": "tut/install/header.jpg",
+   "rects": {}
+  }
+ },
+ "states": {
+  "menuOpen": {
+   "src": "tut/states/menuOpen.jpg",
+   "scroll": 0,
+   "page": "home",
+   "rects": {
+    "programsLink": {
+     "x": 23,
+     "y": 85,
+     "w": 344,
+     "h": 57
+    }
+   }
+  },
+  "tabFiles": {
+   "src": "tut/states/tabFiles.jpg",
+   "scroll": 254,
+   "page": "programs",
+   "rects": {}
+  },
+  "tabConsult": {
+   "src": "tut/states/tabConsult.jpg",
+   "scroll": 254,
+   "page": "programs",
+   "rects": {}
+  },
+  "quiz0": {
+   "src": "tut/states/quiz0.jpg",
+   "scroll": 3157,
+   "page": "programs",
+   "rects": {}
+  },
+  "quiz1": {
+   "src": "tut/states/quiz1.jpg",
+   "scroll": 3157,
+   "page": "programs",
+   "rects": {
+    "answer": {
+     "x": 35,
+     "y": 3384,
+     "w": 320,
+     "h": 46
+    }
+   }
+  },
+  "quiz2": {
+   "src": "tut/states/quiz2.jpg",
+   "scroll": 3157,
+   "page": "programs",
+   "rects": {
+    "answer": {
+     "x": 35,
+     "y": 3583,
+     "w": 320,
+     "h": 46
+    }
+   }
+  },
+  "quiz3": {
+   "src": "tut/states/quiz3.jpg",
+   "scroll": 3441,
+   "page": "programs",
+   "rects": {
+    "answer": {
+     "x": 35,
+     "y": 3890,
+     "w": 320,
+     "h": 46
+    }
+   }
+  },
+  "quiz4": {
+   "src": "tut/states/quiz4.jpg",
+   "scroll": 3721,
+   "page": "programs",
+   "rects": {
+    "answer": {
+     "x": 35,
+     "y": 4170,
+     "w": 320,
+     "h": 46
+    }
+   }
+  },
+  "quizResult": {
+   "src": "tut/states/quizResult.jpg",
+   "scroll": 4160,
+   "page": "programs",
+   "rects": {
+    "card": {
+     "x": 16,
+     "y": 4249,
+     "w": 358,
+     "h": 388
+    },
+    "subscribe": {
+     "x": 163,
+     "y": 4465,
+     "w": 192,
+     "h": 50
+    },
+    "details": {
+     "x": 213,
+     "y": 4527,
+     "w": 142,
+     "h": 50
+    }
+   }
+  },
+  "calc0": {
+   "src": "tut/states/calc0.jpg",
+   "scroll": 483,
+   "page": "calculator",
+   "rects": {}
+  },
+  "calc1": {
+   "src": "tut/states/calc1.jpg",
+   "scroll": 483,
+   "page": "calculator",
+   "rects": {
+    "method": {
+     "x": 35,
+     "y": 704,
+     "w": 320,
+     "h": 105
+    }
+   }
+  },
+  "calcF0": {
+   "src": "tut/states/calcF0.jpg",
+   "scroll": 547,
+   "page": "calculator",
+   "rects": {
+    "field": {
+     "x": 35,
+     "y": 976,
+     "w": 320,
+     "h": 55
+    }
+   }
+  },
+  "calcF1": {
+   "src": "tut/states/calcF1.jpg",
+   "scroll": 651,
+   "page": "calculator",
+   "rects": {
+    "field": {
+     "x": 35,
+     "y": 1080,
+     "w": 320,
+     "h": 55
+    }
+   }
+  },
+  "calcF2": {
+   "src": "tut/states/calcF2.jpg",
+   "scroll": 754,
+   "page": "calculator",
+   "rects": {
+    "field": {
+     "x": 35,
+     "y": 1183,
+     "w": 320,
+     "h": 55
+    }
+   }
+  },
+  "calcReady": {
+   "src": "tut/states/calcReady.jpg",
+   "scroll": 1137,
+   "page": "calculator",
+   "rects": {
+    "submit": {
+     "x": 35,
+     "y": 1766,
+     "w": 320,
+     "h": 50
+    }
+   }
+  },
+  "calcResult0": {
+   "src": "tut/states/calcResult0.jpg",
+   "scroll": 1137,
+   "page": "calculator",
+   "rects": {}
+  },
+  "faqOpen": {
+   "src": "tut/states/faqOpen.jpg",
+   "scroll": 1,
+   "page": "faq",
+   "rects": {
+    "q": {
+     "x": 17,
+     "y": 270,
+     "w": 356,
+     "h": 79
+    }
+   }
+  },
+  "calcGender": {
+   "src": "tut/states/calcGender.jpg",
+   "scroll": 854,
+   "page": "calculator",
+   "rects": {
+    "gender": {
+     "x": 240,
+     "y": 1283,
+     "w": 56,
+     "h": 46
+    }
+   }
+  },
+  "calcResult": {
+   "src": "tut/states/calcResult.jpg",
+   "scroll": 1762,
+   "page": "calculator",
+   "rects": {
+    "result": {
+     "x": 16,
+     "y": 1851,
+     "w": 358,
+     "h": 1557
+    }
+   }
+  }
+ },
+ "overlays": {
+  "badge": {
+   "src": "tut/overlays/badge.png",
+   "x": 196,
+   "y": 780,
+   "w": 194,
+   "h": 64
+  }
+ }
+}
