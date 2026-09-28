@@ -42,3 +42,25 @@ npm run render                    # out/navcoaching-promo.mp4
 ## المحتوى
 
 النصوص والمزايا والألوان مأخوذة من كود الموقع (`navcoaching/navcoaching-website`): ألوان `globals.css`، شعار NAV (محوّل إلى SVG)، عناوين الصفحة الرئيسية، وعيّنة جدول «DAY 1 — LOWER BODY». أرقام لوحة التقدم من اللقطة التوضيحية في الموقع، وعليها وسم «نموذج توضيحي».
+
+---
+
+# المقطع الثاني: رحلة المستخدم (NavJourney)
+
+**1080×1920 · 60fps · 72 ثانية** — على فكرة «رحلة كاملة للمستخدم»: مشكلة ← «اليوم غير» ← الشعار ← 6 فصول بواجهات الموقع (سبوت لايت + مؤشر + ترجمة) ← خاتمة.
+
+| الملف | الوصف |
+|---|---|
+| `render/navcoaching-journey.mp4` | المقطع (موسيقى + مؤثرات، بدون تعليق) |
+| `render/navcoaching-journey-bed.wav` | الموسيقى + المؤثرات لتركيب صوتك عليها |
+| `journey/VOICEOVER_SCRIPT.md` | سكربت التعليق مع التوقيت لكل جملة |
+
+- التوقيت كله في `src/journey/journey.json`: الفصول، الترجمة، النقرات، والأصوات.
+- الواجهات مبنية من كود الموقع نفسه (النصوص، الألوان، خطوات الاستبيان، حالات الطلب)، وما هي لقطات شاشة.
+- الأرقام التوضيحية (رقم الطلب، نتيجة الحاسبة، ردّ المدربة) أمثلة وليست بيانات حقيقية، والآيبان مخفي.
+
+```bash
+python3 audio/journey.py                     # public/audio/journey.wav + stems
+COMP=NavJourney OUT=stills/j npm run stills -- 1000 2000
+npx remotion render NavJourney out/navcoaching-journey.mp4 --props='{"withAudio":true}'
+```
