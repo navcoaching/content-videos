@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>Nav Coaching Wide (Phone)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Readex+Pro:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#07142a;--ink2:#0d1f3c;--navy:#284da0;--cyan:#4cc5ed;--paper:#f3f6fa;--surf2:#eaf0f6;--line:#d8e1ea;--muted:#56667a;--head:#0b1a33;--ok:#157347;--okbg:#e2f4ea;--on:#eaf2fb;--onm:#a9bad0}
+*{box-sizing:border-box;margin:0}
+body{width:1803px;height:761px;overflow:hidden;font-family:"IBM Plex Sans Arabic",Cairo,sans-serif;color:var(--on);position:relative;
+ background:radial-gradient(45% 80% at 50% 45%,#1c3d78 0%,transparent 70%),linear-gradient(180deg,var(--ink2),var(--ink))}
+body::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#4cc5ed12 1px,transparent 1px),linear-gradient(90deg,#4cc5ed12 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(50% 90% at 50% 50%,#000,transparent)}
+.logo{position:absolute;top:255px;left:50%;transform:translateX(-50%);height:74px}
+h1{position:absolute;top:360px;width:100%;text-align:center;font:900 90px/1.2 Cairo}
+h1 em{font-style:normal;color:var(--cyan)}
+.phone{position:absolute;width:496px;height:900px;background:#050b16;border-radius:70px;padding:13px;box-shadow:0 60px 110px #000c,0 0 0 2px #2a3d5c inset;overflow:hidden}
+.p1{left:calc(50% + 24px);top:46px;transform:scale(.85);transform-origin:top left}
+.p2{left:calc(50% - 24px - 422px);top:46px;transform:scale(.85);transform-origin:top left}
+.screen{width:390px;height:750px;transform:scale(1.2);transform-origin:top right;background:var(--paper);border-radius:52px;overflow:hidden;position:relative;color:var(--head);direction:rtl;margin-right:0}
+.phone .screen{position:absolute;top:13px;right:13px}
+.status{height:44px;display:flex;justify-content:space-between;align-items:center;padding:6px 26px 0;font:700 14px "Readex Pro";direction:ltr}
+.island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:100px;height:26px;background:#050b16;border-radius:20px}
+.body{padding:8px 16px}
+h2{font:900 21px/1.25 Cairo;margin:6px 0 2px}.sub{font-size:12px;color:var(--muted);margin-bottom:12px}
+.card{background:#eaf2fb;border-radius:14px;padding:12px 14px;margin-bottom:12px}
+.row{display:flex;justify-content:space-between;align-items:center}
+.pill{display:inline-flex;gap:5px;align-items:center;font-size:11px;font-weight:700;background:#fff3d4;color:#8a5a00;border-radius:99px;padding:3px 9px}
+.pill i{width:7px;height:7px;border-radius:50%;background:#e5a50a}
+.bar{height:11px;border-radius:9px;background:#fff;margin:9px 0 7px;overflow:hidden}.bar b{display:block;height:100%;background:var(--ok);border-radius:9px}
+.t{font:700 15px "IBM Plex Sans Arabic"}.s{font-size:11.5px;color:var(--muted)}
+.sec{font:900 16px Cairo;margin:14px 0 8px}
+.day{background:var(--surf2);border-radius:12px;padding:12px 13px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;font:700 13px "Readex Pro";direction:ltr}
+.day span{font:500 12px "IBM Plex Sans Arabic";color:var(--muted);direction:rtl}
+.day.done{background:var(--okbg);color:var(--ok)}.day.done span{color:var(--ok);font-weight:700}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.st{background:var(--surf2);border-radius:12px;padding:10px 12px}.st small{display:block;font-size:11px;color:var(--muted)}.st b{font:900 18px "Readex Pro";direction:ltr;display:block;text-align:right}.st b em{font:500 11px "IBM Plex Sans Arabic";font-style:normal;color:var(--muted)}
+.chips{display:flex;gap:6px;margin-bottom:8px;direction:rtl;overflow:hidden}
+.chip{font:700 11.5px "IBM Plex Sans Arabic";background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 11px;white-space:nowrap}.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.chip.l{font-family:"Readex Pro";font-size:10.5px;direction:ltr}
+.ex{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:6px}
+.ex h4{font:700 17px "Readex Pro";direction:ltr;text-align:right}
+.tgt{font-size:12px;color:var(--muted);margin:4px 0 12px}.tgt b{color:var(--head);direction:ltr;unicode-bidi:embed}
+.inp{display:flex;gap:6px;direction:rtl;align-items:flex-end;margin-bottom:12px}
+.f{flex:1}.f label{display:block;font-size:11px;font-weight:700;margin-bottom:5px}
+.box{height:40px;border:1px solid var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;font:700 15px "Readex Pro"}
+.btn{background:var(--navy);color:#fff;border-radius:99px;text-align:center;padding:11px;font-weight:700;font-size:14px}
+.ok{display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--ok);color:#fff;font-size:12px;line-height:18px;text-align:center;vertical-align:middle;margin-inline-start:6px}
+.slash{position:absolute;bottom:0;width:70px;height:110px;background:linear-gradient(180deg,#4cc5ed55,#4cc5ed10);transform:skewX(-22deg);transform-origin:bottom}
+.s1{left:60px;height:190px}.s2{left:150px;height:120px}.s3{right:70px;height:150px}.s4{right:160px;height:90px}
+</style></head><body>
+
+<i class="slash s1"></i><i class="slash s2"></i><i class="slash s3"></i><i class="slash s4"></i>
+<div class="phone p1"><div class="screen">
+ <div class="island"></div><div class="status"><span>9:41</span><span>5G ▮▮▮</span></div>
+ <div class="body">
+  <h2>الباقة المكثفة</h2><div class="sub">3 أشهر · متبقي 67 يومًا</div>
+  <div class="card"><div class="row"><span class="t">التزامك 100%</span><span class="pill"><i></i>3 أسابيع متتالية</span></div>
+   <div class="bar"><b style="width:100%"></b></div><div class="s">حافظ على التزام 90% فأكثر، وباقي 9 أسابيع وتحصل على 3 أشهر مجانًا</div></div>
+  <div class="sec">برنامجك الحالي</div>
+  <div class="day done"><span>تم <i class="ok">✓</i></span>DAY 1 — LOWER BODY</div>
+  <div class="day"><span>0 من 5</span>DAY 2 — UPPER BODY</div>
+  <div class="day"><span>0 من 5</span>DAY 3 — GLUTES &amp; HAMSTRINGS</div>
+  <div class="sec">التغذية اليوم</div>
+  <div class="grid">
+   <div class="st"><small>السعرات</small><b>1,228 <em>من 1,850</em></b></div>
+   <div class="st"><small>بروتين</small><b>85 <em>من 130 غ</em></b></div>
+   <div class="st"><small>كارب</small><b>119 <em>من 190 غ</em></b></div>
+   <div class="st"><small>دهون</small><b>46 <em>من 62 غ</em></b></div>
+  </div>
+ </div></div></div>
+
+<div class="phone p2"><div class="screen">
+ <div class="island"></div><div class="status"><span>9:41</span><span>5G ▮▮▮</span></div>
+ <div class="body">
+  <h2>البلوك 1 — بناء القوة</h2><div class="sub">الأسبوع 4 من 4</div>
+  <div class="chips"><span class="chip">الأسبوع 1</span><span class="chip">الأسبوع 2</span><span class="chip on">الأسبوع 3</span><span class="chip">الأسبوع 4</span></div>
+  <div class="chips"><span class="chip l on">DAY 1 — LOWER BODY</span><span class="chip l">DAY 2 — UPPER BODY</span></div>
+  <div class="sec" style="margin-top:8px">اليوم 1 — الأسبوع 3</div>
+  <div class="ex"><div class="row"><h4>1. Mid Leg Press<i class="ok" style="margin:0 0 0 6px">✓</i></h4></div>
+   <div class="tgt">المستهدف: <b>4×10 · RIR 2</b></div>
+   <div class="inp"><div class="f" style="flex:1.2"><label>الوزن (كغ)</label><div class="box">88</div></div>
+    <div class="f" style="flex:3"><label>التكرارات لكل مجموعة</label><div class="row" style="gap:5px"><div class="box" style="flex:1">10</div><div class="box" style="flex:1">10</div><div class="box" style="flex:1">10</div><div class="box" style="flex:1">10</div></div></div>
+    <div class="f" style="flex:.8"><label>RIR</label><div class="box">2</div></div></div>
+   <div class="btn">تحديث</div></div>
+  <div class="ex"><div class="row"><h4>2. Romanian Deadlift</h4></div>
+   <div class="tgt">المستهدف: <b>3×8 · RIR 2</b></div>
+   <div class="inp"><div class="f" style="flex:1.2"><label>الوزن (كغ)</label><div class="box"></div></div>
+    <div class="f" style="flex:3"><label>التكرارات لكل مجموعة</label><div class="row" style="gap:5px"><div class="box" style="flex:1"></div><div class="box" style="flex:1"></div><div class="box" style="flex:1"></div></div></div>
+    <div class="f" style="flex:.8"><label>RIR</label><div class="box"></div></div></div></div>
+ </div></div></div>
+</body></html>
