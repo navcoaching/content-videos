@@ -42,36 +42,44 @@ def tickseq(t0,t1,n,f0,f1,g):
         u=1-(1-i/n)**.25; add(tick(f0+(f1-f0)*i/n),t0+(t1-t0)*u,g*(.6+.4*i/n),pan=.15*np.sin(i))
 def arp(t,notes,g,gap=.07):
     for k,f in enumerate(notes): add(chime(f,.9+.1*k),t+k*gap,g,pan=(k-1)*.12)
+def pluck(f,dur=.5):  # soft marimba-like note (replaces the noisy whoosh)
+    n=int(dur*SR); t=T(n)
+    y=np.sin(2*np.pi*f*t)*np.exp(-t/.16)+.35*np.sin(4*np.pi*f*t)*np.exp(-t/.07)+.12*np.sin(6*np.pi*f*t)*np.exp(-t/.04)
+    return att(y,3)*.7
+def swipe(f0,f1,dur=.16):  # short soft pitched glide for screen transitions
+    n=int(dur*SR); t=T(n); f=f0+(f1-f0)*(t/dur)**.7
+    ph=2*np.pi*np.cumsum(f)/SR; env=np.sin(np.pi*np.minimum(1,t/dur))**2
+    return (np.sin(ph)+.25*np.sin(2*ph))*env*.7
+def run(t,notes,g,gap):
+    for k,f in enumerate(notes): add(pluck(f),t+k*gap,g*(.75+.25*k/len(notes)),pan=-.3+.6*k/len(notes))
 
 # ---- intro
-add(whoosh(.75,250,2600),.20,.20,-.2); add(whoosh(.7,300,2800),.42,.15,.2)
-add(whoosh(1.3,180,3200,.7),.38,.33)
+run(.20,[523,659,784],.20,.09); run(.46,[784,1047],.17,.10)
+run(.62,[392,494,587,698,784,988,1175],.13,.10)
 # ---- screen A
 for i,tt in enumerate([1.75,2.45,2.6,2.75]): add(pop(380+i*60,760+i*60),tt,.10,pan=-.2+.13*i)
 tickseq(2.1,3.4,22,900,2200,.13)
 add(pop(520,1050,.1),3.15,.30); arp(3.5,[1319,1568],.22,.08)
 # ---- tap -> screen B
-add(tap(),4.05,.55); add(whoosh(.75,400,3600),4.32,.30,-.3)
+add(tap(),4.05,.55); add(swipe(420,780),4.34,.24,-.3)
 for i,tt in enumerate([4.65,4.8,4.95]): add(pop(400+i*70,800+i*70),tt,.09,pan=.2)
 add(blip(660),5.5,.32)
 for i,f in enumerate([523,587,659,784]): add(blip(f),5.85+i*.22,.30,pan=(i-1.5)*.15)
 add(blip(880),6.85,.32)
 add(tap(),7.05,.5); arp(7.2,[659,784,1047],.45); add(pop(500,1100),7.25,.22)
-add(whoosh(.4,600,3000),7.33,.10,.4)
 # ---- tap -> screen C
-add(tap(),7.45,.55); add(whoosh(.75,400,3600),7.72,.30,.3)
+add(tap(),7.45,.55); add(swipe(420,780),7.74,.24,.3)
 for i,tt in enumerate([8.15,8.3]): add(pop(420+i*80,850+i*80),tt,.09)
 tickseq(8.55,10.0,30,700,2000,.12)
 for i,tt in enumerate([8.75,8.9,9.05]): add(pop(450+i*60,900+i*60,.07),tt,.10,pan=-.3+.3*i)
-add(whoosh(.5,500,2600),9.33,.12)
 for i,tt in enumerate([9.75,9.85,9.95]): add(pop(440+i*70,880+i*70,.07),tt,.09,pan=.3)
 # ---- dropdown flow
-add(tap(),10.35,.55); add(pop(300,720,.12),10.42,.28); add(whoosh(.35,800,3500),10.40,.09)
+add(tap(),10.35,.55); add(pop(300,720,.12),10.42,.28)
 for i,f in enumerate([1600,1800,2050]): add(tick(f),10.5+i*.07,.20)
 add(tick(1500),11.3,.15)
-add(tap(),11.55,.55); add(whoosh(.3,3200,500),11.68,.10); add(pop(700,1150,.1),11.85,.28)
+add(tap(),11.55,.55); add(swipe(780,420,.12),11.7,.10);add(pop(700,1150,.1),11.85,.28)
 add(tap(),12.5,.5); arp(12.65,[523,659,784,1047],.55,.075); add(pop(500,1150),12.68,.20)
-add(whoosh(.5,700,3000),12.7,.14)
+add(swipe(500,900,.18),12.7,.16)
 tickseq(12.75,13.75,20,1000,2400,.11)
 add(pop(560,1200,.11),13.0,.28)
 # ---- soft reverb + master
