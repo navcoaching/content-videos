@@ -180,7 +180,32 @@ MENNO_REFS = ('<b>المراجع:</b> Menno Henselmans — '
               '<a href="https://mennohenselmans.com/how-close-to-failure-should-you-train/">How close to failure</a>')
 
 
-def build(fname, title, cover_html, days, hdr, pages_after):
+
+# feminine singular wording (same forms used in the original home PDF)
+FEM_MAP = [
+    ('اضغط على اسم التمرين لمشاهدة الشرح', 'اضغطي على اسم التمرين لمشاهدة الشرح'),
+    ('تحمية خاصة للعضلات الي بتمرنونها, أول جولتين بنص الوزن الأساسي الي تشتغلون عليه،',
+     'تحمية خاصة للعضلات الي بتمرنينها, أول جولتين بنص الوزن الأساسي الي تشتغلين عليه،'),
+    ('في اول جلسة وقمت بـ <b>12 عدة</b>', 'في اول جلسة وقمتِ بـ <b>12 عدة</b>'),
+    ('فالوزن كان تقدرون تزيدونه. ولو ماقدرتم تزيدون الوزن؟ وصلوا الى سقف العدات',
+     'فالوزن كان تقدرين تزيدينه. ولو ماقدرتِ تزيدين الوزن؟ وصلي الى سقف العدات'),
+    ('الاسبوع الي بعده تزيدون الوزن وتكون بنطاق', 'الاسبوع الي بعده تزيدين الوزن وتكون بنطاق'),
+    ('<b>تزيدون الوزن</b>', '<b>تزيدين الوزن</b>'),
+    ('<p>اذا عندكم اي استفسار بخصوص الرياضة او التغذية، تواصلوا معي.</p>',
+     '<p>اذا عندك اي استفسار بخصوص الرياضة او التغذية، تواصلي معي.</p>'),
+    ('<p>ولا عليكم أمر أتمنى منكم مشاركتي تعليقاتكم ونقدكم البناء من أجل تحسين جودة المحتوى</p>',
+     '<p>ولا عليك أمر أتمنى منك مشاركتي تعليقاتك ونقدك البناء من أجل تحسين جودة المحتوى</p>'),
+    ('بالليق برس: حطّوا الرجول <b>أعلى المنصة</b>', 'بالليق برس: حطّي رجولك <b>أعلى المنصة</b>'),
+]
+
+
+def feminize(html):
+    for a, b in FEM_MAP:
+        assert a in html, a
+        html = html.replace(a, b)
+    return html
+
+def build(fname, title, cover_html, days, hdr, pages_after, fem=False):
     script = SCRIPT_T
     script = re.sub(r'const DAYS=\[.*?\n\];', 'const DAYS=' + json.dumps(days, ensure_ascii=False) + ';', script, flags=re.S)
     script = script.replace('const TOTAL=7;', 'let TOTAL=0;')
@@ -204,6 +229,8 @@ def build(fname, title, cover_html, days, hdr, pages_after):
     assert 'let TOTAL=0;' in script and 'MID.includes' in script and "d.lbl||" in script and "' t':''" in script
     head = HEAD.replace('<title>جدول تمرين 3 أيام بالمنزل — Nav Coaching</title>', f'<title>{title} — Nav Coaching</title>')
     html = head + EXTRA_CSS + '</style></head><body>\n' + cover_html + '\n<div id="dayPages"></div>\n' + '\n'.join(pages_after) + '\n' + script + '\n</body></html>'
+    if fem:
+        html = feminize(html)
     open(os.path.join(HERE, fname), 'w', encoding='utf8').write(html)
     return fname
 
@@ -324,7 +351,7 @@ build('prog-glutes.html', 'جدول بناء القلوتس',
           {'n': 2, 't': 'قلوتس B', 'p': 'سبليت سكوات · باك اكستنشن · كيك باك', 'k': 4},
           {'n': 3, 't': 'قلوتس C', 'p': 'ليق برس · هيب ثرست · ليق كيرل', 'k': 4}]),
       DG, ('التمرين الأساسي · النادي', 'البديل · المنزل'),
-      [pg_principles, pg_week, RIR_PAGE, THANKS])
+      [pg_principles, pg_week, RIR_PAGE, THANKS], fem=True)
 
 # =====================================================================
 # 3) BACK PAIN (upper-back rounding + lower back)
