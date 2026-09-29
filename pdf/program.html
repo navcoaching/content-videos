@@ -94,6 +94,43 @@ a{color:inherit;text-decoration:none}
 .th .alt-h{text-align:right;padding-right:16px}
 .legend{position:absolute;bottom:78px;right:58px;display:flex;gap:18px;font:500 14px "IBM Plex Sans Arabic";color:var(--muted);z-index:2}
 .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-left:6px;vertical-align:-1px}
+
+/* ---------- instructions */
+.ip .top{position:absolute;top:34px;right:56px;left:56px;height:96px;display:flex;align-items:center;gap:22px;z-index:2}
+.ip .ico{width:86px;height:86px;border-radius:20px;background:var(--cyan-soft);border:2px solid var(--cyan);display:flex;align-items:center;justify-content:center}
+.ip h2{font:800 60px/1 Cairo;color:var(--ink)}
+.ip .logo{height:44px;margin-right:auto}
+.panel{position:absolute;top:150px;bottom:92px;background:#fff;border:1.5px solid var(--line);border-radius:20px;box-shadow:0 12px 34px #07142a0f;overflow:hidden;z-index:2}
+.panel .ph{height:56px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 24px;font:700 17px "IBM Plex Sans Arabic"}
+.panel .ph small{font:500 13px "IBM Plex Sans Arabic";color:var(--onm)}
+.sets{right:56px;width:560px}
+.srow{display:grid;grid-template-columns:190px 1fr 46px;align-items:center;gap:14px;height:56px;padding:0 24px;border-top:1px solid var(--line)}
+.srow:nth-child(odd){background:#f8fafc}
+.srow .mg{font:700 16px/1.25 "IBM Plex Sans Arabic";color:var(--ink)}
+.srow .trk{position:relative;height:14px;background:#edf1f6;border-radius:9px;direction:ltr}
+.srow .trk .band{position:absolute;top:0;bottom:0;right:30%;left:0;background:#dff3fb;border-radius:9px}
+.srow .trk b{position:absolute;right:0;top:0;bottom:0;border-radius:9px;background:linear-gradient(270deg,var(--navy),var(--cyan))}
+.srow .v{font:800 22px "Readex Pro";color:var(--navy);text-align:left}
+.scale{display:grid;grid-template-columns:190px 1fr 46px;gap:14px;padding:8px 24px 0;border-top:1px solid var(--line);height:52px}
+.scale .ax{position:relative;direction:ltr;font:600 12px "IBM Plex Sans Arabic";color:var(--muted)}
+.scale .ax span{position:absolute;top:0;transform:translateX(50%);white-space:nowrap}
+.scale .ax .rng{position:absolute;top:20px;right:30%;left:0;border-top:2px solid #9fdcf2;text-align:center;font:600 12px "IBM Plex Sans Arabic";color:var(--cyan-ink);padding-top:2px;transform:none}
+.notes{left:56px;right:636px;padding:0}
+.nl{padding:4px 24px 0}
+.note{display:flex;gap:14px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed var(--line)}
+.note:last-child{border:0}
+.note .k{flex:none;width:30px;height:30px;border-radius:9px;background:var(--navy);color:#fff;font:800 16px/30px "Readex Pro";text-align:center}
+.note p{font:500 16.5px/1.55 "IBM Plex Sans Arabic";color:var(--head)}
+.note p b{font-weight:700;color:var(--navy)}
+.warm{margin:2px 24px 0;background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:10px 16px 12px}
+.warm p{font:500 16px/1.55 "IBM Plex Sans Arabic";color:var(--head)}
+.warm p b{color:var(--navy)}
+.steps{display:flex;gap:10px;margin-top:8px;align-items:flex-end}
+.st{flex:1;border-radius:12px;padding:7px 12px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end}
+.st small{font:600 13px "IBM Plex Sans Arabic";opacity:.9}
+.st b{font:800 26px/1.1 "Readex Pro";direction:ltr;text-align:right}
+.st span{font:600 12.5px "IBM Plex Sans Arabic";opacity:.9}
+.st.s1{height:78px;background:#8fd6ef;color:var(--ink)}.st.s2{height:94px;background:var(--cyan);color:var(--ink)}.st.s3{height:110px;background:var(--navy)}
 </style></head><body>
 
 <!-- ================= PAGE 1 : COVER ================= -->
@@ -115,6 +152,39 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <div id="dayPages"></div>
+
+<!-- ================= PAGE 5 : INSTRUCTIONS ================= -->
+<section class="page light grid ip" data-sec="تعليمات مهمة">
+ <i class="slash" style="left:-40px;bottom:-40px;width:90px;height:190px;opacity:.25"></i>
+ <div class="top"><div class="ico"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#284da0" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 7v6"/><circle cx="12" cy="16.6" r=".6" fill="#284da0"/></svg></div><h2>تعليمات مهمة</h2>
+  <img class="logo" src="../brand/logo-color.webp" alt="Nav Coaching"></div>
+
+ <div class="panel sets">
+  <div class="ph"><span>مجموعة العضلات</span><span>مجموع الجولات</span></div>
+  <div class="srow"><div class="mg">صدر - أكتاف أمامية</div><div class="trk"><i class="band"></i><b style="width:45.0%"></b></div><div class="v">9</div></div><div class="srow"><div class="mg">أفخاذ أمامية</div><div class="trk"><i class="band"></i><b style="width:40.0%"></b></div><div class="v">8</div></div><div class="srow"><div class="mg">أفخاذ خلفية</div><div class="trk"><i class="band"></i><b style="width:45.0%"></b></div><div class="v">9</div></div><div class="srow"><div class="mg">لاتس - رومبويد - كتف خلفي</div><div class="trk"><i class="band"></i><b style="width:60.0%"></b></div><div class="v">12</div></div><div class="srow"><div class="mg">بطن</div><div class="trk"><i class="band"></i><b style="width:30.0%"></b></div><div class="v">6</div></div><div class="srow"><div class="mg">قلوتس</div><div class="trk"><i class="band"></i><b style="width:70.0%"></b></div><div class="v">14</div></div><div class="srow"><div class="mg">باي</div><div class="trk"><i class="band"></i><b style="width:75.0%"></b></div><div class="v">15</div></div><div class="srow"><div class="mg">تراي</div><div class="trk"><i class="band"></i><b style="width:60.0%"></b></div><div class="v">12</div></div>
+  <div class="scale"><div></div><div class="ax"><span class="rng">النطاق: من 6 إلى 20 جولة أسبوعيًا</span><span style="right:0.0%">0</span><span style="right:30.0%">6</span><span style="right:50.0%">10</span><span style="right:75.0%">15</span><span style="right:100.0%">20</span></div><div></div></div>
+ </div>
+
+ <div class="panel notes">
+  <div class="ph"><span>ملاحظات مهمة</span></div>
+  <div class="nl">
+   <div class="note"><span class="k">1</span><p>عدد الجولات غير ثابت، بمعنى انك تقدرون تزيدون او تنقصون على حسب تطور العضلات عندكم. كمبتدئين غير مهمة لكم هذه الحسبة.</p></div>
+   <div class="note"><span class="k">2</span><p>ضروري نكون في نطاق الجولات مابين <b>6</b> كأقل عدد جولات، و <b>20</b> كأقصى عدد جولات خلال الاسبوع. اذا كنت شخص مبتدئ</p></div>
+   <div class="note"><span class="k">3</span><p>نحسب فقط الجولات <b>الفعالة</b>، الي تكون قريبة من الفشل العضلي بـ1-4 عدات</p></div>
+   <div class="note"><span class="k">4</span><p><b>مانحسب</b> جولات التحمية أبدا</p></div>
+   <div class="note"><span class="k">5</span><p>التحمية تكون كالتالي:</p></div>
+  </div>
+  <div class="warm">
+   <p>تحمية خاصة للعضلات الي بتمرنونها, أول جولتين بنص الوزن الأساسي الي تشتغلون عليه، مثال: تمرين <b>سكوات بالبار</b> — وزن التمرين الأساسي: <b>20 كيلو</b></p>
+   <div class="steps">
+    <div class="st s1"><small>أول جولة تحمية</small><b>10 kg</b><span>50% من الوزن الأساسي</span></div>
+    <div class="st s2"><small>ثاني جولة تحمية</small><b>14 kg</b><span>70% من الوزن الأساسي</span></div>
+    <div class="st s3"><small>الجولة الأساسية الأولى</small><b>20 kg</b><span>100%</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
 
 
 <script>
