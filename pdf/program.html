@@ -165,6 +165,27 @@ a{color:inherit;text-decoration:none}
 .tip{display:flex;gap:14px;align-items:flex-start;background:var(--cyan-soft);border:1.5px solid var(--cyan);border-radius:14px;padding:14px 16px}
 .tip .k{flex:none;min-width:66px;height:34px;border-radius:10px;background:var(--cyan);color:var(--ink);font:800 17px/34px "Readex Pro";text-align:center;direction:ltr}
 .tip p{font:500 18px/1.65 "IBM Plex Sans Arabic";color:var(--head)}
+
+/* ---------- page 7 : thanks */
+.ty .logo{position:absolute;top:56px;left:56px;height:52px;z-index:2}
+.ty .msg{position:absolute;right:96px;top:150px;width:700px;z-index:2}
+.ty .msg .chip{display:inline-flex;gap:10px;align-items:center;font:700 18px "IBM Plex Sans Arabic";color:var(--navy);background:var(--cyan-soft);border:1.5px solid #4cc5ed88;border-radius:99px;padding:7px 18px}
+.ty .msg .chip i{width:22px;height:9px;background:var(--cyan);transform:skewX(-25deg)}
+.ty h2{font:800 104px/1.15 Cairo;color:var(--ink);margin:18px 0 6px}
+.ty .rule{width:130px;height:6px;border-radius:3px;background:var(--cyan);margin:6px 0 28px}
+.ty .msg p{font:500 22px/1.75 "IBM Plex Sans Arabic";color:var(--head);margin-bottom:14px}
+.ty .sig{margin-top:26px;display:flex;align-items:center;gap:14px;font:500 18px "IBM Plex Sans Arabic";color:var(--muted)}
+.ty .sig b{font:800 30px Cairo;color:var(--navy)}
+.ty .contact{position:absolute;left:96px;top:190px;width:540px;display:flex;flex-direction:column;gap:18px;z-index:2}
+.ty .contact h4{font:700 20px "IBM Plex Sans Arabic";color:var(--muted);margin-bottom:2px}
+.cc{display:flex;align-items:center;gap:18px;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:20px 22px;box-shadow:0 14px 34px #07142a12}
+.cc .ic{flex:none;width:62px;height:62px;border-radius:16px;display:flex;align-items:center;justify-content:center}
+.cc .ic.ig{background:linear-gradient(135deg,#284da0,#4cc5ed)}
+.cc .ic.web{background:var(--ink)}
+.cc div small{display:block;font:600 15px "IBM Plex Sans Arabic";color:var(--muted)}
+.cc div b{display:block;font:700 19px "Readex Pro";white-space:nowrap;color:var(--ink);direction:ltr;text-align:right}
+.cc .go{flex:none;margin-right:auto;width:40px;height:40px;border-radius:50%;background:var(--cyan-soft);border:1.5px solid var(--cyan);display:flex;align-items:center;justify-content:center;color:var(--navy);font:800 20px Cairo}
+.credit{position:absolute;left:56px;bottom:70px;font:500 11px "IBM Plex Sans Arabic";color:#9fb0c3;direction:ltr;z-index:2}
 </style></head><body>
 
 <!-- ================= PAGE 1 : COVER ================= -->
@@ -252,6 +273,32 @@ a{color:inherit;text-decoration:none}
   </div>
  </div>
 </section>
+
+<!-- ================= PAGE 7 : THANK YOU ================= -->
+<section class="page light grid ty" data-sec="شكرا لك">
+ <i class="slash" style="left:-30px;bottom:-40px;width:120px;height:300px"></i>
+ <i class="slash n" style="left:120px;bottom:-40px;width:120px;height:200px"></i>
+ <img class="logo" src="../brand/logo-color.webp" alt="Nav Coaching">
+ <div class="msg">
+  <span class="chip"><i></i>Nav Coaching</span>
+  <h2>شكرا لك</h2>
+  <div class="rule"></div>
+  <p>اذا عندكم اي استفسار بخصوص الرياضة او التغذية، تواصلوا معي.</p>
+  <p>ولا عليكم أمر أتمنى منكم مشاركتي تعليقاتكم ونقدكم البناء من أجل تحسين جودة المحتوى</p>
+  <div class="sig"><b>كوتش ناڤ</b></div>
+ </div>
+ <div class="contact">
+  <h4>وسائل التواصل:</h4>
+  <a class="cc" href="https://instagram.com/navvcoaching" target="_blank">
+   <span class="ic ig"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="#fff" stroke="none"/></svg></span>
+   <div><small>Instagram</small><b>Instagram.com/navvcoaching</b></div><span class="go">←</span></a>
+  <a class="cc" href="https://navcoaching.com/" target="_blank">
+   <span class="ic web"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4cc5ed" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></span>
+   <div><small>موقعي الخاص بالمتدربين</small><b>navcoaching.com</b></div><span class="go">←</span></a>
+ </div>
+ <div class="credit">Muscle diagrams based on react-body-highlighter © 2020 GV79 — MIT License</div>
+</section>
+
 
 
 
