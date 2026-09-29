@@ -122,14 +122,15 @@ function shape(tag,attrs){return '<'+tag+' '+Object.entries(attrs).map(([k,v])=>
 function both(kind,a,col){ // draws left + mirrored right
   if(kind==='e'){const [cx,cy,rx,ry]=a;return shape('ellipse',{cx,cy,rx,ry,fill:col})+shape('ellipse',{cx:100-cx,cy,rx,ry,fill:col})}
   return shape('path',{d:a,fill:col})+shape('path',{d:mir(a),fill:col})}
-function sil(){let o='';
+function sil(low){let o='';
   o+=shape('circle',{cx:50,cy:15,r:10,fill:SIL,stroke:STR,'stroke-width':1.2});
   o+=shape('rect',{x:45,y:23,width:10,height:9,fill:SIL});
   const parts=['M30,33 Q50,28 70,33 L68,62 Q66,80 63,98 L37,98 Q34,80 32,62 Z','M37,96 L63,96 L65,112 L50,118 L35,112 Z'];
   parts.forEach(d=>o+=shape('path',{d,fill:SIL,stroke:STR,'stroke-width':1.2}));
-  ['M24,35 Q15,38 14,52 L13,74 Q16,79 21,76 L26,52 Z','M13,76 L10,100 Q13,105 17,102 L21,78 Z','M35,110 Q32,140 36,160 L37,193 L46,193 L47,160 Q50,135 50,116 Z'].forEach(d=>{o+=shape('path',{d,fill:SIL,stroke:STR,'stroke-width':1.2})+shape('path',{d:mir(d),fill:SIL,stroke:STR,'stroke-width':1.2})});
+  (low?[]:['M24,35 Q15,38 14,52 L13,74 Q16,79 21,76 L26,52 Z','M13,76 L10,100 Q13,105 17,102 L21,78 Z']).concat(['M35,110 Q32,140 36,160 L37,193 L46,193 L47,160 Q50,135 50,116 Z']).forEach(d=>{o+=shape('path',{d,fill:SIL,stroke:STR,'stroke-width':1.2})+shape('path',{d:mir(d),fill:SIL,stroke:STR,'stroke-width':1.2})});
   return o}
-function body(view,pri,sec){const c=m=>pri.includes(m)?P:(sec.includes(m)?S2:BASE);let o=sil();
+function body(view,pri,sec){const c=m=>pri.includes(m)?P:(sec.includes(m)?S2:BASE);
+  const all0=pri.concat(sec),low=all0.every(m=>['quads','glutes','hams','calves'].includes(m));let o=sil(low);
   if(view==='f'){
     o+=both('p','M37,37 Q49,35 49,39 L49,52 Q42,56 34,50 Q33,42 37,37Z',c('chest'));
     o+=both('e',[29.5,40,4.8,6.5],c('fdelt'));o+=both('e',[23.5,42,3.8,7],c('sdelt'));
@@ -140,6 +141,7 @@ function body(view,pri,sec){const c=m=>pri.includes(m)?P:(sec.includes(m)?S2:BAS
     o+=shape('circle',{cx:46.5,cy:14,r:1.3,fill:'#8196b0'})+shape('circle',{cx:53.5,cy:14,r:1.3,fill:'#8196b0'})+shape('path',{d:'M47,19 Q50,21 53,19',fill:'none',stroke:'#8196b0','stroke-width':1.1,'stroke-linecap':'round'});
     o+=shape('path',{d:'M45,31 L50,36 L55,31',fill:'none',stroke:STR,'stroke-width':1.2});
     o+=shape('path',{d:'M50,60 V92 M43.5,70 H56.5 M43.5,81 H56.5',fill:'none',stroke:'#ffffffcc','stroke-width':1.1});
+    if(low){o+=shape('path',{d:'M38,99 L50,111 L62,99',fill:'none',stroke:STR,'stroke-width':1.3});o+=both('e',[41.5,161,3,3.2],'#c3cfdd');o+=both('p','M37,190 L46,190 L47,196 L35,196Z','#c3cfdd');}
   }else{
     o+=shape('path',{d:'M50,30 L62,36 L57,52 L50,57 L43,52 L38,36Z',fill:c('rhomb')});
     o+=both('p','M34,46 Q40,52 46,58 L46,80 Q40,77 36,70 Q32,58 34,46Z',c('lats'));
@@ -149,11 +151,12 @@ function body(view,pri,sec){const c=m=>pri.includes(m)?P:(sec.includes(m)?S2:BAS
     // back cues: hair, spine, shoulder blades
     o+=shape('path',{d:'M40,15 A10,10 0 0 1 60,15 Q60,21 57,23 L43,23 Q40,21 40,15Z',fill:'#9fb1c6'});
     o+=shape('path',{d:'M50,57 V96',fill:'none',stroke:'#aab9cb','stroke-width':1.3,'stroke-dasharray':'2.2 1.8'});
+    if(low){o+=shape('path',{d:'M50,99 V116',fill:'none',stroke:'#aab9cb','stroke-width':1.2});o+=both('p','M38,193 L45,193 L44,196 L39,196Z','#c3cfdd');}
     o+=both('p','M38.5,41 Q44,39 46,44 L44,52 Q40,51 38.5,47Z','none');
     o+=shape('path',{d:'M38.5,41 Q44,39 46,44 L44,52 Q40,51 38.5,47Z M61.5,41 Q56,39 54,44 L56,52 Q60,51 61.5,47Z',fill:'none',stroke:'#ffffffb0','stroke-width':1});
   }
   const all=pri.concat(sec),LOW=['quads','glutes','hams','calves'];
-  const vb=all.every(m=>LOW.includes(m))?'4 94 92 104':(all.length===1&&all[0]==='abs')?'4 26 92 92':'4 2 92 104';
+  const vb=all.every(m=>LOW.includes(m))?'20 88 60 110':(all.length===1&&all[0]==='abs')?'4 26 92 92':'4 2 92 104';
   return '<svg viewBox="'+vb+'" preserveAspectRatio="xMidYMid meet">'+o+'</svg>'}
 // ---- data (content kept from the original file)
 const DAYS=[
