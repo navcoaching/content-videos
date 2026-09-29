@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<title>جدول بناء القلوتس — Nav Coaching</title>
+<style>
+@page{size:1440px 810px;margin:0}
+:root{--ink:#07142a;--ink2:#0d1f3c;--ink3:#15294b;--navy:#284da0;--navy2:#3558b0;--cyan:#4cc5ed;--cyan-ink:#0a6a8f;--cyan-soft:#e4f6fc;
+ --paper:#f3f6fa;--surf:#eaf0f6;--line:#d8e1ea;--muted:#56667a;--head:#0b1a33;--on:#eaf2fb;--onm:#a9bad0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff}
+body{font-family:"IBM Plex Sans Arabic",Cairo,sans-serif;color:var(--head);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:1440px;height:810px;position:relative;overflow:hidden;page-break-after:always;break-after:page}
+.page:last-child{page-break-after:auto;break-after:auto}
+a{color:inherit;text-decoration:none}
+
+/* ---------- light theme */
+.light{background:#fff;color:var(--head)}
+.light::after{content:"";position:absolute;left:-120px;top:-160px;width:760px;height:760px;border-radius:50%;background:radial-gradient(#4cc5ed26,transparent 65%);pointer-events:none}
+.grid::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#284da00d 1px,transparent 1px),linear-gradient(90deg,#284da00d 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(70% 80% at 40% 50%,#000,transparent)}
+.slash{position:absolute;background:linear-gradient(180deg,#4cc5ed,#4cc5ed00);transform:skewX(-22deg);opacity:.35}
+.slash.n{background:linear-gradient(180deg,#284da0,#284da000);opacity:.18}
+
+.cover .logo{position:absolute;top:64px;right:84px;height:64px;z-index:2}
+.cover .chip{position:absolute;top:196px;right:84px;display:flex;gap:10px;align-items:center;font:700 19px "IBM Plex Sans Arabic";color:var(--navy);background:var(--cyan-soft);border:1.5px solid #4cc5ed88;border-radius:99px;padding:8px 20px}
+.cover .chip i{width:22px;height:9px;background:var(--cyan);transform:skewX(-25deg)}
+.cover h1{position:absolute;top:262px;right:80px;font:800 118px/1.12 Cairo;letter-spacing:-.5px;color:var(--ink)}
+.cover h1 em{font-style:normal;color:var(--navy)}
+.cover .rule{position:absolute;top:548px;right:84px;width:150px;height:6px;background:var(--cyan);border-radius:3px}
+.cover .sign{position:absolute;bottom:70px;right:84px;display:flex;gap:26px;align-items:center;font:500 20px "IBM Plex Sans Arabic";color:var(--muted)}
+.cover .sign b{color:var(--ink);font:800 21px Cairo}
+.cover .sign span+span{padding-right:26px;border-right:1.5px solid var(--line);direction:ltr;font-family:"Readex Pro";color:var(--navy)}
+
+.days{position:absolute;left:84px;top:150px;width:520px;display:flex;flex-direction:column;gap:22px;z-index:2}
+.day{position:relative;display:flex;align-items:center;gap:24px;background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:24px 28px;box-shadow:0 14px 34px #07142a14}
+.day .n{flex:none;width:78px;height:78px;border-radius:18px;background:var(--cyan);color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;font:800 34px/1 Cairo}
+.day .n small{font:700 13px "IBM Plex Sans Arabic";margin-bottom:4px}
+.day.b .n{background:var(--navy);color:#fff}.day.c .n{background:var(--ink);color:#fff}
+.day{border-right:6px solid var(--cyan)}.day.b{border-right-color:var(--navy)}.day.c{border-right-color:var(--ink)}
+.day h3{font:800 34px/1.1 Cairo;color:var(--ink)}
+.day p{font:500 17px "IBM Plex Sans Arabic";color:var(--muted);margin-top:6px}
+.day .cnt{margin-right:auto;text-align:center;font:700 15px "IBM Plex Sans Arabic";color:var(--muted)}
+.day .cnt b{display:block;font:800 36px/1 "Readex Pro";color:var(--navy)}
+
+/* ---------- pager (progress bar) */
+.pager{position:absolute;left:56px;right:56px;bottom:26px;height:34px;display:flex;align-items:center;gap:22px;z-index:5}
+.pager .sec{font:700 15px "IBM Plex Sans Arabic";color:var(--muted);white-space:nowrap}
+.pager .sec b{color:var(--navy);font-weight:700}
+.pager .bar{flex:1;display:flex;gap:6px;direction:rtl}
+.pager .bar i{flex:1;height:7px;border-radius:9px;background:#e3eaf2}
+.pager .bar i.done{background:var(--navy)}
+.pager .bar i.cur{background:linear-gradient(270deg,var(--navy),var(--cyan))}
+.pager .num{font:700 17px "Readex Pro";color:var(--ink);direction:ltr;white-space:nowrap}
+.pager .num span{color:#9fb0c3;font-weight:500}
+.pager .url{font:500 14px "Readex Pro";color:var(--muted);direction:ltr}
+
+/* ---------- day pages */
+.dp .top{position:absolute;top:34px;right:56px;left:56px;height:96px;display:flex;align-items:center;gap:22px;z-index:2}
+.dp .badge{width:86px;height:86px;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;font:800 38px/1 Cairo;color:#fff;background:var(--navy)}
+.dp .badge small{font:700 14px "IBM Plex Sans Arabic";margin-bottom:5px}
+.dp .badge.a{background:var(--cyan);color:var(--ink)}.dp .badge.c{background:var(--ink)}
+.dp h2{font:800 60px/1 Cairo;color:var(--ink)}
+.dp .hint{display:flex;align-items:center;gap:10px;font:500 16px "IBM Plex Sans Arabic";color:var(--muted);background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:9px 18px}
+.dp .hint .pl{width:24px;height:24px}
+.dp .logo{height:44px;margin-right:18px}
+
+.tbl{position:absolute;top:148px;right:56px;left:56px;border:1.5px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 12px 34px #07142a0f;z-index:2}
+.tr{display:grid;grid-template-columns:50px 300px 244px 200px 88px 104px 1fr;align-items:center;direction:rtl}
+.th{background:var(--ink);color:#fff;height:60px;font:700 16px "IBM Plex Sans Arabic"}
+.th>div{text-align:center}.th>div.r{text-align:right;padding-right:16px}
+.td{height:86px;border-top:1px solid var(--line)}
+.td:nth-child(odd){background:#f8fafc}
+.td>div{height:100%;display:flex;align-items:center;justify-content:center}
+.td .idx{font:800 20px "Readex Pro";color:var(--navy)}
+.td .ex,.td .alt{justify-content:flex-start;padding:0 16px}
+.lnk{display:flex;align-items:center;gap:12px;direction:ltr;text-align:left}
+.lnk .pl{flex:none;width:34px;height:34px}
+.lnk b{font:700 17px/1.2 "Readex Pro";color:var(--ink);letter-spacing:.2px}
+.lnk:hover b{color:var(--navy)}
+.alt .lnk b{font-weight:500;color:#33445c;font-size:15px}
+.alt .lnk .pl{width:28px;height:28px}
+.tags{flex-direction:column;align-items:flex-start!important;justify-content:center!important;gap:7px;padding:0 22px}
+.mrow{display:flex;align-items:center;gap:9px;line-height:1.2}
+.mrow i{flex:none;width:11px;height:11px;border-radius:3px;background:var(--navy)}
+.mrow.p b{font:800 19px Cairo;color:var(--ink)}
+.mrow.s i{background:var(--cyan)}
+.mrow.s span{font:600 15px "IBM Plex Sans Arabic";color:var(--muted)}
+.mrow.s span em{font-style:normal;color:#b8c4d2;margin:0 5px}
+.tag{font:700 14px "IBM Plex Sans Arabic";padding:4px 11px;border-radius:99px;background:var(--cyan-soft);border:1.5px solid var(--cyan);color:var(--cyan-ink);white-space:nowrap}
+.tag.p{background:var(--navy);border-color:var(--navy);color:#fff}
+.lg{display:flex;gap:16px;font:500 15px "IBM Plex Sans Arabic";color:var(--muted)}.lg span{display:flex;align-items:center;gap:7px}.lg i{width:14px;height:14px;border-radius:4px;background:var(--navy)}.lg i.s{background:var(--cyan)}
+.fig{gap:14px}.fig .v{display:flex;flex-direction:column;align-items:center}.fig svg{height:80px;width:80px}.fig .v span{font:700 11.5px "IBM Plex Sans Arabic";color:#fff;background:#8196b0;border-radius:6px;padding:0 7px;line-height:17px}.fig .v.b span{background:var(--ink3)}
+.num{font:800 26px "Readex Pro";color:var(--ink)}
+.rep{font:700 20px "Readex Pro";color:var(--ink);direction:ltr;background:var(--cyan-soft);border-radius:10px;padding:6px 12px}
+.th .fh{display:flex;flex-direction:column;align-items:center;gap:4px;line-height:1.1}.th .fh div{display:flex;gap:14px}.th .fh span{width:80px;font:700 12.5px "IBM Plex Sans Arabic";background:#8196b0;border-radius:6px;line-height:19px}.th .fh span.b{background:var(--cyan);color:var(--ink)}
+.th .alt-h{text-align:right;padding-right:16px}
+.legend{position:absolute;bottom:78px;right:58px;display:flex;gap:18px;font:500 14px "IBM Plex Sans Arabic";color:var(--muted);z-index:2}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-left:6px;vertical-align:-1px}
+
+/* ---------- instructions */
+.ip .top{position:absolute;top:34px;right:56px;left:56px;height:96px;display:flex;align-items:center;gap:22px;z-index:2}
+.ip .ico{width:86px;height:86px;border-radius:20px;background:var(--cyan-soft);border:2px solid var(--cyan);display:flex;align-items:center;justify-content:center}
+.ip h2{font:800 60px/1 Cairo;color:var(--ink)}
+.ip .logo{height:44px;margin-right:auto}
+.panel{position:absolute;top:150px;bottom:92px;background:#fff;border:1.5px solid var(--line);border-radius:20px;box-shadow:0 12px 34px #07142a0f;overflow:hidden;z-index:2}
+.panel .ph{height:56px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 24px;font:700 17px "IBM Plex Sans Arabic"}
+.panel .ph small{font:500 13px "IBM Plex Sans Arabic";color:var(--onm)}
+.sets{right:56px;width:560px}
+.srow{display:grid;grid-template-columns:190px 1fr 46px;align-items:center;gap:14px;height:56px;padding:0 24px;border-top:1px solid var(--line)}
+.srow:nth-child(odd){background:#f8fafc}
+.srow .mg{font:700 16px/1.25 "IBM Plex Sans Arabic";color:var(--ink)}
+.srow .trk{position:relative;height:14px;background:#edf1f6;border-radius:9px;direction:ltr}
+.srow .trk .band{position:absolute;top:0;bottom:0;right:30%;left:0;background:#dff3fb;border-radius:9px}
+.srow .trk b{position:absolute;right:0;top:0;bottom:0;border-radius:9px;background:linear-gradient(270deg,var(--navy),var(--cyan))}
+.srow .v{font:800 22px "Readex Pro";color:var(--navy);text-align:left}
+.scale{display:grid;grid-template-columns:190px 1fr 46px;gap:14px;padding:8px 24px 0;border-top:1px solid var(--line);height:52px}
+.scale .ax{position:relative;direction:ltr;font:600 12px "IBM Plex Sans Arabic";color:var(--muted)}
+.scale .ax span{position:absolute;top:0;transform:translateX(50%);white-space:nowrap}
+.scale .ax .rng{position:absolute;top:20px;right:30%;left:0;border-top:2px solid #9fdcf2;text-align:center;font:600 12px "IBM Plex Sans Arabic";color:var(--cyan-ink);padding-top:2px;transform:none}
+.notes{left:56px;right:636px;padding:0}
+.nl{padding:4px 24px 0}
+.note{display:flex;gap:14px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed var(--line)}
+.note:last-child{border:0}
+.note .k{flex:none;width:30px;height:30px;border-radius:9px;background:var(--navy);color:#fff;font:800 16px/30px "Readex Pro";text-align:center}
+.note p{font:500 16.5px/1.55 "IBM Plex Sans Arabic";color:var(--head)}
+.note p b{font-weight:700;color:var(--navy)}
+.warm{margin:2px 24px 0;background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:10px 16px 12px}
+.warm p{font:500 16px/1.55 "IBM Plex Sans Arabic";color:var(--head)}
+.warm p b{color:var(--navy)}
+.steps{display:flex;gap:10px;margin-top:8px;align-items:flex-end}
+.st{flex:1;border-radius:12px;padding:7px 12px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end}
+.st small{font:600 13px "IBM Plex Sans Arabic";opacity:.9}
+.st b{font:800 26px/1.1 "Readex Pro";direction:ltr;text-align:right}
+.st span{font:600 12.5px "IBM Plex Sans Arabic";opacity:.9}
+.st.s1{height:78px;background:#8fd6ef;color:var(--ink)}.st.s2{height:94px;background:var(--cyan);color:var(--ink)}.st.s3{height:110px;background:var(--navy)}
+
+/* ---------- page 6 */
+.prog{right:56px;width:700px}
+.rirp{left:56px;right:776px}
+.pbody{position:absolute;top:56px;bottom:0;left:0;right:0;padding:18px 26px 22px;display:flex;flex-direction:column;justify-content:space-between}
+.pnote{display:flex;gap:14px;align-items:flex-start;padding:6px 0 12px}
+.pnote .k{flex:none;width:34px;height:34px;border-radius:10px;background:var(--navy);color:#fff;font:800 18px/34px "Readex Pro";text-align:center}
+.pnote p{font:500 18.5px/1.75 "IBM Plex Sans Arabic";color:var(--head)}
+.pnote p b{color:var(--navy);font-weight:700}
+.flow{display:flex;align-items:stretch;gap:8px}
+.fs{flex:1 1 0;min-width:0;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:16px 12px;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.fs small{display:block;font:600 14.5px "IBM Plex Sans Arabic";color:var(--muted)}
+.fs b{display:block;font:800 21px/1.3 "Readex Pro";color:var(--ink);direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.fs.go{background:var(--navy);border-color:var(--navy)}.fs.go small{color:#cfe0ff}.fs.go b{color:#fff;font:800 19px/1.4 Cairo;direction:rtl;white-space:nowrap}
+.arr{align-self:center;color:var(--cyan);display:flex}
+.gauge{direction:ltr}.gauge .gl{position:relative;height:26px;margin-top:6px;font:700 13.5px "IBM Plex Sans Arabic"}.gauge .gl span{position:absolute;top:0;white-space:nowrap;border-top:3px solid;padding-top:3px;text-align:center}
+.gauge .cells{display:grid;grid-template-columns:repeat(11,1fr);gap:4px}
+.gauge .cells i{height:52px;font-size:18px!important;border-radius:8px;background:#edf1f6;display:flex;align-items:center;justify-content:center;font:700 15px "Readex Pro";font-style:normal;color:var(--muted)}
+.gauge .cells i.rec{background:var(--cyan);color:var(--ink)}
+.gauge .cells i.fail{background:var(--ink);color:#fff}
+.gauge .cells i.ex{outline:3px solid var(--navy);outline-offset:-3px;color:var(--navy);background:#fff}
+.gauge .lab{display:grid;grid-template-columns:repeat(11,1fr);gap:4px;margin-top:6px;font:600 12.5px "IBM Plex Sans Arabic";color:var(--muted);direction:rtl}
+.rdef{background:var(--ink);color:#fff;border-radius:14px;padding:16px 18px}
+.rdef b{font:800 23px "Readex Pro";color:var(--cyan);direction:ltr;unicode-bidi:isolate}
+.rdef p{font:500 18px/1.6 "IBM Plex Sans Arabic";color:#dbe6f3;margin-top:2px}
+.rdef p strong{color:#fff}
+.rex{display:flex;flex-direction:column;gap:12px}
+.rex div{display:flex;align-items:center;gap:14px;font:500 18px "IBM Plex Sans Arabic";color:var(--head)}
+.rex div span{flex:none;min-width:86px;text-align:center;font:800 18px "Readex Pro";border-radius:9px;padding:6px 8px;direction:ltr}
+.rex .a span{background:#fff;border:2px solid var(--navy);color:var(--navy)}
+.rex .z span{background:var(--ink);color:#fff}
+.tip{display:flex;gap:14px;align-items:flex-start;background:var(--cyan-soft);border:1.5px solid var(--cyan);border-radius:14px;padding:14px 16px}
+.tip .k{flex:none;min-width:66px;height:34px;border-radius:10px;background:var(--cyan);color:var(--ink);font:800 17px/34px "Readex Pro";text-align:center;direction:ltr}
+.tip p{font:500 18px/1.65 "IBM Plex Sans Arabic";color:var(--head)}
+
+/* ---------- page 7 : thanks */
+.ty .logo{position:absolute;top:56px;left:56px;height:52px;z-index:2}
+.ty .msg{position:absolute;right:96px;top:150px;width:700px;z-index:2}
+.ty .msg .chip{display:inline-flex;gap:10px;align-items:center;font:700 18px "IBM Plex Sans Arabic";color:var(--navy);background:var(--cyan-soft);border:1.5px solid #4cc5ed88;border-radius:99px;padding:7px 18px}
+.ty .msg .chip i{width:22px;height:9px;background:var(--cyan);transform:skewX(-25deg)}
+.ty h2{font:800 104px/1.15 Cairo;color:var(--ink);margin:18px 0 6px}
+.ty .rule{width:130px;height:6px;border-radius:3px;background:var(--cyan);margin:6px 0 28px}
+.ty .msg p{font:500 22px/1.75 "IBM Plex Sans Arabic";color:var(--head);margin-bottom:14px}
+.ty .sig{margin-top:26px;display:flex;align-items:center;gap:14px;font:500 18px "IBM Plex Sans Arabic";color:var(--muted)}
+.ty .sig b{font:800 30px Cairo;color:var(--navy)}
+.ty .contact{position:absolute;left:96px;top:190px;width:540px;display:flex;flex-direction:column;gap:18px;z-index:2}
+.ty .contact h4{font:700 20px "IBM Plex Sans Arabic";color:var(--muted);margin-bottom:2px}
+.cc{display:flex;align-items:center;gap:18px;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:20px 22px;box-shadow:0 14px 34px #07142a12}
+.cc .ic{flex:none;width:62px;height:62px;border-radius:16px;display:flex;align-items:center;justify-content:center}
+.cc .ic.ig{background:linear-gradient(135deg,#284da0,#4cc5ed)}
+.cc .ic.web{background:var(--ink)}
+.cc div small{display:block;font:600 15px "IBM Plex Sans Arabic";color:var(--muted)}
+.cc div b{display:block;font:700 19px "Readex Pro";white-space:nowrap;color:var(--ink);direction:ltr;text-align:right}
+.cc .go{flex:none;margin-right:auto;width:40px;height:40px;border-radius:50%;background:var(--cyan-soft);border:1.5px solid var(--cyan);display:flex;align-items:center;justify-content:center;color:var(--navy);font:800 20px Cairo}
+.credit{position:absolute;left:56px;bottom:70px;font:500 11px "IBM Plex Sans Arabic";color:#9fb0c3;direction:ltr;z-index:2}
+
+/* ---------- home equipment page */
+.eq .grid3{position:absolute;top:150px;bottom:92px;right:56px;left:56px;display:grid;grid-template-columns:1.15fr 1fr;grid-template-rows:1fr 1fr;gap:22px;z-index:2}
+.ecard{background:#fff;border:1.5px solid var(--line);border-radius:22px;box-shadow:0 12px 34px #07142a0f;padding:26px 30px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.ecard .lbl{display:inline-flex;align-self:flex-start;gap:9px;align-items:center;font:700 15px "IBM Plex Sans Arabic";color:var(--navy);background:var(--cyan-soft);border:1.5px solid #4cc5ed88;border-radius:99px;padding:5px 14px;margin-bottom:14px}
+.ecard .lbl i{width:18px;height:8px;background:var(--cyan);transform:skewX(-25deg)}
+.ecard p.big{font:700 25px/1.7 "IBM Plex Sans Arabic";color:var(--ink)}
+.ecard p.big b{color:var(--navy)}
+.equip{grid-row:1/3;background:linear-gradient(160deg,#fff 55%,#eef6ff)}
+.gear{flex:1;margin-top:26px;display:flex;gap:18px;align-items:stretch}
+.gi{flex:1;border-radius:18px;padding:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center}
+.gi.w{background:var(--ink);color:#fff}.gi.bn{background:var(--paper);border:1.5px dashed #9fb0c3}
+.gi b{font:800 46px/1 "Readex Pro";direction:ltr}.gi.w b{color:var(--cyan)}
+.gi span{font:700 19px "IBM Plex Sans Arabic"}.gi.bn span{color:var(--muted)}
+.gi.bn b{font:800 34px Cairo;color:var(--ink)}
+.store{background:var(--navy);border-color:var(--navy);color:#fff;justify-content:space-between}
+.store .lbl{background:#ffffff1a;border-color:#ffffff40;color:#fff}
+.store p.big{color:#fff}
+.store a{align-self:flex-start;display:flex;align-items:center;gap:12px;background:#fff;color:var(--navy);border-radius:14px;padding:12px 18px;font:800 22px "Readex Pro";letter-spacing:.5px;text-decoration:underline;text-underline-offset:5px}
+.store a .ar{display:flex;width:32px;height:32px;border-radius:50%;background:var(--cyan);color:var(--ink);align-items:center;justify-content:center;text-decoration:none}
+.alt{justify-content:space-between}
+.alt p.big{font-size:21px;line-height:1.7}
+.search{display:flex;align-items:center;gap:12px;border:2px solid var(--line);border-radius:99px;padding:10px 16px;background:var(--paper)}
+.search .q{flex:1;display:flex;gap:8px;align-items:center;justify-content:flex-end;font:700 17px "IBM Plex Sans Arabic";color:var(--ink)}
+.search .q em{font:700 16px "Readex Pro";font-style:normal;color:var(--navy);direction:ltr}
+.search .src{display:flex;gap:6px}
+.search .src span{font:700 12.5px "Readex Pro";border-radius:8px;padding:4px 9px;color:#fff}
+
+/* ---------- generator additions */
+.cover .lead{position:absolute;top:572px;right:84px;font:600 23px/1.5 "IBM Plex Sans Arabic";color:var(--navy);max-width:640px}
+.days.d4{top:104px;gap:16px}
+.days.d4 .day{padding:17px 26px}
+.days.d4 .day .n{width:70px;height:70px}
+.days .day h3 small{font:700 15px "IBM Plex Sans Arabic";color:var(--muted);margin-right:8px}
+.dp .td{height:var(--rh,86px)}
+.dp .top h2 small{display:block;font:600 17px "IBM Plex Sans Arabic";color:var(--muted);margin-top:6px}
+.dp .badge.d{background:var(--navy2)}
+.rep.t{direction:rtl;font-size:18px}
+.num.t{font-size:21px;direction:ltr}
+.refs{position:absolute;left:24px;right:24px;bottom:14px;font:500 12.5px/1.6 "IBM Plex Sans Arabic";color:var(--muted)}
+.refs b{color:var(--navy)}
+.refs a{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+.week{padding:10px 22px}
+.wd{display:flex;align-items:center;gap:14px;height:62px;border-bottom:1px dashed var(--line)}
+.wd:last-child{border:0}
+.wd .dn{width:92px;font:700 17px "IBM Plex Sans Arabic";color:var(--ink)}
+.wd .ss{display:flex;gap:8px;flex-wrap:wrap}
+.wd .ss span{font:700 15px "IBM Plex Sans Arabic";border-radius:10px;padding:7px 14px;background:var(--navy);color:#fff}
+.wd .ss span.a{background:var(--cyan);color:var(--ink)}
+.wd .ss span.c{background:var(--ink)}
+.wd .ss span.r{background:var(--surf);color:var(--muted)}
+.wd .ss span.o{background:#fff;border:1.5px solid var(--cyan);color:var(--cyan-ink)}
+.alert{background:var(--ink);color:#fff;border-radius:18px;padding:18px 22px;margin:14px 24px 0}
+.alert h4{font:800 20px Cairo;color:var(--cyan);margin-bottom:8px}
+.alert li{font:500 16px/1.65 "IBM Plex Sans Arabic";color:#dbe6f3;margin-right:18px}
+.alert p{font:500 15px/1.6 "IBM Plex Sans Arabic";color:var(--onm);margin-top:8px}
+.kv{display:flex;gap:10px;margin:6px 0 2px}
+.kv div{flex:1;background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;text-align:center}
+.kv b{display:block;font:800 22px "Readex Pro";color:var(--navy);direction:ltr}
+.kv small{font:600 13px "IBM Plex Sans Arabic";color:var(--muted)}
+.days .day.d .n{background:var(--navy2);color:#fff}.days .day.d{border-right-color:var(--navy2)}
+.ip .notes .note p{font-size:18px;line-height:1.75}
+.ip .notes .note{padding:10px 0}
+.alert li{font-size:18px;line-height:1.8}
+.alert p{font-size:16px}
+</style></head><body>
+
+<section class="page light grid cover" data-sec="الغلاف">
+ <i class="slash" style="left:-30px;bottom:-40px;width:120px;height:330px"></i>
+ <i class="slash n" style="left:120px;bottom:-40px;width:120px;height:220px"></i>
+ <i class="slash" style="right:640px;top:-40px;width:70px;height:170px;opacity:.25"></i>
+ <img class="logo" src="../brand/logo-color-hd.png" alt="Nav Coaching">
+ <span class="chip"><i></i>جدول مجاني</span>
+ <h1>جدول<br><em>بناء القلوتس</em></h1>
+ <span class="rule"></span>
+ <div class="lead">3 أيام بالأسبوع · التمرين بالنادي والبديل بالمنزل</div>
+ <div class="sign"><span>إعداد <b>كوتش ناڤ</b></span><span>navcoaching.com</span></div>
+ <div class="days">
+<div class="day a"><div class="n"><small>اليوم</small>1</div><div><h3>قلوتس A</h3><p>هيب ثرست · سكوات · RDL · أبدكشن</p></div><div class="cnt"><b>4</b>تمارين</div></div>
+<div class="day b"><div class="n"><small>اليوم</small>2</div><div><h3>قلوتس B</h3><p>سبليت سكوات · باك اكستنشن · كيك باك</p></div><div class="cnt"><b>4</b>تمارين</div></div>
+<div class="day c"><div class="n"><small>اليوم</small>3</div><div><h3>قلوتس C</h3><p>ليق برس · هيب ثرست · ليق كيرل</p></div><div class="cnt"><b>4</b>تمارين</div></div>
+ </div>
+</section>
+<div id="dayPages"></div>
+
+<section class="page light grid ip" data-sec="مبادئ الجدول">
+ <i class="slash" style="left:-40px;bottom:-40px;width:90px;height:190px;opacity:.25"></i>
+ <div class="top"><div class="ico"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#284da0" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 7v6"/><circle cx="12" cy="16.6" r=".6" fill="#284da0"/></svg></div><h2>مبادئ بناء القلوتس</h2>
+  <img class="logo" src="../brand/logo-color-hd.png" alt="Nav Coaching"></div>
+ <div class="panel sets">
+  <div class="ph"><span>العضلة</span><span>جولات الأسبوع</span></div>
+  <div class="srow" style="height:80px"><div class="mg">قلوتس</div><div class="trk"><i class="band" style="display:none"></i><b style="width:94.0%"></b></div><div class="v">23.5</div></div><div class="srow" style="height:80px"><div class="mg">قلوتس جانبي</div><div class="trk"><i class="band" style="display:none"></i><b style="width:36.0%"></b></div><div class="v">9</div></div><div class="srow" style="height:80px"><div class="mg">أفخاذ أمامية</div><div class="trk"><i class="band" style="display:none"></i><b style="width:36.0%"></b></div><div class="v">9</div></div><div class="srow" style="height:80px"><div class="mg">أفخاذ خلفية</div><div class="trk"><i class="band" style="display:none"></i><b style="width:44.0%"></b></div><div class="v">11</div></div>
+  <div class="scale"><div></div><div class="ax"><span style="right:0.0%">0</span><span style="right:20.0%">5</span><span style="right:40.0%">10</span><span style="right:60.0%">15</span><span style="right:80.0%">20</span><span style="right:100.0%">25</span></div><div></div></div>
+ </div>
+ <div class="panel notes">
+  <div class="ph"><span>ليش هذي التمارين؟</span></div>
+  <div class="nl"><div class="note"><span class="k">1</span><p><b>الهيب ثرست والسكوات</b> يبنون القلوتس بدرجة متقاربة، وغالبًا يحفّزونها بطريقة مختلفة، لذلك الجدول فيه الاثنين.</p></div><div class="note"><span class="k">2</span><p><b>القلوتس الجانبية</b> (الميديس والمينيمس) ما تكبر كفاية من السكوات والهيب ثرست، وتحتاج <b>أبدكشن</b> مباشر، وهو موجود بكل يوم.</p></div><div class="note"><span class="k">3</span><p>تركيبة كل جلسة: نوع من <b>الهيب ثرست</b>، وتمرين للأفخاذ الأمامية والقلوتس، و<b>هنج</b> للخلفية والقلوتس، وأبدكشن أو كيك باك بالنهاية.</p></div><div class="note"><span class="k">4</span><p>التمارين اللي تمطّ العضلة (<b>RDL والسبليت سكوات</b>) تحتاج استشفاء أطول، لذلك كل واحد منها مرة وحدة بالأسبوع.</p></div><div class="note"><span class="k">5</span><p>القلوتس هي العضلة المستهدفة، لذلك جولاتها أعلى (حوالي <b>20–25</b> بالأسبوع) وما تتجاوز تقريبًا <b>10</b> جولات بالجلسة.</p></div></div>
+  <div class="refs"><b>المراجع:</b> Menno Henselmans — <a href="https://mennohenselmans.com/new-study-hip-thrust-and-back-squat-training-elicit-similar-gluteus-muscle-hypertrophy-and-transfer-similarly-to-the-deadlift/">Hip thrust vs back squat</a> · <a href="https://mennohenselmans.com/optimal-training-frequency-glutes-part-ii/">Optimal glute frequency</a> · <a href="https://mennohenselmans.com/maximum-productive-training-volume-per-session/">Volume per session</a></div>
+ </div>
+</section>
+
+<section class="page light grid ip" data-sec="جدولك الأسبوعي">
+ <i class="slash" style="left:-40px;bottom:-40px;width:90px;height:190px;opacity:.25"></i>
+ <div class="top"><div class="ico"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#284da0" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 7v6"/><circle cx="12" cy="16.6" r=".6" fill="#284da0"/></svg></div><h2>جدولك الأسبوعي</h2>
+  <img class="logo" src="../brand/logo-color-hd.png" alt="Nav Coaching"></div>
+ <div class="panel" style="right:56px;width:560px">
+  <div class="ph"><span>مثال لتوزيع الأسبوع</span></div>
+  <div class="week"><div class="wd"><span class="dn">السبت</span><div class="ss"><span class="a">اليوم 1 · قلوتس A</span></div></div><div class="wd"><span class="dn">الأحد</span><div class="ss"><span class="r">راحة أو جزء علوي</span></div></div><div class="wd"><span class="dn">الاثنين</span><div class="ss"><span class="">اليوم 2 · قلوتس B</span></div></div><div class="wd"><span class="dn">الثلاثاء</span><div class="ss"><span class="r">راحة أو جزء علوي</span></div></div><div class="wd"><span class="dn">الأربعاء</span><div class="ss"><span class="c">اليوم 3 · قلوتس C</span></div></div><div class="wd"><span class="dn">الخميس</span><div class="ss"><span class="r">راحة</span></div></div><div class="wd"><span class="dn">الجمعة</span><div class="ss"><span class="r">راحة</span></div></div></div>
+ </div>
+ <div class="panel notes">
+  <div class="ph"><span>طريقة التنفيذ</span></div>
+  <div class="nl"><div class="note"><span class="k">1</span><p>السبليت سكوات والريفيرس لانج: <b>الجولات لكل رجل</b>.</p></div><div class="note"><span class="k">2</span><p>بالليق برس: حطّوا الرجول <b>أعلى المنصة</b> عشان يزيد شغل القلوتس.</p></div><div class="note"><span class="k">3</span><p>بالهيب ثرست: ثبات ثانية فوق مع عصر القلوتس، وبدون تقويس أسفل الظهر.</p></div></div><div class="warm">
+   <p>تحمية خاصة للعضلات الي بتمرنونها, أول جولتين بنص الوزن الأساسي الي تشتغلون عليه، مثال: تمرين <b>سكوات بالبار</b> — وزن التمرين الأساسي: <b>20 كيلو</b></p>
+   <div class="steps">
+    <div class="st s1"><small>أول جولة تحمية</small><b>10 kg</b><span>50% من الوزن الأساسي</span></div>
+    <div class="st s2"><small>ثاني جولة تحمية</small><b>14 kg</b><span>70% من الوزن الأساسي</span></div>
+    <div class="st s3"><small>الجولة الأساسية الأولى</small><b>20 kg</b><span>100%</span></div>
+   </div>
+  </div>
+  
+ </div>
+</section>
+<!-- ================= PAGE 6 : INSTRUCTIONS 2 ================= -->
+<section class="page light grid ip" data-sec="تعليمات مهمة">
+ <i class="slash" style="left:-40px;bottom:-40px;width:90px;height:190px;opacity:.25"></i>
+ <div class="top"><div class="ico"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#284da0" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 7v6"/><circle cx="12" cy="16.6" r=".6" fill="#284da0"/></svg></div><h2>تعليمات مهمة</h2>
+  <img class="logo" src="../brand/logo-color-hd.png" alt="Nav Coaching"></div>
+
+ <div class="panel prog">
+  <div class="ph"><span>زيادة الوزن</span></div>
+  <div class="pbody">
+   <div class="pnote"><span class="k">1</span><p>اختيار الوزن المناسب في الأسبوع الأول حسب <b>RIR</b> وزيادة الوزن مع تقليل الـ<b>RIR</b> بشكل اسبوعي.</p></div>
+   <div class="pnote"><span class="k">2</span><p>اذا كان الوزن <b>20 كيلو</b> في اول جلسة وقمت بـ <b>12 عدة</b> المفترض الجلسه الثانية تكون العدات اقل بسبب الاجهاد العضلي، فالجلسة التالية مثلا <b>10 عدات</b>. اذا كانت كل الجلسات بنفس العدات فالوزن كان تقدرون تزيدونه. ولو ماقدرتم تزيدون الوزن؟ وصلوا الى سقف العدات الي غالبا يكون <b>12</b> بالجدول. الاسبوع الي بعده تزيدون الوزن وتكون بنطاق مابين <b>6-12</b> عدة</p></div>
+   <div class="flow">
+    <div class="fs"><small>أول جلسة</small><b>20 kg × 12</b></div><span class="arr"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span>
+    <div class="fs"><small>الجلسة التالية مثلا</small><b>20 kg × 10</b></div><span class="arr"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span>
+    <div class="fs"><small>وصلت سقف العدات</small><b>20 kg × 12</b></div><span class="arr"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span>
+    <div class="fs go"><small>الاسبوع الي بعده</small><b>تزيدون الوزن</b></div>
+   </div>
+  </div>
+ </div>
+
+ <div class="panel rirp">
+  <div class="ph"><span>ما هو RIR؟</span></div>
+  <div class="pbody">
+   <div class="rdef"><b>RIR: REPS IN RESERVE</b><p>عدد التكرارت الباقية <strong>للفشل العضلي</strong> من 1-10 مثال:</p></div>
+   <div class="gauge"><div class="cells"><i class="fail">0</i><i class="rec">1</i><i class="rec">2</i><i class="rec">3</i><i class="rec">4</i><i class="ex">5</i><i class="">6</i><i class="">7</i><i class="">8</i><i class="">9</i><i class="">10</i></div><div class="gl"><span style="left:0;width:8.2%;border-color:#07142a;color:#07142a">الفشل</span><span style="left:9.2%;width:35.6%;border-color:#4cc5ed;color:#0a6a8f">النطاق المنصوح به</span></div></div>
+   <div class="rex">
+    <div class="a"><span>RIR 5</span>بامكانك عمل 5 تكرارات إضافية.</div>
+    <div class="z"><span>RIR 0</span>لا يمكنك عمل أي تكرارات أخرى (الفشل العضلي)</div>
+   </div>
+   <div class="tip"><span class="k">1 – 4</span><p>ننصح بنطاق مابين 1-4، واننا مانوصل للفشل العضلي بحد ذاته، لانه اجهاد زائد عن حده وتأثيره سلبي على الاستشفاء</p></div>
+  </div>
+ </div>
+</section>
+<!-- ================= PAGE 7 : THANK YOU ================= -->
+<section class="page light grid ty" data-sec="شكرا لك">
+ <i class="slash" style="left:-30px;bottom:-40px;width:120px;height:300px"></i>
+ <i class="slash n" style="left:120px;bottom:-40px;width:120px;height:200px"></i>
+ <img class="logo" src="../brand/logo-color-hd.png" alt="Nav Coaching">
+ <div class="msg">
+  <span class="chip"><i></i>Nav Coaching</span>
+  <h2>شكرا لك</h2>
+  <div class="rule"></div>
+  <p>اذا عندكم اي استفسار بخصوص الرياضة او التغذية، تواصلوا معي.</p>
+  <p>ولا عليكم أمر أتمنى منكم مشاركتي تعليقاتكم ونقدكم البناء من أجل تحسين جودة المحتوى</p>
+  <div class="sig"><b>كوتش ناڤ</b></div>
+ </div>
+ <div class="contact">
+  <h4>وسائل التواصل:</h4>
+  <a class="cc" href="https://www.instagram.com/navvcoaching/" target="_blank">
+   <span class="ic ig"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="#fff" stroke="none"/></svg></span>
+   <div><small>Instagram</small><b>@navvcoaching</b></div><span class="go"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span></a>
+  <a class="cc" href="https://navcoaching.com/" target="_blank">
+   <span class="ic web"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4cc5ed" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></span>
+   <div><small>موقعي الخاص بالمتدربين</small><b>navcoaching.com</b></div><span class="go"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span></a>
+ </div>
+ <div class="credit">Muscle diagrams based on react-body-highlighter © 2020 GV79 — MIT License</div>
+</section>
+<script>
+let TOTAL=0;
+const PLAY='<svg class="pl" viewBox="0 0 34 34"><circle cx="17" cy="17" r="16" fill="#e4f6fc" stroke="#4cc5ed" stroke-width="1.5"/><path d="M14 11.5v11l9-5.5z" fill="#284da0"/></svg>';
+const YT=id=>id.includes('/')?id:('https://www.youtube.com/'+(id.length&&id[0]==='w'?'watch?v='+id.slice(2):'shorts/'+id));
+// ---- body diagram (anatomy polygons: react-body-highlighter, MIT, (c) 2020 GV79)
+const ANAT={"anteriorData":[["CHEST",["51.8367347 41.6326531 51.0204082 55.1020408 57.9591837 57.9591837 67.755102 55.5102041 70.6122449 47.3469388 62.0408163 41.6326531","29.7959184 46.5306122 31.4285714 55.5102041 40.8163265 57.9591837 48.1632653 55.1020408 47.755102 42.0408163 37.5510204 42.0408163"]],["OBLIQUES",["68.5714286 63.2653061 67.3469388 57.1428571 58.7755102 59.5918367 60 64.0816327 60.4081633 83.2653061 65.7142857 78.7755102 66.5306122 69.7959184","33.877551 78.3673469 33.0612245 71.8367347 31.0204082 63.2653061 32.244898 57.1428571 40.8163265 59.1836735 39.1836735 63.2653061 39.1836735 83.6734694"]],["ABS",["56.3265306 59.1836735 57.9591837 64.0816327 58.3673469 77.9591837 58.3673469 92.6530612 56.3265306 98.3673469 55.1020408 104.081633 51.4285714 107.755102 51.0204082 84.4897959 50.6122449 67.3469388 51.0204082 57.1428571","43.6734694 58.7755102 48.5714286 57.1428571 48.9795918 67.3469388 48.5714286 84.4897959 48.1632653 107.346939 44.4897959 103.673469 40.8163265 91.4285714 40.8163265 78.3673469 41.2244898 64.4897959"]],["BICEPS",["16.7346939 68.1632653 17.9591837 71.4285714 22.8571429 66.122449 28.9795918 53.877551 27.755102 49.3877551 20.4081633 55.9183673","71.4285714 49.3877551 70.2040816 54.6938776 76.3265306 66.122449 81.6326531 71.8367347 82.8571429 68.9795918 78.7755102 55.5102041"]],["TRICEPS",["69.3877551 55.5102041 69.3877551 61.6326531 75.9183673 72.6530612 77.5510204 70.2040816 75.5102041 67.3469388","22.4489796 69.3877551 29.7959184 55.5102041 29.7959184 60.8163265 22.8571429 73.0612245"]],["NECK",["55.5102041 23.6734694 50.6122449 33.4693878 50.6122449 39.1836735 61.6326531 40 70.6122449 44.8979592 69.3877551 36.7346939 63.2653061 35.1020408 58.3673469 30.6122449","28.9795918 44.8979592 30.2040816 37.1428571 36.3265306 35.1020408 41.2244898 30.2040816 44.4897959 24.4897959 48.9795918 33.877551 48.5714286 39.1836735 37.9591837 39.5918367"]],["FRONT_DELTOIDS",["78.3673469 53.0612245 79.5918367 47.755102 79.1836735 41.2244898 75.9183673 37.9591837 71.0204082 36.3265306 72.244898 42.8571429 71.4285714 47.3469388","28.1632653 47.3469388 21.2244898 53.0612245 20 47.755102 20.4081633 40.8163265 24.4897959 37.1428571 28.5714286 37.1428571 26.9387755 43.2653061"]],["HEAD",["42.4489796 2.85714286 40 11.8367347 42.0408163 19.5918367 46.122449 23.2653061 49.7959184 25.3061224 54.6938776 22.4489796 57.5510204 19.1836735 59.1836735 10.2040816 57.1428571 2.44897959 49.7959184 0"]],["ABDUCTORS",["52.6530612 110.204082 54.2857143 124.897959 60 110.204082 62.0408163 100 64.8979592 94.2857143 60 92.6530612 56.7346939 104.489796","47.755102 110.612245 44.8979592 125.306122 42.0408163 115.918367 40.4081633 113.061224 39.5918367 107.346939 37.9591837 102.44898 34.6938776 93.877551 39.5918367 92.244898 41.6326531 99.1836735 43.6734694 105.306122"]],["QUADRICEPS",["34.6938776 98.7755102 37.1428571 108.163265 37.1428571 127.755102 34.2857143 137.142857 31.0204082 132.653061 29.3877551 120 28.1632653 111.428571 29.3877551 100.816327 32.244898 94.6938776","63.2653061 105.714286 64.4897959 100 66.9387755 94.6938776 70.2040816 101.22449 71.0204082 111.836735 68.1632653 133.061224 65.3061224 137.55102 62.4489796 128.571429 62.0408163 111.428571","38.7755102 129.387755 38.3673469 112.244898 41.2244898 118.367347 44.4897959 129.387755 42.8571429 135.102041 40 146.122449 36.3265306 146.530612 35.5102041 140","59.5918367 145.714286 55.5102041 128.979592 60.8163265 113.877551 61.2244898 130.204082 64.0816327 139.591837 62.8571429 146.530612","32.6530612 138.367347 26.5306122 145.714286 25.7142857 136.734694 25.7142857 127.346939 26.9387755 114.285714 29.3877551 133.469388","71.8367347 113.061224 73.877551 124.081633 73.877551 140.408163 72.6530612 145.714286 66.5306122 138.367347 70.2040816 133.469388"]],["KNEES",["33.877551 140 34.6938776 143.265306 35.5102041 147.346939 36.3265306 151.020408 35.1020408 156.734694 29.7959184 156.734694 27.3469388 152.653061 27.3469388 147.346939 30.2040816 144.081633","65.7142857 140 72.244898 147.755102 72.244898 152.244898 69.7959184 157.142857 64.8979592 156.734694 62.8571429 151.020408"]],["CALVES",["71.4285714 160.408163 73.4693878 153.469388 76.7346939 161.22449 79.5918367 167.755102 78.3673469 187.755102 79.5918367 195.510204 74.6938776 195.510204","24.8979592 194.693878 27.755102 164.897959 28.1632653 160.408163 26.122449 154.285714 24.8979592 157.55102 22.4489796 161.632653 20.8163265 167.755102 22.0408163 188.163265 20.8163265 195.510204","72.6530612 195.102041 69.7959184 159.183673 65.3061224 158.367347 64.0816327 162.44898 64.0816327 165.306122 65.7142857 177.142857","35.5102041 158.367347 35.9183673 162.44898 35.9183673 166.938776 35.1020408 172.244898 35.1020408 176.734694 32.244898 182.040816 30.6122449 187.346939 26.9387755 194.693878 27.3469388 187.755102 28.1632653 180.408163 28.5714286 175.510204 28.9795918 169.795918 29.7959184 164.081633 30.2040816 158.77551"]],["FOREARM",["6.12244898 88.5714286 10.2040816 75.1020408 14.6938776 70.2040816 16.3265306 74.2857143 19.1836735 73.4693878 4.48979592 97.5510204 0 100","84.4897959 69.7959184 83.2653061 73.4693878 80 73.0612245 95.1020408 98.3673469 100 100.408163 93.4693878 89.3877551 89.7959184 76.3265306","77.5510204 72.244898 77.5510204 77.5510204 80.4081633 84.0816327 85.3061224 89.7959184 92.244898 101.22449 94.6938776 99.5918367","6.93877551 101.22449 13.4693878 90.6122449 18.7755102 84.0816327 21.6326531 77.1428571 21.2244898 71.8367347 4.89795918 98.7755102"]]],"posteriorData":[["HEAD",["50.6382979 0 45.9574468 0.85106383 40.8510638 5.53191489 40.4255319 12.7659574 45.106383 20 55.7446809 20 59.1489362 13.6170213 59.5744681 4.68085106 55.7446809 1.27659574"]],["TRAPEZIUS",["44.6808511 21.7021277 47.6595745 21.7021277 47.2340426 38.2978723 47.6595745 64.6808511 38.2978723 53.1914894 35.3191489 40.8510638 31.0638298 36.5957447 39.1489362 33.1914894 43.8297872 27.2340426","52.3404255 21.7021277 55.7446809 21.7021277 56.5957447 27.2340426 60.8510638 32.7659574 68.9361702 36.5957447 64.6808511 40.4255319 61.7021277 53.1914894 52.3404255 64.6808511 53.1914894 38.2978723"]],["BACK_DELTOIDS",["29.3617021 37.0212766 22.9787234 39.1489362 17.4468085 44.2553191 18.2978723 53.6170213 24.2553191 49.3617021 27.2340426 46.3829787","71.0638298 37.0212766 78.2978723 39.5744681 82.5531915 44.6808511 81.7021277 53.6170213 74.893617 48.9361702 72.3404255 45.106383"]],["UPPER_BACK",["31.0638298 38.7234043 28.0851064 48.9361702 28.5106383 55.3191489 34.0425532 75.3191489 47.2340426 71.0638298 47.2340426 66.3829787 36.5957447 54.0425532 33.6170213 41.2765957","68.9361702 38.7234043 71.9148936 49.3617021 71.4893617 56.1702128 65.9574468 75.3191489 52.7659574 71.0638298 52.7659574 66.3829787 63.4042553 54.4680851 66.3829787 41.7021277"]],["TRICEPS",["26.8085106 49.787234 17.8723404 55.7446809 14.4680851 72.3404255 16.5957447 81.7021277 21.7021277 63.8297872 26.8085106 55.7446809","73.6170213 50.212766 82.1276596 55.7446809 85.9574468 73.1914894 83.4042553 82.1276596 77.8723404 62.9787234 73.1914894 55.7446809","26.8085106 58.2978723 26.8085106 68.5106383 22.9787234 75.3191489 19.1489362 77.4468085 22.5531915 65.5319149","72.7659574 58.2978723 77.0212766 64.6808511 80.4255319 77.4468085 76.5957447 75.3191489 72.7659574 68.9361702"]],["LOWER_BACK",["47.6595745 72.7659574 34.4680851 77.0212766 35.3191489 83.4042553 49.3617021 102.12766 46.8085106 82.9787234","52.3404255 72.7659574 65.5319149 77.0212766 64.6808511 83.4042553 50.6382979 102.12766 53.1914894 83.8297872"]],["FOREARM",["86.3829787 75.7446809 91.0638298 83.4042553 93.1914894 94.0425532 100 106.382979 96.1702128 104.255319 88.0851064 89.3617021 84.2553191 83.8297872","13.6170213 75.7446809 8.93617021 83.8297872 6.80851064 93.6170213 0 106.382979 3.82978723 104.255319 12.3404255 88.5106383 15.7446809 82.9787234","81.2765957 79.5744681 77.4468085 77.8723404 79.1489362 84.6808511 91.0638298 103.829787 93.1914894 108.93617 94.4680851 104.680851","18.7234043 79.5744681 22.1276596 77.8723404 20.8510638 84.2553191 9.36170213 102.978723 6.80851064 108.510638 5.10638298 104.680851"]],["GLUTEAL",["44.6808511 99.5744681 30.212766 108.510638 29.787234 118.723404 31.4893617 125.957447 47.2340426 121.276596 49.3617021 114.893617","55.3191489 99.1489362 51.0638298 114.468085 52.3404255 120.851064 68.0851064 125.957447 69.787234 119.148936 69.3617021 108.510638"]],["ABDUCTOR",["48.0851064 122.978723 44.6808511 122.978723 41.2765957 125.531915 45.106383 144.255319 48.5106383 135.744681 48.9361702 129.361702","51.9148936 122.553191 55.7446809 123.404255 59.1489362 125.957447 54.893617 144.255319 51.9148936 136.170213 51.0638298 129.361702"]],["HAMSTRING",["28.9361702 122.12766 31.0638298 129.361702 36.5957447 125.957447 35.3191489 135.319149 34.4680851 150.212766 29.3617021 158.297872 28.9361702 146.808511 27.6595745 141.276596 27.2340426 131.489362","71.4893617 121.702128 69.3617021 128.93617 63.8297872 125.957447 65.5319149 136.595745 66.3829787 150.212766 71.0638298 158.297872 71.4893617 147.659574 72.7659574 142.12766 73.6170213 131.914894","38.7234043 125.531915 44.2553191 145.957447 40.4255319 166.808511 36.1702128 152.765957 37.0212766 135.319149","61.7021277 125.531915 63.4042553 136.170213 64.2553191 153.191489 60 166.808511 56.1702128 146.382979"]],["KNEES",["34.4680851 153.191489 31.0638298 159.148936 33.6170213 166.382979 37.4468085 162.553191","66.3829787 153.617021 62.9787234 162.978723 66.8085106 166.382979 69.3617021 159.148936"]],["CALVES",["29.3617021 160.425532 28.5106383 167.234043 24.6808511 179.574468 23.8297872 192.765957 25.5319149 197.021277 28.5106383 193.191489 29.787234 180 31.9148936 171.06383 31.9148936 166.808511","37.4468085 165.106383 35.3191489 167.659574 33.1914894 171.914894 31.0638298 180.425532 30.212766 191.914894 34.0425532 200 38.7234043 190.638298 39.1489362 168.93617","62.9787234 165.106383 61.2765957 168.510638 61.7021277 190.638298 66.3829787 199.574468 70.6382979 191.914894 68.9361702 179.574468 66.8085106 170.212766","70.6382979 160.425532 72.3404255 168.510638 75.7446809 179.148936 76.5957447 192.765957 74.4680851 196.595745 72.3404255 193.617021 70.6382979 179.574468 68.0851064 168.085106"]],["LEFT_SOLEUS",["28.5106383 195.744681 30.212766 195.744681 33.6170213 201.702128 30.6382979 220 28.5106383 213.617021 26.8085106 198.297872"]],["RIGHT_SOLEUS",["69.787234 195.744681 71.9148936 195.744681 73.6170213 198.297872 71.9148936 213.191489 70.212766 219.574468 67.2340426 202.12766"]]]};
+const RED='#284da0',RED2='#4cc5ed',BODY='#cfd8e3';
+const MAP={chest:['CHEST'],fdelt:['FRONT_DELTOIDS'],sdelt:['FRONT_DELTOIDS','BACK_DELTOIDS'],rdelt:['BACK_DELTOIDS'],biceps:['BICEPS'],triceps:['TRICEPS'],
+ lats:['UPPER_BACK'],rhomb:['TRAPEZIUS'],gmed:['GLUTEAL'],lowb:['LOWER_BACK'],obl:['OBLIQUES'],abs:['ABS'],quads:['QUADRICEPS'],glutes:['GLUTEAL'],hams:['HAMSTRING'],calves:['CALVES','LEFT_SOLEUS','RIGHT_SOLEUS']};
+function body(view,pri,sec){
+  const P=new Set(pri.flatMap(m=>MAP[m])),S=new Set(sec.flatMap(m=>MAP[m]));
+  const all=pri.concat(sec),LOW=['quads','glutes','hams','calves','gmed'],MID=['abs','obl','lowb'];
+  const kind=all.every(m=>LOW.includes(m))?'low':all.every(m=>MID.includes(m))?'mid':'up';
+  const VB={f:{up:'2 0 96 104',mid:'8 30 84 88',low:'24 88 52 108'},b:{up:'2 0 96 116',mid:'8 34 84 98',low:'24 98 52 122'}}[view][kind];
+  let o='';(view==='f'?ANAT.anteriorData:ANAT.posteriorData).forEach(([m,ps])=>{if(kind==='low'&&m==='FOREARM')return;
+    const col=P.has(m)?RED:(S.has(m)&&!P.has(m)?RED2:BODY);
+    ps.forEach(p=>o+='<polygon points="'+p+'" fill="'+col+'" stroke="#fff" stroke-width=".6" stroke-linejoin="round"/>');});
+  return '<svg viewBox="'+VB+'" preserveAspectRatio="xMidYMid meet">'+o+'</svg>'}
+// ---- data (content kept from the original file)
+const DAYS=[{"n": 1, "cls": "a", "title": "قلوتس A", "sub": "هيب ثرست · سكوات · هنج · أبدكشن", "rows": [["HIP THRUST", "PqOnYf6Slkg", ["قلوتس", "أفخاذ خلفية"], ["glutes"], ["hams"], 4, "8-12", "DB HIP THRUST", "w:29OfN4ztW_g"], ["SQUAT", "PPmvh7gBTi0", ["قلوتس", "أفخاذ أمامية"], ["glutes", "quads"], [], 3, "6-10", "DB GOBLET SQUAT", "w:gCESNsDsbqk"], ["BARBELL RDL", "5rIqP63yWFg", ["أفخاذ خلفية", "قلوتس"], ["hams"], ["glutes"], 3, "8-10", "DB RDL", "u14AwrUcwWw"], ["HIP ABDUCTION MACHINE", "w:OjI5OpV6IWA", ["قلوتس جانبي"], ["gmed"], [], 3, "12-20", "SIDE LYING HIP ABDUCTION", "w:-rDiQXjeXO0"]]}, {"n": 2, "cls": "b", "title": "قلوتس B", "sub": "سبليت سكوات · باك اكستنشن · كيك باك", "rows": [["BULGARIAN SPLIT SQUAT", "w:SkNsa3eBwLA", ["قلوتس", "أفخاذ أمامية"], ["glutes", "quads"], [], 3, "8-12", "DB REVERSE LUNGE", "w:RZKXLMxPF_I"], ["45° BACK EXTENSION", "w:OMb1VFQK9Tk", ["قلوتس", "أفخاذ خلفية", "أسفل الظهر"], ["glutes"], ["hams", "lowb"], 3, "10-15", "DB SINGLE LEG RDL", "w:lI8-igvsnVQ"], ["CABLE KICKBACK", "w:l4zReIOfPCQ", ["قلوتس"], ["glutes"], [], 3, "12-15", "QUADRUPED KICKBACK", "w:GprFzvlHKmA"], ["CABLE HIP ABDUCTION", "w:vSqhrbzZb7A", ["قلوتس جانبي"], ["gmed"], [], 3, "12-20", "SIDE LYING HIP ABDUCTION", "w:-rDiQXjeXO0"]]}, {"n": 3, "cls": "c", "title": "قلوتس C", "sub": "ليق برس · هيب ثرست · ليق كيرل", "rows": [["LEG PRESS", "nDh_BlnLCGc", ["قلوتس", "أفخاذ أمامية"], ["glutes", "quads"], [], 3, "10-15", "DB STEP UP", "w:aKj-6hgiViA"], ["HIP THRUST", "PqOnYf6Slkg", ["قلوتس", "أفخاذ خلفية"], ["glutes"], ["hams"], 3, "10-15", "GLUTE BRIDGE", "w:L9KZfxT654Y"], ["SEATED LEG CURL", "w:Orxowest56U", ["أفخاذ خلفية"], ["hams"], [], 3, "10-15", "SLIDING LEG CURL", "w:kkkTfzi2gj4"], ["HIP ABDUCTION MACHINE", "w:OjI5OpV6IWA", ["قلوتس جانبي"], ["gmed"], [], 3, "15-20", "SIDE LYING HIP ABDUCTION", "w:-rDiQXjeXO0"]]}];
+const url=id=>id.startsWith('w:')?'https://www.youtube.com/watch?v='+id.slice(2):'https://www.youtube.com/shorts/'+id;
+const lnk=(name,id)=>'<a class="lnk" href="'+url(id)+'" target="_blank">'+PLAY+'<b>'+name+'</b></a>';
+let html='';
+DAYS.forEach(d=>{
+  html+='<section class="page light grid dp" style="--rh:'+(d.rows.length<=4?118:d.rows.length==5?100:86)+'px" data-sec="'+(d.sec||('اليوم '+d.n+' · '+d.title))+'">'
+   +'<i class="slash" style="left:-40px;bottom:-40px;width:90px;height:190px;opacity:.25"></i>'
+   +'<div class="top"><div class="badge '+d.cls+'"><small>'+(d.lbl||'اليوم')+'</small>'+d.n+'</div><h2>'+d.title+(d.sub?'<small>'+d.sub+'</small>':'')+'</h2>'
+   +'<div class="lg" style="margin-right:auto"><span><i></i>عضلة أساسية</span><span><i class="s"></i>عضلة مساعدة</span></div><div class="hint" style="margin-right:22px">'+PLAY.replace('class="pl"','class="pl" style="width:24px;height:24px"')+'اضغط على اسم التمرين لمشاهدة الشرح</div>'
+   +'<img class="logo" src="../brand/logo-color-hd.png" alt="Nav Coaching"></div>'
+   +'<div class="tbl"><div class="tr th"><div>#</div><div class="r">التمرين الأساسي · النادي</div><div class="r" style="padding-right:22px">اسم العضلة</div><div class="fh">العضلات المستهدفة<div><span>أمامي</span><span class="b">خلفي</span></div></div><div>الجولات</div><div>العدات</div><div class="alt-h">البديل · المنزل</div></div>';
+  d.rows.forEach((r,i)=>{const [name,id,mus,pri,sec,sets,reps,alt,altId]=r;
+    html+='<div class="tr td"><div class="idx">'+(i+1)+'</div><div class="ex">'+lnk(name,id)+'</div>'
+     +'<div class="tags"><div class="mrow p"><i></i><b>'+mus[0]+'</b></div>'+(mus.length>1?'<div class="mrow s"><i></i><span>'+mus.slice(1).join('<em>·</em>')+'</span></div>':'')+'</div>'
+     +'<div class="fig"><div class="v">'+body('f',pri,sec)+'</div><div class="v b">'+body('b',pri,sec)+'</div></div>'
+     +'<div class="num'+(typeof sets==='string'?' t':'')+'">'+sets+'</div><div><span class="rep'+(/[\u0600-\u06FF]/.test(reps)?' t':'')+'">'+reps+'</span></div><div class="alt">'+lnk(alt,altId)+'</div></div>';});
+  html+='</div></section>';
+});
+document.getElementById('dayPages').outerHTML=html;
+// ---- pager on every page
+TOTAL=document.querySelectorAll(".page").length;
+document.querySelectorAll('.page').forEach((pg,i)=>{const n=i+1;
+  let bar='';for(let k=1;k<=TOTAL;k++)bar+='<i class="'+(k<n?'done':k===n?'cur':'')+'"></i>';
+  pg.insertAdjacentHTML('beforeend','<footer class="pager"><span class="sec"><b>'+(pg.dataset.sec||'')+'</b></span><div class="bar">'+bar+'</div><span class="num">'+String(n).padStart(2,'0')+' <span>/ '+String(TOTAL).padStart(2,'0')+'</span></span></footer>');});
+</script>
+</body></html>
