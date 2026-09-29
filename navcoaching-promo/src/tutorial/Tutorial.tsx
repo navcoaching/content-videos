@@ -92,12 +92,10 @@ const Screen: React.FC = () => {
     const sc = sid && MAN.states[sid] && (cur.state === sid || prev?.state === sid) ? MAN.states[sid].scroll : sNow;
     return { x: r.x * K, y: (r.y - sc) * K, w: r.w * K, h: r.h * K };
   };
-  const badge = MAN.overlays.badge;
 
   return (
     <div style={{ position: "absolute", left: PX, top: PY, width: SW, height: SH, overflow: "hidden", borderRadius: 46, background: "#fff" }}>
       {content}
-      {badge && <Img src={staticFile(badge.src)} style={{ position: "absolute", left: badge.x * K, top: badge.y * K, width: badge.w * K, height: badge.h * K }} />}
       {RINGS.filter((r) => f >= r.at && f < r.at + r.dur).map((r) => {
         const rect = resolveRect(r.ref);
         if (!rect) return null;
