@@ -32,15 +32,15 @@
   /* المشهد: الأوراق */
   .stage{position:relative;max-width:820px;height:520px;margin:48px auto 0}
   .sheet{position:absolute;background:var(--paper);border-top:5px solid var(--cyan);color:var(--ink);border-radius:6px;padding:20px 22px;
-    box-shadow:0 30px 60px #0009,0 2px 0 #fff inset;text-align:right}
+    box-shadow:0 30px 60px #0009,0 2px 0 #fff inset;text-align:left;direction:ltr}
   .sheet small{font-size:10px;letter-spacing:.08em;color:var(--muted);font-weight:700}
   .sheet h3{font-family:Cairo,"Readex Pro",sans-serif;font-weight:900;font-size:26px;line-height:1.1;margin:6px 0 4px;
     border-bottom:2px solid var(--navy);padding-bottom:10px}
   .meta{font-size:11px;font-weight:700;color:var(--navy);margin:8px 0 12px}
   table{width:100%;border-collapse:collapse;font-size:13px}
-  th{font-size:9px;color:var(--muted);text-align:right;padding:6px 0;border-bottom:1px solid var(--navy);letter-spacing:.06em}
+  th{font-size:9px;color:var(--muted);text-align:left;padding:6px 0;border-bottom:1px solid var(--navy);letter-spacing:.06em}
   td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:500}
-  td:first-child{direction:ltr;text-align:right;font-family:"Readex Pro",sans-serif;font-weight:500;font-size:12.5px}
+  td:first-child{text-align:left;font-family:"Readex Pro",sans-serif;font-weight:500;font-size:12.5px}
   td:not(:first-child),th:not(:first-child){text-align:center;font-variant-numeric:tabular-nums;font-weight:700}
   .fade td{opacity:.35}
   .red{color:var(--navy)}
@@ -78,11 +78,11 @@
   <div class="stage">
     <!-- ورقة البرنامج -->
     <article class="sheet program">
-      <small>برنامجي · الجلسة 01</small>
-      <h3>الأرداف والجزء السفلي</h3>
-      <p class="meta">أرداف 13 · فخذ أمامي 3 · فخذ خلفي 5 · سمانة 3</p>
+      <small>MY PROGRAM · SESSION 01</small>
+      <h3>Glute Focused Lower</h3>
+      <p class="meta">GLUTE 13 · QUAD 3 · HAMS 5 · CALVES 3</p>
       <table>
-        <thead><tr><th>التمرين</th><th>مجموعات</th><th>عدّات</th></tr></thead>
+        <thead><tr><th>EXERCISE</th><th>SETS</th><th>REPS</th></tr></thead>
         <tbody>
           <tr><td>Hip Thrust</td><td>4</td><td>10-15</td></tr>
           <tr><td>Rear Foot Elevated Split Squat</td><td>3</td><td>10-15</td></tr>
@@ -96,10 +96,10 @@
 
     <!-- سجل التدريب -->
     <article class="sheet log">
-      <small>الأسبوع 05</small>
-      <h3>سجل التمارين</h3>
+      <small>WEEK 05</small>
+      <h3>Training Log</h3>
       <table>
-        <thead><tr><th>التمرين</th><th>الوزن</th><th>عدّات</th><th>RIR</th></tr></thead>
+        <thead><tr><th>EXERCISE</th><th>LOAD</th><th>REPS</th><th>RIR</th></tr></thead>
         <tbody>
           <tr><td>Hip Thrust</td><td>110</td><td>12</td><td class="red">1</td></tr>
           <tr><td>Split Squat</td><td>22</td><td>11</td><td class="red">1</td></tr>
