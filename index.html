@@ -3,58 +3,61 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NAV Coaching | برنامج التحول</title>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Tajawal:wght@800;900&display=swap" rel="stylesheet">
+<title>Nav Coaching | برنامجك الشخصي</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Readex+Pro:wght@500;700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#07142a">
 <style>
   :root{
-    --bg:#0b0e13; --bg2:#141922; --paper:#f4f1ea; --ink:#12151a; --muted:#7c8290;
-    --accent:#e4572e; /* غيّر هذا اللون ليطابق لون علامتك */
-    --line:#d8d3c7;
+    --ink:#07142a; --ink2:#0d1f3c; --ink3:#15294b;
+    --navy:#284da0; --cyan:#4cc5ed; --cyan-ink:#0a6a8f;
+    --paper:#f3f6fa; --line:#d8e1ea; --muted:#56667a; --on-dark:#eaf2fb; --on-dark-muted:#a9bad0;
+    --accent:var(--cyan);
   }
   *{box-sizing:border-box;margin:0}
-  body{background:var(--bg);color:#fff;font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;min-height:100vh}
+  body{background:var(--ink);color:var(--on-dark);font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;min-height:100vh}
   .hero{position:relative;overflow:hidden;padding:56px 16px 72px;text-align:center;
     background:
-      radial-gradient(60% 50% at 50% 30%,#27303f 0%,transparent 70%),
-      linear-gradient(180deg,#10141b,var(--bg));}
+      radial-gradient(60% 50% at 50% 30%,#1c3d78 0%,transparent 70%),
+      linear-gradient(180deg,var(--ink2),var(--ink));}
   .hero::before{content:"";position:absolute;inset:0;
-    background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+    background-image:linear-gradient(#4cc5ed12 1px,transparent 1px),linear-gradient(90deg,#4cc5ed12 1px,transparent 1px);
     background-size:44px 44px;mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent);}
-  .tag{position:relative;display:inline-flex;gap:8px;align-items:center;font-size:13px;color:#c9ced8;
+  .tag{position:relative;display:inline-flex;gap:8px;align-items:center;font-size:13px;color:var(--on-dark-muted);
     border:1px solid #ffffff22;border-radius:99px;padding:6px 14px}
-  .tag i{width:8px;height:8px;border-radius:50%;background:var(--accent)}
-  h1{position:relative;font-family:Tajawal,sans-serif;font-weight:900;font-size:clamp(34px,7vw,64px);line-height:1.15;margin:20px auto 12px;max-width:14em}
+  .tag i{width:18px;height:8px;background:var(--cyan);transform:skewX(-25deg)}
+  h1{position:relative;font-family:"Readex Pro","IBM Plex Sans Arabic",sans-serif;font-weight:900;font-size:clamp(34px,7vw,64px);line-height:1.15;margin:20px auto 12px;max-width:14em}
   h1 em{font-style:normal;color:var(--accent)}
-  .sub{position:relative;color:#aab0bc;max-width:34em;margin:0 auto;line-height:1.9}
+  .sub{position:relative;color:var(--on-dark-muted);max-width:34em;margin:0 auto;line-height:1.9}
 
   /* المشهد: الأوراق */
   .stage{position:relative;max-width:820px;height:520px;margin:48px auto 0}
-  .sheet{position:absolute;background:var(--paper);color:var(--ink);border-radius:6px;padding:20px 22px;
+  .sheet{position:absolute;background:var(--paper);border-top:5px solid var(--cyan);color:var(--ink);border-radius:6px;padding:20px 22px;
     box-shadow:0 30px 60px #0009,0 2px 0 #fff inset;text-align:right}
   .sheet small{font-size:10px;letter-spacing:.08em;color:var(--muted);font-weight:700}
-  .sheet h3{font-family:Tajawal,sans-serif;font-weight:900;font-size:26px;line-height:1.1;margin:6px 0 4px;
-    border-bottom:2px solid var(--ink);padding-bottom:10px}
-  .meta{font-size:11px;font-weight:700;color:#4b5060;margin:8px 0 12px}
+  .sheet h3{font-family:"Readex Pro","IBM Plex Sans Arabic",sans-serif;font-weight:900;font-size:26px;line-height:1.1;margin:6px 0 4px;
+    border-bottom:2px solid var(--navy);padding-bottom:10px}
+  .meta{font-size:11px;font-weight:700;color:var(--navy);margin:8px 0 12px}
   table{width:100%;border-collapse:collapse;font-size:13px}
-  th{font-size:9px;color:var(--muted);text-align:right;padding:6px 0;border-bottom:1px solid var(--ink);letter-spacing:.06em}
+  th{font-size:9px;color:var(--muted);text-align:right;padding:6px 0;border-bottom:1px solid var(--navy);letter-spacing:.06em}
   td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:500}
   td:not(:first-child),th:not(:first-child){text-align:center;font-variant-numeric:tabular-nums;font-weight:700}
   .fade td{opacity:.35}
-  .red{color:var(--accent)}
+  .red{color:var(--navy)}
 
   .program{width:min(380px,84%);right:2%;top:0;transform:rotate(-4deg);z-index:2}
   .log{width:min(300px,68%);left:0;top:210px;transform:rotate(3deg);z-index:3}
   .log h3{font-size:18px;padding-bottom:8px}
-  .brandcard{position:absolute;right:8%;bottom:0;width:min(300px,64%);background:#080a0e;border:1px solid #ffffff14;
+  .brandcard{position:absolute;right:8%;bottom:0;width:min(300px,64%);background:var(--ink);border:1px solid #4cc5ed55;
     border-radius:4px;padding:18px 20px;text-align:right;transform:rotate(-2deg);z-index:4;box-shadow:0 24px 50px #000a}
   .brandcard small{display:flex;gap:6px;align-items:center;font-size:10px;letter-spacing:.1em;color:#9aa1ae}
-  .brandcard small i{width:6px;height:6px;border-radius:50%;background:var(--accent)}
-  .brandcard b{display:block;font-family:Tajawal,sans-serif;font-weight:900;font-size:22px;margin:8px 0 12px}
-  .brandcard span{font-size:11px;color:#8b93a1;direction:ltr;display:block;text-align:right}
+  .brandcard img{height:34px;width:auto;display:block;margin-inline-start:auto}
+  .brandcard::after{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:5px;background:var(--cyan)}
+  .brandcard b{display:block;color:#fff;font-family:"Readex Pro","IBM Plex Sans Arabic",sans-serif;font-weight:900;font-size:22px;margin:8px 0 12px}
+  .brandcard span{font-size:11px;color:var(--on-dark-muted);direction:ltr;display:block;text-align:right}
 
-  .cta{position:relative;display:inline-block;margin-top:44px;background:#fff;color:#0b0e13;font-weight:700;
+  .cta{position:relative;display:inline-block;margin-top:44px;background:var(--cyan);color:var(--ink);font-weight:700;
     font-size:18px;padding:16px 36px;border-radius:99px;text-decoration:none;transition:transform .2s,background .2s}
-  .cta:hover{transform:translateY(-2px);background:var(--accent);color:#fff}
+  .cta:hover{transform:translateY(-2px);background:#fff;color:var(--navy)}
   .note{position:relative;margin-top:14px;font-size:12px;color:#7c8290}
 
   @media(max-width:640px){
@@ -68,13 +71,13 @@
 <body>
 <section class="hero">
   <span class="tag"><i></i> NAV COACHING</span>
-  <h1>برنامج <em>التحول</em> الكامل<br>مبني على أرقامك أنت</h1>
-  <p class="sub">خطة تدريب أسبوعية واضحة، وسجل تتبّع تقيس به تقدّمك كل أسبوع. بدون تخمين، وبدون برامج جاهزة لا تناسبك.</p>
+  <h1>برنامج تدريب وتغذية<br><em>مخصص</em> لهدفك أنت</h1>
+  <p class="sub">خطة منظمة، متابعة للتقدم، وتعديلات أسبوعية تناسب مستواك وظروفك مع الكوتش ساره.</p>
 
   <div class="stage">
     <!-- ورقة البرنامج -->
     <article class="sheet program">
-      <small>برنامج NAV · الجلسة 01</small>
+      <small>برنامجي · الجلسة 01</small>
       <h3>الأرداف والجزء السفلي</h3>
       <p class="meta">أرداف 13 · فخذ أمامي 3 · فخذ خلفي 5 · سمانة 3</p>
       <table>
@@ -93,7 +96,7 @@
     <!-- سجل التدريب -->
     <article class="sheet log">
       <small>الأسبوع 05</small>
-      <h3>سجل التدريب</h3>
+      <h3>سجل التمارين</h3>
       <table>
         <thead><tr><th>التمرين</th><th>الوزن</th><th>عدّات</th><th>RIR</th></tr></thead>
         <tbody>
@@ -107,13 +110,13 @@
 
     <!-- بطاقة العلامة -->
     <div class="brandcard">
-      <small><i></i> NAV COACHING</small>
-      <b>برنامج التحول</b>
-      <span>yourwebsite.com/program</span>
+      <img src="brand/logo-white.webp" alt="Nav Coaching">
+      <b>برنامجك الشخصي</b>
+      <span>navcoaching.com</span>
     </div>
   </div>
 
-  <a class="cta" href="#join">ابدأ الآن</a>
+  <a class="cta" href="#join">ابدأ برنامجك</a>
   <p class="note">الأرقام والتمارين أعلاه أمثلة توضيحية</p>
 </section>
 </body>
