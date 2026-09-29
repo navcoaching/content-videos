@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nav Coaching | برنامجك الشخصي</title>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Readex+Pro:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Almarai:wght@400;700&family=Readex+Pro:wght@500;700&display=swap" rel="stylesheet">
 <meta name="theme-color" content="#07142a">
 <style>
   :root{
@@ -14,7 +14,7 @@
     --accent:var(--cyan);
   }
   *{box-sizing:border-box;margin:0}
-  body{background:var(--ink);color:var(--on-dark);font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;min-height:100vh}
+  body{background:var(--ink);color:var(--on-dark);font-family:Almarai,Cairo,system-ui,sans-serif;min-height:100vh}
   .hero{position:relative;overflow:hidden;padding:56px 16px 72px;text-align:center;
     background:
       radial-gradient(60% 50% at 50% 30%,#1c3d78 0%,transparent 70%),
@@ -25,7 +25,7 @@
   .tag{position:relative;display:inline-flex;gap:8px;align-items:center;font-size:13px;color:var(--on-dark-muted);
     border:1px solid #ffffff22;border-radius:99px;padding:6px 14px}
   .tag i{width:18px;height:8px;background:var(--cyan);transform:skewX(-25deg)}
-  h1{position:relative;font-family:"Readex Pro","IBM Plex Sans Arabic",sans-serif;font-weight:900;font-size:clamp(34px,7vw,64px);line-height:1.15;margin:20px auto 12px;max-width:14em}
+  h1{position:relative;font-family:Cairo,"Readex Pro",sans-serif;font-weight:900;font-size:clamp(34px,7vw,64px);line-height:1.15;margin:20px auto 12px;max-width:14em}
   h1 em{font-style:normal;color:var(--accent)}
   .sub{position:relative;color:var(--on-dark-muted);max-width:34em;margin:0 auto;line-height:1.9}
 
@@ -34,12 +34,13 @@
   .sheet{position:absolute;background:var(--paper);border-top:5px solid var(--cyan);color:var(--ink);border-radius:6px;padding:20px 22px;
     box-shadow:0 30px 60px #0009,0 2px 0 #fff inset;text-align:right}
   .sheet small{font-size:10px;letter-spacing:.08em;color:var(--muted);font-weight:700}
-  .sheet h3{font-family:"Readex Pro","IBM Plex Sans Arabic",sans-serif;font-weight:900;font-size:26px;line-height:1.1;margin:6px 0 4px;
+  .sheet h3{font-family:Cairo,"Readex Pro",sans-serif;font-weight:900;font-size:26px;line-height:1.1;margin:6px 0 4px;
     border-bottom:2px solid var(--navy);padding-bottom:10px}
   .meta{font-size:11px;font-weight:700;color:var(--navy);margin:8px 0 12px}
   table{width:100%;border-collapse:collapse;font-size:13px}
   th{font-size:9px;color:var(--muted);text-align:right;padding:6px 0;border-bottom:1px solid var(--navy);letter-spacing:.06em}
   td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:500}
+  td:first-child{direction:ltr;text-align:right;font-family:"Readex Pro",sans-serif;font-weight:500;font-size:12.5px}
   td:not(:first-child),th:not(:first-child){text-align:center;font-variant-numeric:tabular-nums;font-weight:700}
   .fade td{opacity:.35}
   .red{color:var(--navy)}
@@ -47,12 +48,12 @@
   .program{width:min(380px,84%);right:2%;top:0;transform:rotate(-4deg);z-index:2}
   .log{width:min(300px,68%);left:0;top:210px;transform:rotate(3deg);z-index:3}
   .log h3{font-size:18px;padding-bottom:8px}
-  .brandcard{position:absolute;right:8%;bottom:0;width:min(300px,64%);background:var(--ink);border:1px solid #4cc5ed55;
+  .brandcard{position:absolute;right:8%;bottom:-28px;width:min(300px,64%);background:var(--ink);border:1px solid #4cc5ed55;
     border-radius:4px;padding:18px 20px;text-align:right;transform:rotate(-2deg);z-index:4;box-shadow:0 24px 50px #000a}
   .brandcard small{display:flex;gap:6px;align-items:center;font-size:10px;letter-spacing:.1em;color:#9aa1ae}
   .brandcard img{height:34px;width:auto;display:block;margin-inline-start:auto}
   .brandcard::after{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:5px;background:var(--cyan)}
-  .brandcard b{display:block;color:#fff;font-family:"Readex Pro","IBM Plex Sans Arabic",sans-serif;font-weight:900;font-size:22px;margin:8px 0 12px}
+  .brandcard b{display:block;color:#fff;font-family:Cairo,"Readex Pro",sans-serif;font-weight:900;font-size:22px;margin:8px 0 12px}
   .brandcard span{font-size:11px;color:var(--on-dark-muted);direction:ltr;display:block;text-align:right}
 
   .cta{position:relative;display:inline-block;margin-top:44px;background:var(--cyan);color:var(--ink);font-weight:700;
@@ -61,9 +62,9 @@
   .note{position:relative;margin-top:14px;font-size:12px;color:#7c8290}
 
   @media(max-width:640px){
-    .stage{height:760px}
+    .stage{height:830px}
     .program{right:50%;transform:translateX(50%) rotate(-3deg)}
-    .log{left:50%;transform:translateX(-50%) rotate(3deg);top:360px}
+    .log{left:50%;transform:translateX(-50%) rotate(3deg);top:425px}
     .brandcard{right:50%;transform:translateX(50%) rotate(-2deg)}
   }
 </style>
@@ -83,12 +84,12 @@
       <table>
         <thead><tr><th>التمرين</th><th>مجموعات</th><th>عدّات</th></tr></thead>
         <tbody>
-          <tr><td>هيب ثرست</td><td>4</td><td>10-15</td></tr>
-          <tr><td>سكوات منفصل بقدم مرفوعة</td><td>3</td><td>10-15</td></tr>
-          <tr><td>جهاز الإبعاد</td><td>3</td><td>12-20</td></tr>
-          <tr><td>تمديد الظهر 45°</td><td>3</td><td>12-15</td></tr>
-          <tr><td>هامسترنج كيرل</td><td>2</td><td>10-15</td></tr>
-          <tr class="fade"><td>رفع السمانة واقفًا</td><td>3</td><td>12-15</td></tr>
+          <tr><td>Hip Thrust</td><td>4</td><td>10-15</td></tr>
+          <tr><td>Rear Foot Elevated Split Squat</td><td>3</td><td>10-15</td></tr>
+          <tr><td>Abductor Machine</td><td>3</td><td>12-20</td></tr>
+          <tr><td>45° Back Extension</td><td>3</td><td>12-15</td></tr>
+          <tr><td>Hamstring Curl</td><td>2</td><td>10-15</td></tr>
+          <tr class="fade"><td>Standing Calf Raise</td><td>3</td><td>12-15</td></tr>
         </tbody>
       </table>
     </article>
@@ -100,10 +101,10 @@
       <table>
         <thead><tr><th>التمرين</th><th>الوزن</th><th>عدّات</th><th>RIR</th></tr></thead>
         <tbody>
-          <tr><td>هيب ثرست</td><td>110</td><td>12</td><td class="red">1</td></tr>
-          <tr><td>سكوات منفصل</td><td>22</td><td>11</td><td class="red">1</td></tr>
-          <tr><td>إبعاد</td><td>65</td><td>18</td><td class="red">0</td></tr>
-          <tr><td>تمديد ظهر</td><td>20</td><td>14</td><td class="red">1</td></tr>
+          <tr><td>Hip Thrust</td><td>110</td><td>12</td><td class="red">1</td></tr>
+          <tr><td>Split Squat</td><td>22</td><td>11</td><td class="red">1</td></tr>
+          <tr><td>Abductor</td><td>65</td><td>18</td><td class="red">0</td></tr>
+          <tr><td>Back Extension</td><td>20</td><td>14</td><td class="red">1</td></tr>
         </tbody>
       </table>
     </article>
