@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>Nav Coaching Story (Pro)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Readex+Pro:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#07142a;--ink2:#0d1f3c;--navy:#284da0;--cyan:#4cc5ed;--paper:#f3f6fa;--surf2:#eaf0f6;--surf:#eaf2fb;--line:#d8e1ea;--muted:#56667a;--head:#0b1a33;--ok:#157347;--okbg:#e2f4ea;--on:#eaf2fb;--onm:#a9bad0}
+*{box-sizing:border-box;margin:0}
+body{width:1080px;height:1920px;overflow:hidden;font-family:"IBM Plex Sans Arabic",Cairo,sans-serif;color:var(--on);position:relative;
+ background:linear-gradient(180deg,var(--ink2),var(--ink))}
+#bg{position:absolute;inset:0;overflow:hidden}
+#bg::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#4cc5ed10 1px,transparent 1px),linear-gradient(90deg,#4cc5ed10 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(70% 50% at 50% 55%,#000,transparent)}
+.glow{position:absolute;left:50%;top:1150px;width:1100px;height:1100px;margin:-550px 0 0 -550px;border-radius:50%;background:radial-gradient(#2a5fc466,transparent 62%)}
+.slash{position:absolute;width:90px;background:linear-gradient(180deg,#4cc5ed44,#4cc5ed08);transform:skewX(-22deg)}
+.logo{position:absolute;top:214px;left:50%;height:64px;margin-left:-0px;transform:translateX(-50%)}
+.url{position:absolute;top:290px;width:100%;text-align:center;font:500 24px "Readex Pro";letter-spacing:.14em;color:var(--onm)}
+h1{position:absolute;top:340px;width:100%;text-align:center;font:900 88px/1.22 Cairo}
+h1 .ln{display:block;overflow:hidden;padding:0 0 6px}
+h1 .ln span{display:block}
+h1 em{font-style:normal;color:var(--cyan)}
+#persp{position:absolute;left:0;top:0;width:1080px;height:1920px;perspective:2400px;perspective-origin:50% 60%}
+#phone{position:absolute;left:50%;top:575px;width:408px;height:1240px;margin-left:-204px;background:#050b16;border-radius:62px;transform-origin:50% 0;
+ box-shadow:0 0 0 2px #2c4166 inset,0 70px 120px #000c,0 0 90px #4cc5ed22}
+#view{position:absolute;left:9px;top:9px;width:390px;height:1222px;background:var(--paper);border-radius:54px;overflow:hidden;color:var(--head);direction:rtl}
+.island{position:absolute;top:10px;left:50%;margin-left:-48px;width:96px;height:26px;background:#050b16;border-radius:20px;z-index:20}
+.status{position:absolute;top:0;left:0;right:0;height:44px;display:flex;justify-content:space-between;align-items:center;padding:6px 26px 0;font:700 14px "Readex Pro";direction:ltr;z-index:19;background:var(--paper)}
+#tabs{position:absolute;top:50px;left:16px;right:16px;height:42px;background:var(--surf2);border-radius:99px;z-index:18;display:flex;direction:rtl}
+#tabs span{flex:1;text-align:center;font:700 13px/42px "IBM Plex Sans Arabic";color:var(--muted);position:relative;z-index:2}
+#thumb{position:absolute;top:4px;bottom:4px;width:calc(33.333% - 6px);left:0;background:#fff;border-radius:99px;box-shadow:0 2px 8px #07142a26;z-index:1}
+.scr{position:absolute;left:0;right:0;top:100px;bottom:0;padding:6px 16px}
+h2{font:900 22px/1.25 Cairo;margin:6px 0 2px}.sub{font-size:12px;color:var(--muted);margin-bottom:12px}
+.card{background:var(--surf);border-radius:14px;padding:13px 14px;margin-bottom:12px}
+.row{display:flex;justify-content:space-between;align-items:center}
+.pill{display:inline-flex;gap:5px;align-items:center;font-size:11px;font-weight:700;background:#fff3d4;color:#8a5a00;border-radius:99px;padding:3px 9px}
+.pill i{width:7px;height:7px;border-radius:50%;background:#e5a50a}
+.bar{height:11px;border-radius:9px;background:#fff;margin:9px 0 7px;overflow:hidden}.bar b{display:block;height:100%;background:var(--ok);border-radius:9px;transform-origin:right}
+.t{font:700 15px "IBM Plex Sans Arabic"}.s{font-size:11.5px;color:var(--muted)}
+.sec{font:900 16px Cairo;margin:14px 0 8px}
+.day{background:var(--surf2);border-radius:12px;padding:13px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;font:700 13px "Readex Pro";direction:ltr}
+.day span{font:500 12px "IBM Plex Sans Arabic";color:var(--muted);direction:rtl}
+.ok{display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--ok);color:#fff;font-size:12px;line-height:18px;text-align:center;vertical-align:middle;margin-inline-start:6px}
+.next{background:var(--navy);color:#fff;border-radius:16px;padding:14px 16px;margin-top:6px}
+.next small{font-size:11.5px;color:#cfe0ff}.next b{display:block;font:700 15px "Readex Pro";direction:ltr;text-align:right;margin:3px 0 10px}
+.go{background:var(--cyan);color:var(--ink);border-radius:99px;text-align:center;padding:10px;font-weight:700;font-size:14px}
+.chips{display:flex;gap:6px;margin-bottom:8px;overflow:hidden}
+.chip{font:700 11.5px "IBM Plex Sans Arabic";background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 11px;white-space:nowrap}.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.chip.l{font-family:"Readex Pro";font-size:10.5px;direction:ltr}
+.ex{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:8px}
+.ex h4{font:700 17px "Readex Pro";direction:ltr;text-align:right}
+.tgt{font-size:12px;color:var(--muted);margin:4px 0 12px}.tgt b{color:var(--head);direction:ltr;unicode-bidi:embed}
+.inp{display:flex;gap:6px;align-items:flex-end;margin-bottom:12px}
+.f{flex:1}.f label{display:block;font-size:11px;font-weight:700;margin-bottom:5px}
+.box{height:42px;border:1.5px solid var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;font:700 16px "Readex Pro";background:#fff}
+.btn{background:var(--navy);color:#fff;border-radius:99px;text-align:center;padding:12px;font-weight:700;font-size:14px}
+.ringcard{display:flex;align-items:center;gap:14px}
+.ringwrap{position:relative;width:132px;height:132px;flex:none}
+.ringwrap svg{width:132px;height:132px;transform:rotate(-90deg)}
+.ringtxt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ringtxt b{font:900 26px "Readex Pro"}.ringtxt small{font-size:11px;color:var(--muted)}
+.macro{margin-bottom:11px}.macro .row{font-size:12px;font-weight:700;margin-bottom:5px}.macro .row em{font:500 11px "IBM Plex Sans Arabic";font-style:normal;color:var(--muted)}
+.mb{height:10px;border-radius:9px;background:#fff;overflow:hidden}.mb b{display:block;height:100%;background:var(--cyan);border-radius:9px;transform-origin:right}
+.meal{background:var(--surf2);border-radius:12px;padding:12px 13px;margin-bottom:8px;display:flex;justify-content:space-between;font-size:13px;font-weight:700}.meal em{font:500 12px "Readex Pro";font-style:normal;color:var(--muted)}
+.ringwrap{width:104px!important;height:104px!important}.ringwrap svg{width:104px!important;height:104px!important}
+.ringtxt b{font-size:21px!important}.ringtxt small{font-size:10px!important}
+.mm{margin-bottom:8px}.mm .row{font-size:11.5px;font-weight:700;margin-bottom:4px}.mm .row em{font:500 10.5px "IBM Plex Sans Arabic";font-style:normal;color:var(--muted)}
+.mm .mb{height:8px}
+.addc{position:relative;z-index:6}
+.sel{height:44px;border:1.5px solid var(--line);border-radius:12px;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 14px;font-size:13px;color:var(--muted);font-weight:500}
+.sel.has{color:var(--head);font-weight:700}
+.chev{font-style:normal;font-size:15px;color:var(--muted);display:inline-block}
+.menu{position:absolute;left:0;right:0;top:calc(100% + 5px);background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px #07142a33;z-index:12;overflow:hidden;transform-origin:top;visibility:hidden}
+.opt{padding:12px 14px;font-size:13px;font-weight:700;display:flex;justify-content:space-between;border-bottom:1px solid var(--line)}.opt:last-child{border:0}.opt em{font:500 11.5px "Readex Pro";font-style:normal;color:var(--muted)}
+.mealnew{height:0;overflow:hidden}
+.meal{padding:10px 13px!important;margin-bottom:6px!important;font-size:12.5px!important}
+#finger{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:#07142a55;border:2px solid #ffffffaa;z-index:30;opacity:0}
+#ripple{position:absolute;width:70px;height:70px;margin:-35px 0 0 -35px;border-radius:50%;border:3px solid var(--cyan);z-index:29;opacity:0}
+.fchip{position:absolute;display:flex;gap:10px;align-items:center;background:#fff;color:var(--head);border-radius:22px;padding:14px 20px;font:700 25px "IBM Plex Sans Arabic";box-shadow:0 26px 60px #000a;white-space:nowrap;opacity:0}
+.fchip i{width:34px;height:34px;border-radius:50%;background:var(--ok);color:#fff;font-style:normal;text-align:center;line-height:34px;font-size:20px}
+.fchip i.c{background:var(--cyan);color:var(--ink)}
+</style></head><body>
+<div id="bg"><div class="glow" id="glow"></div>
+ <i class="slash" id="s1" style="left:-10px;top:1500px;height:520px"></i><i class="slash" id="s2" style="left:110px;top:1640px;height:380px"></i>
+ <i class="slash" id="s3" style="right:-10px;top:1480px;height:560px"></i><i class="slash" id="s4" style="right:120px;top:1660px;height:360px"></i>
+ <i class="slash" id="s5" style="left:70px;top:120px;height:180px;width:60px;opacity:.5"></i><i class="slash" id="s6" style="right:80px;top:150px;height:150px;width:60px;opacity:.5"></i></div>
+<img class="logo" id="logo" src="brand/logo-white.webp" alt="Nav Coaching">
+<div class="url" id="url">NAVCOACHING.COM</div>
+<h1><span class="ln"><span id="l1">تمرينك وتغذيتك</span></span><span class="ln"><span id="l2"><em>في مكان واحد</em></span></span></h1>
+
+<div id="persp"><div id="phone"><div id="view">
+ <div class="island"></div><div class="status"><span>9:41</span><span>5G ▮▮▮</span></div>
+ <div id="tabs"><i id="thumb"></i><span>برنامجي</span><span>التمارين</span><span>التغذية</span></div>
+
+ <div class="scr" id="A">
+  <h2 id="a_h">الباقة المكثفة</h2><div class="sub" id="a_s">3 أشهر · متبقي 67 يومًا</div>
+  <div class="card" id="a_c"><div class="row"><span class="t">التزامك <span id="pct">0</span>%</span><span class="pill" id="pill"><i></i>3 أسابيع متتالية</span></div>
+   <div class="bar"><b id="bar" style="width:100%"></b></div><div class="s">حافظ على التزام 90% فأكثر، وباقي 9 أسابيع وتحصل على 3 أشهر مجانًا</div></div>
+  <div class="sec" id="a_sec">برنامجك الحالي</div>
+  <div class="day" id="d1"><span id="d1t">0 من 5</span>DAY 1 — LOWER BODY</div>
+  <div class="day" id="d2"><span>0 من 5</span>DAY 2 — UPPER BODY</div>
+  <div class="day" id="d3"><span>0 من 5</span>DAY 3 — GLUTES &amp; HAMSTRINGS</div>
+  <div class="next" id="a_n"><small>جلستك القادمة</small><b>DAY 2 — UPPER BODY</b><div class="go" id="go">ابدأ التمرين</div></div>
+ </div>
+
+ <div class="scr" id="B">
+  <h2 id="b_h">البلوك 1 — بناء القوة</h2><div class="sub" id="b_s">الأسبوع 4 من 4</div>
+  <div id="b_c1" class="chips"><span class="chip">الأسبوع 1</span><span class="chip">الأسبوع 2</span><span class="chip on">الأسبوع 3</span><span class="chip">الأسبوع 4</span></div>
+  <div id="b_c2" class="chips"><span class="chip l on">DAY 1 — LOWER BODY</span><span class="chip l">DAY 2 — UPPER BODY</span></div>
+  <div class="ex" id="ex1"><div class="row"><h4>1. Mid Leg Press<i class="ok" id="chk1" style="margin:0 0 0 6px">✓</i></h4></div>
+   <div class="tgt">المستهدف: <b>4×10 · RIR 2</b></div>
+   <div class="inp"><div class="f" style="flex:1.2"><label>الوزن (كغ)</label><div class="box" id="w1"><span id="w1t"></span></div></div>
+    <div class="f" style="flex:3"><label>التكرارات لكل مجموعة</label><div class="row" style="gap:5px"><div class="box rp" style="flex:1"><span></span></div><div class="box rp" style="flex:1"><span></span></div><div class="box rp" style="flex:1"><span></span></div><div class="box rp" style="flex:1"><span></span></div></div></div>
+    <div class="f" style="flex:.8"><label>RIR</label><div class="box" id="rir"><span id="rirt"></span></div></div></div>
+   <div class="btn" id="btn">تحديث</div></div>
+  <div class="ex" id="ex2"><div class="row"><h4>2. Romanian Deadlift</h4></div>
+   <div class="tgt">المستهدف: <b>3×8 · RIR 2</b></div>
+   <div class="inp"><div class="f" style="flex:1.2"><label>الوزن (كغ)</label><div class="box"></div></div>
+    <div class="f" style="flex:3"><label>التكرارات لكل مجموعة</label><div class="row" style="gap:5px"><div class="box" style="flex:1"></div><div class="box" style="flex:1"></div><div class="box" style="flex:1"></div></div></div>
+    <div class="f" style="flex:.8"><label>RIR</label><div class="box"></div></div></div></div>
+ </div>
+
+ <div class="scr" id="C">
+  <h2 id="c_h">التغذية اليوم</h2>
+  <div class="card ringcard" id="c_r" style="margin-top:8px;margin-bottom:10px;padding:12px 14px">
+   <div class="ringwrap"><svg viewBox="0 0 104 104"><circle cx="52" cy="52" r="42" fill="none" stroke="#fff" stroke-width="12"/><circle id="ring" cx="52" cy="52" r="42" fill="none" stroke="#4cc5ed" stroke-width="12" stroke-linecap="round" stroke-dasharray="263.9" stroke-dashoffset="263.9"/></svg>
+    <div class="ringtxt"><b id="kc">0</b><small>من 1,850</small></div></div>
+   <div style="flex:1">
+    <div class="mm"><div class="row"><span>بروتين</span><span style="direction:ltr;unicode-bidi:isolate"><b id="m1">0</b> <em>/ 130 غ</em></span></div><div class="mb"><b id="mb1" style="width:100%"></b></div></div>
+    <div class="mm"><div class="row"><span>كارب</span><span style="direction:ltr;unicode-bidi:isolate"><b id="m2">0</b> <em>/ 190 غ</em></span></div><div class="mb"><b id="mb2" style="width:100%"></b></div></div>
+    <div class="mm" style="margin:0"><div class="row"><span>دهون</span><span style="direction:ltr;unicode-bidi:isolate"><b id="m3">0</b> <em>/ 62 غ</em></span></div><div class="mb"><b id="mb3" style="width:100%"></b></div></div>
+   </div>
+  </div>
+  <div class="card addc" id="c_a" style="padding:12px 14px 14px;margin-bottom:10px">
+   <div class="t" style="margin-bottom:9px">أضف أكلة</div>
+   <div class="chips" style="margin-bottom:9px"><span class="chip">الفطور</span><span class="chip">الغداء</span><span class="chip">العشاء</span><span class="chip on" id="chSnack">سناك</span></div>
+   <div style="position:relative">
+    <div class="sel" id="sel"><span id="selt">اختر من وجبات جداولك</span><i class="chev" id="chev">⌄</i></div>
+    <div class="menu" id="menu">
+     <div class="opt" id="o1"><span>شوفان بالحليب والموز</span><em>320 kcal</em></div>
+     <div class="opt" id="o2"><span>زبادي يوناني مع توت</span><em>190 kcal</em></div>
+     <div class="opt" id="o3"><span>تونة مع خبز أسمر</span><em>380 kcal</em></div>
+    </div>
+   </div>
+   <div class="btn" id="addbtn" style="margin-top:10px">إضافة</div>
+  </div>
+  <div class="mealnew" id="mn"><div class="meal" id="mnr" style="margin-bottom:6px"><span>سناك — شوفان بالحليب والموز</span><em>320 سعرة</em></div></div>
+  <div class="meal" id="ml1"><span>الفطور</span><em>374 سعرة</em></div>
+  <div class="meal" id="ml2"><span>الغداء</span><em>423 سعرة</em></div>
+  <div class="meal" id="ml3"><span>العشاء</span><em>430 سعرة</em></div>
+ </div>
+ <i id="ripple"></i><i id="finger"></i>
+</div></div></div>
+
+<div class="fchip" id="fc1" style="left:8px;top:820px"><i class="c">✓</i>التزام 100%</div>
+<div class="fchip" id="fc2" style="right:8px;top:1010px"><i>✓</i>تم حفظ التمرين</div>
+<div class="fchip" id="fc3" style="left:8px;top:1190px"><i class="c">✓</i>تمت إضافة وجبتك</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const seg=(t,a,b)=>clamp((t-a)/(b-a));
+const out=x=>1-Math.pow(1-x,4);
+const io=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const back=x=>{const c1=1.2,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+const fmt=n=>Math.round(n).toLocaleString('en-US');
+const rise=(el,t,a,d=.8,dy=26)=>{const k=out(seg(t,a,a+d));el.style.opacity=k;el.style.transform='translateY('+(1-k)*dy+'px)'};
+const pop=(el,t,a,d=.5)=>{const k=seg(t,a,a+d);el.style.opacity=clamp(k*4);el.style.transform='scale('+(k>0?back(k):0)+')'};
+const W=390;
+function render(t){
+  // ---------- background + intro
+  let k=out(seg(t,0,.9));
+  $('logo').style.opacity=k;$('logo').style.transform='translateX(-50%) translateY('+(1-k)*-24+'px)';
+  $('url').style.opacity=out(seg(t,.3,1.1))*.9;
+  [['l1',.25],['l2',.45]].forEach(([id,a])=>{const q=out(seg(t,a,a+1));$(id).style.transform='translateY('+(1-q)*105+'%)'});
+  $('glow').style.transform='translate('+Math.sin(t*.7)*40+'px,'+Math.cos(t*.5)*30+'px) scale('+(1+.05*Math.sin(t*.9))+')';
+  const dr=(id,f,ph)=>$(id).style.transform='skewX(-22deg) translateY('+Math.sin(t*f+ph)*22+'px)';
+  dr('s1',.5,0);dr('s2',.5,1.5);dr('s3',.5,3);dr('s4',.5,4.5);dr('s5',.7,2);dr('s6',.7,5);
+  // ---------- phone entrance + camera sway (always centred, never below frame)
+  const pe=out(seg(t,.35,1.7));
+  const sway=Math.sin(t*2*Math.PI/9);
+  const ry=(1-pe)*-14+sway*4.5, rx=(1-pe)*14+2.5+Math.cos(t*2*Math.PI/9)*1.2;
+  const sc=1.6*(.9+.1*pe);
+  $('phone').style.opacity=clamp(pe*2.2);
+  $('phone').style.transform='translateY('+((1-pe)*70+Math.sin(t*1.1)*5)+'px) rotateX('+rx+'deg) rotateY('+ry+'deg) scale('+sc+')';
+  // ---------- screen navigation
+  const pos=io(seg(t,4.35,5.05))+io(seg(t,7.75,8.45));
+  ['A','B','C'].forEach((id,i)=>{const d=i-pos;const el=$(id);el.style.transform='translateX('+(-d*W)+'px)';el.style.opacity=clamp(1-Math.abs(d)*.9);el.style.visibility=Math.abs(d)>=1.05?'hidden':'visible'});
+  // tabs thumb (RTL: idx0 = right)
+  const tw=(W-32)/3;$('thumb').style.left=((2-pos)*tw+3)+'px';
+  // ---------- taps / finger (positions read from the DOM)
+  const P=el=>{let x=el.offsetWidth/2,y=el.offsetHeight/2,e=el;while(e&&e.id!=='view'){x+=e.offsetLeft;y+=e.offsetTop;e=e.offsetParent}return{x,y}};
+  const EV=[{a:4.05,el:$('tabs').children[2]},{a:7.45,el:$('tabs').children[3]},{a:10.35,el:$('sel')},{a:11.55,el:$('o1')},{a:12.5,el:$('addbtn')}].map(e=>({a:e.a,p:P(e.el)}));
+  let fo=0,fx=0,fy=0,press=0,rip=0,rs=0,rpx=0,rpy=0;
+  EV.forEach((e,i)=>{
+    const chP=i>0&&e.a-EV[i-1].a<1.4, chN=i<EV.length-1&&EV[i+1].a-e.a<1.4;
+    const s0=chP?EV[i-1].a+.35:e.a-.6, from=chP?EV[i-1].p:{x:e.p.x+10,y:e.p.y+90};
+    if(t>=s0&&t<e.a+.35){const q=io(seg(t,s0,e.a));fx=from.x+(e.p.x-from.x)*q;fy=from.y+(e.p.y-from.y)*q;
+      fo=(chP?1:out(seg(t,s0,s0+.3)))*(chN?1:1-seg(t,e.a+.15,e.a+.35))}
+    press=Math.max(press,seg(t,e.a-.12,e.a)-seg(t,e.a,e.a+.16));
+    const r=seg(t,e.a,e.a+.55);if(r>0&&r<1){rip=(1-r)*.9;rs=.3+out(r)*1.2;rpx=e.p.x;rpy=e.p.y}
+  });
+  $('finger').style.opacity=fo;$('finger').style.left=fx+'px';$('finger').style.top=fy+'px';$('finger').style.transform='scale('+(1-.25*press)+')';
+  $('ripple').style.opacity=rip;$('ripple').style.left=rpx+'px';$('ripple').style.top=rpy+'px';$('ripple').style.transform='scale('+rs+')';
+  // ---------- screen A
+  rise($('a_h'),t,1.5);rise($('a_s'),t,1.6);rise($('a_c'),t,1.75);
+  const b=out(seg(t,2.1,3.4));$('bar').style.transform='scaleX('+b+')';$('pct').textContent=Math.round(b*100);
+  pop($('pill'),t,3.15);
+  rise($('a_sec'),t,2.35);rise($('d1'),t,2.45);rise($('d2'),t,2.6);rise($('d3'),t,2.75);
+  const dn=io(seg(t,3.5,3.9));$('d1').style.background='rgb('+(234+(226-234)*dn)+','+(240+(244-240)*dn)+','+(246+(234-246)*dn)+')';$('d1').style.color=dn>.5?'#157347':'';
+  $('d1t').innerHTML=t>=3.6?'تم <i class="ok">✓</i>':'0 من 5';
+  rise($('a_n'),t,3.0,.8);
+  $('go').style.transform='scale('+(1+.03*Math.sin(t*4)*seg(t,3.8,4))+')';
+  // ---------- screen B
+  rise($('b_h'),t,4.65);rise($('b_s'),t,4.72);rise($('b_c1'),t,4.8);rise($('b_c2'),t,4.88);rise($('ex1'),t,4.95,.9,30);rise($('ex2'),t,5.15,.9,30);
+  const val=(box,txt,a)=>{const q=seg(t,a,a+.4);const s=box.firstElementChild;s.textContent=q>0?txt:'';s.style.display='inline-block';s.style.transform='scale('+(q>0?back(q):0)+')';
+    const g=q>0?1-seg(t,a+.4,a+.9):0;box.style.borderColor=g>0?'rgba(76,197,237,'+(.35+.65*g)+')':'';box.style.boxShadow=g>0?'0 0 0 '+4*g+'px rgba(76,197,237,'+.35*g+')':'none'};
+  val($('w1'),'88',5.5);
+  document.querySelectorAll('.rp').forEach((e,i)=>val(e,'10',5.85+i*.22));
+  val($('rir'),'2',6.85);
+  const bp=seg(t,7.0,7.1)-seg(t,7.1,7.25);$('btn').style.transform='scale('+(1-.05*bp)+')';
+  const sv=io(seg(t,7.1,7.4));$('btn').style.background='rgb('+(40+(21-40)*sv)+','+(77+(115-77)*sv)+','+(160+(71-160)*sv)+')';$('btn').textContent=t>=7.2?'تم الحفظ ✓':'تحديث';
+  pop($('chk1'),t,7.25);
+  // ---------- screen C
+  rise($('c_h'),t,8.15);rise($('c_r'),t,8.3,.8);
+  const rg=out(seg(t,8.55,10.0)), aq=io(seg(t,12.75,13.75));
+  const tot=1228*rg+320*aq;
+  $('ring').style.strokeDashoffset=263.9*(1-tot/1850);$('kc').textContent=fmt(tot);
+  [['mb1','m1',85,12,130,8.75],['mb2','m2',119,48,190,8.9],['mb3','m3',46,8,62,9.05]].forEach(([bar,num,v,add,goal,a])=>{const q=out(seg(t,a,a+1.3));const val=v*q+add*aq;$(bar).style.transform='scaleX('+(val/goal)+')';$(num).textContent=Math.round(val)});
+  rise($('c_a'),t,9.35,.8,26);
+  rise($('ml1'),t,9.75,.7,16);rise($('ml2'),t,9.85,.7,16);rise($('ml3'),t,9.95,.7,16);
+  // dropdown
+  const mo=clamp(io(seg(t,10.4,10.7))-io(seg(t,11.7,11.95)));
+  const menu=$('menu');menu.style.visibility=mo>0?'visible':'hidden';menu.style.opacity=mo;menu.style.transform='scaleY('+(.8+.2*mo)+') translateY('+(1-mo)*-6+'px)';
+  ['o1','o2','o3'].forEach((id,i)=>{const o=$(id);const q=out(seg(t,10.5+i*.07,10.8+i*.07));o.style.opacity=q;o.style.transform='translateY('+(1-q)*-8+'px)'});
+  const hov=io(seg(t,11.25,11.5))*(1-seg(t,11.75,11.9));
+  $('o1').style.background='rgba(76,197,237,'+(.18*hov+.16*(t>=11.55&&t<11.75?1:0))+')';
+  $('chev').style.transform='rotate('+(180*mo)+'deg)';
+  const chosen=t>=11.85;$('selt').textContent=chosen?'شوفان بالحليب والموز':'اختر من وجبات جداولك';$('sel').classList.toggle('has',chosen);
+  $('sel').style.borderColor=mo>0?'rgba(76,197,237,'+(.4+.6*mo)+')':(chosen?'#4cc5ed':'');
+  $('sel').style.boxShadow=mo>0?'0 0 0 '+4*mo+'px rgba(76,197,237,.25)':'none';
+  // add button + new meal
+  const ap=seg(t,12.38,12.5)-seg(t,12.5,12.66);$('addbtn').style.transform='scale('+(1-.05*ap)+')';
+  const av=io(seg(t,12.55,12.85));$('addbtn').style.background='rgb('+(40+(21-40)*av)+','+(77+(115-77)*av)+','+(160+(71-160)*av)+')';$('addbtn').textContent=t>=12.65?'تمت الإضافة ✓':'إضافة';
+  const hh=io(seg(t,12.7,13.1));$('mn').style.height=(hh*($('mnr').offsetHeight+6))+'px';$('mn').style.opacity=hh;
+  $('mnr').style.background='rgb('+(223+(234-223)*seg(t,13.2,14))+','+(243+(240-243)*seg(t,13.2,14))+','+(251+(246-251)*seg(t,13.2,14))+')';
+  // ---------- floating chips (parallax, gentle bob)
+  const chip=(id,a,z,ph)=>{const inn=out(seg(t,a,a+.6)),o=seg(t,z-.5,z);const el=$(id);el.style.opacity=inn*(1-o);el.style.transform='translateY('+(Math.sin(t*1.6+ph)*8+(1-inn)*40)+'px) scale('+(.85+.15*inn)+') rotate('+(-3+ph*.3)+'deg)'};
+  chip('fc1',3.4,4.6,0);chip('fc2',7.35,8.3,1);chip('fc3',13.0,99,2);
+}
+window.render=render;render(0);
+</script></body></html>
