@@ -131,6 +131,40 @@ a{color:inherit;text-decoration:none}
 .st b{font:800 26px/1.1 "Readex Pro";direction:ltr;text-align:right}
 .st span{font:600 12.5px "IBM Plex Sans Arabic";opacity:.9}
 .st.s1{height:78px;background:#8fd6ef;color:var(--ink)}.st.s2{height:94px;background:var(--cyan);color:var(--ink)}.st.s3{height:110px;background:var(--navy)}
+
+/* ---------- page 6 */
+.prog{right:56px;width:700px}
+.rirp{left:56px;right:776px}
+.pbody{position:absolute;top:56px;bottom:0;left:0;right:0;padding:18px 26px 22px;display:flex;flex-direction:column;justify-content:space-between}
+.pnote{display:flex;gap:14px;align-items:flex-start;padding:6px 0 12px}
+.pnote .k{flex:none;width:34px;height:34px;border-radius:10px;background:var(--navy);color:#fff;font:800 18px/34px "Readex Pro";text-align:center}
+.pnote p{font:500 18.5px/1.75 "IBM Plex Sans Arabic";color:var(--head)}
+.pnote p b{color:var(--navy);font-weight:700}
+.flow{display:flex;align-items:stretch;gap:8px}
+.fs{flex:1 1 0;min-width:0;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:16px 12px;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.fs small{display:block;font:600 14.5px "IBM Plex Sans Arabic";color:var(--muted)}
+.fs b{display:block;font:800 21px/1.3 "Readex Pro";color:var(--ink);direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.fs.go{background:var(--navy);border-color:var(--navy)}.fs.go small{color:#cfe0ff}.fs.go b{color:#fff;font:800 19px/1.4 Cairo;direction:rtl;white-space:nowrap}
+.arr{align-self:center;color:var(--cyan);font:800 22px Cairo}
+.gauge{direction:ltr}.gauge .gl{position:relative;height:26px;margin-top:6px;font:700 13.5px "IBM Plex Sans Arabic"}.gauge .gl span{position:absolute;top:0;white-space:nowrap;border-top:3px solid;padding-top:3px;text-align:center}
+.gauge .cells{display:grid;grid-template-columns:repeat(11,1fr);gap:4px}
+.gauge .cells i{height:52px;font-size:18px!important;border-radius:8px;background:#edf1f6;display:flex;align-items:center;justify-content:center;font:700 15px "Readex Pro";font-style:normal;color:var(--muted)}
+.gauge .cells i.rec{background:var(--cyan);color:var(--ink)}
+.gauge .cells i.fail{background:var(--ink);color:#fff}
+.gauge .cells i.ex{outline:3px solid var(--navy);outline-offset:-3px;color:var(--navy);background:#fff}
+.gauge .lab{display:grid;grid-template-columns:repeat(11,1fr);gap:4px;margin-top:6px;font:600 12.5px "IBM Plex Sans Arabic";color:var(--muted);direction:rtl}
+.rdef{background:var(--ink);color:#fff;border-radius:14px;padding:16px 18px}
+.rdef b{font:800 23px "Readex Pro";color:var(--cyan);direction:ltr;unicode-bidi:isolate}
+.rdef p{font:500 18px/1.6 "IBM Plex Sans Arabic";color:#dbe6f3;margin-top:2px}
+.rdef p strong{color:#fff}
+.rex{display:flex;flex-direction:column;gap:12px}
+.rex div{display:flex;align-items:center;gap:14px;font:500 18px "IBM Plex Sans Arabic";color:var(--head)}
+.rex div span{flex:none;min-width:86px;text-align:center;font:800 18px "Readex Pro";border-radius:9px;padding:6px 8px;direction:ltr}
+.rex .a span{background:#fff;border:2px solid var(--navy);color:var(--navy)}
+.rex .z span{background:var(--ink);color:#fff}
+.tip{display:flex;gap:14px;align-items:flex-start;background:var(--cyan-soft);border:1.5px solid var(--cyan);border-radius:14px;padding:14px 16px}
+.tip .k{flex:none;min-width:66px;height:34px;border-radius:10px;background:var(--cyan);color:var(--ink);font:800 17px/34px "Readex Pro";text-align:center;direction:ltr}
+.tip p{font:500 18px/1.65 "IBM Plex Sans Arabic";color:var(--head)}
 </style></head><body>
 
 <!-- ================= PAGE 1 : COVER ================= -->
@@ -184,6 +218,41 @@ a{color:inherit;text-decoration:none}
   </div>
  </div>
 </section>
+
+<!-- ================= PAGE 6 : INSTRUCTIONS 2 ================= -->
+<section class="page light grid ip" data-sec="تعليمات مهمة">
+ <i class="slash" style="left:-40px;bottom:-40px;width:90px;height:190px;opacity:.25"></i>
+ <div class="top"><div class="ico"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#284da0" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 7v6"/><circle cx="12" cy="16.6" r=".6" fill="#284da0"/></svg></div><h2>تعليمات مهمة</h2>
+  <img class="logo" src="../brand/logo-color.webp" alt="Nav Coaching"></div>
+
+ <div class="panel prog">
+  <div class="ph"><span>زيادة الوزن</span></div>
+  <div class="pbody">
+   <div class="pnote"><span class="k">1</span><p>اختيار الوزن المناسب في الأسبوع الأول حسب <b>RIR</b> وزيادة الوزن مع تقليل الـ<b>RIR</b> بشكل اسبوعي.</p></div>
+   <div class="pnote"><span class="k">2</span><p>اذا كان الوزن <b>20 كيلو</b> في اول جلسة وقمت بـ <b>12 عدة</b> المفترض الجلسه الثانية تكون العدات اقل بسبب الاجهاد العضلي، فالجلسة التالية مثلا <b>10 عدات</b>. اذا كانت كل الجلسات بنفس العدات فالوزن كان تقدرون تزيدونه. ولو ماقدرتم تزيدون الوزن؟ وصلوا الى سقف العدات الي غالبا يكون <b>12</b> بالجدول. الاسبوع الي بعده تزيدون الوزن وتكون بنطاق مابين <b>6-12</b> عدة</p></div>
+   <div class="flow">
+    <div class="fs"><small>أول جلسة</small><b>20 kg × 12</b></div><span class="arr">←</span>
+    <div class="fs"><small>الجلسة التالية مثلا</small><b>20 kg × 10</b></div><span class="arr">←</span>
+    <div class="fs"><small>وصلت سقف العدات</small><b>20 kg × 12</b></div><span class="arr">←</span>
+    <div class="fs go"><small>الاسبوع الي بعده</small><b>تزيدون الوزن</b></div>
+   </div>
+  </div>
+ </div>
+
+ <div class="panel rirp">
+  <div class="ph"><span>ما هو RIR؟</span></div>
+  <div class="pbody">
+   <div class="rdef"><b>RIR: REPS IN RESERVE</b><p>عدد التكرارت الباقية <strong>للفشل العضلي</strong> من 1-10 مثال:</p></div>
+   <div class="gauge"><div class="cells"><i class="fail">0</i><i class="rec">1</i><i class="rec">2</i><i class="rec">3</i><i class="rec">4</i><i class="ex">5</i><i class="">6</i><i class="">7</i><i class="">8</i><i class="">9</i><i class="">10</i></div><div class="gl"><span style="left:0;width:8.2%;border-color:#07142a;color:#07142a">الفشل</span><span style="left:9.2%;width:35.6%;border-color:#4cc5ed;color:#0a6a8f">النطاق المنصوح به</span></div></div>
+   <div class="rex">
+    <div class="a"><span>RIR 5</span>بامكانك عمل 5 تكرارات إضافية.</div>
+    <div class="z"><span>RIR 0</span>لا يمكنك عمل أي تكرارات أخرى (الفشل العضلي)</div>
+   </div>
+   <div class="tip"><span class="k">1 – 4</span><p>ننصح بنطاق مابين 1-4، واننا مانوصل للفشل العضلي بحد ذاته، لانه اجهاد زائد عن حده وتأثيره سلبي على الاستشفاء</p></div>
+  </div>
+ </div>
+</section>
+
 
 
 
