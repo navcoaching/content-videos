@@ -12,38 +12,41 @@ body{font-family:"IBM Plex Sans Arabic",Cairo,sans-serif;color:var(--head);-webk
 .page:last-child{page-break-after:auto;break-after:auto}
 a{color:inherit;text-decoration:none}
 
-/* ---------- dark (cover) */
-.dark{background:radial-gradient(55% 75% at 30% 45%,#1c3d78 0%,transparent 70%),linear-gradient(160deg,var(--ink2),var(--ink));color:var(--on)}
-.grid::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#4cc5ed10 1px,transparent 1px),linear-gradient(90deg,#4cc5ed10 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(70% 80% at 40% 50%,#000,transparent)}
-.slash{position:absolute;background:linear-gradient(180deg,#4cc5ed55,#4cc5ed08);transform:skewX(-22deg)}
+/* ---------- light theme */
+.light{background:#fff;color:var(--head)}
+.light::after{content:"";position:absolute;left:-120px;top:-160px;width:760px;height:760px;border-radius:50%;background:radial-gradient(#4cc5ed26,transparent 65%);pointer-events:none}
+.grid::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#284da00d 1px,transparent 1px),linear-gradient(90deg,#284da00d 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(70% 80% at 40% 50%,#000,transparent)}
+.slash{position:absolute;background:linear-gradient(180deg,#4cc5ed,#4cc5ed00);transform:skewX(-22deg);opacity:.35}
+.slash.n{background:linear-gradient(180deg,#284da0,#284da000);opacity:.18}
 
-.cover .logo{position:absolute;top:64px;right:84px;height:62px}
-.cover .chip{position:absolute;top:196px;right:84px;display:flex;gap:10px;align-items:center;font:700 19px "IBM Plex Sans Arabic";color:var(--cyan);border:1.5px solid #4cc5ed66;border-radius:99px;padding:8px 20px}
+.cover .logo{position:absolute;top:64px;right:84px;height:64px;z-index:2}
+.cover .chip{position:absolute;top:196px;right:84px;display:flex;gap:10px;align-items:center;font:700 19px "IBM Plex Sans Arabic";color:var(--navy);background:var(--cyan-soft);border:1.5px solid #4cc5ed88;border-radius:99px;padding:8px 20px}
 .cover .chip i{width:22px;height:9px;background:var(--cyan);transform:skewX(-25deg)}
-.cover h1{position:absolute;top:262px;right:80px;font:800 118px/1.12 Cairo;letter-spacing:-.5px}
-.cover h1 em{font-style:normal;color:var(--cyan)}
+.cover h1{position:absolute;top:262px;right:80px;font:800 118px/1.12 Cairo;letter-spacing:-.5px;color:var(--ink)}
+.cover h1 em{font-style:normal;color:var(--navy)}
 .cover .rule{position:absolute;top:548px;right:84px;width:150px;height:6px;background:var(--cyan);border-radius:3px}
-.cover .sign{position:absolute;bottom:70px;right:84px;display:flex;gap:26px;align-items:center;font:500 20px "IBM Plex Sans Arabic";color:var(--onm)}
-.cover .sign b{color:#fff;font:800 21px Cairo}
-.cover .sign span+span{padding-right:26px;border-right:1.5px solid #ffffff2a;direction:ltr;font-family:"Readex Pro"}
+.cover .sign{position:absolute;bottom:70px;right:84px;display:flex;gap:26px;align-items:center;font:500 20px "IBM Plex Sans Arabic";color:var(--muted)}
+.cover .sign b{color:var(--ink);font:800 21px Cairo}
+.cover .sign span+span{padding-right:26px;border-right:1.5px solid var(--line);direction:ltr;font-family:"Readex Pro";color:var(--navy)}
 
-.days{position:absolute;left:84px;top:150px;width:520px;display:flex;flex-direction:column;gap:22px}
-.day{position:relative;z-index:2;display:flex;align-items:center;gap:24px;background:linear-gradient(135deg,#17305c,#10244a);border:1.5px solid #4cc5ed33;border-radius:22px;padding:24px 28px;box-shadow:0 20px 40px #0006}
+.days{position:absolute;left:84px;top:150px;width:520px;display:flex;flex-direction:column;gap:22px;z-index:2}
+.day{position:relative;display:flex;align-items:center;gap:24px;background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:24px 28px;box-shadow:0 14px 34px #07142a14}
 .day .n{flex:none;width:78px;height:78px;border-radius:18px;background:var(--cyan);color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;font:800 34px/1 Cairo}
 .day .n small{font:700 13px "IBM Plex Sans Arabic";margin-bottom:4px}
-.day.b .n{background:#fff}.day.c .n{background:var(--navy2);color:#fff}
-.day h3{font:800 34px/1.1 Cairo;color:#fff}
-.day p{font:500 17px "IBM Plex Sans Arabic";color:var(--onm);margin-top:6px}
-.day .cnt{margin-right:auto;text-align:center;font:700 15px "IBM Plex Sans Arabic";color:var(--onm)}
-.day .cnt b{display:block;font:800 36px/1 "Readex Pro";color:#fff}
+.day.b .n{background:var(--navy);color:#fff}.day.c .n{background:var(--ink);color:#fff}
+.day{border-right:6px solid var(--cyan)}.day.b{border-right-color:var(--navy)}.day.c{border-right-color:var(--ink)}
+.day h3{font:800 34px/1.1 Cairo;color:var(--ink)}
+.day p{font:500 17px "IBM Plex Sans Arabic";color:var(--muted);margin-top:6px}
+.day .cnt{margin-right:auto;text-align:center;font:700 15px "IBM Plex Sans Arabic";color:var(--muted)}
+.day .cnt b{display:block;font:800 36px/1 "Readex Pro";color:var(--navy)}
 </style></head><body>
 
 <!-- ================= PAGE 1 : COVER ================= -->
-<section class="page dark grid cover">
+<section class="page light grid cover">
  <i class="slash" style="left:-30px;bottom:-40px;width:120px;height:330px"></i>
- <i class="slash" style="left:120px;bottom:-40px;width:120px;height:220px"></i>
- <i class="slash" style="right:640px;top:-40px;width:70px;height:170px;opacity:.6"></i>
- <img class="logo" src="../brand/logo-white.webp" alt="Nav Coaching">
+ <i class="slash n" style="left:120px;bottom:-40px;width:120px;height:220px"></i>
+ <i class="slash" style="right:640px;top:-40px;width:70px;height:170px;opacity:.25"></i>
+ <img class="logo" src="../brand/logo-color.webp" alt="Nav Coaching">
  <span class="chip"><i></i>جدول مجاني</span>
  <h1>جدول تمرين<br><em>3 أيام</em> بالنادي</h1>
  <span class="rule"></span>
