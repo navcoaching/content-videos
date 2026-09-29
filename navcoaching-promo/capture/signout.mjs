@@ -1,0 +1,12 @@
+import { open } from "./lib.mjs";
+const { browser, page } = await open({ storageState: process.argv[2] });
+await page.goto("https://navcoaching.com/account", { waitUntil: "load", timeout: 60000 });
+await page.waitForTimeout(1500);
+const btn = page.locator("main button", { hasText: /خروج/ }).first();
+console.log("signout button:", await btn.textContent());
+await btn.click();
+await page.waitForTimeout(3000);
+await page.goto("https://navcoaching.com/account", { waitUntil: "load", timeout: 60000 });
+await page.waitForTimeout(1500);
+console.log("after signout, /account ->", page.url());
+await browser.close();

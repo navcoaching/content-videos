@@ -1,0 +1,27 @@
+// Cancel the test order, verify, then sign out. Usage: node capture/cleanup.mjs <session> <order-file>
+import fs from "node:fs";
+import { open } from "./lib.mjs";
+const go = async (page, u) => { await page.goto("https://navcoaching.com" + u, { waitUntil: "load", timeout: 60000 }); await page.waitForTimeout(1500); };
+const [SESSION, ORDERFILE] = process.argv.slice(2);
+const url = fs.readFileSync(ORDERFILE, "utf8").trim();
+const { browser, page } = await open({ storageState: SESSION });
+page.on("dialog", (d) => d.accept());
+await go(page, url);
+const vis = async () => (await page.locator("main button:visible, main a:visible, main summary:visible").allTextContents()).map((t) => t.trim()).filter(Boolean);
+await page.getByText("إلغاء الطلب", { exact: true }).first().click();
+await page.waitForTimeout(800);
+console.log("after first click:", (await vis()).filter((t) => /إلغاء|تأكيد|نعم/.test(t)));
+const reason = page.locator("main textarea:visible, main input[name=reason]:visible").first();
+if (await reason.count()) await reason.fill("طلب تجريبي لتصوير فيديو شرح الموقع");
+const confirm = page.locator("main button:visible", { hasText: /تأكيد|إلغاء الطلب|نعم/ }).last();
+await confirm.click();
+await page.waitForTimeout(2500);
+await page.waitForTimeout(1500);
+await go(page, url);
+console.log("STATUS:", await page.locator("[data-testid=order-status]").textContent());
+await go(page, "/account");
+const out = page.locator("button", { hasText: /تسجيل الخروج|خروج/ }).first();
+await out.click();
+await page.waitForTimeout(1500);
+console.log("after signout url:", page.url());
+await browser.close();

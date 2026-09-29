@@ -57,8 +57,24 @@ async function withFixedHidden(page, fn) {
 }
 
 /** Full page as vertical tiles + the sticky header, for smooth scrolling in the video. */
+/** Scroll through the page so lazy images load, then wait until every image is decoded. */
+export async function loadAll(page) {
+  const h = await page.evaluate(() => document.documentElement.scrollHeight);
+  for (let y = 0; y < h; y += 600) {
+    await page.evaluate((v) => window.scrollTo(0, v), y);
+    await page.waitForTimeout(120);
+  }
+  await page.evaluate(async () => {
+    const imgs = [...document.images];
+    imgs.forEach((i) => (i.loading = "eager"));
+    await Promise.all(imgs.map((i) => (i.complete && i.naturalWidth ? null : new Promise((r) => { i.onload = i.onerror = r; setTimeout(r, 8000); }))));
+  });
+  await page.waitForLoadState("networkidle");
+}
+
 export async function capturePage(page, id, rects = {}) {
   const d = dir(id);
+  await loadAll(page);
   await page.evaluate(() => window.scrollTo(0, 0));
   await settle(page);
   const height = await page.evaluate(() => document.documentElement.scrollHeight);
@@ -99,7 +115,7 @@ export async function captureState(page, id, { scroll, rects = {}, pageId }) {
 /** Rect of a locator in page coordinates (CSS px). */
 export async function rectOf(page, loc) {
   const l = typeof loc === "string" ? page.locator(loc).first() : loc;
-  const b = await l.boundingBox();
+  const b = await l.boundingBox({ timeout: 4000 }).catch(() => null);
   const sy = await page.evaluate(() => window.scrollY);
   if (!b) return null;
   return { x: Math.round(b.x), y: Math.round(b.y + sy), w: Math.round(b.width), h: Math.round(b.height) };
