@@ -86,7 +86,12 @@ const Screen: React.FC = () => {
 
   // visible scroll right now, for placing taps/rings on page coordinates
   const sNow = scrollOf(i, f);
-  const toScreen = (r: { x: number; y: number; w: number; h: number }) => ({ x: r.x * K, y: (r.y - sNow) * K, w: r.w * K, h: r.h * K });
+  // rects measured inside a state are placed with that state's scroll; page rects follow the live scroll
+  const toScreen = (r: { x: number; y: number; w: number; h: number }, ref = "") => {
+    const sid = ref.startsWith("@") ? ref.slice(1).split(".")[0] : "";
+    const sc = sid && MAN.states[sid] && (cur.state === sid || prev?.state === sid) ? MAN.states[sid].scroll : sNow;
+    return { x: r.x * K, y: (r.y - sc) * K, w: r.w * K, h: r.h * K };
+  };
   const badge = MAN.overlays.badge;
 
   return (
@@ -96,7 +101,7 @@ const Screen: React.FC = () => {
       {RINGS.filter((r) => f >= r.at && f < r.at + r.dur).map((r) => {
         const rect = resolveRect(r.ref);
         if (!rect) return null;
-        const s = toScreen(rect);
+        const s = toScreen(rect, r.ref);
         const p = ramp(f, [r.at, r.at + 10]) * (1 - ramp(f, [r.at + r.dur - 10, r.at + r.dur]));
         const g = 0.5 + 0.5 * Math.sin((f - r.at) / 6);
         return (
@@ -118,7 +123,7 @@ const Screen: React.FC = () => {
       {TAPS.filter((tp) => f >= tp.at - 10 && f < tp.at + 22).map((tp) => {
         const rect = resolveRect(tp.ref);
         if (!rect) return null;
-        const s = toScreen(rect);
+        const s = toScreen(rect, tp.ref);
         const cx = s.x + s.w / 2;
         const cy = s.y + s.h / 2;
         const pre = ramp(f, [tp.at - 10, tp.at]);

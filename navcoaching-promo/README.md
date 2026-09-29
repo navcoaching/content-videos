@@ -64,3 +64,20 @@ python3 audio/journey.py                     # public/audio/journey.wav + stems
 COMP=NavJourney OUT=stills/j npm run stills -- 1000 2000
 npx remotion render NavJourney out/navcoaching-journey.mp4 --props='{"withAudio":true}'
 ```
+
+---
+
+# المقطع الثالث: دليل استخدام الموقع (NavTutorial)
+
+**1080×1920 · 60fps · 2:52** — `render/navcoaching-tutorial.mp4`
+
+- كل الصور لقطات حقيقية من navcoaching.com بحجم iPhone (390×844 بدقة 3×)، ملتقطة بـ Playwright (`capture/`).
+- الفصول: الرئيسية، القائمة، البرامج، الاختبار، تفاصيل الباقة، الدخول، الاستبيان، الدفع، حسابي، بعد التفعيل (دليل الاستخدام)، الحاسبة، التقييمات والأسئلة.
+- الاستبيان عُبّي ببيانات تجريبية، والطلب التجريبي أُلغي بعد التصوير، والإيميل مموّه في كل اللقطات (`capture/blur.py`).
+- التوقيت في `src/tutorial/tutorial.json`، والصوت من `audio/tutorial.py`.
+
+```bash
+node capture/public.mjs                 # الصفحات العامة (قراءة فقط)
+python3 audio/tutorial.py
+npx remotion render NavTutorial out/navcoaching-tutorial.mp4 --props='{"withAudio":true}'
+```
