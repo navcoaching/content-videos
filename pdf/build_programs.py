@@ -622,26 +622,52 @@ PORTRAIT_CSS = """
 .portrait .cc div b{font-size:34px}
 .portrait .cc .go{width:64px;height:64px}
 .portrait .credit{left:64px;bottom:120px;font-size:20px}
+.pd-cards.d .card{border-right-color:var(--navy2)}
+.pd-cards.five .c-name b{font-size:36px}
+.pd-cards.five .c-info .mrow.p b{font-size:40px}
+.pd-cards.five .c-info .mrow.s span{font-size:30px}
+.pd-cards.five .c2 b{font-size:35px}.pd-cards.five .c2 small{font-size:26px}
+.pd-cards.five .c-fig svg{width:170px;height:206px}
+.pd-cards.five .c-alt b{font-size:30px}
+.pd-cards.few .c-name b{font-size:42px}
+.pd-cards.few .c-num{width:74px;height:74px;font-size:40px;line-height:74px;border-radius:22px}
+.pd-cards.few .c-name svg{width:60px;height:60px}
+.pd-cards.few .c-info .mrow.p b{font-size:48px}
+.pd-cards.few .c-info .mrow.s span{font-size:34px}
+.pd-cards.few .c-info .mrow i{width:20px;height:20px}
+.pd-cards.few .c2 b{font-size:40px}.pd-cards.few .c2 small{font-size:30px}
+.pd-cards.few .c-fig svg{width:210px;height:270px}
+.pd-cards.few .c-alt{padding:14px 22px}.pd-cards.few .c-alt b{font-size:34px}.pd-cards.few .c-alt small{font-size:28px}
+
+.portrait .cover .lead:empty{display:none}
+/* RIR / progression page */
+.portrait .ip .prog,.portrait .ip .rirp{flex:1 1 0;min-height:0}
+.portrait .ip .fs b{font-size:18px}
+.portrait .ip .fs small{font-size:13px}
+/* home equipment page */
+.portrait .eq .grid3{position:absolute;top:270px;left:48px;right:48px;bottom:150px;grid-template-columns:1fr;grid-template-rows:1.35fr .8fr 1fr;gap:28px}
+.portrait .eq .equip{grid-row:auto}
+.portrait .eq .ecard{zoom:1.38}
 """
 PORTRAIT_DAYS_JS = r"""
 // ---- portrait day pages: one card per exercise
 const PLAY2=s=>'<svg width="'+s+'" height="'+s+'" viewBox="0 0 34 34"><circle cx="17" cy="17" r="16" fill="#e4f6fc" stroke="#4cc5ed" stroke-width="1.5"/><path d="M14 11.5v11l9-5.5z" fill="#284da0"/></svg>';
-const vurl=id=>'https://www.youtube.com/watch?v='+id.slice(2);
+const vurl=id=>id.startsWith('w:')?'https://www.youtube.com/watch?v='+id.slice(2):'https://www.youtube.com/shorts/'+id;
 let html='';
 DAYS.forEach(d=>{
   html+='<section class="page light grid dp" data-sec="'+(d.sec||('اليوم '+d.n+' · '+d.title))+'">'
    +'<i class="slash" style="left:-40px;bottom:-40px;width:110px;height:230px;opacity:.25"></i>'
-   +'<div class="top"><div class="badge '+d.cls+'"><small>اليوم</small>'+d.n+'</div><h2>'+d.title+(d.sub?'<small>'+d.sub+'</small>':'')+'</h2><img class="logo" src="../brand/logo-color-hd.png" alt="Nav Coaching"></div>'
+   +'<div class="top"><div class="badge '+d.cls+'"><small>'+(d.lbl||'اليوم')+'</small>'+d.n+'</div><h2'+(d.title.length>8?' style="font-size:70px"':'')+'>'+d.title+(d.sub?'<small>'+d.sub+'</small>':'')+'</h2><img class="logo" src="../brand/logo-color-hd.png" alt="Nav Coaching"></div>'
    +'<div class="pd-hint"><span>'+PLAY2(36)+'اضغط على اسم التمرين لمشاهدة الشرح</span><span class="lg"><span><i></i>عضلة أساسية</span><span><i class="s"></i>عضلة مساعدة</span></span></div>'
-   +'<div class="pd-cards '+d.cls+'">';
+   +'<div class="pd-cards '+d.cls+(d.rows.length<=4?' few':d.rows.length==5?' five':'')+'">';
   d.rows.forEach((r,i)=>{const [name,id,mus,pri,sec,sets,reps,alt,altId]=r;
     html+='<div class="card">'
      +'<div class="c-top"><span class="c-num">'+(i+1)+'</span><a class="c-name" href="'+vurl(id)+'">'+PLAY2(48)+'<b>'+name+'</b></a></div>'
      +'<div class="c-mid"><div class="c-info">'
      +'<div class="mrow p"><i></i><b>'+mus[0]+'</b></div>'+(mus.length>1?'<div class="mrow s"><i></i><span>'+mus.slice(1).join('<em>·</em>')+'</span></div>':'')
-     +'<div class="c-chips"><span class="c2"><small>جولات</small><b>'+sets+'</b></span><span class="c2"><small>المطلوب</small><b>'+reps.replace('<br>',' ')+'</b></span></div></div>'
+     +'<div class="c-chips"><span class="c2"><small>جولات</small><b>'+sets+'</b></span><span class="c2"><small>'+(d.rl||'المطلوب')+'</small><b>'+reps.replace('<br>',' ')+'</b></span></div></div>'
      +'<div class="c-fig">'+body('f',pri,sec)+body('b',pri,sec)+'</div></div>'
-     +'<a class="c-alt" href="'+vurl(altId)+'">'+PLAY2(34)+'<small>بديل أسهل</small><b>'+alt+'</b></a></div>';});
+     +'<a class="c-alt" href="'+vurl(altId)+'">'+PLAY2(34)+'<small>'+(d.al||'بديل أسهل')+'</small><b>'+alt+'</b></a></div>';});
   html+='</div></section>';
 });
 document.getElementById('dayPages').outerHTML=html;
@@ -653,7 +679,7 @@ document.querySelectorAll('.page').forEach((pg,i)=>{const n=i+1;
 </script>
 """
 
-def build_portrait(fname, title, cover_html, days, pages_after, body_cls='portrait flex'):
+def build_portrait(fname, title, cover_html, days, pages_after, body_cls='portrait', fem=False):
     head_js = SCRIPT_T[:SCRIPT_T.index('// ---- data (content kept')]
     head_js = head_js.replace('const TOTAL=7;\n', '')
     head_js = head_js.replace("lats:['UPPER_BACK'],rhomb:['TRAPEZIUS'],",
@@ -666,6 +692,8 @@ def build_portrait(fname, title, cover_html, days, pages_after, body_cls='portra
     head = HEAD.replace('<title>جدول تمرين 3 أيام بالمنزل — Nav Coaching</title>', f'<title>{title} — Nav Coaching</title>')
     html = (head + EXTRA_CSS + PORTRAIT_CSS + f'</style></head><body class="{body_cls}">\n' + cover_html
             + '\n<div id="dayPages"></div>\n' + '\n'.join(pages_after) + '\n' + script + '\n</body></html>')
+    if fem:
+        html = feminize(html)
     open(os.path.join(HERE, fname), 'w', encoding='utf8').write(html)
 
 build_portrait('prog-flex-portrait.html', 'جدول زيادة المرونة',
@@ -676,5 +704,61 @@ build_portrait('prog-flex-portrait.html', 'جدول زيادة المرونة',
       DF, [pf_principles.replace('class="page light grid ip"','class="page light grid ip" style="--z:1.72"').replace('<h2>مبادئ زيادة المرونة</h2>','<h2>مبادئ الجدول</h2>'),
            pf_how.replace('class="page light grid ip"','class="page light grid ip" style="--z:1.95"'),
            pf_safety.replace('class="page light grid ip"','class="page light grid ip" style="--z:2.1"'), THANKS])
+
+# ---------------------------------------------------------------------
+# Portrait versions of every program
+# ---------------------------------------------------------------------
+import ast
+def parse_days(src):
+    t = src[src.index('const DAYS=[') + len('const DAYS='):]
+    t = t[:t.index('\n];') + 2]
+    t = re.sub(r"\b(n|cls|title|rows):", r"'\1':", t)
+    return ast.literal_eval(t)
+def zz(html, z):
+    return html.replace('class="page light grid ip"', f'class="page light grid ip" style="--z:{z}"', 1)
+def split_panels(sec_html, first_marker, second_marker):
+    a = sec_html.index(first_marker); b = sec_html.index(second_marker)
+    head = sec_html[:a]
+    return (head + sec_html[a:b] + '</section>', head + sec_html[b:])
+GYM_DAYS  = [dict(d, rl='العدات', al='بديل') for d in parse_days(gym)]
+HOME_DAYS = [dict(d, rl='العدات', al='بديل') for d in parse_days(home)]
+GYM_CARDS = [{'n': 1, 't': 'علوي', 'p': 'صدر · ظهر · أكتاف · ذراعين', 'k': 6},
+             {'n': 2, 't': 'سفلي', 'p': 'أفخاذ · قلوتس · بطات · بطن', 'k': 6},
+             {'n': 3, 't': 'شامل', 'p': 'الجسم كامل', 'k': 6}]
+def sets_notes_pages(src, z=1.68):
+    sec = section(src, '<!-- ================= PAGE 5 : INSTRUCTIONS')
+    return zz(sec, z)
+RIR_GYM  = section(gym,  '<!-- ================= PAGE 6 : INSTRUCTIONS 2')
+RIR_HOME = section(home, '<!-- ================= PAGE 6 : INSTRUCTIONS 2')
+EQ = EQUIP_PAGE
+gsn = sets_notes_pages(gym); hsn = sets_notes_pages(home)
+build_portrait('prog-gym3-portrait.html', 'جدول تمرين 3 أيام بالنادي',
+    cover('جدول تمرين<br><em>3 أيام</em> بالنادي', '', GYM_CARDS).replace('<h1>','<h1 style="font-size:140px">'), GYM_DAYS,
+    [gsn, zz(RIR_GYM, 1.6), THANKS])
+build_portrait('prog-home3-portrait.html', 'جدول تمرين 3 أيام بالمنزل',
+    cover('جدول تمرين<br><em>3 أيام</em> بالمنزل', '', GYM_CARDS).replace('<h1>','<h1 style="font-size:140px">'), HOME_DAYS,
+    [EQ, hsn, zz(RIR_HOME, 1.6), THANKS])
+D4P = [dict(d, rl='العدات', al='بديل المنزل') for d in D4]
+build_portrait('prog-4days-portrait.html', 'جدول تمرين 4 أيام — نادي ومنزل',
+    cover('جدول تمرين<br><em>4 أيام</em>', 'التمرين الأساسي بالنادي · والبديل بالمنزل', [
+        {'n': 1, 't': 'علوي A', 'p': 'صدر · ظهر · أكتاف · تراي', 'k': 6},
+        {'n': 2, 't': 'سفلي A', 'p': 'أفخاذ · قلوتس · بطات · بطن', 'k': 6},
+        {'n': 3, 't': 'علوي B', 'p': 'صدر · ظهر · أكتاف · باي', 'k': 6},
+        {'n': 4, 't': 'سفلي B', 'p': 'قلوتس · أفخاذ خلفية · بطات · بطن', 'k': 6}]), D4P,
+    [zz(p4_principles, 1.6), zz(p4_week, 1.85), zz(RIR_PAGE, 1.5), EQ, THANKS])
+DGP = [dict(d, rl='العدات', al='بديل المنزل') for d in DG]
+build_portrait('prog-glutes-portrait.html', 'جدول بناء القلوتس',
+    cover('جدول<br><em>بناء القلوتس</em>', '3 أيام بالأسبوع · التمرين بالنادي والبديل بالمنزل', [
+        {'n': 1, 't': 'قلوتس A', 'p': 'هيب ثرست · سكوات · RDL · أبدكشن', 'k': 4},
+        {'n': 2, 't': 'قلوتس B', 'p': 'سبليت سكوات · باك اكستنشن · كيك باك', 'k': 4},
+        {'n': 3, 't': 'قلوتس C', 'p': 'ليق برس · هيب ثرست · ليق كيرل', 'k': 4}]), DGP,
+    [zz(pg_principles, 2.0), zz(pg_week, 2.0), zz(RIR_PAGE, 1.5), THANKS], fem=True)
+DBP = [dict(d, rl='المطلوب', al='بديل / أسهل') for d in DB]
+build_portrait('prog-back-portrait.html', 'جدول تخفيف ألم الظهر',
+    cover('جدول تخفيف<br><em>ألم الظهر</em>', 'أعلى الظهر (التحدّب) وأسفل الظهر · نادي أو منزل', [
+        {'n': '1', 'lbl': 'يوميًا', 't': 'روتين يومي', 'p': '5–10 دقائق · حركة وثبات', 'k': 4},
+        {'n': 'A', 'lbl': 'تقوية', 't': 'تقوية A', 'p': 'أعلى الظهر · القلوتس', 'k': 5},
+        {'n': 'B', 'lbl': 'تقوية', 't': 'تقوية B', 'p': 'الظهر كامل · الرجول', 'k': 5}]), DBP,
+    [zz(pb_safety, 2.0), zz(pb_how, 1.9), THANKS])
 
 print('built')
