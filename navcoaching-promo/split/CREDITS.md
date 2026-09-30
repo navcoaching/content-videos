@@ -13,27 +13,29 @@ On-screen credit (end of the video, small text at the bottom):
 
 Modifications made: cropped to vertical / 4:3 / 16:9, colour-graded (teal-orange), vignette and glow added, speed unchanged.
 
+Selection rules (re-selected on request): every man shown was checked frame-by-frame at full resolution and has no visible tattoos; every woman shown is fully covered by a hoodie / sweatshirt / sweater. Clips with tattooed men or women in sportswear that shows the body were removed.
+
 | Mixkit ID | Title | Page |
 |---|---|---|
-| 52102 | At a pause on her fitness training a young muscular woman wearing a snugly sportsware black outfit is inhaling and exhaling at the gym | https://mixkit.co/free-stock-video/at-a-pause-on-her-fitness-training-a-young-muscular-52102/ |
-| 52106 | A young woman wearing a black sportswear outfit performs squats holding a russian dumbbell on her fitness routine | https://mixkit.co/free-stock-video/a-young-woman-wearing-a-black-sportswear-outfit-performs-squats-52106/ |
-| 100546 | Man performing cable fly exercise in gym. | https://mixkit.co/free-stock-video/man-performing-cable-fly-exercise-in-gym-100546/ |
-| 727 | Man and woman using Russian kettlebell  | https://mixkit.co/free-stock-video/man-and-woman-using-russian-kettlebell-727/ |
-| 40246 | Young fitness woman jumping a box in her workout | https://mixkit.co/free-stock-video/young-fitness-woman-jumping-a-box-in-her-workout-40246/ |
-| 44434 | Strong woman doing weightlifting in a gym | https://mixkit.co/free-stock-video/strong-woman-doing-weightlifting-in-a-gym-44434/ |
-| 100520 | Woman using a leg press machine in the gym | https://mixkit.co/free-stock-video/woman-using-a-leg-press-machine-in-the-gym-100520/ |
-| 52110 | A young woman clad in black workout attire exercise at the gym does lunges with dumbbells on her hands | https://mixkit.co/free-stock-video/a-young-woman-clad-in-black-workout-attire-exercise-at-52110/ |
-| 780 | Silhouette of woman stretching her arms | https://mixkit.co/free-stock-video/silhouette-of-woman-stretching-her-arms-780/ |
-| 50972 | A young woman takes a breath before continuing with her stationary bike training over a black backdrop | https://mixkit.co/free-stock-video/a-young-woman-takes-a-breath-before-continuing-with-her-50972/ |
-| 100543 | Man doing bench press at the gym | https://mixkit.co/free-stock-video/man-doing-bench-press-at-the-gym-100543/ |
-| 100549 | Man Working Out on a Lat Pulldown Machine | https://mixkit.co/free-stock-video/man-working-out-on-a-lat-pulldown-machine-100549/ |
-| 52111 | A young woman wearing a black snugly outfit is on her fitness routine doing squats holding dumbbells on each hand | https://mixkit.co/free-stock-video/a-young-woman-wearing-a-black-snugly-outfit-is-on-52111/ |
-| 100541 | Man Building Strength on a Gym Machine | https://mixkit.co/free-stock-video/man-building-strength-on-a-gym-machine-100541/ |
-| 100538 | Man exercising on chest press machine in gym | https://mixkit.co/free-stock-video/man-exercising-on-chest-press-machine-in-gym-100538/ |
-| 100530 | People running on treadmills at the gym | https://mixkit.co/free-stock-video/people-running-on-treadmills-at-the-gym-100530/ |
-| 52104 | A young woman wearing black leggins exercises by launching a black ball towards the wall | https://mixkit.co/free-stock-video/a-young-woman-wearing-black-leggins-exercises-by-launching-a-52104/ |
-| 44433 | Strong woman training lifting weights | https://mixkit.co/free-stock-video/strong-woman-training-lifting-weights-44433/ |
-| 52108 | A young muscular woman training his muscular physique by doing burpees with dumbbells on her hands | https://mixkit.co/free-stock-video/a-young-muscular-woman-training-his-muscular-physique-by-doing-52108/ |
-| 42898 | Woman exercising in her living room | https://mixkit.co/free-stock-video/woman-exercising-in-her-living-room-42898/ |
-| 52079 | A young muscular man training at the gym with the battle ropes | https://mixkit.co/free-stock-video/a-young-muscular-man-training-at-the-gym-with-the-52079/ |
+| 549 | Woman jogs in the forest | https://mixkit.co/free-stock-video/woman-jogs-in-the-forest-549/ |
+| 44417 | Strong man exercising with a kettlebell | https://mixkit.co/free-stock-video/strong-man-exercising-with-a-kettlebell-44417/ |
+| 52091 | A muscular shirtless young man on his strength training with the barbell at the gym | https://mixkit.co/free-stock-video/a-muscular-shirtless-young-man-on-his-strength-training-with-52091/ |
+| 52088 | A shirtless young man swings the battle ropes with vigorous force as part of his workout at the gym | https://mixkit.co/free-stock-video/a-shirtless-young-man-swings-the-battle-ropes-with-vigorous-52088/ |
+| 40787 | Sporty man stretching in the middle of a forest | https://mixkit.co/free-stock-video/sporty-man-stretching-in-the-middle-of-a-forest-40787/ |
+| 23056 | Man jumping the rope at the gym | https://mixkit.co/free-stock-video/man-jumping-the-rope-at-the-gym-23056/ |
+| 52099 | A young shirtless young man shows his physique and toned body by doing a combined exercise with squats and dumbbell lifting | https://mixkit.co/free-stock-video/a-young-shirtless-young-man-shows-his-physique-and-toned-52099/ |
+| 40758 | Exercising by climbing the steps of some bleachers | https://mixkit.co/free-stock-video/exercising-by-climbing-the-steps-of-some-bleachers-40758/ |
+| 887 | Man doing yoga | https://mixkit.co/free-stock-video/man-doing-yoga-887/ |
+| 44418 | Muscular man exercising with a kettlebell | https://mixkit.co/free-stock-video/muscular-man-exercising-with-a-kettlebell-44418/ |
+| 23450 | Man training on the bars in the gym | https://mixkit.co/free-stock-video/man-training-on-the-bars-in-the-gym-23450/ |
+| 33130 | Man training outdoors while raining | https://mixkit.co/free-stock-video/man-training-outdoors-while-raining-33130/ |
+| 44410 | Muscular man doing pull-ups on a bar | https://mixkit.co/free-stock-video/muscular-man-doing-pull-ups-on-a-bar-44410/ |
+| 52089 | A young muscular man is training his toned physique by lifting the gym bar with just one hand | https://mixkit.co/free-stock-video/a-young-muscular-man-is-training-his-toned-physique-by-52089/ |
+| 606 | Sportsman doing cardio training  | https://mixkit.co/free-stock-video/sportsman-doing-cardio-training-606/ |
+| 47498 | Urban girl with a grey hoodie | https://mixkit.co/free-stock-video/urban-girl-with-a-grey-hoodie-47498/ |
+| 733 | Shirtless man lifting weights at the gym | https://mixkit.co/free-stock-video/shirtless-man-lifting-weights-at-the-gym-733/ |
+| 11766 | Man doing push ups quickly | https://mixkit.co/free-stock-video/man-doing-push-ups-quickly-11766/ |
+| 52317 | A young man training his muscular physique shaking the battle ropes with strength and determination at the gym | https://mixkit.co/free-stock-video/a-young-man-training-his-muscular-physique-shaking-the-battle-52317/ |
+| 50759 | A young man stretches his arms on the balcony | https://mixkit.co/free-stock-video/a-young-man-stretches-his-arms-on-the-balcony-50759/ |
 | 32809 | Man runs past ground level shot | https://mixkit.co/free-stock-video/man-runs-past-ground-level-shot-32809/ |
+| 14067 | Woman in hoodie meditating on the grass | https://mixkit.co/free-stock-video/woman-in-hoodie-meditating-on-the-grass-14067/ |
