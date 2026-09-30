@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<title>Nav Coaching — Belly fat carousel</title>
+<style>
+:root{--ink:#07142a;--ink2:#0d1f3c;--navy:#284da0;--cyan:#4cc5ed;--on:#eaf2fb;--mut:#a9bad0;--line:#ffffff24}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#000;font-family:"IBM Plex Sans Arabic",Cairo,sans-serif;color:var(--on)}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;margin:0 0 40px;
+  background:radial-gradient(70% 45% at 85% 12%,#1f4a8f 0%,transparent 70%),radial-gradient(60% 40% at 10% 100%,#15356b 0%,transparent 70%),linear-gradient(165deg,#0d1f3c,#07142a 75%)}
+.s::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#4cc5ed10 1px,transparent 1px),linear-gradient(90deg,#4cc5ed10 1px,transparent 1px);background-size:60px 60px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 70%)}
+.slash{z-index:1;position:absolute;left:-60px;bottom:170px;width:420px;height:26px;background:var(--cyan);transform:skewX(-22deg);opacity:.9}
+.slash.b{bottom:210px;left:-120px;width:300px;height:10px;opacity:.45}
+.brand{position:absolute;top:70px;right:72px;left:72px;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.brand img{height:62px}
+.tg{font-family:"Readex Pro","IBM Plex Sans Arabic",sans-serif;font-weight:500;font-size:25px;color:var(--mut);display:flex;align-items:center;gap:14px;direction:rtl}
+.tg i{display:block;width:34px;height:2px;background:#ffffff55}
+.tag{position:absolute;right:0;top:250px;background:var(--cyan);color:var(--ink);font-family:Cairo,sans-serif;font-weight:900;font-size:34px;padding:12px 38px 12px 52px;letter-spacing:.04em}
+.c{z-index:2;position:absolute;right:72px;left:72px;top:340px;bottom:170px;display:flex;flex-direction:column;justify-content:flex-start}
+h1,h2{font-family:Cairo,sans-serif;font-weight:900;color:#fff;line-height:1.3}
+h1{font-size:108px}
+h2{font-size:84px;margin-bottom:38px}
+em{font-style:normal;color:var(--cyan)}
+p,li{font-size:42px;line-height:1.75;color:#d4e0f0;font-weight:400}
+b{color:#fff;font-weight:700}
+.en{font-family:"Readex Pro",sans-serif;direction:ltr;unicode-bidi:isolate;display:inline-block}
+.foot{position:absolute;bottom:62px;right:72px;left:72px;display:flex;justify-content:space-between;align-items:center;font-size:25px;color:var(--mut);font-family:"Readex Pro","IBM Plex Sans Arabic",sans-serif}
+.foot .src{max-width:800px;line-height:1.5;unicode-bidi:plaintext;text-align:right}
+.foot .n{border:1.5px solid #ffffff44;border-radius:99px;padding:6px 20px;direction:ltr;font-weight:500}
+.foot .sw{color:var(--cyan);font-weight:700}
+/* components */
+.q{border-right:8px solid var(--cyan);padding:10px 34px 10px 0;margin:10px 0 30px}
+.q p{font-size:50px;color:#fff;font-weight:700;line-height:1.6}
+.grid{display:grid;gap:26px}
+.stat{background:#ffffff0d;border:1.5px solid var(--line);border-top:6px solid var(--cyan);padding:30px 34px}
+.stat .v{font-family:"Readex Pro",sans-serif;font-weight:700;font-size:92px;color:#fff;line-height:1.05;direction:ltr;text-align:right}
+.stat .l{font-size:34px;color:var(--mut);margin-top:8px;line-height:1.5}
+.bars{margin-top:22px;display:flex;flex-direction:column;gap:26px}
+.bar .t{font-size:36px;color:#fff;font-weight:700;margin-bottom:12px}
+.bar .tr{height:66px;background:#ffffff12;position:relative}
+.bar .fl{position:absolute;right:0;top:0;bottom:0;background:linear-gradient(270deg,var(--cyan),#2f8fc0)}
+.bar .fl.g{background:#ffffff33}
+.bar .vv{position:absolute;left:18px;top:50%;transform:translateY(-50%);font-family:"Readex Pro",sans-serif;font-weight:700;font-size:38px;color:#fff;direction:ltr}
+.note{font-size:34px;color:var(--mut);line-height:1.6;margin-top:30px}
+.li{list-style:none;display:flex;flex-direction:column;gap:18px}
+.li li{background:#ffffff0d;border:1.5px solid var(--line);padding:18px 28px;display:flex;gap:24px;align-items:flex-start;font-size:35px;line-height:1.5}
+.li li .k{flex:0 0 66px;height:66px;background:var(--cyan);color:var(--ink);font-family:Cairo,sans-serif;font-weight:900;font-size:40px;display:flex;align-items:center;justify-content:center;transform:skewX(-8deg)}
+.li li.x .k{background:#ffffff26;color:#fff}
+.verdict{margin-top:22px;background:var(--cyan);color:var(--ink);padding:18px 28px;font-size:33px;font-weight:700;line-height:1.55}
+.verdict small{display:block;font-size:26px;font-weight:500;opacity:.75;margin-bottom:4px}
+table{width:100%;border-collapse:collapse;font-size:36px;margin-top:6px}
+th{font-size:28px;color:var(--mut);font-weight:500;text-align:right;padding:10px 6px;border-bottom:2px solid var(--cyan)}
+td{padding:11px 6px;border-bottom:1.5px solid var(--line);font-family:"Readex Pro",sans-serif;font-weight:500;color:#fff}
+td.g{color:var(--cyan);font-weight:700}
+.srcl{list-style:none;display:flex;flex-direction:column;gap:16px}
+.srcl li{font-size:30px;line-height:1.5;border-right:5px solid var(--cyan);padding:2px 22px 2px 0;color:#d4e0f0}
+.srcl li span{display:block;font-family:"Readex Pro",sans-serif;direction:ltr;text-align:right;color:var(--cyan);font-size:25px;margin-top:2px}
+.cta{display:inline-block;background:var(--cyan);color:var(--ink);font-family:Cairo,sans-serif;font-weight:900;font-size:52px;padding:26px 60px;margin-top:40px}
+.handle{font-family:"Readex Pro",sans-serif;direction:ltr;font-size:40px;color:#fff;font-weight:500;margin-top:30px;text-align:right}
+.disc{font-size:26px;color:var(--mut);line-height:1.6;margin-top:34px}
+</style></head><body>
+
+<!-- 1 COVER -->
+<section class="s" id="s1">
+  <div class="brand"><img src="../brand/logo-white.webp"><div class="tg"><i></i>تمرينك وتغذيتك في مكان واحد<i></i></div></div>
+  <div class="tag">حقيقة علمية</div>
+  <div class="c" style="top:370px"><h1>هل تمارين البطن<br><em>تحرق دهون البطن؟</em></h1>
+    <p style="margin-top:46px;font-size:46px">الجواب أدق مما تسمعه — وفيه دراسة جديدة تغيّر الصورة قليلًا.</p></div>
+  <div class="slash"></div><div class="slash b"></div>
+  <div class="foot"><span class="sw">اسحب ←</span><span class="n">1 / 10</span></div>
+</section>
+
+<!-- 2 MYTH -->
+<section class="s" id="s2">
+  <div class="brand"><img src="../brand/logo-white.webp"><div class="tg"><i></i>تمرينك وتغذيتك في مكان واحد<i></i></div></div>
+  <div class="tag">الفكرة الشائعة</div>
+  <div class="c"><h2>«اشتغل على منطقة معينة <em>تذوب الدهون منها</em>»</h2>
+    <div class="q"><p>ألف تمرين بطن يوميًا ← بطن مسطّح؟</p></div>
+    <p>اسمها علميًا <b class="en">Spot Reduction</b> (التنحيف الموضعي). وهي من أكثر الأسئلة تكرارًا بين من يريدون التنشيف.</p>
+    <p style="margin-top:20px">هل هذا صحيح؟ نراجع ما تقوله المصادر.</p></div>
+  <div class="slash"></div>
+  <div class="foot"><span class="src">تقدير الاهتمام مبني على استطلاعات الخليج، وليس على إحصاءات بحث.</span><span class="n">2 / 10</span></div>
+</section>
+
+<!-- 3 ACE + KATCH -->
+<section class="s" id="s3">
+  <div class="brand"><img src="../brand/logo-white.webp"><div class="tg"><i></i>تمرينك وتغذيتك في مكان واحد<i></i></div></div>
+  <div class="tag">الموقف التقليدي</div>
+  <div class="c"><h2>ACE: <em>لا تنحيف موضعي</em></h2>
+    <p>المجلس الأمريكي للتمارين يعدّ الفكرة خرافة: تمرين منطقة بعينها <b>لا يحرق دهونها بشكل انتقائي</b>.</p>
+    <div class="grid" style="grid-template-columns:1fr 1fr;margin-top:34px">
+      <div class="stat"><div class="v">5,004</div><div class="l">تمرين بطن</div></div>
+      <div class="stat"><div class="v">27</div><div class="l">يومًا</div></div></div>
+    <p style="margin-top:30px;font-size:38px">تجربة كلاسيكية (Katch، 1984): تقلّص حجم الخلايا الدهنية في البطن والظهر والأرداف <b>بنفس الدرجة تقريبًا</b>.</p></div>
+  <div class="slash"></div>
+  <div class="foot"><span class="src" dir="ltr" style="text-align:left">ACE — Myths &amp; Misconceptions: Spot Reduction (2013) · Katch et al., 1984</span><span class="n">3 / 10</span></div>
+</section>
+
+<!-- 4 2023 STUDY -->
+<section class="s" id="s4">
+  <div class="brand"><img src="../brand/logo-white.webp"><div class="tg"><i></i>تمرينك وتغذيتك في مكان واحد<i></i></div></div>
+  <div class="tag">دراسة 2023</div>
+  <div class="c"><h2>لكن… تجربة عشوائية <em>حديثة</em></h2>
+    <p style="font-size:35px;line-height:1.6">16 رجلًا بوزن زائد، 10 أسابيع، 4 أيام أسبوعيًا، مع ضبط الطاقة المصروفة. الفارق الوحيد: إضافة تمارين بطن بعد الجري.</p>
+    <div class="bars">
+      <div class="bar"><div class="t">جري + تمارين بطن</div><div class="tr"><div class="fl" style="width:78%"></div><div class="vv" style="direction:rtl;font-family:'IBM Plex Sans Arabic'">دهون الجذع <span class="en">−7%</span></div></div></div>
+      <div class="bar"><div class="t">جري فقط</div><div class="tr"><div class="fl g" style="width:6%"></div><div class="vv" style="left:auto;right:calc(6% + 18px);color:#ffffffcc;font-size:32px;font-family:'IBM Plex Sans Arabic'">لا تغيّر دالّ إحصائيًا</div></div></div>
+    </div>
+    <p class="note" style="font-size:30px;margin-top:22px">استنتج الباحثون أن تمارين تحمّل عضلات البطن استهلكت دهونًا موضعية أكثر. ناقش Menno Henselmans هذه النتيجة بعنوان: «التنحيف الموضعي ليس خرافة».</p></div>
+  <div class="slash"></div>
+  <div class="foot"><span class="src" dir="ltr" style="text-align:left">Brobakken et al., Physiological Reports, Nov 2023 (DEXA)</span><span class="n">4 / 10</span></div>
+</section>
+
+<!-- 5 CAVEATS -->
+<section class="s" id="s5">
+  <div class="brand"><img src="../brand/logo-white.webp"><div class="tg"><i></i>تمرينك وتغذيتك في مكان واحد<i></i></div></div>
+  <div class="tag">تمهّل</div>
+  <div class="c"><h2 style="font-size:76px;margin-bottom:28px">دراسة واحدة <em>لا تصنع قاعدة</em></h2>
+    <ul class="li">
+      <li><span class="k">1</span><span><b>عيّنة صغيرة:</b> 16 مشاركًا فقط</span></li>
+      <li><span class="k">2</span><span><b>رجال فقط</b> (متوسط العمر 43 سنة)</span></li>
+      <li><span class="k">3</span><span><b>فارق متواضع:</b> نحو 0.7 كغ بين المجموعتين</span></li>
+      <li><span class="k">4</span><span><b>أبحاث أخرى:</b> أثر موضعي جزئي فقط (2013)</span></li></ul>
+    <div class="verdict"><small>الخلاصة (استنتاجنا من الأدلة)</small>أثر موضعي صغير ممكن، لكنه ليس الطريق الأساسي لنزول الدهون.</div></div>
+  <div class="slash"></div>
+  <div class="foot"><span class="src" dir="ltr" style="text-align:left">Brobakken 2023 · Ramírez-Campillo, J Strength Cond Res, 2013</span><span class="n">5 / 10</span></div>
+</section>
+
+<!-- 6 PRACTICAL -->
+<section class="s" id="s6">
+  <div class="brand"><img src="../brand/logo-white.webp"><div class="tg"><i></i>تمرينك وتغذيتك في مكان واحد<i></i></div></div>
+  <div class="tag">وش تسوي فعليًا</div>
+  <div class="c"><h2>الدهون تنزل <em>من الجسم كله</em></h2>
+    <ul class="li">
+      <li><span class="k">1</span><span><b>عجز سعرات معتدل وثابت</b> يمكنك الاستمرار عليه</span></li>
+      <li><span class="k">2</span><span><b>تدريب مقاومة تصاعدي</b> للحفاظ على عضلاتك</span></li>
+      <li><span class="k">3</span><span><b>بروتين كافٍ</b> كل يوم (الشريحة التالية)</span></li>
+      <li class="x"><span class="k">+</span><span><b>تمارين البطن:</b> اختيارية — لتقوية العضلة، لا كأداة حرق رئيسية</span></li></ul>
+  </div>
+  <div class="slash"></div>
+  <div class="foot"><span class="src">الإطار العام: ACE + Menno Henselmans (Muscle &amp; Strength Pyramids)</span><span class="n">6 / 10</span></div>
+</section>
+
+<!-- 7 PROTEIN -->
+<section class="s" id="s7">
+  <div class="brand"><img src="../brand/logo-white.webp"><div class="tg"><i></i>تمرينك وتغذيتك في مكان واحد<i></i></div></div>
+  <div class="tag">البروتين</div>
+  <div class="c"><h2 style="font-size:76px;margin-bottom:28px">كم بروتين تحتاج <em>وأنت تنشّف؟</em></h2>
+    <p style="font-size:34px;line-height:1.6">يوصي Menno بما لا يقل عن <b class="en">1.8 g/kg</b> يوميًا، وتحليل Morton 2018 (شارك فيه) وجد أن فائدة البروتين للعضلات تتوقف عند حوالي <b class="en">1.6 g/kg</b>.</p>
+    <table><thead><tr><th>وزنك</th><th>عند 1.6</th><th>عند 1.8</th></tr></thead><tbody>
+      <tr><td>60 kg</td><td>96 g</td><td class="g">108 g</td></tr>
+      <tr><td>70 kg</td><td>112 g</td><td class="g">126 g</td></tr>
+      <tr><td>80 kg</td><td>128 g</td><td class="g">144 g</td></tr>
+      <tr><td>90 kg</td><td>144 g</td><td class="g">162 g</td></tr></tbody></table>
+    <p class="note" style="font-size:28px;margin-top:20px">الرقم في اليوم الواحد، من كل المصادر. إذا عندك مرض كلى أو حالة طبية، استشر طبيبك أولًا.</p></div>
+  <div class="slash"></div>
+  <div class="foot"><span class="src" dir="ltr" style="text-align:left">Henselmans — How much protein for max gains? · Morton et al., BJSM, 2018</span><span class="n">7 / 10</span></div>
+</section>
+
+<!-- 8 TAKEAWAY -->
+<section class="s" id="s8">
+  <div class="brand"><img src="../brand/logo-white.webp"><div class="tg"><i></i>تمرينك وتغذيتك في مكان واحد<i></i></div></div>
+  <div class="tag">باختصار</div>
+  <div class="c"><h2>الخلاصة في <em>3 نقاط</em></h2>
+    <ul class="li">
+      <li><span class="k">✓</span><span>تمارين البطن وحدها <b>ليست</b> وصفة لحرق دهون البطن</span></li>
+      <li><span class="k">✓</span><span>قد يوجد أثر موضعي <b>صغير</b>، والأدلة عليه ما زالت محدودة</span></li>
+      <li><span class="k">✓</span><span>ما يتحكم بالنتيجة: <b>عجز السعرات + بروتين + تدريب مقاومة</b></span></li></ul>
+    <p class="note">احفظ المنشور وأرسله لمن يسأل: «وش أسوي عشان أخسّر كرشي؟»</p></div>
+  <div class="slash"></div>
+  <div class="foot"><span class="src">تثقيفي — لا يغني عن استشارة مختص</span><span class="n">8 / 10</span></div>
+</section>
+
+<!-- 9 SOURCES -->
+<section class="s" id="s9">
+  <div class="brand"><img src="../brand/logo-white.webp"><div class="tg"><i></i>تمرينك وتغذيتك في مكان واحد<i></i></div></div>
+  <div class="tag">المصادر</div>
+  <div class="c"><ul class="srcl">
+    <li>ACE — Chris McGrath: Myths &amp; Misconceptions: Spot Reduction and Feeling the Burn (2013)<span>acefitness.org</span></li>
+    <li>Brobakken et al. — Abdominal aerobic endurance exercise reveals spot reduction exists: an RCT. Physiol Rep, 2023<span>pmc.ncbi.nlm.nih.gov/articles/PMC10680576</span></li>
+    <li>Henselmans — New science: spot reduction is not a myth<span>mennohenselmans.com/science-spot-reduction-myth</span></li>
+    <li>Morton et al. — Protein supplementation &amp; resistance training gains. Br J Sports Med, 2018<span>pubmed.ncbi.nlm.nih.gov/28698222</span></li>
+    <li><span dir="ltr" style="display:block;color:#d4e0f0;font-size:30px;margin:0">Henselmans — How much protein for max gains?</span><span>mennohenselmans.com/how-much-protein-for-max-gains</span></li>
+    <li>Katch et al., 1984 · Ramírez-Campillo et al., 2013 (J Strength Cond Res)<span>PubMed</span></li></ul></div>
+  <div class="slash"></div>
+  <div class="foot"><span class="src">للتفاصيل الكاملة راجع النصوص الأصلية</span><span class="n">9 / 10</span></div>
+</section>
+
+<!-- 10 CTA -->
+<section class="s" id="s10">
+  <div class="brand"><img src="../brand/logo-white.webp"><div class="tg"><i></i>تمرينك وتغذيتك في مكان واحد<i></i></div></div>
+  <div class="tag">ابدأ</div>
+  <div class="c" style="top:370px"><h1>برنامج <em>مخصص</em><br>لهدفك أنت</h1>
+    <p style="margin-top:34px;font-size:44px">خطة تدريب وتغذية منظمة، متابعة للتقدم، وتعديلات أسبوعية تناسب مستواك وظروفك.</p>
+    <div><span class="cta">ابدأ برنامجك</span></div>
+    <div class="handle">navcoaching.com &nbsp;·&nbsp; @navvcoaching</div>
+    <p class="disc" style="position:relative;z-index:3">معلومات تثقيفية عامة، وليست نصيحة طبية. استشر مختصًا قبل تغيير نظامك الغذائي إذا كان لديك حالة صحية.</p></div>
+    <div class="foot"><span></span><span class="n">10 / 10</span></div>
+</section>
+</body></html>
