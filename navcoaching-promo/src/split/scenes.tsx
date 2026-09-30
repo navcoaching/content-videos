@@ -76,7 +76,7 @@ export const AddOnsScene: React.FC = () => {
   const [a, b] = SEC.addons;
   if (f < a || f >= b) return null;
   const out = ramp(f, [b - 8, b]);
-  const labels = ["مرونة", "قفزات بلايو", "كارديو"];
+  const labels = ["باقات المتابعة", "باقة القيمرز", "جدول خاص بدون متابعة"];
   const idx = Math.min(2, Math.floor((f - a) / 80));
   const head = sp(f, a + 2, SPR.snappy);
   return (
@@ -95,7 +95,7 @@ export const AddOnsScene: React.FC = () => {
               style={{
                 fontFamily: FONT,
                 fontWeight: 700,
-                fontSize: 78,
+                fontSize: l.length > 14 ? 64 : 78,
                 color: "#04121f",
                 background: C.cyan,
                 borderRadius: 26,
