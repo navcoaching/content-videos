@@ -253,7 +253,97 @@ a{color:inherit;text-decoration:none}
 .ip .notes .note{padding:10px 0}
 .alert li{font-size:18px;line-height:1.8}
 .alert p{font-size:16px}
-</style></head><body class="flex">
+
+@page{size:1080px 2520px;margin:0}
+.portrait .page{width:1080px;height:2520px}
+.portrait .grid::before{background-size:72px 72px;mask-image:radial-gradient(85% 55% at 50% 35%,#000,transparent)}
+.portrait .pager{left:48px;right:48px;bottom:46px;height:48px;gap:24px}
+.portrait .pager .sec{font-size:24px}
+.portrait .pager .num{font-size:28px}
+.portrait .pager .bar i{height:11px}
+/* cover */
+.portrait .cover .logo{top:84px;right:64px;height:104px}
+.portrait .cover .chip{top:300px;right:64px;font-size:28px;padding:12px 30px}
+.portrait .cover .chip i{width:34px;height:13px}
+.portrait .cover h1{top:390px;right:60px;font-size:170px;line-height:1.1}
+.portrait .cover .rule{top:850px;right:64px;width:220px;height:9px}
+.portrait .cover .lead{top:905px;right:64px;left:64px;max-width:none;font-size:36px}
+.portrait .cover .days{left:64px;right:64px;width:auto;top:1130px;gap:30px}
+.portrait .cover .day{padding:36px 44px;border-radius:34px;gap:34px}
+.portrait .cover .day .n{width:130px;height:130px;border-radius:30px;font-size:64px}
+.portrait .cover .day .n small{font-size:24px}
+.portrait .cover .day h3{font-size:64px}
+.portrait .cover .day p{font-size:30px;margin-top:10px}
+.portrait .cover .day .cnt{font-size:24px}
+.portrait .cover .day .cnt b{font-size:62px}
+.portrait .cover .sign{bottom:150px;right:64px;font-size:30px}
+.portrait .cover .sign b{font-size:32px}
+/* day pages */
+.portrait .dp .top{top:64px;right:48px;left:48px;height:150px;gap:28px}
+.portrait .dp .badge{width:130px;height:130px;border-radius:30px;font-size:62px}
+.portrait .dp .badge small{font-size:24px}
+.portrait .dp h2{font-size:88px}
+.portrait .dp .top h2 small{font-size:26px;margin-top:8px}
+.portrait .dp .logo{height:70px;margin-right:auto}
+.pd-hint{position:absolute;top:236px;right:48px;left:48px;display:flex;justify-content:space-between;align-items:center;gap:20px;font:600 26px "IBM Plex Sans Arabic";color:var(--muted);z-index:2}
+.pd-hint>span{display:flex;align-items:center;gap:12px}
+.pd-hint .lg{font-size:24px;gap:22px}
+.pd-hint .lg i{width:20px;height:20px}
+.pd-cards{position:absolute;top:300px;left:48px;right:48px;bottom:128px;display:flex;flex-direction:column;gap:18px;z-index:2}
+.card{flex:1;min-height:0;background:#fff;border:2px solid var(--line);border-right:12px solid var(--cyan);border-radius:30px;box-shadow:0 12px 34px #07142a12;padding:16px 28px 16px 26px;display:flex;flex-direction:column;justify-content:space-between;gap:8px}
+.pd-cards.b .card{border-right-color:var(--navy)}
+.pd-cards.c .card{border-right-color:var(--ink)}
+.c-top{display:flex;align-items:center;gap:20px}
+.c-num{flex:none;width:60px;height:60px;border-radius:18px;background:var(--navy);color:#fff;font:800 32px/60px "Readex Pro";text-align:center}
+.c-name{display:flex;align-items:center;gap:14px;direction:ltr;text-align:left}
+.c-name b{font:700 33px/1.15 "Readex Pro";color:var(--ink)}
+.c-mid{display:flex;align-items:center;gap:22px;flex:1;min-height:0}
+.c-info{flex:1;display:flex;flex-direction:column;gap:9px}
+.c-info .mrow{gap:12px}
+.c-info .mrow i{width:16px;height:16px;border-radius:5px}
+.c-info .mrow.p b{font:800 36px/1.2 Cairo}
+.c-info .mrow.s span{font:600 27px "IBM Plex Sans Arabic"}
+.c-chips{display:flex;gap:12px;margin-top:4px;flex-wrap:wrap}
+.c2{display:flex;align-items:baseline;gap:10px;background:var(--cyan-soft);border-radius:16px;padding:8px 18px}
+.c2 small{font:600 24px "IBM Plex Sans Arabic";color:var(--muted)}
+.c2 b{font:800 32px/1.2 "Readex Pro";color:var(--navy)}
+.c-fig{flex:none;display:flex;gap:4px;align-items:center}
+.c-fig svg{width:150px;height:172px}
+.c-alt{display:flex;align-items:center;gap:14px;background:var(--paper);border:1.5px solid var(--line);border-radius:18px;padding:8px 18px;direction:ltr}
+.c-alt small{font:600 24px "IBM Plex Sans Arabic";color:var(--muted);direction:rtl}
+.c-alt b{font:600 28px "Readex Pro";color:#33445c}
+/* other pages: stacked panels, zoomed for phone reading */
+.portrait .ip{display:flex;flex-direction:column;gap:34px;padding:270px 48px 150px}
+.portrait .ip .top{top:64px;right:48px;left:48px;height:150px;gap:28px}
+.portrait .ip .ico{width:112px;height:112px;border-radius:26px}
+.portrait .ip .ico svg{width:64px;height:64px}
+.portrait .ip h2{font-size:72px}
+.portrait .ip .logo{height:62px}
+.portrait .ip .panel{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;width:auto!important;zoom:var(--z,1.5);flex:none}
+.portrait .ip .notes{flex:1}
+.portrait .ip .refs{position:relative;left:auto;right:auto;bottom:auto;padding:0 24px 16px;margin-top:6px}
+.portrait .ip .srow .mg{font-size:16px}
+.portrait .ip .scale .ax span{font-size:15px}
+.portrait .ip .scale .ax .rng{font-size:15px;top:24px}
+.portrait .ip .scale{height:64px}
+/* thanks */
+.portrait .ty .logo{top:84px;left:64px;height:104px}
+.portrait .ty .msg{right:64px;left:64px;width:auto;top:330px}
+.portrait .ty .msg .chip{font-size:28px;padding:10px 28px}
+.portrait .ty h2{font-size:230px;margin:26px 0 8px}
+.portrait .ty .rule{width:200px;height:9px;margin:10px 0 44px}
+.portrait .ty .msg p{font-size:40px;line-height:1.7}
+.portrait .ty .sig b{font-size:48px}
+.portrait .ty .contact{left:64px;right:64px;width:auto;top:1380px;gap:26px}
+.portrait .ty .contact h4{font-size:32px}
+.portrait .cc{padding:30px 34px;gap:28px;border-radius:30px}
+.portrait .cc .ic{width:100px;height:100px;border-radius:26px}
+.portrait .cc .ic svg{width:54px;height:54px}
+.portrait .cc div small{font-size:28px}
+.portrait .cc div b{font-size:34px}
+.portrait .cc .go{width:64px;height:64px}
+.portrait .credit{left:64px;bottom:120px;font-size:20px}
+</style></head><body class="portrait flex">
 
 <section class="page light grid cover" data-sec="الغلاف">
  <i class="slash" style="left:-30px;bottom:-40px;width:120px;height:330px"></i>
@@ -273,9 +363,9 @@ a{color:inherit;text-decoration:none}
 </section>
 <div id="dayPages"></div>
 
-<section class="page light grid ip" data-sec="مبادئ الجدول">
+<section class="page light grid ip" style="--z:1.72" data-sec="مبادئ الجدول">
  <i class="slash" style="left:-40px;bottom:-40px;width:90px;height:190px;opacity:.25"></i>
- <div class="top"><div class="ico"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#284da0" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 7v6"/><circle cx="12" cy="16.6" r=".6" fill="#284da0"/></svg></div><h2>مبادئ زيادة المرونة</h2>
+ <div class="top"><div class="ico"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#284da0" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 7v6"/><circle cx="12" cy="16.6" r=".6" fill="#284da0"/></svg></div><h2>مبادئ الجدول</h2>
   <img class="logo" src="../brand/logo-color-hd.png" alt="Nav Coaching"></div>
  <div class="panel sets">
   <div class="ph"><span>المنطقة</span><span>دقائق التمدد أسبوعيًا</span></div>
@@ -289,7 +379,7 @@ a{color:inherit;text-decoration:none}
  </div>
 </section>
 
-<section class="page light grid ip" data-sec="طريقة التنفيذ">
+<section class="page light grid ip" style="--z:1.95" data-sec="طريقة التنفيذ">
  <i class="slash" style="left:-40px;bottom:-40px;width:90px;height:190px;opacity:.25"></i>
  <div class="top"><div class="ico"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#284da0" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 7v6"/><circle cx="12" cy="16.6" r=".6" fill="#284da0"/></svg></div><h2>طريقة التنفيذ</h2>
   <img class="logo" src="../brand/logo-color-hd.png" alt="Nav Coaching"></div>
@@ -304,7 +394,7 @@ a{color:inherit;text-decoration:none}
  </div>
 </section>
 
-<section class="page light grid ip" data-sec="قبل ما تبدأ">
+<section class="page light grid ip" style="--z:2.1" data-sec="قبل ما تبدأ">
  <i class="slash" style="left:-40px;bottom:-40px;width:90px;height:190px;opacity:.25"></i>
  <div class="top"><div class="ico"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#284da0" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 7v6"/><circle cx="12" cy="16.6" r=".6" fill="#284da0"/></svg></div><h2>قبل ما تبدأ</h2>
   <img class="logo" src="../brand/logo-color-hd.png" alt="Nav Coaching"></div>
@@ -348,7 +438,6 @@ a{color:inherit;text-decoration:none}
  <div class="credit">Muscle diagrams based on react-body-highlighter © 2020 GV79 — MIT License</div>
 </section>
 <script>
-let TOTAL=0;
 const PLAY='<svg class="pl" viewBox="0 0 34 34"><circle cx="17" cy="17" r="16" fill="#e4f6fc" stroke="#4cc5ed" stroke-width="1.5"/><path d="M14 11.5v11l9-5.5z" fill="#284da0"/></svg>';
 const YT=id=>id.includes('/')?id:('https://www.youtube.com/'+(id.length&&id[0]==='w'?'watch?v='+id.slice(2):'shorts/'+id));
 // ---- body diagram (anatomy polygons: react-body-highlighter, MIT, (c) 2020 GV79)
@@ -365,30 +454,35 @@ function body(view,pri,sec){
     const col=P.has(m)?RED:(S.has(m)&&!P.has(m)?RED2:BODY);
     ps.forEach(p=>o+='<polygon points="'+p+'" fill="'+col+'" stroke="#fff" stroke-width=".6" stroke-linejoin="round"/>');});
   return '<svg viewBox="'+VB+'" preserveAspectRatio="xMidYMid meet">'+o+'</svg>'}
-// ---- data (content kept from the original file)
+// ---- data
 const DAYS=[{"n": 1, "cls": "a", "title": "الحوض", "sub": "مثنيات الورك · الأرداف · الفخذ الداخلي", "rows": [["HALF KNEELING HIP FLEXOR STRETCH", "w:gqoPYLUgP48", ["مثنيات الورك", "أفخاذ أمامية"], ["hflex"], [], 2, "45 ثانية<br>لكل جهة", "STANDING HIP FLEXOR STRETCH", "w:ljCDEb_MIto"], ["90/90 HIP SWITCH", "w:t4Zz6-aG8Iw", ["دوّارات الورك", "قلوتس", "فخذ داخلي"], ["glutes"], ["add"], 2, "8 تبديلات", "SEATED HIP ROTATION", "w:WLMSzXQTVrA"], ["PIGEON STRETCH", "w:e99cdZ_Nl3I", ["قلوتس", "دوّارات الورك"], ["glutes"], [], 2, "45 ثانية<br>لكل جهة", "LYING FIGURE-4 STRETCH", "w:nj1-GzbAauI"], ["FROG STRETCH", "w:orMZYFWo9P0", ["فخذ داخلي", "الحوض"], ["add"], [], 3, "50 ثانية", "BUTTERFLY STRETCH", "w:aaQVOFRDvRo"], ["DEEP SQUAT HOLD (GOBLET)", "w:ShvTpCsgTiw", ["قلوتس", "حوض", "كاحل وبطات"], ["glutes"], ["add", "calves"], 2, "40 ثانية", "SUPPORTED DEEP SQUAT HOLD", "w:uQbUORRwzqk"], ["COSSACK SQUAT", "w:nLNqEQ4B6XI", ["فخذ داخلي", "قلوتس"], ["add"], ["glutes"], 2, "6-8 تكرارات<br>لكل جهة", "SIDE LUNGE ADDUCTOR STRETCH", "w:lmVhur0mHkY"]]}, {"n": 2, "cls": "b", "title": "الظهر", "sub": "أسفل الظهر · أعلى الظهر · الصدر · الأكتاف", "rows": [["CAT CAMEL", "w:UScu7P0yua4", ["أسفل الظهر", "أعلى الظهر"], ["lowb"], ["rhomb"], 2, "8-10 تكرارات", "SEATED CAT COW", "w:ab40Gphamag"], ["THORACIC EXTENSION (FOAM ROLLER)", "w:SQF-0s1CckA", ["أعلى الظهر", "ترابيس"], ["rhomb"], ["lats"], 2, "40 ثانية", "THORACIC EXTENSION OVER CHAIR", "w:SvDHk_ar8FA"], ["THREAD THE NEEDLE", "w:blBC6222kuU", ["أعلى الظهر", "كتف خلفي"], ["rhomb"], ["rdelt"], 2, "8 تكرارات<br>لكل جهة", "SEATED THORACIC ROTATION", "w:QwsdhRTdqqs"], ["CHILD'S POSE WITH SIDE REACH", "w:uGWsHEXSg4U", ["لاتس", "أسفل الظهر"], ["lats"], ["lowb"], 2, "40 ثانية<br>لكل جهة", "STANDING WALL LAT STRETCH", "w:JUglskfkdgQ"], ["DOORWAY PEC STRETCH", "w:CEQMx4zFwYs", ["صدر", "أكتاف أمامية"], ["chest"], ["fdelt"], 3, "45 ثانية<br>لكل جهة", "WALL PEC STRETCH", "w:40BBXdyJdak"], ["WALL SLIDES", "w:tWDGEyMWv10", ["ترابيس سفلي", "كتف"], ["rhomb"], ["sdelt"], 2, "8-10 تكرارات", "ARM CIRCLES", "w:ndmSvkEdNQQ"]]}, {"n": 3, "cls": "c", "title": "شامل", "sub": "الورك · الأرجل · الظهر · الصدر", "rows": [["WORLD'S GREATEST STRETCH", "w:-CiWQ2IvY34", ["مثنيات الورك", "أفخاذ خلفية", "أعلى الظهر"], ["hflex"], ["hams", "rhomb"], 2, "5 تكرارات<br>لكل جهة", "LUNGE WITH ROTATION", "w:Mwkh9MWbF04"], ["HAMSTRING STRETCH (STRAP)", "w:Il1L75v6gq0", ["أفخاذ خلفية"], ["hams"], [], 3, "45 ثانية<br>لكل جهة", "SEATED HAMSTRING STRETCH", "w:aJvfeuu71gw"], ["WALL CALF STRETCH", "w:mtVqe4CR_60", ["بطات"], ["calves"], [], 3, "45 ثانية<br>لكل جهة", "KNEE TO WALL ANKLE MOBILITY", "w:ElrpduJn92Y"], ["COUCH STRETCH", "w:d9pOjXCKGN8", ["مثنيات الورك", "أفخاذ أمامية"], ["hflex"], [], 2, "45 ثانية<br>لكل جهة", "STANDING QUAD STRETCH", "w:aNXGOpP37CY"], ["SUPINE SPINAL TWIST", "w:mNdJti7ZwKI", ["جانبي البطن", "أسفل الظهر"], ["obl"], ["lowb"], 2, "45 ثانية<br>لكل جهة", "SEATED SPINAL TWIST", "w:6URMDkf2Uxk"], ["OPEN BOOK", "w:peeW19ofFUg", ["أعلى الظهر", "صدر"], ["rhomb"], ["chest"], 2, "8 تكرارات<br>لكل جهة", "SEATED THORACIC ROTATION", "w:QwsdhRTdqqs"]]}];
-const url=id=>id.startsWith('w:')?'https://www.youtube.com/watch?v='+id.slice(2):'https://www.youtube.com/shorts/'+id;
-const lnk=(name,id)=>'<a class="lnk" href="'+url(id)+'" target="_blank">'+PLAY+'<b>'+name+'</b></a>';
+
+// ---- portrait day pages: one card per exercise
+const PLAY2=s=>'<svg width="'+s+'" height="'+s+'" viewBox="0 0 34 34"><circle cx="17" cy="17" r="16" fill="#e4f6fc" stroke="#4cc5ed" stroke-width="1.5"/><path d="M14 11.5v11l9-5.5z" fill="#284da0"/></svg>';
+const vurl=id=>'https://www.youtube.com/watch?v='+id.slice(2);
 let html='';
 DAYS.forEach(d=>{
-  html+='<section class="page light grid dp" style="--rh:'+(d.rows.length<=4?118:d.rows.length==5?100:86)+'px" data-sec="'+(d.sec||('اليوم '+d.n+' · '+d.title))+'">'
-   +'<i class="slash" style="left:-40px;bottom:-40px;width:90px;height:190px;opacity:.25"></i>'
-   +'<div class="top"><div class="badge '+d.cls+'"><small>'+(d.lbl||'اليوم')+'</small>'+d.n+'</div><h2>'+d.title+(d.sub?'<small>'+d.sub+'</small>':'')+'</h2>'
-   +'<div class="lg" style="margin-right:auto"><span><i></i>عضلة أساسية</span><span><i class="s"></i>عضلة مساعدة</span></div><div class="hint" style="margin-right:22px">'+PLAY.replace('class="pl"','class="pl" style="width:24px;height:24px"')+'اضغط على اسم التمرين لمشاهدة الشرح</div>'
-   +'<img class="logo" src="../brand/logo-color-hd.png" alt="Nav Coaching"></div>'
-   +'<div class="tbl"><div class="tr th"><div>#</div><div class="r">التمرين الأساسي</div><div class="r" style="padding-right:22px">اسم العضلة</div><div class="fh">العضلات المستهدفة<div><span>أمامي</span><span class="b">خلفي</span></div></div><div>الجولات</div><div>العدات</div><div class="alt-h">البديل · أسهل</div></div>';
+  html+='<section class="page light grid dp" data-sec="'+(d.sec||('اليوم '+d.n+' · '+d.title))+'">'
+   +'<i class="slash" style="left:-40px;bottom:-40px;width:110px;height:230px;opacity:.25"></i>'
+   +'<div class="top"><div class="badge '+d.cls+'"><small>اليوم</small>'+d.n+'</div><h2>'+d.title+(d.sub?'<small>'+d.sub+'</small>':'')+'</h2><img class="logo" src="../brand/logo-color-hd.png" alt="Nav Coaching"></div>'
+   +'<div class="pd-hint"><span>'+PLAY2(36)+'اضغط على اسم التمرين لمشاهدة الشرح</span><span class="lg"><span><i></i>عضلة أساسية</span><span><i class="s"></i>عضلة مساعدة</span></span></div>'
+   +'<div class="pd-cards '+d.cls+'">';
   d.rows.forEach((r,i)=>{const [name,id,mus,pri,sec,sets,reps,alt,altId]=r;
-    html+='<div class="tr td"><div class="idx">'+(i+1)+'</div><div class="ex">'+lnk(name,id)+'</div>'
-     +'<div class="tags"><div class="mrow p"><i></i><b>'+mus[0]+'</b></div>'+(mus.length>1?'<div class="mrow s"><i></i><span>'+mus.slice(1).join('<em>·</em>')+'</span></div>':'')+'</div>'
-     +'<div class="fig"><div class="v">'+body('f',pri,sec)+'</div><div class="v b">'+body('b',pri,sec)+'</div></div>'
-     +'<div class="num'+(typeof sets==='string'?' t':'')+'">'+sets+'</div><div><span class="rep'+(/[\u0600-\u06FF]/.test(reps)?' t':'')+'">'+reps+'</span></div><div class="alt">'+lnk(alt,altId)+'</div></div>';});
+    html+='<div class="card">'
+     +'<div class="c-top"><span class="c-num">'+(i+1)+'</span><a class="c-name" href="'+vurl(id)+'">'+PLAY2(48)+'<b>'+name+'</b></a></div>'
+     +'<div class="c-mid"><div class="c-info">'
+     +'<div class="mrow p"><i></i><b>'+mus[0]+'</b></div>'+(mus.length>1?'<div class="mrow s"><i></i><span>'+mus.slice(1).join('<em>·</em>')+'</span></div>':'')
+     +'<div class="c-chips"><span class="c2"><small>جولات</small><b>'+sets+'</b></span><span class="c2"><small>المطلوب</small><b>'+reps.replace('<br>',' ')+'</b></span></div></div>'
+     +'<div class="c-fig">'+body('f',pri,sec)+body('b',pri,sec)+'</div></div>'
+     +'<a class="c-alt" href="'+vurl(altId)+'">'+PLAY2(34)+'<small>بديل أسهل</small><b>'+alt+'</b></a></div>';});
   html+='</div></section>';
 });
 document.getElementById('dayPages').outerHTML=html;
 // ---- pager on every page
-TOTAL=document.querySelectorAll(".page").length;
+const TOTAL=document.querySelectorAll('.page').length;
 document.querySelectorAll('.page').forEach((pg,i)=>{const n=i+1;
   let bar='';for(let k=1;k<=TOTAL;k++)bar+='<i class="'+(k<n?'done':k===n?'cur':'')+'"></i>';
   pg.insertAdjacentHTML('beforeend','<footer class="pager"><span class="sec"><b>'+(pg.dataset.sec||'')+'</b></span><div class="bar">'+bar+'</div><span class="num">'+String(n).padStart(2,'0')+' <span>/ '+String(TOTAL).padStart(2,'0')+'</span></span></footer>');});
 </script>
+
 </body></html>

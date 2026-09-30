@@ -486,7 +486,7 @@ pf_principles = page('مبادئ الجدول', 'مبادئ زيادة المر�
     chart_panel(fx_chart, 12, (0, 5, 10), band=(5, 10), rng_label='المنصوح: 5–10 دقائق أسبوعيًا',
                 head=('المنطقة', 'دقائق التمدد أسبوعيًا')),
     notes_panel('ليش هالتوزيع؟', [
-        'الأهم هو <b>مجموع وقت التمدد بالأسبوع</b> لكل منطقة: حوالي <b>5–10 دقائق</b> تكفي لزيادة المدى، وما يضيف الزيادة الكثيرة بعدها فايدة تُذكر.',
+        'الأهم هو <b>مجموع وقت التمدد بالأسبوع</b> لكل منطقة: حوالي <b style="white-space:nowrap">5–10 دقائق</b> تكفي لزيادة المدى، وما يضيف الزيادة الكثيرة بعدها فايدة تُذكر.',
         'كل جولة تمدد حوالي <b>45 ثانية</b> لمدى مريح: شد خفيف إلى متوسط، وليس ألمًا.',
         'الحوض وأعلى الظهر يتمرنون <b>مرتين بالأسبوع</b>: الحوض باليوم 1 و3، وأعلى الظهر باليوم 2 و3.',
         'تمارين القوة بمدى حركة كامل (مثل السكوات العميق) <b>تزيد المرونة بدرجة مقاربة للتمدد</b> حسب مراجعة منهجية لدراسات مقارنة، فلا تتركون تمارين القوة.',
@@ -501,7 +501,7 @@ pf_how = page('طريقة التنفيذ', 'طريقة التنفيذ',
     notes_panel('كيف تنفذون الجدول', [
         f'مدة كل يوم تقريبًا: <b>{day_min[0]} · {day_min[1]} · {day_min[2]} دقيقة</b> بدون فترات الراحة بين الجولات.',
         'التمارين المكتوب فيها <b>«لكل جهة»</b>: كرروا الجولة على الجهة الثانية بنفس المدة.',
-        'الأفضل بعد التمرين، أو بيوم مستقل. وقبل التمدد سخّنوا <b>3–5 دقائق</b> (مشي أو حركة خفيفة).',
+        'الأفضل بعد التمرين، أو بيوم مستقل. وقبل التمدد سخّنوا <b style="white-space:nowrap">3–5 دقائق</b> (مشي أو حركة خفيفة).',
         'العمود الأول هو <b>التمرين الأساسي</b>، والأخير <b>بديل أسهل</b> لنفس المنطقة إذا كان الأساسي صعبًا.',
         'تتقدمون بالتدريج: أضيفوا جولة، أو زيدوا المدة، أو انتقلوا من البديل الأسهل إلى الأساسي.',
     ]).replace('<div class="panel notes">', '<div class="panel notes" style="right:676px">'))
@@ -527,5 +527,154 @@ build('prog-flex.html', 'جدول زيادة المرونة',
           {'n': 3, 't': 'شامل', 'p': 'ورك · أرجل · ظهر · صدر', 'k': 6}]),
       DF, ('التمرين الأساسي', 'البديل · أسهل'),
       [pf_principles, pf_how, pf_safety, THANKS], body_cls='flex')
+
+# =====================================================================
+# PORTRAIT (phone-first) builder — one vertical card per exercise
+# =====================================================================
+PORTRAIT_H = 2520
+PORTRAIT_CSS = """
+@page{size:1080px 2520px;margin:0}
+.portrait .page{width:1080px;height:2520px}
+.portrait .grid::before{background-size:72px 72px;mask-image:radial-gradient(85% 55% at 50% 35%,#000,transparent)}
+.portrait .pager{left:48px;right:48px;bottom:46px;height:48px;gap:24px}
+.portrait .pager .sec{font-size:24px}
+.portrait .pager .num{font-size:28px}
+.portrait .pager .bar i{height:11px}
+/* cover */
+.portrait .cover .logo{top:84px;right:64px;height:104px}
+.portrait .cover .chip{top:300px;right:64px;font-size:28px;padding:12px 30px}
+.portrait .cover .chip i{width:34px;height:13px}
+.portrait .cover h1{top:390px;right:60px;font-size:170px;line-height:1.1}
+.portrait .cover .rule{top:850px;right:64px;width:220px;height:9px}
+.portrait .cover .lead{top:905px;right:64px;left:64px;max-width:none;font-size:36px}
+.portrait .cover .days{left:64px;right:64px;width:auto;top:1130px;gap:30px}
+.portrait .cover .day{padding:36px 44px;border-radius:34px;gap:34px}
+.portrait .cover .day .n{width:130px;height:130px;border-radius:30px;font-size:64px}
+.portrait .cover .day .n small{font-size:24px}
+.portrait .cover .day h3{font-size:64px}
+.portrait .cover .day p{font-size:30px;margin-top:10px}
+.portrait .cover .day .cnt{font-size:24px}
+.portrait .cover .day .cnt b{font-size:62px}
+.portrait .cover .sign{bottom:150px;right:64px;font-size:30px}
+.portrait .cover .sign b{font-size:32px}
+/* day pages */
+.portrait .dp .top{top:64px;right:48px;left:48px;height:150px;gap:28px}
+.portrait .dp .badge{width:130px;height:130px;border-radius:30px;font-size:62px}
+.portrait .dp .badge small{font-size:24px}
+.portrait .dp h2{font-size:88px}
+.portrait .dp .top h2 small{font-size:26px;margin-top:8px}
+.portrait .dp .logo{height:70px;margin-right:auto}
+.pd-hint{position:absolute;top:236px;right:48px;left:48px;display:flex;justify-content:space-between;align-items:center;gap:20px;font:600 26px "IBM Plex Sans Arabic";color:var(--muted);z-index:2}
+.pd-hint>span{display:flex;align-items:center;gap:12px}
+.pd-hint .lg{font-size:24px;gap:22px}
+.pd-hint .lg i{width:20px;height:20px}
+.pd-cards{position:absolute;top:300px;left:48px;right:48px;bottom:128px;display:flex;flex-direction:column;gap:18px;z-index:2}
+.card{flex:1;min-height:0;background:#fff;border:2px solid var(--line);border-right:12px solid var(--cyan);border-radius:30px;box-shadow:0 12px 34px #07142a12;padding:16px 28px 16px 26px;display:flex;flex-direction:column;justify-content:space-between;gap:8px}
+.pd-cards.b .card{border-right-color:var(--navy)}
+.pd-cards.c .card{border-right-color:var(--ink)}
+.c-top{display:flex;align-items:center;gap:20px}
+.c-num{flex:none;width:60px;height:60px;border-radius:18px;background:var(--navy);color:#fff;font:800 32px/60px "Readex Pro";text-align:center}
+.c-name{display:flex;align-items:center;gap:14px;direction:ltr;text-align:left}
+.c-name b{font:700 33px/1.15 "Readex Pro";color:var(--ink)}
+.c-mid{display:flex;align-items:center;gap:22px;flex:1;min-height:0}
+.c-info{flex:1;display:flex;flex-direction:column;gap:9px}
+.c-info .mrow{gap:12px}
+.c-info .mrow i{width:16px;height:16px;border-radius:5px}
+.c-info .mrow.p b{font:800 36px/1.2 Cairo}
+.c-info .mrow.s span{font:600 27px "IBM Plex Sans Arabic"}
+.c-chips{display:flex;gap:12px;margin-top:4px;flex-wrap:wrap}
+.c2{display:flex;align-items:baseline;gap:10px;background:var(--cyan-soft);border-radius:16px;padding:8px 18px}
+.c2 small{font:600 24px "IBM Plex Sans Arabic";color:var(--muted)}
+.c2 b{font:800 32px/1.2 "Readex Pro";color:var(--navy)}
+.c-fig{flex:none;display:flex;gap:4px;align-items:center}
+.c-fig svg{width:150px;height:172px}
+.c-alt{display:flex;align-items:center;gap:14px;background:var(--paper);border:1.5px solid var(--line);border-radius:18px;padding:8px 18px;direction:ltr}
+.c-alt small{font:600 24px "IBM Plex Sans Arabic";color:var(--muted);direction:rtl}
+.c-alt b{font:600 28px "Readex Pro";color:#33445c}
+/* other pages: stacked panels, zoomed for phone reading */
+.portrait .ip{display:flex;flex-direction:column;gap:34px;padding:270px 48px 150px}
+.portrait .ip .top{top:64px;right:48px;left:48px;height:150px;gap:28px}
+.portrait .ip .ico{width:112px;height:112px;border-radius:26px}
+.portrait .ip .ico svg{width:64px;height:64px}
+.portrait .ip h2{font-size:72px}
+.portrait .ip .logo{height:62px}
+.portrait .ip .panel{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;width:auto!important;zoom:var(--z,1.5);flex:none}
+.portrait .ip .notes{flex:1}
+.portrait .ip .refs{position:relative;left:auto;right:auto;bottom:auto;padding:0 24px 16px;margin-top:6px}
+.portrait .ip .srow .mg{font-size:16px}
+.portrait .ip .scale .ax span{font-size:15px}
+.portrait .ip .scale .ax .rng{font-size:15px;top:24px}
+.portrait .ip .scale{height:64px}
+/* thanks */
+.portrait .ty .logo{top:84px;left:64px;height:104px}
+.portrait .ty .msg{right:64px;left:64px;width:auto;top:330px}
+.portrait .ty .msg .chip{font-size:28px;padding:10px 28px}
+.portrait .ty h2{font-size:230px;margin:26px 0 8px}
+.portrait .ty .rule{width:200px;height:9px;margin:10px 0 44px}
+.portrait .ty .msg p{font-size:40px;line-height:1.7}
+.portrait .ty .sig b{font-size:48px}
+.portrait .ty .contact{left:64px;right:64px;width:auto;top:1380px;gap:26px}
+.portrait .ty .contact h4{font-size:32px}
+.portrait .cc{padding:30px 34px;gap:28px;border-radius:30px}
+.portrait .cc .ic{width:100px;height:100px;border-radius:26px}
+.portrait .cc .ic svg{width:54px;height:54px}
+.portrait .cc div small{font-size:28px}
+.portrait .cc div b{font-size:34px}
+.portrait .cc .go{width:64px;height:64px}
+.portrait .credit{left:64px;bottom:120px;font-size:20px}
+"""
+PORTRAIT_DAYS_JS = r"""
+// ---- portrait day pages: one card per exercise
+const PLAY2=s=>'<svg width="'+s+'" height="'+s+'" viewBox="0 0 34 34"><circle cx="17" cy="17" r="16" fill="#e4f6fc" stroke="#4cc5ed" stroke-width="1.5"/><path d="M14 11.5v11l9-5.5z" fill="#284da0"/></svg>';
+const vurl=id=>'https://www.youtube.com/watch?v='+id.slice(2);
+let html='';
+DAYS.forEach(d=>{
+  html+='<section class="page light grid dp" data-sec="'+(d.sec||('اليوم '+d.n+' · '+d.title))+'">'
+   +'<i class="slash" style="left:-40px;bottom:-40px;width:110px;height:230px;opacity:.25"></i>'
+   +'<div class="top"><div class="badge '+d.cls+'"><small>اليوم</small>'+d.n+'</div><h2>'+d.title+(d.sub?'<small>'+d.sub+'</small>':'')+'</h2><img class="logo" src="../brand/logo-color-hd.png" alt="Nav Coaching"></div>'
+   +'<div class="pd-hint"><span>'+PLAY2(36)+'اضغط على اسم التمرين لمشاهدة الشرح</span><span class="lg"><span><i></i>عضلة أساسية</span><span><i class="s"></i>عضلة مساعدة</span></span></div>'
+   +'<div class="pd-cards '+d.cls+'">';
+  d.rows.forEach((r,i)=>{const [name,id,mus,pri,sec,sets,reps,alt,altId]=r;
+    html+='<div class="card">'
+     +'<div class="c-top"><span class="c-num">'+(i+1)+'</span><a class="c-name" href="'+vurl(id)+'">'+PLAY2(48)+'<b>'+name+'</b></a></div>'
+     +'<div class="c-mid"><div class="c-info">'
+     +'<div class="mrow p"><i></i><b>'+mus[0]+'</b></div>'+(mus.length>1?'<div class="mrow s"><i></i><span>'+mus.slice(1).join('<em>·</em>')+'</span></div>':'')
+     +'<div class="c-chips"><span class="c2"><small>جولات</small><b>'+sets+'</b></span><span class="c2"><small>المطلوب</small><b>'+reps.replace('<br>',' ')+'</b></span></div></div>'
+     +'<div class="c-fig">'+body('f',pri,sec)+body('b',pri,sec)+'</div></div>'
+     +'<a class="c-alt" href="'+vurl(altId)+'">'+PLAY2(34)+'<small>بديل أسهل</small><b>'+alt+'</b></a></div>';});
+  html+='</div></section>';
+});
+document.getElementById('dayPages').outerHTML=html;
+// ---- pager on every page
+const TOTAL=document.querySelectorAll('.page').length;
+document.querySelectorAll('.page').forEach((pg,i)=>{const n=i+1;
+  let bar='';for(let k=1;k<=TOTAL;k++)bar+='<i class="'+(k<n?'done':k===n?'cur':'')+'"></i>';
+  pg.insertAdjacentHTML('beforeend','<footer class="pager"><span class="sec"><b>'+(pg.dataset.sec||'')+'</b></span><div class="bar">'+bar+'</div><span class="num">'+String(n).padStart(2,'0')+' <span>/ '+String(TOTAL).padStart(2,'0')+'</span></span></footer>');});
+</script>
+"""
+
+def build_portrait(fname, title, cover_html, days, pages_after, body_cls='portrait flex'):
+    head_js = SCRIPT_T[:SCRIPT_T.index('// ---- data (content kept')]
+    head_js = head_js.replace('const TOTAL=7;\n', '')
+    head_js = head_js.replace("lats:['UPPER_BACK'],rhomb:['TRAPEZIUS'],",
+        "lats:['UPPER_BACK'],rhomb:['TRAPEZIUS'],gmed:['GLUTEAL'],lowb:['LOWER_BACK'],obl:['OBLIQUES'],hflex:['QUADRICEPS'],add:['ABDUCTORS','ABDUCTOR'],")
+    head_js = head_js.replace("LOW=['quads','glutes','hams','calves'];",
+        "LOW=['quads','glutes','hams','calves','gmed','hflex','add'],MID=['abs','obl','lowb'];")
+    head_js = head_js.replace("(all.length===1&&all[0]==='abs')?'mid'", "all.every(m=>MID.includes(m))?'mid'")
+    assert "hflex" in head_js and "MID.includes" in head_js
+    script = head_js + '// ---- data\nconst DAYS=' + json.dumps(days, ensure_ascii=False) + ';\n' + PORTRAIT_DAYS_JS
+    head = HEAD.replace('<title>جدول تمرين 3 أيام بالمنزل — Nav Coaching</title>', f'<title>{title} — Nav Coaching</title>')
+    html = (head + EXTRA_CSS + PORTRAIT_CSS + f'</style></head><body class="{body_cls}">\n' + cover_html
+            + '\n<div id="dayPages"></div>\n' + '\n'.join(pages_after) + '\n' + script + '\n</body></html>')
+    open(os.path.join(HERE, fname), 'w', encoding='utf8').write(html)
+
+build_portrait('prog-flex-portrait.html', 'جدول زيادة المرونة',
+      cover('جدول زيادة<br><em>المرونة</em>', 'الحوض · الظهر · الأكتاف · الأرجل — من المنزل', [
+          {'n': 1, 't': 'الحوض', 'p': 'مثنيات · قلوتس · فخذ داخلي', 'k': 6},
+          {'n': 2, 't': 'الظهر', 'p': 'أسفل · أعلى · صدر · أكتاف', 'k': 6},
+          {'n': 3, 't': 'شامل', 'p': 'ورك · أرجل · ظهر · صدر', 'k': 6}]),
+      DF, [pf_principles.replace('class="page light grid ip"','class="page light grid ip" style="--z:1.72"').replace('<h2>مبادئ زيادة المرونة</h2>','<h2>مبادئ الجدول</h2>'),
+           pf_how.replace('class="page light grid ip"','class="page light grid ip" style="--z:1.95"'),
+           pf_safety.replace('class="page light grid ip"','class="page light grid ip" style="--z:2.1"'), THANKS])
 
 print('built')
