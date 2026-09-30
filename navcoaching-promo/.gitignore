@@ -5,3 +5,6 @@ audio/stems
 stills
 capture/.session*
 capture/.code*
+split/src
+public/split/clips
+__pycache__

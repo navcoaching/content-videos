@@ -81,3 +81,20 @@ node capture/public.mjs                 # الصفحات العامة (قراء�
 python3 audio/tutorial.py
 npx remotion render NavTutorial out/navcoaching-tutorial.mp4 --props='{"withAudio":true}'
 ```
+
+---
+
+# المقطع الرابع: «خطة 3 أيام» بمقاطع رياضية (NavSplit)
+
+**1080×1920 · 60fps · 52 ثانية** — `render/navcoaching-split.mp4` — على فكرة ريل «3-day split»: هوك ← عنوان ← 3 أيام (أرجل / جزء علوي / جسم كامل) بينها أيام راحة ← إضافات اختيارية ← شعار وموقع.
+
+- **المقاطع الرياضية** من مكتبة Mixkit (رخصة Mixkit Stock Video Free License: استخدام تجاري وتعديل مسموح، الإشارة غير إلزامية)، والمصدر مكتوب بخط صغير في آخر المقطع، والتفاصيل لكل مقطع في `split/CREDITS.md`.
+- **الفلتر السينمائي**: تصحيح لوني (ظلال تيل / إضاءات دافئة)، Vignette، توهّج (Bloom)، وحبيبات فيلم (Grain) كطبقة فوق الفيديو.
+- التوقيت في `src/split/split.json` و`src/split/data.ts`، والصوت (موسيقى + مؤثرات) من `audio/split.py`، وسكربت التعليق في `split/VOICEOVER_SCRIPT.md`.
+
+```bash
+python3 split/fetch.py            # تحميل المقاطع المرخّصة (split/src)
+python3 split/process.py          # قص + تدريج لوني -> public/split/clips
+python3 audio/split.py            # الصوت
+npx remotion render NavSplit out/navcoaching-split.mp4 --props='{"withAudio":true}'
+```
