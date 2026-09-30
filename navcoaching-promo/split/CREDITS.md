@@ -36,6 +36,7 @@ Selection rules (re-selected on request): every man shown was checked frame-by-f
 | 733 | Shirtless man lifting weights at the gym | https://mixkit.co/free-stock-video/shirtless-man-lifting-weights-at-the-gym-733/ |
 | 11766 | Man doing push ups quickly | https://mixkit.co/free-stock-video/man-doing-push-ups-quickly-11766/ |
 | 52317 | A young man training his muscular physique shaking the battle ropes with strength and determination at the gym | https://mixkit.co/free-stock-video/a-young-man-training-his-muscular-physique-shaking-the-battle-52317/ |
-| 50759 | A young man stretches his arms on the balcony | https://mixkit.co/free-stock-video/a-young-man-stretches-his-arms-on-the-balcony-50759/ |
-| 32809 | Man runs past ground level shot | https://mixkit.co/free-stock-video/man-runs-past-ground-level-shot-32809/ |
+| 23261 | Man lifting weights supported by his trainer | https://mixkit.co/free-stock-video/man-lifting-weights-supported-by-his-trainer-23261/ |
+| 51619 | A young woman wearing a hoodie puts on her headphones to start playing video games in front of the pc rig | https://mixkit.co/free-stock-video/a-young-woman-wearing-a-hoodie-puts-on-her-headphones-51619/ |
+| 50126 | A young student wearing a hoodie hilight texts on a book while atuding in the  | https://mixkit.co/free-stock-video/a-young-student-wearing-a-hoodie-hilight-texts-on-a-50126/ |
 | 14067 | Woman in hoodie meditating on the grass | https://mixkit.co/free-stock-video/woman-in-hoodie-meditating-on-the-grass-14067/ |

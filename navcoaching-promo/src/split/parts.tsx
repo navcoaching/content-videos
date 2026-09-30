@@ -3,7 +3,7 @@ import { AbsoluteFill, Img, interpolate, OffthreadVideo, random, staticFile, use
 import { C, FONT, MONO } from "../theme";
 import { KWord, LogoMark } from "../components/Brand";
 import { clamp, pulse, ramp, sp, SPR } from "../lib/motion";
-import { CAPTIONS, DAYS, SHOTS, Day, Shot, listActiveAt } from "./data";
+import { CAPTIONS, DAYS, SHOTS, Day, Shot } from "./data";
 
 /* ------------------------------------------------------------------ film look overlays */
 
@@ -91,14 +91,15 @@ export const Backdrop: React.FC = () => {
 /* ------------------------------------------------------------------ shots */
 
 const BOX: Record<string, [number, number, number, number]> = {
-  t1: [60, 600, 470, 352],
-  t2: [550, 600, 470, 352],
-  t3: [60, 980, 960, 540],
+  t1: [60, 650, 470, 340],
+  t2: [550, 650, 470, 340],
+  t3: [60, 1020, 960, 500],
   a1: [60, 560, 960, 720],
   a2: [60, 560, 960, 720],
   a3: [60, 560, 960, 720],
 };
 const DEFAULT_BOX: [number, number, number, number] = [60, 700, 960, 720];
+const LIST_BOX: [number, number, number, number] = [90, 290, 900, 650];
 const DELAY: Record<string, number> = { t2: 7, t3: 14 };
 const PLAIN_BG = new Set(["t1", "t2", "t3", "a1", "a2", "a3"]);
 
@@ -118,8 +119,8 @@ export const ShotView: React.FC<{ shot: Shot }> = ({ shot }) => {
     );
   }
 
-  const dflt: [number, number, number, number] = listActiveAt(shot.from + f) ? [60, 430, 960, 720] : DEFAULT_BOX;
-  const [x, y, w, h] = BOX[shot.id] ?? dflt;
+  const m = listMix(shot.from + f);
+  const [x, y, w, h] = (BOX[shot.id] ?? DEFAULT_BOX).map((v, i) => (BOX[shot.id] ? v : v + (LIST_BOX[i] - v) * m)) as [number, number, number, number];
   const p = sp(f, DELAY[shot.id] ?? 0, SPR.snappy);
   const blurredBg = !PLAIN_BG.has(shot.id);
   return (
@@ -151,6 +152,14 @@ export const ShotView: React.FC<{ shot: Shot }> = ({ shot }) => {
   );
 };
 
+/** 0 → 1 while the exercise list slides in (cards and captions glide to make room instead of jumping). */
+export const listMix = (f: number) => {
+  const day = DAYS.find((d) => f >= d.from && f < d.to);
+  if (!day) return 0;
+  const t = interpolate(f, [day.list.from - 2, day.list.from + 16], [0, 1], clamp);
+  return 1 - Math.pow(1 - t, 3);
+};
+
 /** Layout of the shot playing at frame f (decides where captions sit). */
 export const layoutAt = (f: number): Shot["layout"] => {
   const s = SHOTS.filter((x) => f >= x.from && f < x.from + x.dur && !PLAIN_BG.has(x.id));
@@ -167,8 +176,8 @@ export const Words: React.FC = () => {
   const p = sp(f, c.at, { damping: 14, stiffness: 300, mass: 0.55 });
   const out = ramp(f, [to - 4, to]);
   const layout = layoutAt(f);
-  const listing = listActiveAt(f);
-  const y = layout === "card" ? (listing ? 1205 : 1580) : listing ? 1140 : 1230;
+  const m = listMix(f);
+  const y = layout === "card" ? 1580 + (1035 - 1580) * m : 1230 + (1075 - 1230) * m;
   const fs = c.text.length > 18 ? 66 : c.text.length > 12 ? 78 : 92;
   const base: React.CSSProperties = {
     display: "inline-block",
@@ -225,7 +234,7 @@ export const DayTitle: React.FC<{ day: Day }> = ({ day }) => {
     <AbsoluteFill style={{ direction: "rtl", opacity: 1 - out, transform: `translateY(${-out * 50}px)` }}>
       <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1000, background: "linear-gradient(180deg, rgba(0,0,0,0.72), rgba(0,0,0,0.35) 60%, rgba(0,0,0,0))" }} />
       <div style={{ position: "absolute", top: 250, right: 70, left: 70 }}>
-        <div style={{ fontFamily: MONO, fontSize: 30, letterSpacing: 9, color: C.cyan, direction: "ltr", textAlign: "right", opacity: ramp(f, [day.from + 6, day.from + 20]) }}>{day.en}</div>
+        <div style={{ fontFamily: MONO, fontSize: 30, letterSpacing: 9, color: C.cyan, direction: "ltr", textAlign: "right", marginBottom: 14, opacity: ramp(f, [day.from + 6, day.from + 20]) }}>{day.en}</div>
         <div style={{ transform: "skewX(-7deg)", transformOrigin: "right center" }}>
           <KWord text={day.big} at={day.from} size={200} weight={800} glow style={{ display: "block", lineHeight: 1.05 }} />
         </div>
@@ -291,7 +300,7 @@ export const ExerciseList: React.FC = () => {
     <div
       style={{
         position: "absolute",
-        top: 1290,
+        top: 1180,
         left: 60,
         right: 60,
         direction: "rtl",
@@ -315,7 +324,7 @@ export const ExerciseList: React.FC = () => {
           <div
             key={name}
             style={{
-              height: 62,
+              height: 56,
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
@@ -324,11 +333,11 @@ export const ExerciseList: React.FC = () => {
               transform: `translateX(${(1 - r) * 60}px)`,
             }}
           >
-            <span style={{ display: "flex", alignItems: "center", gap: 18, fontFamily: FONT, fontWeight: 600, fontSize: 38, color: "#fff" }}>
-              <span style={{ width: 40, height: 40, borderRadius: "50%", background: C.cyan, color: "#04121f", display: "grid", placeItems: "center", fontFamily: MONO, fontWeight: 700, fontSize: 24 }}>{i + 1}</span>
+            <span style={{ display: "flex", alignItems: "center", gap: 18, fontFamily: FONT, fontWeight: 600, fontSize: 36, color: "#fff" }}>
+              <span style={{ width: 38, height: 38, borderRadius: "50%", background: C.cyan, color: "#04121f", display: "grid", placeItems: "center", fontFamily: MONO, fontWeight: 700, fontSize: 24 }}>{i + 1}</span>
               {name}
             </span>
-            <span style={{ fontFamily: MONO, fontWeight: 700, fontSize: 32, color: C.cyan, direction: "ltr" }}>{sets}</span>
+            <span style={{ fontFamily: MONO, fontWeight: 700, fontSize: 30, color: C.cyan, direction: "ltr" }}>{sets}</span>
           </div>
         );
       })}

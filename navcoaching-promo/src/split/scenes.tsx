@@ -14,16 +14,16 @@ export const TitleScene: React.FC = () => {
   const chips = ["أرجل", "جزء علوي", "جسم كامل"];
   return (
     <AbsoluteFill style={{ direction: "rtl", opacity: 1 - out }}>
-      <div style={{ position: "absolute", top: 70, left: 0, right: 0, display: "flex", justifyContent: "center", transform: `scale(${interpolate(sp(f, a, SPR.slam), [0, 1], [1.8, 1])})`, opacity: Math.min(1, sp(f, a, SPR.slam) * 3) }}>
-        <LogoMark width={250} glow={0.6} />
+      <div style={{ position: "absolute", top: 56, left: 0, right: 0, display: "flex", justifyContent: "center", transform: `scale(${interpolate(sp(f, a, SPR.slam), [0, 1], [1.8, 1])})`, opacity: Math.min(1, sp(f, a, SPR.slam) * 3) }}>
+        <LogoMark width={200} glow={0.6} />
       </div>
-      <div style={{ position: "absolute", top: 230, left: 40, right: 40, textAlign: "center" }}>
-        <KWord text="خطة تمرين" at={a + 6} size={92} weight={600} color={C.text} />
+      <div style={{ position: "absolute", top: 175, left: 40, right: 40, textAlign: "center" }}>
+        <KWord text="خطة تمرين" at={a + 6} size={80} weight={600} color={C.text} />
         <div>
-          <KWord text="3 أيام" at={a + 14} size={230} weight={800} glow gradient={`linear-gradient(100deg, #ffffff 0%, ${C.cyan} 50%, #7fdcff 100%)`} />
+          <KWord text="3 أيام" at={a + 14} size={190} weight={800} glow gradient={`linear-gradient(100deg, #ffffff 0%, ${C.cyan} 50%, #7fdcff 100%)`} />
         </div>
       </div>
-      <div style={{ position: "absolute", top: 1590, left: 0, right: 0, display: "flex", justifyContent: "center", gap: 18 }}>
+      <div style={{ position: "absolute", top: 1580, left: 0, right: 0, display: "flex", justifyContent: "center", gap: 18 }}>
         {chips.map((c, i) => {
           const p = sp(f, a + 40 + i * 9, SPR.bouncy);
           return (
@@ -59,13 +59,13 @@ export const RestScene: React.FC<{ from: number; to: number }> = ({ from, to }) 
   const sub = sp(f, from + 34, SPR.soft);
   return (
     <AbsoluteFill style={{ direction: "rtl", opacity: inP * (1 - out) }}>
-      <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(3,6,12,0.78), rgba(3,6,12,0.5) 40%, rgba(3,6,12,0.82))" }} />
-      <div style={{ position: "absolute", top: 640, left: 40, right: 40, textAlign: "center" }}>
-        <div style={{ fontFamily: MONO, fontSize: 30, letterSpacing: 14, color: C.cyan, opacity: ramp(f, [from + 4, from + 18]) }}>REST DAY</div>
+      <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(3,6,12,0.82), rgba(3,6,12,0.66) 40%, rgba(3,6,12,0.86))" }} />
+      <div style={{ position: "absolute", top: 600, left: 40, right: 40, textAlign: "center" }}>
+        <div style={{ fontFamily: MONO, fontSize: 30, letterSpacing: 14, color: C.cyan, marginBottom: 26, opacity: ramp(f, [from + 4, from + 18]) }}>REST DAY</div>
         <div style={{ transform: "skewX(-7deg)" }}>
           <KWord text="يوم راحة" at={from + 6} size={190} weight={800} glow />
         </div>
-        <div style={{ marginTop: 8, fontFamily: FONT, fontWeight: 600, fontSize: 54, color: "#fff", textShadow: "0 3px 24px rgba(0,0,0,0.95)", opacity: sub, transform: `translateY(${(1 - sub) * 24}px)` }}>جسمك يبني وأنت مرتاح</div>
+        <div style={{ marginTop: 46, fontFamily: FONT, fontWeight: 600, fontSize: 54, color: "#fff", textShadow: "0 3px 24px rgba(0,0,0,0.95), 0 0 3px rgba(0,0,0,0.9)", opacity: sub, transform: `translateY(${(1 - sub) * 24}px)` }}>جسمك يبني وأنت مرتاح</div>
       </div>
     </AbsoluteFill>
   );
@@ -82,7 +82,7 @@ export const AddOnsScene: React.FC = () => {
   return (
     <AbsoluteFill style={{ direction: "rtl", opacity: 1 - out }}>
       <div style={{ position: "absolute", top: 210, left: 40, right: 40, textAlign: "center", opacity: Math.min(1, head * 2), transform: `translateY(${(1 - head) * 30}px)` }}>
-        <div style={{ fontFamily: MONO, fontSize: 28, letterSpacing: 10, color: C.cyan }}>OPTIONAL</div>
+        <div style={{ fontFamily: MONO, fontSize: 28, letterSpacing: 10, color: C.cyan, marginBottom: 30 }}>OPTIONAL</div>
         <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: 118, color: "#fff", lineHeight: 1.15, textShadow: "0 0 50px rgba(76,197,237,0.45)" }}>وإذا تبي أكثر…</div>
       </div>
       <div style={{ position: "absolute", top: 1360, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
@@ -144,7 +144,9 @@ export const CtaScene: React.FC = () => {
       <div style={{ position: "absolute", top: 820, left: 40, right: 40, textAlign: "center" }}>
         <KWord text="تدريب مبني عليك" at={a + 80} size={104} weight={800} glow color={C.text} />
         <div>
-          <KWord text="مو جدول جاهز" at={a + 100} size={64} weight={500} color={C.muted} from="up" />
+          <div style={{ marginTop: 30 }}>
+            <KWord text="مو جدول جاهز" at={a + 100} size={64} weight={500} color={C.muted} from="up" />
+          </div>
         </div>
       </div>
       <div style={{ position: "absolute", top: 1160, left: 0, right: 0, display: "flex", justifyContent: "center", opacity: ramp(f, [a + 160, a + 170]) }}>
