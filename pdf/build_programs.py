@@ -23,6 +23,8 @@ RIR_PAGE = section(gym, '<!-- ================= PAGE 6 : INSTRUCTIONS 2')
 EQUIP_PAGE = section(home, '<!-- ================= PAGE 5 : HOME EQUIPMENT')
 
 EXTRA_CSS = '''
+.flex .rep.t{font-size:15px;line-height:1.4;padding:5px 8px;text-align:center;white-space:nowrap}
+.flex .num.t{font-size:22px}
 /* ---------- generator additions */
 .cover .lead{position:absolute;top:572px;right:84px;font:600 23px/1.5 "IBM Plex Sans Arabic";color:var(--navy);max-width:640px}
 .days.d4{top:104px;gap:16px}
@@ -205,16 +207,16 @@ def feminize(html):
         html = html.replace(a, b)
     return html
 
-def build(fname, title, cover_html, days, hdr, pages_after, fem=False):
+def build(fname, title, cover_html, days, hdr, pages_after, fem=False, body_cls=''):
     script = SCRIPT_T
     script = re.sub(r'const DAYS=\[.*?\n\];', 'const DAYS=' + json.dumps(days, ensure_ascii=False) + ';', script, flags=re.S)
     script = script.replace('const TOTAL=7;', 'let TOTAL=0;')
     script = script.replace('// ---- pager on every page', '// ---- pager on every page\nTOTAL=document.querySelectorAll(".page").length;')
     script = script.replace(
         "lats:['UPPER_BACK'],rhomb:['TRAPEZIUS'],",
-        "lats:['UPPER_BACK'],rhomb:['TRAPEZIUS'],gmed:['GLUTEAL'],lowb:['LOWER_BACK'],obl:['OBLIQUES'],")
+        "lats:['UPPER_BACK'],rhomb:['TRAPEZIUS'],gmed:['GLUTEAL'],lowb:['LOWER_BACK'],obl:['OBLIQUES'],hflex:['QUADRICEPS'],add:['ABDUCTORS','ABDUCTOR'],")
     script = script.replace("LOW=['quads','glutes','hams','calves'];",
-                            "LOW=['quads','glutes','hams','calves','gmed'],MID=['abs','obl','lowb'];")
+                            "LOW=['quads','glutes','hams','calves','gmed','hflex','add'],MID=['abs','obl','lowb'];")
     script = script.replace("(all.length===1&&all[0]==='abs')?'mid'", "all.every(m=>MID.includes(m))?'mid'")
     # headers + per-day subtitle / row height / small label
     script = script.replace('<div class="r">اسم التمرين</div>', '<div class="r">' + hdr[0] + '</div>')
@@ -228,7 +230,7 @@ def build(fname, title, cover_html, days, hdr, pages_after, fem=False):
                             """'<div class="num'+(typeof sets==='string'?' t':'')+'">'+sets+'</div><div><span class="rep'+(/[\\u0600-\\u06FF]/.test(reps)?' t':'')+'">'+reps+'</span></div>""")
     assert 'let TOTAL=0;' in script and 'MID.includes' in script and "d.lbl||" in script and "' t':''" in script
     head = HEAD.replace('<title>جدول تمرين 3 أيام بالمنزل — Nav Coaching</title>', f'<title>{title} — Nav Coaching</title>')
-    html = head + EXTRA_CSS + '</style></head><body>\n' + cover_html + '\n<div id="dayPages"></div>\n' + '\n'.join(pages_after) + '\n' + script + '\n</body></html>'
+    html = head + EXTRA_CSS + f'</style></head><body class="{body_cls}">\n' + cover_html + '\n<div id="dayPages"></div>\n' + '\n'.join(pages_after) + '\n' + script + '\n</body></html>'
     if fem:
         html = feminize(html)
     open(os.path.join(HERE, fname), 'w', encoding='utf8').write(html)
@@ -419,4 +421,111 @@ build('prog-back.html', 'جدول تخفيف ألم الظهر',
           {'n': 'B', 'lbl': 'تقوية', 't': 'تقوية B', 'p': 'الظهر كامل · الرجول', 'k': 5}]),
       DB, ('التمرين', 'البديل · المنزل / أسهل'),
       [pb_safety, pb_how, THANKS])
+
+# =====================================================================
+# 4) FLEXIBILITY (hips, back, shoulders, legs)
+# =====================================================================
+FLEX_CSS = """
+.flex .rep.t{font-size:15px;line-height:1.4;padding:5px 8px;text-align:center;white-space:nowrap}
+.flex .num.t{font-size:22px}
+"""
+EXTRA_CSS_FLEX = FLEX_CSS
+# (name, video, muscles, pri, sec, sets, reps text, alt name, alt video, secs/round, sides)
+FX = [
+ # day 1 - hips
+ ('HALF KNEELING HIP FLEXOR STRETCH', 'w:gqoPYLUgP48', ['مثنيات الورك', 'أفخاذ أمامية'], ['hflex'], [], 2, '45 ثانية<br>لكل جهة', 'STANDING HIP FLEXOR STRETCH', 'w:ljCDEb_MIto', 45, 2),
+ ('90/90 HIP SWITCH', 'w:t4Zz6-aG8Iw', ['دوّارات الورك', 'قلوتس', 'فخذ داخلي'], ['glutes'], ['add'], 2, '8 تبديلات', 'SEATED HIP ROTATION', 'w:WLMSzXQTVrA', 30, 1),
+ ('PIGEON STRETCH', 'w:e99cdZ_Nl3I', ['قلوتس', 'دوّارات الورك'], ['glutes'], [], 2, '45 ثانية<br>لكل جهة', 'LYING FIGURE-4 STRETCH', 'w:nj1-GzbAauI', 45, 2),
+ ('FROG STRETCH', 'w:orMZYFWo9P0', ['فخذ داخلي', 'الحوض'], ['add'], [], 3, '50 ثانية', 'BUTTERFLY STRETCH', 'w:aaQVOFRDvRo', 50, 1),
+ ('DEEP SQUAT HOLD (GOBLET)', 'w:ShvTpCsgTiw', ['قلوتس', 'حوض', 'كاحل وبطات'], ['glutes'], ['add', 'calves'], 2, '40 ثانية', 'SUPPORTED DEEP SQUAT HOLD', 'w:uQbUORRwzqk', 40, 1),
+ ('COSSACK SQUAT', 'w:nLNqEQ4B6XI', ['فخذ داخلي', 'قلوتس'], ['add'], ['glutes'], 2, '6-8 تكرارات<br>لكل جهة', 'SIDE LUNGE ADDUCTOR STRETCH', 'w:lmVhur0mHkY', 30, 2),
+ # day 2 - back & shoulders
+ ('CAT CAMEL', 'w:UScu7P0yua4', ['أسفل الظهر', 'أعلى الظهر'], ['lowb'], ['rhomb'], 2, '8-10 تكرارات', 'SEATED CAT COW', 'w:ab40Gphamag', 45, 1),
+ ('THORACIC EXTENSION (FOAM ROLLER)', 'w:SQF-0s1CckA', ['أعلى الظهر', 'ترابيس'], ['rhomb'], ['lats'], 2, '40 ثانية', 'THORACIC EXTENSION OVER CHAIR', 'w:SvDHk_ar8FA', 40, 1),
+ ('THREAD THE NEEDLE', 'w:blBC6222kuU', ['أعلى الظهر', 'كتف خلفي'], ['rhomb'], ['rdelt'], 2, '8 تكرارات<br>لكل جهة', 'SEATED THORACIC ROTATION', 'w:QwsdhRTdqqs', 30, 2),
+ ("CHILD'S POSE WITH SIDE REACH", 'w:uGWsHEXSg4U', ['لاتس', 'أسفل الظهر'], ['lats'], ['lowb'], 2, '40 ثانية<br>لكل جهة', 'STANDING WALL LAT STRETCH', 'w:JUglskfkdgQ', 40, 2),
+ ('DOORWAY PEC STRETCH', 'w:CEQMx4zFwYs', ['صدر', 'أكتاف أمامية'], ['chest'], ['fdelt'], 3, '45 ثانية<br>لكل جهة', 'WALL PEC STRETCH', 'w:40BBXdyJdak', 45, 2),
+ ('WALL SLIDES', 'w:tWDGEyMWv10', ['ترابيس سفلي', 'كتف'], ['rhomb'], ['sdelt'], 2, '8-10 تكرارات', 'ARM CIRCLES', 'w:ndmSvkEdNQQ', 30, 1),
+ # day 3 - full
+ ("WORLD'S GREATEST STRETCH", 'w:-CiWQ2IvY34', ['مثنيات الورك', 'أفخاذ خلفية', 'أعلى الظهر'], ['hflex'], ['hams', 'rhomb'], 2, '5 تكرارات<br>لكل جهة', 'LUNGE WITH ROTATION', 'w:Mwkh9MWbF04', 30, 2),
+ ('HAMSTRING STRETCH (STRAP)', 'w:Il1L75v6gq0', ['أفخاذ خلفية'], ['hams'], [], 3, '45 ثانية<br>لكل جهة', 'SEATED HAMSTRING STRETCH', 'w:aJvfeuu71gw', 45, 2),
+ ('WALL CALF STRETCH', 'w:mtVqe4CR_60', ['بطات'], ['calves'], [], 3, '45 ثانية<br>لكل جهة', 'KNEE TO WALL ANKLE MOBILITY', 'w:ElrpduJn92Y', 45, 2),
+ ('COUCH STRETCH', 'w:d9pOjXCKGN8', ['مثنيات الورك', 'أفخاذ أمامية'], ['hflex'], [], 2, '45 ثانية<br>لكل جهة', 'STANDING QUAD STRETCH', 'w:aNXGOpP37CY', 45, 2),
+ ('SUPINE SPINAL TWIST', 'w:mNdJti7ZwKI', ['جانبي البطن', 'أسفل الظهر'], ['obl'], ['lowb'], 2, '45 ثانية<br>لكل جهة', 'SEATED SPINAL TWIST', 'w:6URMDkf2Uxk', 45, 2),
+ ('OPEN BOOK', 'w:peeW19ofFUg', ['أعلى الظهر', 'صدر'], ['rhomb'], ['chest'], 2, '8 تكرارات<br>لكل جهة', 'SEATED THORACIC ROTATION', 'w:QwsdhRTdqqs', 30, 2),
+]
+def fx_rows(a, b):
+    return [list(r[:9]) for r in FX[a:b]]
+DF = [
+ {'n': 1, 'cls': 'a', 'title': 'الحوض', 'sub': 'مثنيات الورك · الأرداف · الفخذ الداخلي', 'rows': fx_rows(0, 6)},
+ {'n': 2, 'cls': 'b', 'title': 'الظهر', 'sub': 'أسفل الظهر · أعلى الظهر · الصدر · الأكتاف', 'rows': fx_rows(6, 12)},
+ {'n': 3, 'cls': 'c', 'title': 'شامل', 'sub': 'الورك · الأرجل · الظهر · الصدر', 'rows': fx_rows(12, 18)},
+]
+def fx_minutes(keys):
+    tot = 0.0
+    for r in FX:
+        m = r[5] * r[9] * r[10] / 60
+        if any(k in r[3] for k in keys):
+            tot += m
+        elif any(k in r[4] for k in keys):
+            tot += m / 2
+    return tot
+FX_AREAS = [('مثنيات الورك', ['hflex']), ('قلوتس ودوّارات الورك', ['glutes']), ('الفخذ الداخلي', ['add']),
+            ('الأفخاذ الخلفية', ['hams']), ('البطات', ['calves']), ('أسفل الظهر والجذع', ['lowb', 'obl']),
+            ('أعلى الظهر', ['rhomb', 'lats']), ('الصدر والأكتاف', ['chest', 'fdelt'])]
+fx_chart = [(n, round(fx_minutes(k), 1)) for n, k in FX_AREAS]
+print('flex minutes/week:', fx_chart)
+day_min = [round(sum(r[5] * r[9] * r[10] / 60 for r in FX[a:b])) for a, b in ((0, 6), (6, 12), (12, 18))]
+print('flex minutes/day:', day_min)
+
+FX_REFS = ('<b>المراجع:</b> '
+           '<a href="https://pubmed.ncbi.nlm.nih.gov/29506306/">Thomas 2018 — Stretching typology & duration vs ROM</a> · '
+           '<a href="https://estudogeral.uc.pt/handle/10316/104612">Afonso 2021 — Strength training vs stretching for ROM</a> · '
+           '<a href="https://sportsmedicine-open.springeropen.com/articles/10.1186/s40798-024-00772-y">Optimising the dose of static stretching</a>')
+pf_principles = page('مبادئ الجدول', 'مبادئ زيادة المرونة',
+    chart_panel(fx_chart, 12, (0, 5, 10), band=(5, 10), rng_label='المنصوح: 5–10 دقائق أسبوعيًا',
+                head=('المنطقة', 'دقائق التمدد أسبوعيًا')),
+    notes_panel('ليش هالتوزيع؟', [
+        'الأهم هو <b>مجموع وقت التمدد بالأسبوع</b> لكل منطقة: حوالي <b>5–10 دقائق</b> تكفي لزيادة المدى، وما يضيف الزيادة الكثيرة بعدها فايدة تُذكر.',
+        'كل جولة تمدد حوالي <b>45 ثانية</b> لمدى مريح: شد خفيف إلى متوسط، وليس ألمًا.',
+        'الحوض وأعلى الظهر يتمرنون <b>مرتين بالأسبوع</b>: الحوض باليوم 1 و3، وأعلى الظهر باليوم 2 و3.',
+        'تمارين القوة بمدى حركة كامل (مثل السكوات العميق) <b>تزيد المرونة بدرجة مقاربة للتمدد</b> حسب مراجعة منهجية لدراسات مقارنة، فلا تتركون تمارين القوة.',
+        'أرقام الرسم <b>تقديرية</b>: التمرين الأساسي للمنطقة يُحسب كاملًا، والمساعد نصفه، وتمارين الجهتين تُحسب لكلا الجهتين.',
+    ], refs=FX_REFS))
+pf_how = page('طريقة التنفيذ', 'طريقة التنفيذ',
+    week_panel('مثال لتوزيع الأسبوع', [
+        ('السبت', [('a', 'اليوم 1 · الحوض')]), ('الأحد', [('r', 'راحة')]),
+        ('الاثنين', [('', 'اليوم 2 · الظهر')]), ('الثلاثاء', [('r', 'راحة')]),
+        ('الأربعاء', [('c', 'اليوم 3 · شامل')]), ('الخميس', [('r', 'راحة')]), ('الجمعة', [('r', 'راحة')])],
+        side='right:56px;width:600px'),
+    notes_panel('كيف تنفذون الجدول', [
+        f'مدة كل يوم تقريبًا: <b>{day_min[0]} · {day_min[1]} · {day_min[2]} دقيقة</b> بدون فترات الراحة بين الجولات.',
+        'التمارين المكتوب فيها <b>«لكل جهة»</b>: كرروا الجولة على الجهة الثانية بنفس المدة.',
+        'الأفضل بعد التمرين، أو بيوم مستقل. وقبل التمدد سخّنوا <b>3–5 دقائق</b> (مشي أو حركة خفيفة).',
+        'العمود الأول هو <b>التمرين الأساسي</b>، والأخير <b>بديل أسهل</b> لنفس المنطقة إذا كان الأساسي صعبًا.',
+        'تتقدمون بالتدريج: أضيفوا جولة، أو زيدوا المدة، أو انتقلوا من البديل الأسهل إلى الأساسي.',
+    ]).replace('<div class="panel notes">', '<div class="panel notes" style="right:676px">'))
+pf_safety = page('قبل ما تبدأ', 'قبل ما تبدأ',
+    """<div class="panel" style="right:56px;width:600px">
+  <div class="ph"><span>وقّفوا التمرين واستشيروا مختص إذا:</span></div>
+  <div class="alert" style="margin-top:18px"><h4>علامات تحتاج انتباه</h4><ul>
+   <li>ألم حاد، أو وخز وتنميل، أثناء التمدد.</li>
+   <li>ألم يستمر أكثر من يوم بعد التمرين.</li>
+   <li>ألم مفاجئ بالظهر بعد حادث، أو ألم ينزل للرجل مع ضعف.</li>
+   <li>إصابة أو عملية سابقة بالحوض أو الركبة أو الكتف، أو انزلاق غضروفي: راجعوا الطبيب أو أخصائي العلاج الطبيعي قبل البدء.</li></ul>
+   <p>هذا الجدول للمرونة العامة، وما يغني عن التشخيص.</p></div>
+ </div>""",
+    notes_panel('ملاحظات مهمة', [
+        'التمدد يكون عند <b>حد الشد المريح</b>، وليس عند أقصى ما تتحملون.',
+        'إذا عندكم ألم بالظهر: استبدلوا <b>اللف الأرضي (Supine spinal twist)</b> بالبديل الجالس، أو استخدموا جدول تخفيف ألم الظهر.',
+        'المرونة تحتاج <b>استمرارية</b>: 3 جلسات بالأسبوع لمدة 6–8 أسابيع، ثم قيّموا التقدم.',
+    ]).replace('<div class="panel notes">', '<div class="panel notes" style="right:676px">'))
+build('prog-flex.html', 'جدول زيادة المرونة',
+      cover('جدول زيادة<br><em>المرونة</em>', 'الحوض · الظهر · الأكتاف · الأرجل — من المنزل', [
+          {'n': 1, 't': 'الحوض', 'p': 'مثنيات · قلوتس · فخذ داخلي', 'k': 6},
+          {'n': 2, 't': 'الظهر', 'p': 'أسفل · أعلى · صدر · أكتاف', 'k': 6},
+          {'n': 3, 't': 'شامل', 'p': 'ورك · أرجل · ظهر · صدر', 'k': 6}]),
+      DF, ('التمرين الأساسي', 'البديل · أسهل'),
+      [pf_principles, pf_how, pf_safety, THANKS], body_cls='flex')
+
 print('built')
