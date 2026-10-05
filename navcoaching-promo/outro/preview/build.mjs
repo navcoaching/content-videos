@@ -9,14 +9,25 @@ const u = (p) => pathToFileURL(path.join(root, p)).href;
 const URL_TEXT = "navcoaching.com";
 const SERVICES = ["برامج مع متابعة", "ملفات بدون متابعة", "استشارات", "باقة القيمرز"];
 const fonts = ["arabic-500", "arabic-600", "latin-500", "latin-600"].map((f) => `<link rel="stylesheet" href="${u(`node_modules/@fontsource/readex-pro/${f}.css`)}">`).join("");
-const html = `<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">${fonts}<style>
+const html = (st = {}) => {
+  const a = st.angle ?? 0, sc = st.scale ?? 1;
+  const ph = `transform: rotateY(${a}deg) scale(${sc}); opacity:${st.phoneO ?? 1}`;
+  const sh = Math.cos((a * Math.PI) / 180);
+  const sheen = `background:linear-gradient(${100 + a / 4}deg, rgba(255,255,255,0) 30%, rgba(255,255,255,${(0.22 * (1 - Math.abs(sh))).toFixed(3)}) 50%, rgba(255,255,255,0) 70%)`;
+  const show = (k) => (st[k] ?? 1);
+  return `<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">${fonts}<style>
 html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
 body{position:relative;background:radial-gradient(ellipse 85% 50% at 50% 42%, #0c2144 0%, #07142a 52%, #030914 100%);font-family:"Readex Pro",sans-serif}
 .beam{position:absolute;left:-20%;top:-10%;width:140%;height:70%;background:linear-gradient(115deg, rgba(76,197,237,0) 38%, rgba(76,197,237,0.09) 50%, rgba(76,197,237,0) 62%);filter:blur(30px);transform:rotate(-8deg)}
 .glow{position:absolute;left:50%;top:820px;width:900px;height:900px;transform:translate(-50%,-50%);background:radial-gradient(circle at center, rgba(76,197,237,0.18) 0%, rgba(76,197,237,0) 62%)}
 .vig{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%)}
 .logo{position:absolute;left:50%;top:225px;width:456px;transform:translate(-50%,-50%)}
-.phone{position:absolute;left:50%;top:395px;width:380px;height:822px;transform:translateX(-50%);border-radius:58px;padding:14px;background:linear-gradient(160deg,#1b2b45,#0b1424);box-shadow:0 0 0 2px rgba(76,197,237,0.35),0 50px 110px rgba(0,0,0,0.6),0 0 90px rgba(76,197,237,0.18)}
+.stage{position:absolute;left:50%;top:395px;width:408px;height:850px;transform:translateX(-50%);perspective:1700px}
+.phone{position:relative;width:100%;height:100%;transform-style:preserve-3d}
+.face{position:absolute;inset:0;border-radius:58px;padding:14px;box-sizing:border-box;backface-visibility:hidden;background:linear-gradient(160deg,#1b2b45,#0b1424);box-shadow:0 0 0 2px rgba(76,197,237,0.35),0 50px 110px rgba(0,0,0,0.6),0 0 90px rgba(76,197,237,0.18)}
+.back{transform:rotateY(180deg);display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#16263f 0%,#0a1322 55%,#132741 100%)}
+.back img{width:150px;opacity:0.9}
+.sheen{position:absolute;inset:0;border-radius:58px;pointer-events:none}
 .screen{width:100%;height:100%;border-radius:46px;overflow:hidden;background:#fff}
 .screen img{width:100%;display:block}
 .svc{position:absolute;left:90px;right:90px;top:1282px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
@@ -28,17 +39,31 @@ body{position:relative;background:radial-gradient(ellipse 85% 50% at 50% 42%, #0
 .url{position:absolute;left:0;right:0;top:1566px;text-align:center;direction:ltr;font-weight:500;font-size:68px;letter-spacing:1.5px;color:#eaf2fb}
 </style></head><body><div class="beam"></div><div class="glow"></div><div class="vig"></div>
 <img class="logo" src="${u("public/brand/logo-white.webp")}">
-<div class="phone"><div class="screen"><img src="${u("public/brand/site-home.jpg")}"></div></div>
-<div class="svc">${SERVICES.map((s) => `<span><i></i>${s}</span>`).join("")}</div>
-<div class="line"></div><div class="url">${URL_TEXT}</div><div class="ring"></div><svg class="cursor" viewBox="0 0 24 36"><path d="M1.5 1.5 L1.5 28 L8 22 L12.5 33 L17 31 L12.6 20.5 L21 20.5 Z" fill="#ffffff" stroke="#0a1628" stroke-width="2" stroke-linejoin="round"/></svg></body></html>`;
-const f = path.join(root, "outro/preview/_p.html");
-fs.writeFileSync(f, html);
+<div class="stage"><div class="phone" style="${ph}"><div class="face"><div class="screen"><img src="${u("public/brand/site-home.jpg")}"></div><div class="sheen" style="${sheen}"></div></div><div class="face back"><img src="${u("public/brand/logo-mark.png")}"></div></div></div>
+<div class="svc" style="opacity:${show("svc")}">${SERVICES.map((s) => `<span><i></i>${s}</span>`).join("")}</div>
+<div class="line" style="opacity:${show("url")}"></div><div class="url" style="opacity:${show("url")}">${URL_TEXT}</div><div class="ring" style="opacity:${show("cur")}"></div><svg class="cursor" style="opacity:${show("cur")}" viewBox="0 0 24 36"><path d="M1.5 1.5 L1.5 28 L8 22 L12.5 33 L17 31 L12.6 20.5 L21 20.5 Z" fill="#ffffff" stroke="#0a1628" stroke-width="2" stroke-linejoin="round"/></svg></body></html>`;
+};
 const browser = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome" });
 const p = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
-await p.goto(pathToFileURL(f).href, { waitUntil: "load" });
-await p.evaluate(() => document.fonts.ready);
-await p.waitForTimeout(400);
-console.log(await p.evaluate(() => ({ imgs: [...document.images].map((i) => i.naturalWidth), font: document.fonts.check('500 40px "Readex Pro"') })));
-await p.screenshot({ path: "outro/preview/outro-preview.png" });
+const shot = async (st, out) => {
+  const f = path.join(root, "outro/preview/_p.html");
+  fs.writeFileSync(f, html(st));
+  await p.goto(pathToFileURL(f).href, { waitUntil: "load" });
+  await p.evaluate(() => document.fonts.ready);
+  await p.waitForTimeout(250);
+  await p.screenshot({ path: out });
+  fs.unlinkSync(f);
+};
+await shot({}, "outro/preview/outro-preview.png");
+// keyframes of the 3D spin (one full turn on the Y axis, easing out, landing face-on as the services appear)
+const KF = [
+  { t: "1.0s", angle: -340, scale: 0.86, phoneO: 0.35, svc: 0, url: 0, cur: 0 },
+  { t: "1.4s", angle: -250, scale: 0.9, phoneO: 1, svc: 0, url: 0, cur: 0 },
+  { t: "1.8s", angle: -160, scale: 0.94, svc: 0, url: 0, cur: 0 },
+  { t: "2.2s", angle: -60, scale: 0.98, svc: 0, url: 0, cur: 0 },
+  { t: "2.6s", angle: -6, scale: 1, svc: 0.6, url: 0, cur: 0 },
+];
+fs.mkdirSync("outro/preview/frames", { recursive: true });
+for (const [i, k] of KF.entries()) await shot(k, `outro/preview/frames/k${i}.png`);
 await browser.close();
-fs.unlinkSync(f);
+console.log("ok", KF.length, "keyframes");
