@@ -116,3 +116,21 @@ npx remotion render NavIntro out/intro-audio.mp4  --props='{"withAudio":true}'  
 npx remotion render NavIntro out/intro-silent.mp4 --props='{"withAudio":false}' --codec h264 --crf 14
 ```
 المعاينة الثابتة: `node intro/preview/build.mjs`.
+
+# الخاتمة (NavOutro) — 7.5 ثانية عمودي 1080×1920 · 30fps
+
+الملفات: `render/outro/nav-outro-with-sound.mp4` و`render/outro/nav-outro-silent.mp4` وصورة الإطار النهائي `render/outro/nav-outro-final-frame.png`.
+المصدر: `src/outro/Outro.tsx` (التحريك) و`src/outro/config.json` (الإعدادات) و`audio/outro.py` (الصوت). الشعار الأصلي من `public/brand/` بلا تعديل، وصورة الموقع `public/brand/site-home.jpg` لقطة حقيقية للصفحة الرئيسية.
+
+**التعديل** (كله في `src/outro/config.json`):
+- رابط الموقع: `url` — وأسماء الخدمات: `services` (أربعة عناصر، تُرتّب يمين ثم يسار).
+- المدة: `durationSec` — والتوقيتات بالثواني في `timing` (مثلاً `phoneSpin` لدوران الجوال، `click` للنقرة، `fadeOut` للتلاشي). عند تغيير المدة حرّك `fadeOut` معها وأبقِ ثانيتين على الأقل بين نهاية `url` وبداية `fadeOut`.
+- الصوت: `audio.peakDb` (الذروة، الحالية -22 dBFS)، `fadeInSec`، `fadeOutSec`، و`clickGain` لقوة صوت النقرة.
+- الألوان: `colors`.
+
+```bash
+python3 audio/outro.py      # بعد أي تعديل في التوقيت أو الصوت
+npx remotion render NavOutro out/outro-audio.mp4  --props='{"withAudio":true}'  --codec h264 --crf 14
+npx remotion render NavOutro out/outro-silent.mp4 --props='{"withAudio":false}' --codec h264 --crf 14
+npx remotion still  NavOutro render/outro/nav-outro-final-frame.png --frame=180 --image-format=png
+```

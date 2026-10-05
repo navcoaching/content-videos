@@ -8,6 +8,7 @@ import { Tutorial, TUTORIAL_DURATION } from "./tutorial/Tutorial";
 import { Split } from "./split/Split";
 import { DURATION as SPLIT_DURATION } from "./split/data";
 import { Intro, INTRO_DURATION, INTRO_FPS } from "./intro/Intro";
+import { Outro, OUTRO_DURATION, OUTRO_FPS } from "./outro/Outro";
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -51,6 +52,15 @@ export const RemotionRoot: React.FC = () => (
     component={Intro}
     durationInFrames={INTRO_DURATION}
     fps={INTRO_FPS}
+    width={1080}
+    height={1920}
+    defaultProps={{ withAudio: false }}
+  />
+  <Composition
+    id="NavOutro"
+    component={Outro}
+    durationInFrames={OUTRO_DURATION}
+    fps={OUTRO_FPS}
     width={1080}
     height={1920}
     defaultProps={{ withAudio: false }}
