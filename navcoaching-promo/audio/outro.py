@@ -55,21 +55,27 @@ def bell(f, start, gain):
     return stereo(place(x, start))
 bells = bell(880.0, T["logo"][0] + 0.15, 0.12) + bell(1174.66, T["url"][0] + 0.1, 0.09)
 
-# click: short, rounded tick (low-passed noise burst + tiny 1.8 kHz tone), no harsh transient
-cn = int(0.05 * SR)
-ct = np.arange(cn) / SR
-ce = (1 - np.exp(-ct / 0.0015)) * np.exp(-ct / 0.012)
-cb, ca = signal.butter(2, 3500 / (SR / 2))
-click = (signal.lfilter(cb, ca, rng.standard_normal(cn)) * 0.6 + np.sin(2 * np.pi * 1800 * ct) * 0.5) * ce
-click = stereo(place(click * A["clickGain"], T["click"]), 0)
+# click: clear two-part "mouse click" (press + softer release), crisp but rounded — no harsh transient
+def tick(gain, decay, tone_hz):
+    n = int(0.06 * SR)
+    ct = np.arange(n) / SR
+    e = (1 - np.exp(-ct / 0.0006)) * np.exp(-ct / decay)
+    cb, ca = signal.butter(2, [900 / (SR / 2), 7000 / (SR / 2)], btype="band")
+    nz = signal.lfilter(cb, ca, rng.standard_normal(n))
+    nz /= np.max(np.abs(nz)) + 1e-9
+    return (nz * 0.7 + np.sin(2 * np.pi * tone_hz * ct) * 0.45) * e * gain
+click = place(tick(1.0, 0.006, 2400), T["click"]) + place(tick(0.45, 0.005, 2900), T["click"] + 0.075)
+click = stereo(click / (np.max(np.abs(click)) + 1e-9), 0)
 
-mix = pad + swell + bells + click
+# bed (pad + swell + bells) is levelled to peakDb; the click sits on top at clickPeakDb (still well under a voice-over)
+bed = pad + swell + bells
 lb, la = signal.butter(2, 6000 / (SR / 2))
-mix = signal.lfilter(lb, la, mix, axis=1)
+bed = signal.lfilter(lb, la, bed, axis=1)
 fi, fo = A["fadeInSec"], A["fadeOutSec"]
 fade = np.minimum(t / fi, 1.0) * np.minimum((DUR - t) / fo, 1.0)
-mix = mix * np.sin(np.clip(fade, 0, 1) * np.pi / 2) ** 2
-mix = mix / (np.max(np.abs(mix)) + 1e-9) * 10 ** (A["peakDb"] / 20)
+bed = bed * np.sin(np.clip(fade, 0, 1) * np.pi / 2) ** 2
+bed = bed / (np.max(np.abs(bed)) + 1e-9) * 10 ** (A["peakDb"] / 20)
+mix = bed + click * 10 ** (A["clickPeakDb"] / 20)
 out = os.path.join(ROOT, "public", "audio", "outro.wav")
 wavfile.write(out, SR, (mix.T * 32767).astype(np.int16))
 rms = 20 * np.log10(np.sqrt(np.mean(mix ** 2)) + 1e-12)

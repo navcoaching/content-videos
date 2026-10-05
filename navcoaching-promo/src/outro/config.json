@@ -2,22 +2,51 @@
   "fps": 30,
   "durationSec": 7.5,
   "url": "navcoaching.com",
-  "services": ["برامج مع متابعة", "ملفات بدون متابعة", "استشارات", "باقة القيمرز"],
+  "services": [
+    "برامج مع متابعة",
+    "ملفات بدون متابعة",
+    "استشارات",
+    "باقة القيمرز"
+  ],
   "logo": "brand/logo-white.webp",
   "phoneBackLogo": "brand/logo-mark.png",
   "siteScreenshot": "brand/site-home.jpg",
   "timing": {
-    "lightIn": [0, 0.8],
-    "logo": [0.5, 1.6],
-    "phoneSpin": [0.8, 2.6],
+    "lightIn": [
+      0,
+      0.8
+    ],
+    "logo": [
+      0.5,
+      1.6
+    ],
+    "phoneSpin": [
+      0.8,
+      2.6
+    ],
     "servicesStart": 2.5,
     "servicesStagger": 0.25,
-    "line": [3.5, 3.9],
-    "url": [3.7, 4.2],
-    "cursorIn": [3.95, 4.4],
+    "line": [
+      3.5,
+      3.9
+    ],
+    "url": [
+      3.7,
+      4.2
+    ],
+    "cursorIn": [
+      3.95,
+      4.4
+    ],
     "click": 4.4,
-    "cursorOut": [4.75, 5.05],
-    "fadeOut": [6.7, 7.5]
+    "cursorOut": [
+      4.75,
+      5.05
+    ],
+    "fadeOut": [
+      6.7,
+      7.5
+    ]
   },
   "colors": {
     "bgInner": "#0c2144",
@@ -30,6 +59,6 @@
     "peakDb": -22,
     "fadeInSec": 0.8,
     "fadeOutSec": 1.2,
-    "clickGain": 0.7
+    "clickPeakDb": -15
   }
 }

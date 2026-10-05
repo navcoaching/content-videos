@@ -22,11 +22,17 @@ const Cursor: React.FC<{ f: number }> = ({ f }) => {
   const y = tw(f, T.cursorIn, 1850, 1662, Easing.bezier(0.45, 0, 0.2, 1));
   const c = fr(T.click);
   const press = f >= c - 3 && f < c + 5 ? 1 - Math.abs(f - c) / 5 : 0;
-  const r = f >= c ? Math.min(1, (f - c) / 18) : -1;
+  const r = f >= c ? (f - c) / 22 : -1; // 0..1 over ~0.7 s after the press
+  const e = r >= 0 ? 1 - Math.pow(1 - Math.min(r, 1), 3) : 0;
   return (
     <>
       {r >= 0 && r < 1 && (
-        <div style={{ position: "absolute", left: x, top: y, width: 40 + r * 70, height: 40 + r * 70, transform: "translate(-50%,-50%)", borderRadius: "50%", border: `3px solid ${C.accent}`, opacity: (1 - r) * 0.85, boxShadow: "0 0 22px rgba(76,197,237,0.45)" }} />
+        <>
+          {/* soft filled circle that blooms and fades */}
+          <div style={{ position: "absolute", left: x, top: y, width: 36 + e * 120, height: 36 + e * 120, transform: "translate(-50%,-50%)", borderRadius: "50%", background: "radial-gradient(circle, rgba(76,197,237,0.55) 0%, rgba(76,197,237,0.28) 55%, rgba(76,197,237,0) 72%)", opacity: 1 - r }} />
+          {/* outline ring expanding outward */}
+          <div style={{ position: "absolute", left: x, top: y, width: 40 + e * 170, height: 40 + e * 170, transform: "translate(-50%,-50%)", borderRadius: "50%", border: `${4 - 2 * e}px solid ${C.accent}`, opacity: (1 - r) * 0.95, boxShadow: "0 0 26px rgba(76,197,237,0.55)" }} />
+        </>
       )}
       <svg viewBox="0 0 24 36" style={{ position: "absolute", left: x, top: y, width: 52, opacity: o, transform: `scale(${1 - press * 0.12})`, transformOrigin: "0 0", filter: "drop-shadow(0 6px 10px rgba(0,0,0,0.55))" }}>
         <path d="M1.5 1.5 L1.5 28 L8 22 L12.5 33 L17 31 L12.6 20.5 L21 20.5 Z" fill="#ffffff" stroke="#0a1628" strokeWidth={2} strokeLinejoin="round" />

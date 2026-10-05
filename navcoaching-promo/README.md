@@ -125,7 +125,7 @@ npx remotion render NavIntro out/intro-silent.mp4 --props='{"withAudio":false}' 
 **التعديل** (كله في `src/outro/config.json`):
 - رابط الموقع: `url` — وأسماء الخدمات: `services` (أربعة عناصر، تُرتّب يمين ثم يسار).
 - المدة: `durationSec` — والتوقيتات بالثواني في `timing` (مثلاً `phoneSpin` لدوران الجوال، `click` للنقرة، `fadeOut` للتلاشي). عند تغيير المدة حرّك `fadeOut` معها وأبقِ ثانيتين على الأقل بين نهاية `url` وبداية `fadeOut`.
-- الصوت: `audio.peakDb` (الذروة، الحالية -22 dBFS)، `fadeInSec`، `fadeOutSec`، و`clickGain` لقوة صوت النقرة.
+- الصوت: `audio.peakDb` (ذروة الموسيقى، الحالية -22 dBFS)، `fadeInSec`، `fadeOutSec`، و`clickPeakDb` لقوة صوت النقرة (الحالية -15 dBFS).
 - الألوان: `colors`.
 
 ```bash
@@ -134,3 +134,9 @@ npx remotion render NavOutro out/outro-audio.mp4  --props='{"withAudio":true}'  
 npx remotion render NavOutro out/outro-silent.mp4 --props='{"withAudio":false}' --codec h264 --crf 14
 npx remotion still  NavOutro render/outro/nav-outro-final-frame.png --frame=180 --image-format=png
 ```
+
+## تركيب الانترو والأوترو على أي مقطع
+```bash
+python3 scripts/wrap.py input.mp4 render/edits/output.mp4
+```
+يحوّل المقطع إلى 1080×1920 بـ 30 إطار/ث مع استيفاء حركة (Motion interpolation) يحافظ على القطعات نظيفة، ثم انتقال ناعم 0.5ث من الانترو، و0.5ث عبر السواد إلى الأوترو. صوت المقطع الأصلي يُحفظ إن وُجد.
