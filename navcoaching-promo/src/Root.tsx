@@ -7,6 +7,7 @@ import J from "./journey/journey.json";
 import { Tutorial, TUTORIAL_DURATION } from "./tutorial/Tutorial";
 import { Split } from "./split/Split";
 import { DURATION as SPLIT_DURATION } from "./split/data";
+import { Intro, INTRO_DURATION, INTRO_FPS } from "./intro/Intro";
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -41,6 +42,15 @@ export const RemotionRoot: React.FC = () => (
     component={Split}
     durationInFrames={SPLIT_DURATION}
     fps={60}
+    width={1080}
+    height={1920}
+    defaultProps={{ withAudio: false }}
+  />
+  <Composition
+    id="NavIntro"
+    component={Intro}
+    durationInFrames={INTRO_DURATION}
+    fps={INTRO_FPS}
     width={1080}
     height={1920}
     defaultProps={{ withAudio: false }}

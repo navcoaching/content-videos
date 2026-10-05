@@ -1,0 +1,19 @@
+{
+  "fps": 30,
+  "durationSec": 4,
+  "tagline": "تدريب مبني عليك",
+  "logo": "brand/logo-white.webp",
+  "logoWidth": 528,
+  "colors": {
+    "bgInner": "#0d1f3c",
+    "bgMid": "#07142a",
+    "bgOuter": "#040c1b",
+    "accent": "#4cc5ed",
+    "tagline": "#c9d7e8"
+  },
+  "audio": {
+    "peakDb": -22,
+    "fadeInSec": 0.6,
+    "fadeOutSec": 0.8
+  }
+}

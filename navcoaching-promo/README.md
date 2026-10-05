@@ -98,3 +98,21 @@ python3 split/process.py          # قص + تدريج لوني -> public/split/c
 python3 audio/split.py            # الصوت
 npx remotion render NavSplit out/navcoaching-split.mp4 --props='{"withAudio":true}'
 ```
+
+# الانترو (NavIntro) — 4 ثوانٍ عمودي 1080×1920 · 30fps
+
+الملفات: `render/intro/nav-intro-with-sound.mp4` و`render/intro/nav-intro-silent.mp4`.
+المصدر: `src/intro/Intro.tsx` (التحريك) و`src/intro/config.json` (الإعدادات) و`audio/intro.py` (الصوت) — والشعار الأصلي من `public/brand/` بلا أي تعديل.
+
+**التعديل** (كله في `src/intro/config.json`):
+- الجملة: `tagline`. الاسم جزء من صورة الشعار؛ لتغييره بدّل الملف في `logo` (مثلاً `brand/logo-color.webp`) وعدّل `logoWidth`.
+- الألوان: `colors` (الخلفية `bgInner/bgMid/bgOuter`، الإبراز `accent`، لون الجملة `tagline`).
+- المدة: `durationSec` (التوقيتات داخل `Intro.tsx` بالثواني: الشعار 0.4–1.8، الخط 1.8–2.4، الجملة 2.2–3.0).
+- الصوت: `audio.peakDb` (مستوى الذروة، الحالي -22 dBFS) و`fadeInSec` و`fadeOutSec`.
+
+```bash
+python3 audio/intro.py                                    # يعيد توليد الصوت من الإعدادات
+npx remotion render NavIntro out/intro-audio.mp4  --props='{"withAudio":true}'  --codec h264 --crf 14
+npx remotion render NavIntro out/intro-silent.mp4 --props='{"withAudio":false}' --codec h264 --crf 14
+```
+المعاينة الثابتة: `node intro/preview/build.mjs`.
