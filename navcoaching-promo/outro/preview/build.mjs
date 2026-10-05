@@ -20,15 +20,17 @@ body{position:relative;background:radial-gradient(ellipse 85% 50% at 50% 42%, #0
 .screen{width:100%;height:100%;border-radius:46px;overflow:hidden;background:#fff}
 .screen img{width:100%;display:block}
 .svc{position:absolute;left:90px;right:90px;top:1282px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.svc span{display:flex;align-items:center;justify-content:center;gap:12px;height:88px;border-radius:22px;background:rgba(10,24,46,0.72);border:1.5px solid rgba(76,197,237,0.42);color:#eaf2fb;font-weight:500;font-size:38px}
+.svc span{display:flex;align-items:center;justify-content:flex-start;padding:0 36px;gap:16px;height:88px;border-radius:22px;background:rgba(10,24,46,0.72);border:1.5px solid rgba(76,197,237,0.42);color:#eaf2fb;font-weight:500;font-size:38px}
 .svc span i{width:10px;height:10px;border-radius:50%;background:#4cc5ed;flex:none}
 .line{position:absolute;left:50%;top:1532px;width:120px;height:4px;border-radius:4px;background:#4cc5ed;transform:translateX(-50%)}
+.ring{position:absolute;left:760px;top:1662px;width:64px;height:64px;transform:translate(-50%,-50%);border-radius:50%;border:3px solid rgba(76,197,237,0.75);box-shadow:0 0 24px rgba(76,197,237,0.45)}
+.cursor{position:absolute;left:760px;top:1662px;width:52px;filter:drop-shadow(0 6px 10px rgba(0,0,0,0.55))}
 .url{position:absolute;left:0;right:0;top:1566px;text-align:center;direction:ltr;font-weight:500;font-size:68px;letter-spacing:1.5px;color:#eaf2fb}
 </style></head><body><div class="beam"></div><div class="glow"></div><div class="vig"></div>
 <img class="logo" src="${u("public/brand/logo-white.webp")}">
 <div class="phone"><div class="screen"><img src="${u("public/brand/site-home.jpg")}"></div></div>
 <div class="svc">${SERVICES.map((s) => `<span><i></i>${s}</span>`).join("")}</div>
-<div class="line"></div><div class="url">${URL_TEXT}</div></body></html>`;
+<div class="line"></div><div class="url">${URL_TEXT}</div><div class="ring"></div><svg class="cursor" viewBox="0 0 24 36"><path d="M1.5 1.5 L1.5 28 L8 22 L12.5 33 L17 31 L12.6 20.5 L21 20.5 Z" fill="#ffffff" stroke="#0a1628" stroke-width="2" stroke-linejoin="round"/></svg></body></html>`;
 const f = path.join(root, "outro/preview/_p.html");
 fs.writeFileSync(f, html);
 const browser = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome" });
