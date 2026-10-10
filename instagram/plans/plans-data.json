@@ -1,0 +1,2368 @@
+{
+ "gym3": {
+  "D": [
+   {
+    "n": 1,
+    "cls": "a",
+    "title": "علوي",
+    "rows": [
+     [
+      "INCLINE DB PRESS",
+      "Gruq177Psnk",
+      [
+       "صدر علوي",
+       "أكتاف أمامية",
+       "تراي"
+      ],
+      [
+       "chest"
+      ],
+      [
+       "fdelt",
+       "triceps"
+      ],
+      3,
+      "6-12",
+      "MACHINE INCLINE CHEST PRESS",
+      "w:tiWPSwt8_zM"
+     ],
+     [
+      "FLAT DB PRESS",
+      "1V3vpcaxRYQ",
+      [
+       "صدر",
+       "أكتاف أمامية",
+       "تراي"
+      ],
+      [
+       "chest"
+      ],
+      [
+       "fdelt",
+       "triceps"
+      ],
+      3,
+      "6-12",
+      "MACHINE CHEST PRESS",
+      "relql3kwCi8"
+     ],
+     [
+      "LATS PULLDOWN",
+      "w:hnSqbBk15tw",
+      [
+       "لاتس",
+       "باي"
+      ],
+      [
+       "lats"
+      ],
+      [
+       "biceps"
+      ],
+      3,
+      "6-12",
+      "PULL UP",
+      "WLzut1ZxxTY"
+     ],
+     [
+      "SEATED ROW",
+      "w:YKAeU55CkVk",
+      [
+       "لاتس",
+       "رومبويد",
+       "باي",
+       "كتف خلفي"
+      ],
+      [
+       "lats",
+       "rhomb"
+      ],
+      [
+       "biceps",
+       "rdelt"
+      ],
+      3,
+      "6-12",
+      "ONE ARM ROW",
+      "KaCcBqhiXtc"
+     ],
+     [
+      "DB LATERAL RAISE",
+      "JIhbYYA1Q90",
+      [
+       "كتف جانبي"
+      ],
+      [
+       "sdelt"
+      ],
+      [],
+      3,
+      "6-12",
+      "MACHINE LATERAL RAISE",
+      "AydmHFgOn6U"
+     ],
+     [
+      "DB CURL",
+      "YgHnvJQkfhc",
+      [
+       "باي"
+      ],
+      [
+       "biceps"
+      ],
+      [],
+      3,
+      "6-12",
+      "ZIG ZAG BAR CURL",
+      "JMT4HmbJadQ"
+     ]
+    ],
+    "rl": "العدات",
+    "al": "بديل"
+   },
+   {
+    "n": 2,
+    "cls": "b",
+    "title": "سفلي",
+    "rows": [
+     [
+      "SQUAT",
+      "PPmvh7gBTi0",
+      [
+       "أفخاذ أمامية",
+       "قلوتس"
+      ],
+      [
+       "quads"
+      ],
+      [
+       "glutes"
+      ],
+      4,
+      "6-12",
+      "LEG PRESS",
+      "nDh_BlnLCGc"
+     ],
+     [
+      "BARBELL RDL",
+      "5rIqP63yWFg",
+      [
+       "أفخاذ خلفية",
+       "قلوتس"
+      ],
+      [
+       "hams"
+      ],
+      [
+       "glutes"
+      ],
+      3,
+      "6-12",
+      "DB RDL",
+      "u14AwrUcwWw"
+     ],
+     [
+      "LYING LEG CURL",
+      "ANKSmhT0dTk",
+      [
+       "أفخاذ خلفية"
+      ],
+      [
+       "hams"
+      ],
+      [],
+      3,
+      "6-12",
+      "STANDING CABLE LEG CURL",
+      "bkwW1flKchc"
+     ],
+     [
+      "STANDING CALF RAISES",
+      "95itLfMBG40",
+      [
+       "بطات"
+      ],
+      [
+       "calves"
+      ],
+      [],
+      3,
+      "6-12",
+      "LEG PRESS CALF RAISES",
+      "1cvpm--Y-4I"
+     ],
+     [
+      "CABLE CRUNCHES",
+      "dkGwcfo9zto",
+      [
+       "بطن"
+      ],
+      [
+       "abs"
+      ],
+      [],
+      3,
+      "6-12",
+      "CRUNCHES",
+      "eeJ_CYqSoT4"
+     ],
+     [
+      "HANGING LEG RAISES",
+      "2n4UqRIJyk4",
+      [
+       "بطن"
+      ],
+      [
+       "abs"
+      ],
+      [],
+      3,
+      "6-12",
+      "SUPPORTED LEG RAISES",
+      "PpZxg66ftYc"
+     ]
+    ],
+    "rl": "العدات",
+    "al": "بديل"
+   },
+   {
+    "n": 3,
+    "cls": "c",
+    "title": "شامل",
+    "rows": [
+     [
+      "LEG PRESS",
+      "nDh_BlnLCGc",
+      [
+       "أفخاذ أمامية",
+       "قلوتس"
+      ],
+      [
+       "quads"
+      ],
+      [
+       "glutes"
+      ],
+      4,
+      "6-12",
+      "SQUAT",
+      "PPmvh7gBTi0"
+     ],
+     [
+      "HIP THRUST",
+      "PqOnYf6Slkg",
+      [
+       "قلوتس",
+       "أفخاذ خلفية"
+      ],
+      [
+       "glutes"
+      ],
+      [
+       "hams"
+      ],
+      3,
+      "6-12",
+      "MACHINE HIP THRUST",
+      "6jVU_KaQOfw"
+     ],
+     [
+      "SEATED ROW",
+      "w:YKAeU55CkVk",
+      [
+       "لاتس",
+       "رومبويد",
+       "باي",
+       "كتف خلفي"
+      ],
+      [
+       "lats",
+       "rhomb"
+      ],
+      [
+       "biceps",
+       "rdelt"
+      ],
+      3,
+      "6-12",
+      "PULL UP",
+      "WLzut1ZxxTY"
+     ],
+     [
+      "LATS PULLDOWN",
+      "w:hnSqbBk15tw",
+      [
+       "لاتس",
+       "باي"
+      ],
+      [
+       "lats"
+      ],
+      [
+       "biceps"
+      ],
+      3,
+      "6-12",
+      "ONE ARM ROW",
+      "KaCcBqhiXtc"
+     ],
+     [
+      "FLAT DB PRESS",
+      "1V3vpcaxRYQ",
+      [
+       "صدر",
+       "أكتاف أمامية",
+       "تراي"
+      ],
+      [
+       "chest"
+      ],
+      [
+       "fdelt",
+       "triceps"
+      ],
+      3,
+      "6-12",
+      "MACHINE CHEST PRESS",
+      "relql3kwCi8"
+     ],
+     [
+      "TRICEPS PUSHDOWN",
+      "Rc7-euA8FDI",
+      [
+       "تراي"
+      ],
+      [
+       "triceps"
+      ],
+      [],
+      3,
+      "6-12",
+      "OVERHEAD TRICEPS EXTENSION",
+      "7hx0-DZgdl8"
+     ]
+    ],
+    "rl": "العدات",
+    "al": "بديل"
+   }
+  ],
+  "pages": [
+   {
+    "i": 0,
+    "cls": "page light grid cover",
+    "h": "جدول تمرين3 أيام بالنادي",
+    "panels": 0,
+    "text": "جدول مجاني | جدول تمرين | 3 أيام بالنادي | إعداد كوتش ناڤ | navcoaching.com | اليوم | 1 | علوي |  | صدر · ظهر · أكتاف · ذراعين |  | 6 | تمارين | ا"
+   },
+   {
+    "i": 1,
+    "cls": "page light grid dp",
+    "h": "علوي",
+    "panels": 0,
+    "text": "اليوم | 1 | علوي | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | INCLINE DB PRESS | صدر علوي | أكتاف أمامية·تراي | جو"
+   },
+   {
+    "i": 2,
+    "cls": "page light grid dp",
+    "h": "سفلي",
+    "panels": 0,
+    "text": "اليوم | 2 | سفلي | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | SQUAT | أفخاذ أمامية | قلوتس | جولات | 4 | العدات | 6-12 | ب"
+   },
+   {
+    "i": 3,
+    "cls": "page light grid dp",
+    "h": "شامل",
+    "panels": 0,
+    "text": "اليوم | 3 | شامل | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | LEG PRESS | أفخاذ أمامية | قلوتس | جولات | 4 | العدات | 6-"
+   },
+   {
+    "i": 4,
+    "cls": "page light grid ip",
+    "h": "تعليمات مهمة",
+    "panels": 2,
+    "text": "تعليمات مهمة | مجموعة العضلات | مجموع الجولات | صدر - أكتاف أمامية | 9 | أفخاذ أمامية | 8 | أفخاذ خلفية | 9 | لاتس - رومبويد - كتف خلفي | 12"
+   },
+   {
+    "i": 5,
+    "cls": "page light grid ip",
+    "h": "تعليمات مهمة",
+    "panels": 2,
+    "text": "تعليمات مهمة | زيادة الوزن | 1 |  | اختيار الوزن المناسب في الأسبوع الأول حسب RIR وزيادة الوزن مع تقليل الـRIR بشكل اسبوعي. |  | 2 |  | "
+   },
+   {
+    "i": 6,
+    "cls": "page light grid ty",
+    "h": "شكرا لك",
+    "panels": 0,
+    "text": "Nav Coaching | شكرا لك |  | اذا عندكم اي استفسار بخصوص الرياضة او التغذية، تواصلوا معي. |  | ولا عليكم أمر أتمنى منكم مشاركتي تعلي"
+   }
+  ]
+ },
+ "home3": {
+  "D": [
+   {
+    "n": 1,
+    "cls": "a",
+    "title": "علوي",
+    "rows": [
+     [
+      "INCLINE DB PRESS",
+      "Gruq177Psnk",
+      [
+       "صدر علوي",
+       "أكتاف أمامية",
+       "تراي"
+      ],
+      [
+       "chest"
+      ],
+      [
+       "fdelt",
+       "triceps"
+      ],
+      3,
+      "6-12",
+      "MACHINE INCLINE CHEST PRESS",
+      "w:tiWPSwt8_zM"
+     ],
+     [
+      "FLAT DB PRESS",
+      "1V3vpcaxRYQ",
+      [
+       "صدر",
+       "أكتاف أمامية",
+       "تراي"
+      ],
+      [
+       "chest"
+      ],
+      [
+       "fdelt",
+       "triceps"
+      ],
+      3,
+      "6-12",
+      "MACHINE CHEST PRESS",
+      "relql3kwCi8"
+     ],
+     [
+      "LATS PULLDOWN",
+      "w:hnSqbBk15tw",
+      [
+       "لاتس",
+       "باي"
+      ],
+      [
+       "lats"
+      ],
+      [
+       "biceps"
+      ],
+      3,
+      "6-12",
+      "PULL UP",
+      "WLzut1ZxxTY"
+     ],
+     [
+      "SEATED ROW",
+      "w:YKAeU55CkVk",
+      [
+       "لاتس",
+       "رومبويد",
+       "باي",
+       "كتف خلفي"
+      ],
+      [
+       "lats",
+       "rhomb"
+      ],
+      [
+       "biceps",
+       "rdelt"
+      ],
+      3,
+      "6-12",
+      "ONE ARM ROW",
+      "KaCcBqhiXtc"
+     ],
+     [
+      "DB LATERAL RAISE",
+      "JIhbYYA1Q90",
+      [
+       "كتف جانبي"
+      ],
+      [
+       "sdelt"
+      ],
+      [],
+      3,
+      "6-12",
+      "MACHINE LATERAL RAISE",
+      "AydmHFgOn6U"
+     ],
+     [
+      "DB CURL",
+      "YgHnvJQkfhc",
+      [
+       "باي"
+      ],
+      [
+       "biceps"
+      ],
+      [],
+      3,
+      "6-12",
+      "ZIG ZAG BAR CURL",
+      "JMT4HmbJadQ"
+     ]
+    ],
+    "rl": "العدات",
+    "al": "بديل"
+   },
+   {
+    "n": 2,
+    "cls": "b",
+    "title": "سفلي",
+    "rows": [
+     [
+      "SQUAT",
+      "PPmvh7gBTi0",
+      [
+       "أفخاذ أمامية",
+       "قلوتس"
+      ],
+      [
+       "quads"
+      ],
+      [
+       "glutes"
+      ],
+      4,
+      "6-12",
+      "LEG PRESS",
+      "nDh_BlnLCGc"
+     ],
+     [
+      "BARBELL RDL",
+      "5rIqP63yWFg",
+      [
+       "أفخاذ خلفية",
+       "قلوتس"
+      ],
+      [
+       "hams"
+      ],
+      [
+       "glutes"
+      ],
+      3,
+      "6-12",
+      "DB RDL",
+      "u14AwrUcwWw"
+     ],
+     [
+      "LYING LEG CURL",
+      "ANKSmhT0dTk",
+      [
+       "أفخاذ خلفية"
+      ],
+      [
+       "hams"
+      ],
+      [],
+      3,
+      "6-12",
+      "STANDING CABLE LEG CURL",
+      "bkwW1flKchc"
+     ],
+     [
+      "STANDING CALF RAISES",
+      "95itLfMBG40",
+      [
+       "بطات"
+      ],
+      [
+       "calves"
+      ],
+      [],
+      3,
+      "6-12",
+      "LEG PRESS CALF RAISES",
+      "1cvpm--Y-4I"
+     ],
+     [
+      "CABLE CRUNCHES",
+      "dkGwcfo9zto",
+      [
+       "بطن"
+      ],
+      [
+       "abs"
+      ],
+      [],
+      3,
+      "6-12",
+      "CRUNCHES",
+      "eeJ_CYqSoT4"
+     ],
+     [
+      "HANGING LEG RAISES",
+      "2n4UqRIJyk4",
+      [
+       "بطن"
+      ],
+      [
+       "abs"
+      ],
+      [],
+      3,
+      "6-12",
+      "SUPPORTED LEG RAISES",
+      "PpZxg66ftYc"
+     ]
+    ],
+    "rl": "العدات",
+    "al": "بديل"
+   },
+   {
+    "n": 3,
+    "cls": "c",
+    "title": "شامل",
+    "rows": [
+     [
+      "LEG PRESS",
+      "nDh_BlnLCGc",
+      [
+       "أفخاذ أمامية",
+       "قلوتس"
+      ],
+      [
+       "quads"
+      ],
+      [
+       "glutes"
+      ],
+      4,
+      "6-12",
+      "SQUAT",
+      "PPmvh7gBTi0"
+     ],
+     [
+      "HIP THRUST",
+      "PqOnYf6Slkg",
+      [
+       "قلوتس",
+       "أفخاذ خلفية"
+      ],
+      [
+       "glutes"
+      ],
+      [
+       "hams"
+      ],
+      3,
+      "6-12",
+      "MACHINE HIP THRUST",
+      "6jVU_KaQOfw"
+     ],
+     [
+      "SEATED ROW",
+      "w:YKAeU55CkVk",
+      [
+       "لاتس",
+       "رومبويد",
+       "باي",
+       "كتف خلفي"
+      ],
+      [
+       "lats",
+       "rhomb"
+      ],
+      [
+       "biceps",
+       "rdelt"
+      ],
+      3,
+      "6-12",
+      "PULL UP",
+      "WLzut1ZxxTY"
+     ],
+     [
+      "LATS PULLDOWN",
+      "w:hnSqbBk15tw",
+      [
+       "لاتس",
+       "باي"
+      ],
+      [
+       "lats"
+      ],
+      [
+       "biceps"
+      ],
+      3,
+      "6-12",
+      "ONE ARM ROW",
+      "KaCcBqhiXtc"
+     ],
+     [
+      "FLAT DB PRESS",
+      "1V3vpcaxRYQ",
+      [
+       "صدر",
+       "أكتاف أمامية",
+       "تراي"
+      ],
+      [
+       "chest"
+      ],
+      [
+       "fdelt",
+       "triceps"
+      ],
+      3,
+      "6-12",
+      "MACHINE CHEST PRESS",
+      "relql3kwCi8"
+     ],
+     [
+      "TRICEPS PUSHDOWN",
+      "Rc7-euA8FDI",
+      [
+       "تراي"
+      ],
+      [
+       "triceps"
+      ],
+      [],
+      3,
+      "6-12",
+      "OVERHEAD TRICEPS EXTENSION",
+      "7hx0-DZgdl8"
+     ]
+    ],
+    "rl": "العدات",
+    "al": "بديل"
+   }
+  ],
+  "pages": [
+   {
+    "i": 0,
+    "cls": "page light grid cover",
+    "h": "جدول تمرين3 أيام بالمنزل",
+    "panels": 0,
+    "text": "جدول مجاني | جدول تمرين | 3 أيام بالمنزل | إعداد كوتش ناڤ | navcoaching.com | اليوم | 1 | علوي |  | صدر · ظهر · أكتاف · ذراعين |  | 6 | تمارين | ا"
+   },
+   {
+    "i": 1,
+    "cls": "page light grid dp",
+    "h": "علوي",
+    "panels": 0,
+    "text": "اليوم | 1 | علوي | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | INCLINE DB PRESS | صدر علوي | أكتاف أمامية·تراي | جو"
+   },
+   {
+    "i": 2,
+    "cls": "page light grid dp",
+    "h": "سفلي",
+    "panels": 0,
+    "text": "اليوم | 2 | سفلي | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | SQUAT | أفخاذ أمامية | قلوتس | جولات | 4 | العدات | 6-12 | ب"
+   },
+   {
+    "i": 3,
+    "cls": "page light grid dp",
+    "h": "شامل",
+    "panels": 0,
+    "text": "اليوم | 3 | شامل | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | LEG PRESS | أفخاذ أمامية | قلوتس | جولات | 4 | العدات | 6-"
+   },
+   {
+    "i": 4,
+    "cls": "page light grid ip eq",
+    "h": "تعليمات مهمة",
+    "panels": 0,
+    "text": "تعليمات مهمة | الأدوات |  | لأفضل تطور من تمارين المنزل راح نحتاج شنطة اوزان لا تقل عن 30 كيلو + بنش ( اختياري ) |  | 30+ kg | شنطة "
+   },
+   {
+    "i": 5,
+    "cls": "page light grid ip",
+    "h": "تعليمات مهمة",
+    "panels": 2,
+    "text": "تعليمات مهمة | مجموعة العضلات | مجموع الجولات | صدر - أكتاف أمامية | 9 | أفخاذ أمامية | 8 | أفخاذ خلفية | 9 | لاتس - رومبويد - كتف خلفي | 12"
+   },
+   {
+    "i": 6,
+    "cls": "page light grid ip",
+    "h": "تعليمات مهمة",
+    "panels": 2,
+    "text": "تعليمات مهمة | زيادة الوزن | 1 |  | اختيار الوزن المناسب في الأسبوع الأول حسب RIR وزيادة الوزن مع تقليل الـRIR بشكل اسبوعي. |  | 2 |  | "
+   },
+   {
+    "i": 7,
+    "cls": "page light grid ty",
+    "h": "شكرا لك",
+    "panels": 0,
+    "text": "Nav Coaching | شكرا لك |  | اذا عندكم اي استفسار بخصوص الرياضة او التغذية، تواصلوا معي. |  | ولا عليكم أمر أتمنى منكم مشاركتي تعلي"
+   }
+  ]
+ },
+ "4days": {
+  "D": [
+   {
+    "n": 1,
+    "cls": "a",
+    "title": "علوي A",
+    "rows": [
+     [
+      "BARBELL BENCH PRESS",
+      "w:hWbUlkb5Ms4",
+      [
+       "صدر",
+       "أكتاف أمامية",
+       "تراي"
+      ],
+      [
+       "chest"
+      ],
+      [
+       "fdelt",
+       "triceps"
+      ],
+      3,
+      "6-10",
+      "DB FLOOR PRESS",
+      "w:Bx4QPVH-J1g"
+     ],
+     [
+      "SEATED ROW",
+      "w:YKAeU55CkVk",
+      [
+       "لاتس",
+       "رومبويد",
+       "باي",
+       "كتف خلفي"
+      ],
+      [
+       "lats",
+       "rhomb"
+      ],
+      [
+       "biceps",
+       "rdelt"
+      ],
+      3,
+      "8-12",
+      "ONE ARM DB ROW",
+      "KaCcBqhiXtc"
+     ],
+     [
+      "MACHINE SHOULDER PRESS",
+      "w:3R14MnZbcpw",
+      [
+       "أكتاف أمامية",
+       "تراي"
+      ],
+      [
+       "fdelt"
+      ],
+      [
+       "triceps"
+      ],
+      3,
+      "8-12",
+      "SEATED DB SHOULDER PRESS",
+      "w:rO_iEImwHyo"
+     ],
+     [
+      "LATS PULLDOWN",
+      "w:hnSqbBk15tw",
+      [
+       "لاتس",
+       "باي"
+      ],
+      [
+       "lats"
+      ],
+      [
+       "biceps"
+      ],
+      3,
+      "8-12",
+      "DB PULLOVER",
+      "w:jQjWlIwG4sI"
+     ],
+     [
+      "CABLE LATERAL RAISE",
+      "w:Z5FA9aq3L6A",
+      [
+       "كتف جانبي"
+      ],
+      [
+       "sdelt"
+      ],
+      [],
+      3,
+      "10-15",
+      "DB LATERAL RAISE",
+      "JIhbYYA1Q90"
+     ],
+     [
+      "TRICEPS PUSHDOWN",
+      "Rc7-euA8FDI",
+      [
+       "تراي"
+      ],
+      [
+       "triceps"
+      ],
+      [],
+      3,
+      "10-15",
+      "OVERHEAD DB TRICEPS EXTENSION",
+      "w:2jl4M0Dnq4c"
+     ]
+    ],
+    "rl": "العدات",
+    "al": "بديل المنزل"
+   },
+   {
+    "n": 2,
+    "cls": "b",
+    "title": "سفلي A",
+    "rows": [
+     [
+      "SQUAT",
+      "PPmvh7gBTi0",
+      [
+       "أفخاذ أمامية",
+       "قلوتس"
+      ],
+      [
+       "quads"
+      ],
+      [
+       "glutes"
+      ],
+      3,
+      "6-10",
+      "DB GOBLET SQUAT",
+      "w:gCESNsDsbqk"
+     ],
+     [
+      "BARBELL RDL",
+      "5rIqP63yWFg",
+      [
+       "أفخاذ خلفية",
+       "قلوتس"
+      ],
+      [
+       "hams"
+      ],
+      [
+       "glutes"
+      ],
+      3,
+      "6-10",
+      "DB RDL",
+      "u14AwrUcwWw"
+     ],
+     [
+      "LEG PRESS",
+      "nDh_BlnLCGc",
+      [
+       "أفخاذ أمامية",
+       "قلوتس"
+      ],
+      [
+       "quads"
+      ],
+      [
+       "glutes"
+      ],
+      3,
+      "10-15",
+      "DB BULGARIAN SPLIT SQUAT",
+      "w:SkNsa3eBwLA"
+     ],
+     [
+      "LYING LEG CURL",
+      "ANKSmhT0dTk",
+      [
+       "أفخاذ خلفية"
+      ],
+      [
+       "hams"
+      ],
+      [],
+      3,
+      "10-15",
+      "SLIDING LEG CURL",
+      "w:kkkTfzi2gj4"
+     ],
+     [
+      "STANDING CALF RAISES",
+      "95itLfMBG40",
+      [
+       "بطات"
+      ],
+      [
+       "calves"
+      ],
+      [],
+      3,
+      "10-15",
+      "SINGLE LEG CALF RAISE",
+      "w:ORT4oJ_R8Qs"
+     ],
+     [
+      "CABLE CRUNCHES",
+      "dkGwcfo9zto",
+      [
+       "بطن"
+      ],
+      [
+       "abs"
+      ],
+      [],
+      3,
+      "10-15",
+      "CRUNCHES",
+      "eeJ_CYqSoT4"
+     ]
+    ],
+    "rl": "العدات",
+    "al": "بديل المنزل"
+   },
+   {
+    "n": 3,
+    "cls": "c",
+    "title": "علوي B",
+    "rows": [
+     [
+      "MACHINE INCLINE CHEST PRESS",
+      "w:tiWPSwt8_zM",
+      [
+       "صدر علوي",
+       "أكتاف أمامية",
+       "تراي"
+      ],
+      [
+       "chest"
+      ],
+      [
+       "fdelt",
+       "triceps"
+      ],
+      3,
+      "8-12",
+      "PUSH UP",
+      "w:IODxDxX7oi4"
+     ],
+     [
+      "ASSISTED PULL UP",
+      "WLzut1ZxxTY",
+      [
+       "لاتس",
+       "باي"
+      ],
+      [
+       "lats"
+      ],
+      [
+       "biceps"
+      ],
+      3,
+      "6-12",
+      "DB CHEST SUPPORTED ROW",
+      "w:tZUYS7X50so"
+     ],
+     [
+      "MACHINE CHEST PRESS",
+      "relql3kwCi8",
+      [
+       "صدر",
+       "أكتاف أمامية",
+       "تراي"
+      ],
+      [
+       "chest"
+      ],
+      [
+       "fdelt",
+       "triceps"
+      ],
+      3,
+      "8-12",
+      "FLAT DB PRESS",
+      "1V3vpcaxRYQ"
+     ],
+     [
+      "CABLE FACE PULL",
+      "w:3pToT5_DUiY",
+      [
+       "كتف خلفي",
+       "ترابيس"
+      ],
+      [
+       "rdelt"
+      ],
+      [
+       "rhomb"
+      ],
+      3,
+      "12-15",
+      "DB REVERSE FLY",
+      "w:d1QEddtoOq0"
+     ],
+     [
+      "MACHINE LATERAL RAISE",
+      "AydmHFgOn6U",
+      [
+       "كتف جانبي"
+      ],
+      [
+       "sdelt"
+      ],
+      [],
+      3,
+      "10-15",
+      "DB LATERAL RAISE",
+      "JIhbYYA1Q90"
+     ],
+     [
+      "CABLE CURL",
+      "w:2MUEL4nL6hA",
+      [
+       "باي"
+      ],
+      [
+       "biceps"
+      ],
+      [],
+      3,
+      "10-15",
+      "DB CURL",
+      "YgHnvJQkfhc"
+     ]
+    ],
+    "rl": "العدات",
+    "al": "بديل المنزل"
+   },
+   {
+    "n": 4,
+    "cls": "d",
+    "title": "سفلي B",
+    "rows": [
+     [
+      "HIP THRUST",
+      "PqOnYf6Slkg",
+      [
+       "قلوتس",
+       "أفخاذ خلفية"
+      ],
+      [
+       "glutes"
+      ],
+      [
+       "hams"
+      ],
+      3,
+      "8-12",
+      "DB HIP THRUST",
+      "w:29OfN4ztW_g"
+     ],
+     [
+      "LEG EXTENSION",
+      "w:ljO4jkwv8wQ",
+      [
+       "أفخاذ أمامية"
+      ],
+      [
+       "quads"
+      ],
+      [],
+      3,
+      "10-15",
+      "DB REVERSE LUNGE",
+      "w:RZKXLMxPF_I"
+     ],
+     [
+      "SEATED LEG CURL",
+      "w:Orxowest56U",
+      [
+       "أفخاذ خلفية"
+      ],
+      [
+       "hams"
+      ],
+      [],
+      3,
+      "10-15",
+      "DB SINGLE LEG RDL",
+      "w:lI8-igvsnVQ"
+     ],
+     [
+      "HIP ABDUCTION MACHINE",
+      "w:OjI5OpV6IWA",
+      [
+       "قلوتس جانبي"
+      ],
+      [
+       "gmed"
+      ],
+      [],
+      3,
+      "12-20",
+      "SIDE LYING HIP ABDUCTION",
+      "w:-rDiQXjeXO0"
+     ],
+     [
+      "LEG PRESS CALF RAISES",
+      "1cvpm--Y-4I",
+      [
+       "بطات"
+      ],
+      [
+       "calves"
+      ],
+      [],
+      3,
+      "10-15",
+      "SINGLE LEG CALF RAISE",
+      "w:ORT4oJ_R8Qs"
+     ],
+     [
+      "HANGING LEG RAISES",
+      "2n4UqRIJyk4",
+      [
+       "بطن"
+      ],
+      [
+       "abs"
+      ],
+      [],
+      3,
+      "10-15",
+      "LYING LEG RAISES",
+      "PpZxg66ftYc"
+     ]
+    ],
+    "rl": "العدات",
+    "al": "بديل المنزل"
+   }
+  ],
+  "pages": [
+   {
+    "i": 0,
+    "cls": "page light grid cover",
+    "h": "جدول تمرين4 أيام",
+    "panels": 0,
+    "text": "جدول مجاني | جدول تمرين | 4 أيام | التمرين الأساسي بالنادي · والبديل بالمنزل | إعداد كوتش ناڤ | navcoaching.com | اليوم | 1 | علوي A |  | صد"
+   },
+   {
+    "i": 1,
+    "cls": "page light grid dp",
+    "h": "علوي A",
+    "panels": 0,
+    "text": "اليوم | 1 | علوي A | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | BARBELL BENCH PRESS | صدر | أكتاف أمامية·تراي | جو"
+   },
+   {
+    "i": 2,
+    "cls": "page light grid dp",
+    "h": "سفلي A",
+    "panels": 0,
+    "text": "اليوم | 2 | سفلي A | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | SQUAT | أفخاذ أمامية | قلوتس | جولات | 3 | العدات | 6-10"
+   },
+   {
+    "i": 3,
+    "cls": "page light grid dp",
+    "h": "علوي B",
+    "panels": 0,
+    "text": "اليوم | 3 | علوي B | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | MACHINE INCLINE CHEST PRESS | صدر علوي | أكتاف أ"
+   },
+   {
+    "i": 4,
+    "cls": "page light grid dp",
+    "h": "سفلي B",
+    "panels": 0,
+    "text": "اليوم | 4 | سفلي B | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | HIP THRUST | قلوتس | أفخاذ خلفية | جولات | 3 | العدات | "
+   },
+   {
+    "i": 5,
+    "cls": "page light grid ip",
+    "h": "مبادئ الجدول",
+    "panels": 2,
+    "text": "مبادئ الجدول | مجموعة العضلات | جولات الأسبوع | صدر | 9 | ظهر (لاتس · رومبويد · كتف خلفي) | 12 | أكتاف (أمامية · جانبية) | 13.5 | باي | 7.5 | "
+   },
+   {
+    "i": 6,
+    "cls": "page light grid ip",
+    "h": "جدولك الأسبوعي",
+    "panels": 2,
+    "text": "جدولك الأسبوعي | مثال لتوزيع الأسبوع | السبت | اليوم 1 · علوي A | الأحد | اليوم 2 · سفلي A | الاثنين | راحة | الثلاثاء | اليوم 3 · علوي B | "
+   },
+   {
+    "i": 7,
+    "cls": "page light grid ip",
+    "h": "تعليمات مهمة",
+    "panels": 2,
+    "text": "تعليمات مهمة | زيادة الوزن | 1 |  | اختيار الوزن المناسب في الأسبوع الأول حسب RIR وزيادة الوزن مع تقليل الـRIR بشكل اسبوعي. |  | 2 |  | "
+   },
+   {
+    "i": 8,
+    "cls": "page light grid ip eq",
+    "h": "تعليمات مهمة",
+    "panels": 0,
+    "text": "تعليمات مهمة | الأدوات |  | لأفضل تطور من تمارين المنزل راح نحتاج شنطة اوزان لا تقل عن 30 كيلو + بنش ( اختياري ) |  | 30+ kg | شنطة "
+   },
+   {
+    "i": 9,
+    "cls": "page light grid ty",
+    "h": "شكرا لك",
+    "panels": 0,
+    "text": "Nav Coaching | شكرا لك |  | اذا عندكم اي استفسار بخصوص الرياضة او التغذية، تواصلوا معي. |  | ولا عليكم أمر أتمنى منكم مشاركتي تعلي"
+   }
+  ]
+ },
+ "glutes": {
+  "D": [
+   {
+    "n": 1,
+    "cls": "a",
+    "title": "قلوتس A",
+    "sub": "هيب ثرست · سكوات · هنج · أبدكشن",
+    "rows": [
+     [
+      "HIP THRUST",
+      "PqOnYf6Slkg",
+      [
+       "قلوتس",
+       "أفخاذ خلفية"
+      ],
+      [
+       "glutes"
+      ],
+      [
+       "hams"
+      ],
+      4,
+      "8-12",
+      "DB HIP THRUST",
+      "w:29OfN4ztW_g"
+     ],
+     [
+      "SQUAT",
+      "PPmvh7gBTi0",
+      [
+       "قلوتس",
+       "أفخاذ أمامية"
+      ],
+      [
+       "glutes",
+       "quads"
+      ],
+      [],
+      3,
+      "6-10",
+      "DB GOBLET SQUAT",
+      "w:gCESNsDsbqk"
+     ],
+     [
+      "BARBELL RDL",
+      "5rIqP63yWFg",
+      [
+       "أفخاذ خلفية",
+       "قلوتس"
+      ],
+      [
+       "hams"
+      ],
+      [
+       "glutes"
+      ],
+      3,
+      "8-10",
+      "DB RDL",
+      "u14AwrUcwWw"
+     ],
+     [
+      "HIP ABDUCTION MACHINE",
+      "w:OjI5OpV6IWA",
+      [
+       "قلوتس جانبي"
+      ],
+      [
+       "gmed"
+      ],
+      [],
+      3,
+      "12-20",
+      "SIDE LYING HIP ABDUCTION",
+      "w:-rDiQXjeXO0"
+     ]
+    ],
+    "rl": "العدات",
+    "al": "بديل المنزل"
+   },
+   {
+    "n": 2,
+    "cls": "b",
+    "title": "قلوتس B",
+    "sub": "سبليت سكوات · باك اكستنشن · كيك باك",
+    "rows": [
+     [
+      "BULGARIAN SPLIT SQUAT",
+      "w:SkNsa3eBwLA",
+      [
+       "قلوتس",
+       "أفخاذ أمامية"
+      ],
+      [
+       "glutes",
+       "quads"
+      ],
+      [],
+      3,
+      "8-12",
+      "DB REVERSE LUNGE",
+      "w:RZKXLMxPF_I"
+     ],
+     [
+      "45° BACK EXTENSION",
+      "w:OMb1VFQK9Tk",
+      [
+       "قلوتس",
+       "أفخاذ خلفية",
+       "أسفل الظهر"
+      ],
+      [
+       "glutes"
+      ],
+      [
+       "hams",
+       "lowb"
+      ],
+      3,
+      "10-15",
+      "DB SINGLE LEG RDL",
+      "w:lI8-igvsnVQ"
+     ],
+     [
+      "CABLE KICKBACK",
+      "w:l4zReIOfPCQ",
+      [
+       "قلوتس"
+      ],
+      [
+       "glutes"
+      ],
+      [],
+      3,
+      "12-15",
+      "QUADRUPED KICKBACK",
+      "w:GprFzvlHKmA"
+     ],
+     [
+      "CABLE HIP ABDUCTION",
+      "w:vSqhrbzZb7A",
+      [
+       "قلوتس جانبي"
+      ],
+      [
+       "gmed"
+      ],
+      [],
+      3,
+      "12-20",
+      "SIDE LYING HIP ABDUCTION",
+      "w:-rDiQXjeXO0"
+     ]
+    ],
+    "rl": "العدات",
+    "al": "بديل المنزل"
+   },
+   {
+    "n": 3,
+    "cls": "c",
+    "title": "قلوتس C",
+    "sub": "ليق برس · هيب ثرست · ليق كيرل",
+    "rows": [
+     [
+      "LEG PRESS",
+      "nDh_BlnLCGc",
+      [
+       "قلوتس",
+       "أفخاذ أمامية"
+      ],
+      [
+       "glutes",
+       "quads"
+      ],
+      [],
+      3,
+      "10-15",
+      "DB STEP UP",
+      "w:aKj-6hgiViA"
+     ],
+     [
+      "HIP THRUST",
+      "PqOnYf6Slkg",
+      [
+       "قلوتس",
+       "أفخاذ خلفية"
+      ],
+      [
+       "glutes"
+      ],
+      [
+       "hams"
+      ],
+      3,
+      "10-15",
+      "GLUTE BRIDGE",
+      "w:L9KZfxT654Y"
+     ],
+     [
+      "SEATED LEG CURL",
+      "w:Orxowest56U",
+      [
+       "أفخاذ خلفية"
+      ],
+      [
+       "hams"
+      ],
+      [],
+      3,
+      "10-15",
+      "SLIDING LEG CURL",
+      "w:kkkTfzi2gj4"
+     ],
+     [
+      "HIP ABDUCTION MACHINE",
+      "w:OjI5OpV6IWA",
+      [
+       "قلوتس جانبي"
+      ],
+      [
+       "gmed"
+      ],
+      [],
+      3,
+      "15-20",
+      "SIDE LYING HIP ABDUCTION",
+      "w:-rDiQXjeXO0"
+     ]
+    ],
+    "rl": "العدات",
+    "al": "بديل المنزل"
+   }
+  ],
+  "pages": [
+   {
+    "i": 0,
+    "cls": "page light grid cover",
+    "h": "جدولبناء القلوتس",
+    "panels": 0,
+    "text": "جدول مجاني | جدول | بناء القلوتس | 3 أيام بالأسبوع · التمرين بالنادي والبديل بالمنزل | إعداد كوتش ناڤ | navcoaching.com | اليوم | 1 | قل"
+   },
+   {
+    "i": 1,
+    "cls": "page light grid dp",
+    "h": "قلوتس Aهيب ثرست · سكوات · هنج · أبدكشن",
+    "panels": 0,
+    "text": "اليوم | 1 | قلوتس A | هيب ثرست · سكوات · هنج · أبدكشن | اضغطي على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | HIP THRUST"
+   },
+   {
+    "i": 2,
+    "cls": "page light grid dp",
+    "h": "قلوتس Bسبليت سكوات · باك اكستنشن · كيك باك",
+    "panels": 0,
+    "text": "اليوم | 2 | قلوتس B | سبليت سكوات · باك اكستنشن · كيك باك | اضغطي على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | BULGAR"
+   },
+   {
+    "i": 3,
+    "cls": "page light grid dp",
+    "h": "قلوتس Cليق برس · هيب ثرست · ليق كيرل",
+    "panels": 0,
+    "text": "اليوم | 3 | قلوتس C | ليق برس · هيب ثرست · ليق كيرل | اضغطي على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | LEG PRESS | قل"
+   },
+   {
+    "i": 4,
+    "cls": "page light grid ip",
+    "h": "مبادئ بناء القلوتس",
+    "panels": 2,
+    "text": "مبادئ بناء القلوتس | العضلة | جولات الأسبوع | قلوتس | 23.5 | قلوتس جانبي | 9 | أفخاذ أمامية | 9 | أفخاذ خلفية | 11 | 0 | 5 | 10 | 15 | 20 | 25 | ليش هذي ا"
+   },
+   {
+    "i": 5,
+    "cls": "page light grid ip",
+    "h": "جدولك الأسبوعي",
+    "panels": 2,
+    "text": "جدولك الأسبوعي | مثال لتوزيع الأسبوع | السبت | اليوم 1 · قلوتس A | الأحد | راحة أو جزء علوي | الاثنين | اليوم 2 · قلوتس B | الثلاثاء | راح"
+   },
+   {
+    "i": 6,
+    "cls": "page light grid ip",
+    "h": "تعليمات مهمة",
+    "panels": 2,
+    "text": "تعليمات مهمة | زيادة الوزن | 1 |  | اختيار الوزن المناسب في الأسبوع الأول حسب RIR وزيادة الوزن مع تقليل الـRIR بشكل اسبوعي. |  | 2 |  | "
+   },
+   {
+    "i": 7,
+    "cls": "page light grid ty",
+    "h": "شكرا لك",
+    "panels": 0,
+    "text": "Nav Coaching | شكرا لك |  | اذا عندك اي استفسار بخصوص الرياضة او التغذية، تواصلي معي. |  | ولا عليك أمر أتمنى منك مشاركتي تعليقاتك"
+   }
+  ]
+ },
+ "back": {
+  "D": [
+   {
+    "n": 1,
+    "cls": "a",
+    "lbl": "يوميًا",
+    "title": "روتين يومي",
+    "sub": "5–10 دقائق · كل يوم",
+    "sec": "الروتين اليومي",
+    "rows": [
+     [
+      "CAT CAMEL",
+      "w:UScu7P0yua4",
+      [
+       "أسفل الظهر",
+       "أعلى الظهر"
+      ],
+      [
+       "lowb"
+      ],
+      [
+       "rhomb"
+      ],
+      1,
+      "8-10",
+      "FOAM ROLLER THORACIC EXT.",
+      "w:SQF-0s1CckA"
+     ],
+     [
+      "MCGILL CURL UP",
+      "w:I_drRVYlHbc",
+      [
+       "بطن"
+      ],
+      [
+       "abs"
+      ],
+      [],
+      "5-3-1",
+      "10 ثوانٍ",
+      "DEAD BUG",
+      "w:GbSC02oU3To"
+     ],
+     [
+      "SIDE PLANK",
+      "w:44ND4bOB-T0",
+      [
+       "بطن جانبي",
+       "قلوتس جانبي"
+      ],
+      [
+       "obl"
+      ],
+      [
+       "gmed"
+      ],
+      "5-3-1",
+      "10 ثوانٍ",
+      "SIDE PLANK (KNEES)",
+      "w:CofbfhHCWCY"
+     ],
+     [
+      "BIRD DOG",
+      "w:vM_4Y_-N0ds",
+      [
+       "أسفل الظهر",
+       "قلوتس"
+      ],
+      [
+       "lowb"
+      ],
+      [
+       "glutes"
+      ],
+      "5-3-1",
+      "10 ثوانٍ",
+      "BIRD DOG REGRESSIONS",
+      "w:hjQB8wf_dRc"
+     ]
+    ],
+    "rl": "المطلوب",
+    "al": "بديل / أسهل"
+   },
+   {
+    "n": "A",
+    "cls": "b",
+    "lbl": "تقوية",
+    "title": "تقوية A",
+    "sub": "أعلى الظهر · القلوتس",
+    "sec": "تقوية A",
+    "rows": [
+     [
+      "CHEST SUPPORTED ROW",
+      "w:FU6YQawma2Q",
+      [
+       "رومبويد",
+       "لاتس",
+       "كتف خلفي"
+      ],
+      [
+       "rhomb"
+      ],
+      [
+       "lats",
+       "rdelt"
+      ],
+      3,
+      "12-15",
+      "DB CHEST SUPPORTED ROW",
+      "w:tZUYS7X50so"
+     ],
+     [
+      "CABLE FACE PULL",
+      "w:3pToT5_DUiY",
+      [
+       "كتف خلفي",
+       "ترابيس"
+      ],
+      [
+       "rdelt"
+      ],
+      [
+       "rhomb"
+      ],
+      3,
+      "12-20",
+      "DB REVERSE FLY",
+      "w:d1QEddtoOq0"
+     ],
+     [
+      "LATS PULLDOWN",
+      "w:hnSqbBk15tw",
+      [
+       "لاتس",
+       "باي"
+      ],
+      [
+       "lats"
+      ],
+      [
+       "biceps"
+      ],
+      3,
+      "12-15",
+      "DB PULLOVER",
+      "w:jQjWlIwG4sI"
+     ],
+     [
+      "INCLINE Y RAISE",
+      "w:lXp16YozXgk",
+      [
+       "ترابيس سفلي",
+       "كتف خلفي"
+      ],
+      [
+       "rhomb"
+      ],
+      [
+       "rdelt"
+      ],
+      2,
+      "12-15",
+      "PRONE Y T W",
+      "w:QdGTI4Lshg4"
+     ],
+     [
+      "HIP THRUST",
+      "PqOnYf6Slkg",
+      [
+       "قلوتس",
+       "أفخاذ خلفية"
+      ],
+      [
+       "glutes"
+      ],
+      [
+       "hams"
+      ],
+      3,
+      "12-15",
+      "GLUTE BRIDGE",
+      "w:L9KZfxT654Y"
+     ]
+    ],
+    "rl": "المطلوب",
+    "al": "بديل / أسهل"
+   },
+   {
+    "n": "B",
+    "cls": "c",
+    "lbl": "تقوية",
+    "title": "تقوية B",
+    "sub": "الظهر كامل · الرجول",
+    "sec": "تقوية B",
+    "rows": [
+     [
+      "SEATED ROW",
+      "w:YKAeU55CkVk",
+      [
+       "لاتس",
+       "رومبويد",
+       "باي",
+       "كتف خلفي"
+      ],
+      [
+       "lats",
+       "rhomb"
+      ],
+      [
+       "biceps",
+       "rdelt"
+      ],
+      3,
+      "12-15",
+      "ONE ARM DB ROW",
+      "KaCcBqhiXtc"
+     ],
+     [
+      "45° BACK EXTENSION",
+      "w:OMb1VFQK9Tk",
+      [
+       "أسفل الظهر",
+       "قلوتس",
+       "أفخاذ خلفية"
+      ],
+      [
+       "lowb"
+      ],
+      [
+       "glutes",
+       "hams"
+      ],
+      2,
+      "10-15",
+      "PRONE BACK EXTENSION",
+      "w:cIYeKqLqVVs"
+     ],
+     [
+      "DB RDL",
+      "u14AwrUcwWw",
+      [
+       "أفخاذ خلفية",
+       "قلوتس",
+       "أسفل الظهر"
+      ],
+      [
+       "hams"
+      ],
+      [
+       "glutes",
+       "lowb"
+      ],
+      2,
+      "12-15",
+      "GLUTE BRIDGE",
+      "w:L9KZfxT654Y"
+     ],
+     [
+      "REVERSE PEC DECK",
+      "w:dC7jhEk-29A",
+      [
+       "كتف خلفي",
+       "ترابيس"
+      ],
+      [
+       "rdelt"
+      ],
+      [
+       "rhomb"
+      ],
+      3,
+      "12-20",
+      "DB REVERSE FLY",
+      "w:d1QEddtoOq0"
+     ],
+     [
+      "GOBLET BOX SQUAT",
+      "w:mIJub2k6YNg",
+      [
+       "أفخاذ أمامية",
+       "قلوتس"
+      ],
+      [
+       "quads"
+      ],
+      [
+       "glutes"
+      ],
+      3,
+      "10-15",
+      "BODYWEIGHT BOX SQUAT",
+      "w:7LpLZOdz68A"
+     ]
+    ],
+    "rl": "المطلوب",
+    "al": "بديل / أسهل"
+   }
+  ],
+  "pages": [
+   {
+    "i": 0,
+    "cls": "page light grid cover",
+    "h": "جدول تخفيفألم الظهر",
+    "panels": 0,
+    "text": "جدول مجاني | جدول تخفيف | ألم الظهر | أعلى الظهر (التحدّب) وأسفل الظهر · نادي أو منزل | إعداد كوتش ناڤ | navcoaching.com | يوميًا | 1 | "
+   },
+   {
+    "i": 1,
+    "cls": "page light grid dp",
+    "h": "روتين يومي5–10 دقائق · كل يوم",
+    "panels": 0,
+    "text": "يوميًا | 1 | روتين يومي | 5–10 دقائق · كل يوم | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | CAT CAMEL | أسفل الظه"
+   },
+   {
+    "i": 2,
+    "cls": "page light grid dp",
+    "h": "تقوية Aأعلى الظهر · القلوتس",
+    "panels": 0,
+    "text": "تقوية | A | تقوية A | أعلى الظهر · القلوتس | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | CHEST SUPPORTED ROW | رو"
+   },
+   {
+    "i": 3,
+    "cls": "page light grid dp",
+    "h": "تقوية Bالظهر كامل · الرجول",
+    "panels": 0,
+    "text": "تقوية | B | تقوية B | الظهر كامل · الرجول | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | SEATED ROW | لاتس | رومبويد"
+   },
+   {
+    "i": 4,
+    "cls": "page light grid ip",
+    "h": "قبل ما تبدأ",
+    "panels": 2,
+    "text": "قبل ما تبدأ | راجعوا طبيب أو أخصائي علاج طبيعي أولًا إذا: | علامات تحتاج تقييم قبل التمرين | الألم بدأ بعد حادث أو سقوط. | ألم ي"
+   },
+   {
+    "i": 5,
+    "cls": "page light grid ip",
+    "h": "طريقة التنفيذ",
+    "panels": 2,
+    "text": "طريقة التنفيذ | مثال لتوزيع الأسبوع | السبت | روتين يومي | تقوية A | الأحد | روتين يومي | الاثنين | روتين يومي | تقوية B | الثلاثاء | روتين يو"
+   },
+   {
+    "i": 6,
+    "cls": "page light grid ty",
+    "h": "شكرا لك",
+    "panels": 0,
+    "text": "Nav Coaching | شكرا لك |  | اذا عندكم اي استفسار بخصوص الرياضة او التغذية، تواصلوا معي. |  | ولا عليكم أمر أتمنى منكم مشاركتي تعلي"
+   }
+  ]
+ },
+ "flex": {
+  "D": [
+   {
+    "n": 1,
+    "cls": "a",
+    "title": "الحوض",
+    "sub": "مثنيات الورك · الأرداف · الفخذ الداخلي",
+    "rows": [
+     [
+      "HALF KNEELING HIP FLEXOR STRETCH",
+      "w:gqoPYLUgP48",
+      [
+       "مثنيات الورك",
+       "أفخاذ أمامية"
+      ],
+      [
+       "hflex"
+      ],
+      [],
+      2,
+      "45 ثانية<br>لكل جهة",
+      "STANDING HIP FLEXOR STRETCH",
+      "w:ljCDEb_MIto"
+     ],
+     [
+      "90/90 HIP SWITCH",
+      "w:t4Zz6-aG8Iw",
+      [
+       "دوّارات الورك",
+       "قلوتس",
+       "فخذ داخلي"
+      ],
+      [
+       "glutes"
+      ],
+      [
+       "add"
+      ],
+      2,
+      "8 تبديلات",
+      "SEATED HIP ROTATION",
+      "w:WLMSzXQTVrA"
+     ],
+     [
+      "PIGEON STRETCH",
+      "w:e99cdZ_Nl3I",
+      [
+       "قلوتس",
+       "دوّارات الورك"
+      ],
+      [
+       "glutes"
+      ],
+      [],
+      2,
+      "45 ثانية<br>لكل جهة",
+      "LYING FIGURE-4 STRETCH",
+      "w:nj1-GzbAauI"
+     ],
+     [
+      "FROG STRETCH",
+      "w:orMZYFWo9P0",
+      [
+       "فخذ داخلي",
+       "الحوض"
+      ],
+      [
+       "add"
+      ],
+      [],
+      3,
+      "50 ثانية",
+      "BUTTERFLY STRETCH",
+      "w:aaQVOFRDvRo"
+     ],
+     [
+      "DEEP SQUAT HOLD (GOBLET)",
+      "w:ShvTpCsgTiw",
+      [
+       "قلوتس",
+       "حوض",
+       "كاحل وبطات"
+      ],
+      [
+       "glutes"
+      ],
+      [
+       "add",
+       "calves"
+      ],
+      2,
+      "40 ثانية",
+      "SUPPORTED DEEP SQUAT HOLD",
+      "w:uQbUORRwzqk"
+     ],
+     [
+      "COSSACK SQUAT",
+      "w:nLNqEQ4B6XI",
+      [
+       "فخذ داخلي",
+       "قلوتس"
+      ],
+      [
+       "add"
+      ],
+      [
+       "glutes"
+      ],
+      2,
+      "6-8 تكرارات<br>لكل جهة",
+      "SIDE LUNGE ADDUCTOR STRETCH",
+      "w:lmVhur0mHkY"
+     ]
+    ]
+   },
+   {
+    "n": 2,
+    "cls": "b",
+    "title": "الظهر",
+    "sub": "أسفل الظهر · أعلى الظهر · الصدر · الأكتاف",
+    "rows": [
+     [
+      "CAT CAMEL",
+      "w:UScu7P0yua4",
+      [
+       "أسفل الظهر",
+       "أعلى الظهر"
+      ],
+      [
+       "lowb"
+      ],
+      [
+       "rhomb"
+      ],
+      2,
+      "8-10 تكرارات",
+      "SEATED CAT COW",
+      "w:ab40Gphamag"
+     ],
+     [
+      "THORACIC EXTENSION (FOAM ROLLER)",
+      "w:SQF-0s1CckA",
+      [
+       "أعلى الظهر",
+       "ترابيس"
+      ],
+      [
+       "rhomb"
+      ],
+      [
+       "lats"
+      ],
+      2,
+      "40 ثانية",
+      "THORACIC EXTENSION OVER CHAIR",
+      "w:SvDHk_ar8FA"
+     ],
+     [
+      "THREAD THE NEEDLE",
+      "w:blBC6222kuU",
+      [
+       "أعلى الظهر",
+       "كتف خلفي"
+      ],
+      [
+       "rhomb"
+      ],
+      [
+       "rdelt"
+      ],
+      2,
+      "8 تكرارات<br>لكل جهة",
+      "SEATED THORACIC ROTATION",
+      "w:QwsdhRTdqqs"
+     ],
+     [
+      "CHILD'S POSE WITH SIDE REACH",
+      "w:uGWsHEXSg4U",
+      [
+       "لاتس",
+       "أسفل الظهر"
+      ],
+      [
+       "lats"
+      ],
+      [
+       "lowb"
+      ],
+      2,
+      "40 ثانية<br>لكل جهة",
+      "STANDING WALL LAT STRETCH",
+      "w:JUglskfkdgQ"
+     ],
+     [
+      "DOORWAY PEC STRETCH",
+      "w:CEQMx4zFwYs",
+      [
+       "صدر",
+       "أكتاف أمامية"
+      ],
+      [
+       "chest"
+      ],
+      [
+       "fdelt"
+      ],
+      3,
+      "45 ثانية<br>لكل جهة",
+      "WALL PEC STRETCH",
+      "w:40BBXdyJdak"
+     ],
+     [
+      "WALL SLIDES",
+      "w:tWDGEyMWv10",
+      [
+       "ترابيس سفلي",
+       "كتف"
+      ],
+      [
+       "rhomb"
+      ],
+      [
+       "sdelt"
+      ],
+      2,
+      "8-10 تكرارات",
+      "ARM CIRCLES",
+      "w:ndmSvkEdNQQ"
+     ]
+    ]
+   },
+   {
+    "n": 3,
+    "cls": "c",
+    "title": "شامل",
+    "sub": "الورك · الأرجل · الظهر · الصدر",
+    "rows": [
+     [
+      "WORLD'S GREATEST STRETCH",
+      "w:-CiWQ2IvY34",
+      [
+       "مثنيات الورك",
+       "أفخاذ خلفية",
+       "أعلى الظهر"
+      ],
+      [
+       "hflex"
+      ],
+      [
+       "hams",
+       "rhomb"
+      ],
+      2,
+      "5 تكرارات<br>لكل جهة",
+      "LUNGE WITH ROTATION",
+      "w:Mwkh9MWbF04"
+     ],
+     [
+      "HAMSTRING STRETCH (STRAP)",
+      "w:Il1L75v6gq0",
+      [
+       "أفخاذ خلفية"
+      ],
+      [
+       "hams"
+      ],
+      [],
+      3,
+      "45 ثانية<br>لكل جهة",
+      "SEATED HAMSTRING STRETCH",
+      "w:aJvfeuu71gw"
+     ],
+     [
+      "WALL CALF STRETCH",
+      "w:mtVqe4CR_60",
+      [
+       "بطات"
+      ],
+      [
+       "calves"
+      ],
+      [],
+      3,
+      "45 ثانية<br>لكل جهة",
+      "KNEE TO WALL ANKLE MOBILITY",
+      "w:ElrpduJn92Y"
+     ],
+     [
+      "COUCH STRETCH",
+      "w:d9pOjXCKGN8",
+      [
+       "مثنيات الورك",
+       "أفخاذ أمامية"
+      ],
+      [
+       "hflex"
+      ],
+      [],
+      2,
+      "45 ثانية<br>لكل جهة",
+      "STANDING QUAD STRETCH",
+      "w:aNXGOpP37CY"
+     ],
+     [
+      "SUPINE SPINAL TWIST",
+      "w:mNdJti7ZwKI",
+      [
+       "جانبي البطن",
+       "أسفل الظهر"
+      ],
+      [
+       "obl"
+      ],
+      [
+       "lowb"
+      ],
+      2,
+      "45 ثانية<br>لكل جهة",
+      "SEATED SPINAL TWIST",
+      "w:6URMDkf2Uxk"
+     ],
+     [
+      "OPEN BOOK",
+      "w:peeW19ofFUg",
+      [
+       "أعلى الظهر",
+       "صدر"
+      ],
+      [
+       "rhomb"
+      ],
+      [
+       "chest"
+      ],
+      2,
+      "8 تكرارات<br>لكل جهة",
+      "SEATED THORACIC ROTATION",
+      "w:QwsdhRTdqqs"
+     ]
+    ]
+   }
+  ],
+  "pages": [
+   {
+    "i": 0,
+    "cls": "page light grid cover",
+    "h": "جدول زيادةالمرونة",
+    "panels": 0,
+    "text": "جدول مجاني | جدول زيادة | المرونة | الحوض · الظهر · الأكتاف · الأرجل — من المنزل | إعداد كوتش ناڤ | navcoaching.com | اليوم | 1 | الحوض | "
+   },
+   {
+    "i": 1,
+    "cls": "page light grid dp",
+    "h": "الحوضمثنيات الورك · الأرداف · الفخذ الداخلي",
+    "panels": 0,
+    "text": "اليوم | 1 | الحوض | مثنيات الورك · الأرداف · الفخذ الداخلي | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | HALF K"
+   },
+   {
+    "i": 2,
+    "cls": "page light grid dp",
+    "h": "الظهرأسفل الظهر · أعلى الظهر · الصدر · الأكتاف",
+    "panels": 0,
+    "text": "اليوم | 2 | الظهر | أسفل الظهر · أعلى الظهر · الصدر · الأكتاف | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | CAT"
+   },
+   {
+    "i": 3,
+    "cls": "page light grid dp",
+    "h": "شاملالورك · الأرجل · الظهر · الصدر",
+    "panels": 0,
+    "text": "اليوم | 3 | شامل | الورك · الأرجل · الظهر · الصدر | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | WORLD'S GREATES"
+   },
+   {
+    "i": 4,
+    "cls": "page light grid ip",
+    "h": "مبادئ الجدول",
+    "panels": 2,
+    "text": "مبادئ الجدول | المنطقة | دقائق التمدد أسبوعيًا | مثنيات الورك | 8 | قلوتس ودوّارات الورك | 6.3 | الفخذ الداخلي | 5.7 | الأفخاذ الخلفية | 5.5"
+   },
+   {
+    "i": 5,
+    "cls": "page light grid ip",
+    "h": "طريقة التنفيذ",
+    "panels": 2,
+    "text": "طريقة التنفيذ | مثال لتوزيع الأسبوع | السبت | اليوم 1 · الحوض | الأحد | راحة | الاثنين | اليوم 2 · الظهر | الثلاثاء | راحة | الأربعاء | اليوم "
+   },
+   {
+    "i": 6,
+    "cls": "page light grid ip",
+    "h": "قبل ما تبدأ",
+    "panels": 2,
+    "text": "قبل ما تبدأ | وقّفوا التمرين واستشيروا مختص إذا: | علامات تحتاج انتباه | ألم حاد، أو وخز وتنميل، أثناء التمدد. | ألم يستمر أكثر "
+   },
+   {
+    "i": 7,
+    "cls": "page light grid ty",
+    "h": "شكرا لك",
+    "panels": 0,
+    "text": "Nav Coaching | شكرا لك |  | اذا عندكم اي استفسار بخصوص الرياضة او التغذية، تواصلوا معي. |  | ولا عليكم أمر أتمنى منكم مشاركتي تعلي"
+   }
+  ]
+ }
+}

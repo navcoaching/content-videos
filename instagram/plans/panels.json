@@ -1,0 +1,172 @@
+{
+ "gym3": [
+  {
+   "f": "/home/user/content-videos/instagram/plans/gym3/panels/p4-0.png",
+   "title": "تعليمات مهمة",
+   "sub": "مجموعة العضلاتمجموع الجولات"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/gym3/panels/p4-1.png",
+   "title": "تعليمات مهمة",
+   "sub": "ملاحظات مهمة"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/gym3/panels/p5-0.png",
+   "title": "تعليمات مهمة",
+   "sub": "زيادة الوزن"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/gym3/panels/p5-1.png",
+   "title": "تعليمات مهمة",
+   "sub": "ما هو RIR؟"
+  }
+ ],
+ "home3": [
+  {
+   "f": "/home/user/content-videos/instagram/plans/home3/panels/p4-eq.png",
+   "title": "تعليمات مهمة"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/home3/panels/p5-0.png",
+   "title": "تعليمات مهمة",
+   "sub": "مجموعة العضلاتمجموع الجولات"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/home3/panels/p5-1.png",
+   "title": "تعليمات مهمة",
+   "sub": "ملاحظات مهمة"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/home3/panels/p6-0.png",
+   "title": "تعليمات مهمة",
+   "sub": "زيادة الوزن"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/home3/panels/p6-1.png",
+   "title": "تعليمات مهمة",
+   "sub": "ما هو RIR؟"
+  }
+ ],
+ "4days": [
+  {
+   "f": "/home/user/content-videos/instagram/plans/4days/panels/p5-0.png",
+   "title": "مبادئ الجدول",
+   "sub": "مجموعة العضلاتجولات الأسبوع"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/4days/panels/p5-1.png",
+   "title": "مبادئ الجدول",
+   "sub": "كيف بُني الجدول"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/4days/panels/p6-0.png",
+   "title": "جدولك الأسبوعي",
+   "sub": "مثال لتوزيع الأسبوع"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/4days/panels/p6-1.png",
+   "title": "جدولك الأسبوعي",
+   "sub": "النادي أو المنزل"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/4days/panels/p7-0.png",
+   "title": "تعليمات مهمة",
+   "sub": "زيادة الوزن"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/4days/panels/p7-1.png",
+   "title": "تعليمات مهمة",
+   "sub": "ما هو RIR؟"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/4days/panels/p8-eq.png",
+   "title": "تعليمات مهمة"
+  }
+ ],
+ "glutes": [
+  {
+   "f": "/home/user/content-videos/instagram/plans/glutes/panels/p4-0.png",
+   "title": "مبادئ بناء القلوتس",
+   "sub": "العضلةجولات الأسبوع"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/glutes/panels/p4-1.png",
+   "title": "مبادئ بناء القلوتس",
+   "sub": "ليش هذي التمارين؟"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/glutes/panels/p5-0.png",
+   "title": "جدولك الأسبوعي",
+   "sub": "مثال لتوزيع الأسبوع"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/glutes/panels/p5-1.png",
+   "title": "جدولك الأسبوعي",
+   "sub": "طريقة التنفيذ"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/glutes/panels/p6-0.png",
+   "title": "تعليمات مهمة",
+   "sub": "زيادة الوزن"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/glutes/panels/p6-1.png",
+   "title": "تعليمات مهمة",
+   "sub": "ما هو RIR؟"
+  }
+ ],
+ "back": [
+  {
+   "f": "/home/user/content-videos/instagram/plans/back/panels/p4-0.png",
+   "title": "قبل ما تبدأ",
+   "sub": "راجعوا طبيب أو أخصائي علاج طبيعي أولًا إذا:"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/back/panels/p4-1.png",
+   "title": "قبل ما تبدأ",
+   "sub": "مبادئ الجدول"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/back/panels/p5-0.png",
+   "title": "طريقة التنفيذ",
+   "sub": "مثال لتوزيع الأسبوع"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/back/panels/p5-1.png",
+   "title": "طريقة التنفيذ",
+   "sub": "كيف تتقدّمون"
+  }
+ ],
+ "flex": [
+  {
+   "f": "/home/user/content-videos/instagram/plans/flex/panels/p4-0.png",
+   "title": "مبادئ الجدول",
+   "sub": "المنطقةدقائق التمدد أسبوعيًا"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/flex/panels/p4-1.png",
+   "title": "مبادئ الجدول",
+   "sub": "ليش هالتوزيع؟"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/flex/panels/p5-0.png",
+   "title": "طريقة التنفيذ",
+   "sub": "مثال لتوزيع الأسبوع"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/flex/panels/p5-1.png",
+   "title": "طريقة التنفيذ",
+   "sub": "كيف تنفذون الجدول"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/flex/panels/p6-0.png",
+   "title": "قبل ما تبدأ",
+   "sub": "وقّفوا التمرين واستشيروا مختص إذا:"
+  },
+  {
+   "f": "/home/user/content-videos/instagram/plans/flex/panels/p6-1.png",
+   "title": "قبل ما تبدأ",
+   "sub": "ملاحظات مهمة"
+  }
+ ]
+}
