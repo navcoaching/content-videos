@@ -722,6 +722,30 @@ def split_panels(sec_html, first_marker, second_marker):
     return (head + sec_html[a:b] + '</section>', head + sec_html[b:])
 GYM_DAYS  = [dict(d, rl='العدات', al='بديل') for d in parse_days(gym)]
 HOME_DAYS = [dict(d, rl='العدات', al='بديل') for d in parse_days(home)]
+# home version: same muscles/sets/reps as the gym days, but only dumbbells (+ optional bench) and bodyweight
+HOME_SWAP = [
+ [('INCLINE DB PRESS', 'Gruq177Psnk', 'DB FLOOR PRESS', 'w:Bx4QPVH-J1g'),
+  ('DB FLOOR PRESS', 'w:Bx4QPVH-J1g', 'PUSH UP', 'w:IODxDxX7oi4'),
+  ('ONE ARM DB ROW', 'KaCcBqhiXtc', 'DB PULLOVER', 'w:jQjWlIwG4sI'),
+  ('DB CHEST SUPPORTED ROW', 'w:tZUYS7X50so', 'ONE ARM DB ROW', 'KaCcBqhiXtc'),
+  ('DB LATERAL RAISE', 'JIhbYYA1Q90', 'LEANING DB LATERAL RAISE', 'w:qWif_7SOYpQ'),
+  ('DB CURL', 'YgHnvJQkfhc', 'DB HAMMER CURL', 'w:BRVDS6HVR9Q')],
+ [('DB GOBLET SQUAT', 'w:gCESNsDsbqk', 'DB BULGARIAN SPLIT SQUAT', 'w:SkNsa3eBwLA'),
+  ('DB RDL', 'u14AwrUcwWw', 'DB SINGLE LEG RDL', 'w:lI8-igvsnVQ'),
+  ('SLIDING LEG CURL', 'w:kkkTfzi2gj4', 'GLUTE BRIDGE', 'w:L9KZfxT654Y'),
+  ('DB CALF RAISE', 'w:wxwY7GXxL4k', 'SINGLE LEG CALF RAISE', 'w:ORT4oJ_R8Qs'),
+  ('CRUNCHES', 'eeJ_CYqSoT4', 'DEAD BUG', 'w:GbSC02oU3To'),
+  ('LYING LEG RAISES', 'PpZxg66ftYc', 'REVERSE CRUNCH', 'w:lmSP-c1X_iY')],
+ [('DB BULGARIAN SPLIT SQUAT', 'w:SkNsa3eBwLA', 'DB REVERSE LUNGE', 'w:RZKXLMxPF_I'),
+  ('DB HIP THRUST', 'w:29OfN4ztW_g', 'GLUTE BRIDGE', 'w:L9KZfxT654Y'),
+  ('DB CHEST SUPPORTED ROW', 'w:tZUYS7X50so', 'ONE ARM DB ROW', 'KaCcBqhiXtc'),
+  ('ONE ARM DB ROW', 'KaCcBqhiXtc', 'DB PULLOVER', 'w:jQjWlIwG4sI'),
+  ('DB FLOOR PRESS', 'w:Bx4QPVH-J1g', 'PUSH UP', 'w:IODxDxX7oi4'),
+  ('OVERHEAD DB TRICEPS EXTENSION', 'w:2jl4M0Dnq4c', 'BENCH DIPS', 'w:0326dy_-CzM')]]
+for _d, _sw in zip(HOME_DAYS, HOME_SWAP):
+    assert len(_d['rows']) == len(_sw)
+    for _r, (_n, _v, _an, _av) in zip(_d['rows'], _sw):
+        _r[0], _r[1], _r[7], _r[8] = _n, _v, _an, _av
 GYM_CARDS = [{'n': 1, 't': 'علوي', 'p': 'صدر · ظهر · أكتاف · ذراعين', 'k': 6},
              {'n': 2, 't': 'سفلي', 'p': 'أفخاذ · قلوتس · بطات · بطن', 'k': 6},
              {'n': 3, 't': 'شامل', 'p': 'الجسم كامل', 'k': 6}]
@@ -732,6 +756,7 @@ RIR_GYM  = section(gym,  '<!-- ================= PAGE 6 : INSTRUCTIONS 2')
 RIR_HOME = section(home, '<!-- ================= PAGE 6 : INSTRUCTIONS 2')
 EQ = EQUIP_PAGE
 gsn = sets_notes_pages(gym); hsn = sets_notes_pages(home)
+hsn = hsn.replace('سكوات بالبار', 'قوبلت سكوات بالدمبل'); RIR_HOME = RIR_HOME.replace('سكوات بالبار', 'قوبلت سكوات بالدمبل')
 build_portrait('prog-gym3-portrait.html', 'جدول تمرين 3 أيام بالنادي',
     cover('جدول تمرين<br><em>3 أيام</em> بالنادي', '', GYM_CARDS).replace('<h1>','<h1 style="font-size:140px">'), GYM_DAYS,
     [gsn, zz(RIR_GYM, 1.6), THANKS])

@@ -18,8 +18,8 @@ CLIPS = {
     'BARBELL BENCH PRESS': dict(f='coverr-weight-lifting-in-the-gym-7769.mp4', ss=2, crop='1283:1080:400:0'),
     'DB CURL': dict(f='coverr-man-training-in-the-gym-8192.mp4', ss=7, crop='1283:1080:150:0'),
     'MACHINE INCLINE CHEST PRESS': dict(f='coverr-using-the-machines-at-the-gym-1295.mp4', ss=2, crop='1283:1080:318:0'),
-    'HANGING LEG RAISES': dict(f='coverr-a-man-does-hanging-leg-raises-3252.mp4', ss=0, crop='1283:1080:600:0',
-                               note='في الفيديو: البديل (SUPPORTED LEG RAISES)'),
+    'HANGING LEG RAISES': dict(f='wm-leg-raises.webm', ss=0, crop='400:337:0:0', src='854:480', credit='FitnessScape · CC BY 3.0 · Wikimedia Commons'),
+    'LEG PRESS': dict(f='wm-hip-sled.webm', ss=48, crop='571:480:99:0', src='854:480', credit='FitnessScape · CC BY 3.0 · Wikimedia Commons'),
 }
 
 PLANS = {
@@ -146,7 +146,7 @@ def tile(i, r, rl, al):
     reps = reps.replace('<br>', ' ')
     sets_s = f'<em>{sets}</em> جولات' if isinstance(sets, int) else f'<em>{sets}</em>'
     if clip:
-        media = (f'<div class="vid live" data-clip="{clip["f"]}" data-ss="{clip["ss"]}" data-crop="{clip["crop"]}"><span class="no">{i}</span>'
+        media = (f'<div class="vid live" data-clip="{clip["f"]}" data-ss="{clip["ss"]}" data-crop="{clip["crop"]}" data-src="{clip.get("src", "1920:1080")}" data-credit="{clip.get("credit", "Coverr")}"><span class="no">{i}</span>'
                  + (f'<span class="vnote">{clip["note"]}</span>' if clip.get('note') else '') + '</div>')
     else:
         media = (f'<div class="vid"><span class="no">{i}</span>'
@@ -229,7 +229,9 @@ def build(key):
     spec = []
     for i, (kind, inner) in enumerate(slides, 1):
         live = 'data-clip=' in inner
-        credit = 'Videos: Coverr' if live else 'navcoaching.com'
+        import re as _re
+        creds = sorted(set(_re.findall(r'data-credit="([^"]+)"', inner)))
+        credit = ('Videos: ' + ' | '.join(creds)) if live else 'navcoaching.com'
         cls = 's ad' if kind == 'ad' else ('s cv' if kind == 'cover' else 's')
         out.append(f'<section class="{cls}" id="s{i}">{inner}<div class="foot"><span class="n">{i} / {N}</span>'
                    f'<span class="r">{credit}</span></div></section>')

@@ -422,12 +422,12 @@
       ],
       3,
       "6-12",
-      "MACHINE INCLINE CHEST PRESS",
-      "w:tiWPSwt8_zM"
+      "DB FLOOR PRESS",
+      "w:Bx4QPVH-J1g"
      ],
      [
-      "FLAT DB PRESS",
-      "1V3vpcaxRYQ",
+      "DB FLOOR PRESS",
+      "w:Bx4QPVH-J1g",
       [
        "صدر",
        "أكتاف أمامية",
@@ -442,12 +442,12 @@
       ],
       3,
       "6-12",
-      "MACHINE CHEST PRESS",
-      "relql3kwCi8"
+      "PUSH UP",
+      "w:IODxDxX7oi4"
      ],
      [
-      "LATS PULLDOWN",
-      "w:hnSqbBk15tw",
+      "ONE ARM DB ROW",
+      "KaCcBqhiXtc",
       [
        "لاتس",
        "باي"
@@ -460,12 +460,12 @@
       ],
       3,
       "6-12",
-      "PULL UP",
-      "WLzut1ZxxTY"
+      "DB PULLOVER",
+      "w:jQjWlIwG4sI"
      ],
      [
-      "SEATED ROW",
-      "w:YKAeU55CkVk",
+      "DB CHEST SUPPORTED ROW",
+      "w:tZUYS7X50so",
       [
        "لاتس",
        "رومبويد",
@@ -482,7 +482,7 @@
       ],
       3,
       "6-12",
-      "ONE ARM ROW",
+      "ONE ARM DB ROW",
       "KaCcBqhiXtc"
      ],
      [
@@ -497,8 +497,8 @@
       [],
       3,
       "6-12",
-      "MACHINE LATERAL RAISE",
-      "AydmHFgOn6U"
+      "LEANING DB LATERAL RAISE",
+      "w:qWif_7SOYpQ"
      ],
      [
       "DB CURL",
@@ -512,8 +512,8 @@
       [],
       3,
       "6-12",
-      "ZIG ZAG BAR CURL",
-      "JMT4HmbJadQ"
+      "DB HAMMER CURL",
+      "w:BRVDS6HVR9Q"
      ]
     ],
     "rl": "العدات",
@@ -525,8 +525,8 @@
     "title": "سفلي",
     "rows": [
      [
-      "SQUAT",
-      "PPmvh7gBTi0",
+      "DB GOBLET SQUAT",
+      "w:gCESNsDsbqk",
       [
        "أفخاذ أمامية",
        "قلوتس"
@@ -539,12 +539,12 @@
       ],
       4,
       "6-12",
-      "LEG PRESS",
-      "nDh_BlnLCGc"
+      "DB BULGARIAN SPLIT SQUAT",
+      "w:SkNsa3eBwLA"
      ],
      [
-      "BARBELL RDL",
-      "5rIqP63yWFg",
+      "DB RDL",
+      "u14AwrUcwWw",
       [
        "أفخاذ خلفية",
        "قلوتس"
@@ -557,12 +557,12 @@
       ],
       3,
       "6-12",
-      "DB RDL",
-      "u14AwrUcwWw"
+      "DB SINGLE LEG RDL",
+      "w:lI8-igvsnVQ"
      ],
      [
-      "LYING LEG CURL",
-      "ANKSmhT0dTk",
+      "SLIDING LEG CURL",
+      "w:kkkTfzi2gj4",
       [
        "أفخاذ خلفية"
       ],
@@ -572,12 +572,12 @@
       [],
       3,
       "6-12",
-      "STANDING CABLE LEG CURL",
-      "bkwW1flKchc"
+      "GLUTE BRIDGE",
+      "w:L9KZfxT654Y"
      ],
      [
-      "STANDING CALF RAISES",
-      "95itLfMBG40",
+      "DB CALF RAISE",
+      "w:wxwY7GXxL4k",
       [
        "بطات"
       ],
@@ -587,27 +587,12 @@
       [],
       3,
       "6-12",
-      "LEG PRESS CALF RAISES",
-      "1cvpm--Y-4I"
+      "SINGLE LEG CALF RAISE",
+      "w:ORT4oJ_R8Qs"
      ],
      [
-      "CABLE CRUNCHES",
-      "dkGwcfo9zto",
-      [
-       "بطن"
-      ],
-      [
-       "abs"
-      ],
-      [],
-      3,
-      "6-12",
       "CRUNCHES",
-      "eeJ_CYqSoT4"
-     ],
-     [
-      "HANGING LEG RAISES",
-      "2n4UqRIJyk4",
+      "eeJ_CYqSoT4",
       [
        "بطن"
       ],
@@ -617,8 +602,23 @@
       [],
       3,
       "6-12",
-      "SUPPORTED LEG RAISES",
-      "PpZxg66ftYc"
+      "DEAD BUG",
+      "w:GbSC02oU3To"
+     ],
+     [
+      "LYING LEG RAISES",
+      "PpZxg66ftYc",
+      [
+       "بطن"
+      ],
+      [
+       "abs"
+      ],
+      [],
+      3,
+      "6-12",
+      "REVERSE CRUNCH",
+      "w:lmSP-c1X_iY"
      ]
     ],
     "rl": "العدات",
@@ -630,8 +630,8 @@
     "title": "شامل",
     "rows": [
      [
-      "LEG PRESS",
-      "nDh_BlnLCGc",
+      "DB BULGARIAN SPLIT SQUAT",
+      "w:SkNsa3eBwLA",
       [
        "أفخاذ أمامية",
        "قلوتس"
@@ -644,12 +644,12 @@
       ],
       4,
       "6-12",
-      "SQUAT",
-      "PPmvh7gBTi0"
+      "DB REVERSE LUNGE",
+      "w:RZKXLMxPF_I"
      ],
      [
-      "HIP THRUST",
-      "PqOnYf6Slkg",
+      "DB HIP THRUST",
+      "w:29OfN4ztW_g",
       [
        "قلوتس",
        "أفخاذ خلفية"
@@ -662,12 +662,12 @@
       ],
       3,
       "6-12",
-      "MACHINE HIP THRUST",
-      "6jVU_KaQOfw"
+      "GLUTE BRIDGE",
+      "w:L9KZfxT654Y"
      ],
      [
-      "SEATED ROW",
-      "w:YKAeU55CkVk",
+      "DB CHEST SUPPORTED ROW",
+      "w:tZUYS7X50so",
       [
        "لاتس",
        "رومبويد",
@@ -684,12 +684,12 @@
       ],
       3,
       "6-12",
-      "PULL UP",
-      "WLzut1ZxxTY"
+      "ONE ARM DB ROW",
+      "KaCcBqhiXtc"
      ],
      [
-      "LATS PULLDOWN",
-      "w:hnSqbBk15tw",
+      "ONE ARM DB ROW",
+      "KaCcBqhiXtc",
       [
        "لاتس",
        "باي"
@@ -702,12 +702,12 @@
       ],
       3,
       "6-12",
-      "ONE ARM ROW",
-      "KaCcBqhiXtc"
+      "DB PULLOVER",
+      "w:jQjWlIwG4sI"
      ],
      [
-      "FLAT DB PRESS",
-      "1V3vpcaxRYQ",
+      "DB FLOOR PRESS",
+      "w:Bx4QPVH-J1g",
       [
        "صدر",
        "أكتاف أمامية",
@@ -722,12 +722,12 @@
       ],
       3,
       "6-12",
-      "MACHINE CHEST PRESS",
-      "relql3kwCi8"
+      "PUSH UP",
+      "w:IODxDxX7oi4"
      ],
      [
-      "TRICEPS PUSHDOWN",
-      "Rc7-euA8FDI",
+      "OVERHEAD DB TRICEPS EXTENSION",
+      "w:2jl4M0Dnq4c",
       [
        "تراي"
       ],
@@ -737,8 +737,8 @@
       [],
       3,
       "6-12",
-      "OVERHEAD TRICEPS EXTENSION",
-      "7hx0-DZgdl8"
+      "BENCH DIPS",
+      "w:0326dy_-CzM"
      ]
     ],
     "rl": "العدات",
@@ -765,14 +765,14 @@
     "cls": "page light grid dp",
     "h": "سفلي",
     "panels": 0,
-    "text": "اليوم | 2 | سفلي | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | SQUAT | أفخاذ أمامية | قلوتس | جولات | 4 | العدات | 6-12 | ب"
+    "text": "اليوم | 2 | سفلي | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | DB GOBLET SQUAT | أفخاذ أمامية | قلوتس | جولات | 4 | الع"
    },
    {
     "i": 3,
     "cls": "page light grid dp",
     "h": "شامل",
     "panels": 0,
-    "text": "اليوم | 3 | شامل | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | LEG PRESS | أفخاذ أمامية | قلوتس | جولات | 4 | العدات | 6-"
+    "text": "اليوم | 3 | شامل | اضغط على اسم التمرين لمشاهدة الشرح | عضلة أساسية | عضلة مساعدة | 1 | DB BULGARIAN SPLIT SQUAT | أفخاذ أمامية | قلوتس | جو"
    },
    {
     "i": 4,
