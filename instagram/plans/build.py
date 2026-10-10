@@ -64,6 +64,7 @@ body{background:#888;font-family:Cairo,"IBM Plex Sans Arabic",sans-serif;color:v
 .top{position:absolute;z-index:5;top:44px;right:48px;left:48px;display:flex;justify-content:space-between;align-items:center}
 .top img{height:50px}
 .eb{display:inline-flex;align-items:center;gap:10px;font:700 25px Cairo;color:var(--cyan-ink);background:#fff;border:1.5px solid var(--line);border-radius:99px;padding:7px 22px;white-space:nowrap}
+.mk{height:1.05em;width:auto;display:inline-block;vertical-align:middle}
 .eb i,.lab i,.sl i{display:inline-block;width:7px;height:20px;background:var(--cyan);transform:skewX(-22deg);margin-left:3px}
 .foot{position:absolute;z-index:6;bottom:38px;right:48px;left:48px;display:flex;justify-content:space-between;align-items:center;font:500 22px "Readex Pro";color:var(--muted)}
 .foot .n{border:1.5px solid var(--line);background:#fff;border-radius:99px;padding:4px 18px;direction:ltr}
@@ -133,7 +134,8 @@ body{background:#888;font-family:Cairo,"IBM Plex Sans Arabic",sans-serif;color:v
 
 LOGO = '<img src="../../../brand/logo-color-hd.png">'
 LOGO_W = '<img src="../../../brand/logo-white.webp">'
-SL = '<span class="sl"><i></i><i></i><i></i></span>'
+SL = '<img class="mk" src="../../../brand/nav-mark-navy.png">'
+SLW = '<img class="mk" src="../../../brand/nav-mark-white.png">'
 
 
 def esc(s):
@@ -196,7 +198,7 @@ def build(key):
             lab_top = '685px' if lay in ('L4', 'L3') else '176px'
             slides.append(('day', f'''<div class="top">{LOGO}<span class="eb">{plain_title} {SL}</span></div>
 <div class="grid {lay}">{tiles}</div>
-<div class="lab" style="top:{lab_top}"><span style="display:flex;gap:4px"><i></i><i></i></span>{lbl} {d["n"]} · {d["title"]}<small>{len(d["rows"])} تمارين{more}</small></div>'''))
+<div class="lab" style="top:{lab_top}">{SLW}{lbl} {d["n"]} · {d["title"]}<small>{len(d["rows"])} تمارين{more}</small></div>'''))
 
     # ---- info panels (everything else in the PDF)
     for p in PANELS[key]:
@@ -216,7 +218,7 @@ def build(key):
     # ---- ad
     you = dict(want='تبين' if fem else 'تبي', start='ابدئي' if fem else 'ابدأ', your='لك')
     slides.append(('ad', f'''<div class="top">{LOGO_W}<span class="ebd" style="font:700 24px Cairo;color:#a9d8ec">navcoaching.com</span></div>
-<div class="c"><span class="ebd">Nav Coaching {SL}</span>
+<div class="c"><span class="ebd">Nav Coaching {SLW}</span>
 <h2>{you["want"]} نتيجة أسرع؟<br><em>برنامج مصمم {you["your"]}</em></h2>
 <ul><li><i>✓</i>تمرين وتغذية مخصصة لهدفك</li><li><i>✓</i>متابعة أسبوعية بالفيديو أو الصوت</li>
 <li><i>✓</i>تعديلات حسب تقدمك وقياساتك</li><li><i>✓</i>تواصل يومي على واتساب</li></ul>
