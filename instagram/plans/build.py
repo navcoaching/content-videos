@@ -38,10 +38,10 @@ CLIPS = {
     # recovered from the earlier render (already graded) while Wikimedia rate-limits downloads
     'HANGING LEG RAISES': dict(f='wm-leg-raises-rec.mp4', ss=0, crop='504:334:0:0', src='504:334', grade=False, credit='FitnessScape · CC BY 3.0 · Wikimedia Commons'),
     # clips supplied by the owner (credit='' keeps them out of the footer credit line)
-    'SQUAT': dict(f='up-squat.mp4', ss=14.5, crop='360:340:0:230', src='360:640', credit=''),
-    'BARBELL RDL': dict(f='up-rdl.mp4', ss=3, crop='360:640:0:0', src='360:640', credit=''),
-    'TRICEPS PUSHDOWN': dict(f='up-pushdown.mp4', ss=0.5, crop='300:360:20:0', src='640:360', credit=''),
-    'CABLE CRUNCHES': dict(f='up-cable-crunch.mp4', ss=17, crop='360:640:0:0', src='360:640', credit=''),
+    'SQUAT': dict(f='up-squat.mp4', ss=0, crop='360:640:0:0', src='360:640', credit=''),
+    'BARBELL RDL': dict(f='up-rdl.mp4', ss=0, crop='360:640:0:0', src='360:640', credit=''),
+    'TRICEPS PUSHDOWN': dict(f='up-pushdown.mp4', ss=0, crop='300:360:150:0', src='640:360', credit=''),
+    'CABLE CRUNCHES': dict(f='up-cable-crunch.mp4', ss=0, crop='360:640:0:0', src='360:640', credit=''),
 }
 
 PLANS = {

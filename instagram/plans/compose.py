@@ -31,12 +31,13 @@ for k in sys.argv[1:]:
         rects = json.load(open(rj))
         args = [FF, '-loglevel', 'error', '-y', '-f', 'lavfi', '-i', 'color=c=0xf3f6fa:s=1080x1350:r=30:d=6']
         for r in rects:
-            args += ['-stream_loop', '2', '-ss', str(r['ss']), '-i', f"{HERE}/clips/{r['clip']}"]
+            args += ['-stream_loop', '-1', '-ss', str(r['ss']), '-i', f"{HERE}/clips/{r['clip']}"]
         args += ['-loop', '1', '-i', base + '-fg.png']
         fc, last = [], '[0:v]'
         for i, r in enumerate(rects, 1):
-            if r['w'] / r['h'] > 2:   # wide tile: sharp centre + blurred fill
-                cw = round(r['h'] * 1.5) // 2 * 2
+            SW, SH = map(int, r.get('src', '1920:1080').split(':'))
+            if r['w'] / r['h'] > 2 or SW / SH < 1:   # wide tile or vertical source: sharp centre + blurred fill
+                cw = round(r['h'] * min(1.5, SW / SH)) // 2 * 2
                 fc.append(f"[{i}:v]fps=30,split[a{i}][b{i}]")
                 fc.append(f"[a{i}]crop={crop_for(r['crop'], r['w'], r['h'], r.get('src', '1920:1080'))},scale={r['w']}:{r['h']},boxblur=20:2,eq=brightness=-0.08[bg{i}]")
                 g = G if r.get('grade') != '0' else 'null'
