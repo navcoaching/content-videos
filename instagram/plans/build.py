@@ -30,6 +30,7 @@ CLIPS = {
     'SEATED LEG CURL': dict(f='wg-366_37.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
     'STANDING CALF RAISES': dict(f='wg-622_14.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
     'DB CALF RAISE': dict(f='wg-622_14.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'DB RDL': dict(f='wg-507_3.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
     'HIP THRUST': dict(f='wg-294_72.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
     'LATS PULLDOWN': dict(f='coverr-doing-chest-exercises-in-the-gym-3449.mp4', ss=1, crop='1283:1080:222:0'),
     'MACHINE INCLINE CHEST PRESS': dict(f='coverr-using-the-machines-at-the-gym-1295.mp4', ss=2, crop='1283:1080:318:0'),
