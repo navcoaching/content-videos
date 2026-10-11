@@ -289,7 +289,7 @@ def build(key):
     # ---- ad
     you = dict(want='تبين' if fem else 'تبي', start='ابدئي' if fem else 'ابدأ', your='لك')
     slides.append(('ad', f'''<div class="top">{LOGO_W}<span class="ebd" style="font:700 24px Cairo;color:#a9d8ec">navcoaching.com</span></div>
-<div class="c"><span class="ebd">Nav Coaching {SLW}</span>
+<div class="c">
 <h2>{you["want"]} نتيجة أسرع؟<br><em>برنامج مصمم {you["your"]}</em></h2>
 <ul><li><i>✓</i>تمرين وتغذية مخصصة لهدفك</li><li><i>✓</i>متابعة أسبوعية بالفيديو أو الصوت</li>
 <li><i>✓</i>تعديلات حسب تقدمك وقياساتك</li><li><i>✓</i>تواصل يومي على واتساب</li></ul>
