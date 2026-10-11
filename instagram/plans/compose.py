@@ -25,9 +25,10 @@ for k in sys.argv[1:]:
     for rj in sorted(glob.glob(f'{HERE}/{k}/out/*-rects.json')):
         n = os.path.basename(rj).split('-')[0]
         base = f'{HERE}/{k}/out/{n}'
-        fg = Image.open(base + '.png').convert('RGBA')
-        fg.putalpha(ImageOps.invert(Image.open(base + '-mask.png').convert('L')))
-        fg.save(base + '-fg.png')
+        if not os.path.exists(base + '-fg.png'):
+            fg = Image.open(base + '.png').convert('RGBA')
+            fg.putalpha(ImageOps.invert(Image.open(base + '-mask.png').convert('L')))
+            fg.save(base + '-fg.png')
         rects = json.load(open(rj))
         args = [FF, '-loglevel', 'error', '-y', '-f', 'lavfi', '-i', 'color=c=0xf3f6fa:s=1080x1350:r=30:d=6']
         for r in rects:
@@ -51,6 +52,7 @@ for k in sys.argv[1:]:
                  '-preset', 'medium', '-movflags', '+faststart', base + '.mp4']
         subprocess.run(args, check=True)
         for f in (base + '-fg.png', base + '-mask.png', rj):
-            os.remove(f)
+            if os.path.exists(f):
+                os.remove(f)
         os.remove(base + '.png')
         print('video', k, n)

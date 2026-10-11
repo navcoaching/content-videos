@@ -12,6 +12,10 @@ for(const s of spec){const n=s.id.slice(1).padStart(2,'0');
   const rects=await p.evaluate(id=>{const sec=document.getElementById(id);const o=sec.getBoundingClientRect();
     return [...sec.querySelectorAll('.vid.live')].map(e=>{const r=e.getBoundingClientRect();return {x:Math.round(r.left-o.left),y:Math.round(r.top-o.top),w:Math.round(r.width),h:Math.round(r.height),clip:e.dataset.clip,ss:+e.dataset.ss,crop:e.dataset.crop,src:e.dataset.src,grade:e.dataset.grade}})},s.id);
   fs.writeFileSync(`${dir}/out/${n}-rects.json`,JSON.stringify(rects));
+  if(s.kind==='cover'){ // text over video: keep real alpha instead of a mask
+   const t=await p.addStyleTag({content:`html,body{background:transparent!important} #${s.id}{background:transparent!important} #${s.id} .vid.live{background:transparent!important}`});
+   await p.locator('#'+s.id).screenshot({path:`${dir}/out/${n}-fg.png`,omitBackground:true});
+   await t.evaluate(e=>e.remove()); continue;}
   const st=await p.addStyleTag({content:`#${s.id},#${s.id} *{visibility:hidden} #${s.id}{visibility:visible!important;background:#000!important} #${s.id}::before{display:none} #${s.id} .vid.live{visibility:visible!important;background:#fff!important;border-color:#fff!important} #${s.id} .vid.live *{visibility:hidden!important} #${s.id} .vid.live .no,#${s.id} .vid.live .vnote{visibility:visible!important;background:#000!important;color:#000!important}`});
   await p.locator('#'+s.id).screenshot({path:`${dir}/out/${n}-mask.png`});
   await st.evaluate(e=>e.remove());

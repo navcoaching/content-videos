@@ -53,6 +53,26 @@ PLANS = {
     'flex':   dict(title='جدول زيادة <em>المرونة</em>', place='من المنزل', sub='الحوض · الظهر · الأكتاف · الأرجل', fem=False, site='جدول زيادة المرونة'),
 }
 
+# cover hook (approved copy) + full-bleed hero clip behind it
+HOOKS = {
+    'gym3':   '3 أيام بس…<br>وكل عضلة بجسمك<br><em>تاخذ حقها</em>',
+    'home3':  'ما عندك نادي؟<br><em>دمبل وبنش</em> يكفيك<br>3 أيام بالأسبوع',
+    '4days':  'نادي أو بيت؟<br>نفس الجدول<br><em>يمشي معك بالحالتين</em>',
+    'glutes': 'السكوات لحاله<br>ما يكبّر القلوتس…<br><em>هذا الجدول يكمّل الناقص</em>',
+    'back':   'ظهرك يوجعك<br>من الجلوس؟<br><em>4 تمارين تبدأ فيها اليوم</em>',
+    'flex':   'ما تقدر تلمس<br>أصابع رجولك؟<br><em>جرّب هذا 3 أيام بالأسبوع</em>',
+}
+HERO = {
+    'gym3':   dict(f='coverr-doing-chest-exercises-in-the-gym-3449.mp4', ss=1, crop='864:1080:431:0', credit='Coverr'),
+    'home3':  dict(f='wg-75_17.mp4', ss=1, crop='576:720:352:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    '4days':  dict(f='wg-73_23.mp4', ss=1, crop='576:720:352:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'glutes': dict(f='wg-294_72.mp4', ss=1, crop='576:720:352:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'back':   dict(f='wg-512_1.mp4', ss=1, crop='576:720:352:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'flex':   dict(f='coverr-early-morning-stretching-routine.mp4', ss=1, crop='864:1080:528:0', credit='Coverr'),
+}
+BOOKMARK = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>'
+DOC = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/></svg>'
+
 MAP = {'chest': ['CHEST'], 'fdelt': ['FRONT_DELTOIDS'], 'sdelt': ['FRONT_DELTOIDS', 'BACK_DELTOIDS'], 'rdelt': ['BACK_DELTOIDS'],
        'biceps': ['BICEPS'], 'triceps': ['TRICEPS'], 'lats': ['UPPER_BACK'], 'rhomb': ['TRAPEZIUS'], 'gmed': ['GLUTEAL'],
        'lowb': ['LOWER_BACK'], 'obl': ['OBLIQUES'], 'hflex': ['QUADRICEPS'], 'add': ['ABDUCTORS', 'ABDUCTOR'], 'abs': ['ABS'],
@@ -154,6 +174,29 @@ body{background:#888;font-family:Cairo,"IBM Plex Sans Arabic",sans-serif;color:v
 .ad .cta{position:absolute;z-index:3;bottom:120px;right:64px;left:64px;background:var(--cyan);color:var(--ink);border-radius:30px;padding:26px 34px;display:flex;align-items:center;justify-content:space-between}
 .ad .cta b{font:900 44px Cairo}.ad .cta span{font:700 32px "Readex Pro"}
 .ad .foot{color:#a9bad0}.ad .foot .n{background:transparent;border-color:#ffffff40;color:#a9bad0}
+/* hook cover */
+.hk{background:#07142a;color:#fff}
+.hk::before{display:none}
+.hk .vid.hero{position:absolute;inset:0;border:none;border-radius:0;z-index:0}
+.hk .shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#07142aee 0%,#07142acc 30%,#07142a55 52%,#07142a66 64%,#07142af5 86%)}
+.hk .ebk{background:#ffffff14;border-color:#ffffff40;color:#fff}
+.hk .ebk .mk{border-color:#ffffff40}
+.hk .c{position:absolute;z-index:3;top:150px;right:64px;left:64px}
+.hk h1{white-space:nowrap;font:900 104px/1.16 Cairo;color:#fff;letter-spacing:-.5px;text-shadow:0 4px 30px #07142a80}
+.hk h1 em{font-style:normal;color:var(--cyan)}
+.hk .pl{display:inline-block;margin-top:30px;background:var(--cyan);color:var(--ink);font:900 32px Cairo;padding:6px 26px;border-radius:99px}
+.hk .dl{position:absolute;z-index:3;bottom:236px;right:64px;left:64px;display:flex;gap:12px;flex-wrap:wrap}
+.hk .dl span{background:#ffffff1f;border:1.5px solid #ffffff38;border-radius:16px;padding:8px 18px;font:700 26px Cairo;color:#fff}
+.hk .dl small{font:700 20px Cairo;color:#a9d8ec;margin-left:6px}
+.hk .save{position:absolute;z-index:3;bottom:110px;right:64px;left:64px;background:#fff;color:var(--ink);border-radius:28px;padding:22px 30px;display:flex;align-items:center;justify-content:space-between}
+.hk .save b{display:flex;align-items:center;gap:12px;font:900 34px Cairo}
+.hk .save b svg{color:var(--navy)}
+.hk .save span{font:700 28px Cairo;color:var(--cyan-ink)}
+.hk .foot{color:#a9bad0}.hk .foot .n{background:transparent;border-color:#ffffff40;color:#a9bad0}
+.ad .pdfl{position:absolute;z-index:3;bottom:250px;right:64px;left:64px;display:flex;align-items:center;justify-content:space-between;border:1.5px solid #ffffff40;border-radius:24px;padding:16px 26px}
+.ad .pdfl b{display:flex;align-items:center;gap:12px;font:700 28px Cairo;color:#fff}
+.ad .pdfl b svg{color:var(--cyan)}
+.ad .pdfl span{font:700 24px "Readex Pro";color:var(--cyan)}
 '''
 
 LOGO = '<img src="../../../brand/logo-color-hd.png">'
@@ -201,13 +244,17 @@ def build(key):
     plain_title = html.unescape(P['title'].replace('<em>', '').replace('</em>', ''))
     slides = []   # (html, kind)
 
-    # ---- cover
-    days_html = ''.join(
-        f'<div class="day"><div class="k"><small>{d.get("lbl", "اليوم")}</small>{d["n"]}</div><div><h3>{d["title"]}</h3>'
-        f'<p>{d.get("sub", "")}</p></div><span class="cnt">{len(d["rows"])} تمارين</span></div>' for d in D)
-    slides.append(('cover', f'''<div class="top">{LOGO}<span class="eb">جدول مجاني {SL}</span></div>
-<div class="c"><h1>{P["title"]}</h1><span class="place">{P["place"]}</span><div class="sub">{P["sub"]}</div><div class="days">{days_html}</div></div>
-<div class="free"><b>{"حمّليه" if fem else "حمّله"} PDF مجانًا</b><span>navcoaching.com</span></div>'''))
+    # ---- cover (hook over a dimmed hero clip)
+    h = HERO[key]
+    days_html = ''.join(f'<span>{d["title"]}</span>' if d["title"] in (d["n"], f'{d.get("lbl", "اليوم")} {d["n"]}') else
+                        f'<span><small>{d.get("lbl", "اليوم")} {d["n"]}</small>{d["title"]}</span>' for d in D)
+    place = P["place"]
+    slides.append(('cover', f'''<div class="vid live hero" data-clip="{h["f"]}" data-ss="{h["ss"]}" data-crop="{h["crop"]}" data-src="{h.get("src", "1920:1080")}" data-credit="{h["credit"]}"></div>
+<div class="shade"></div>
+<div class="top">{LOGO_W}<span class="eb ebk">جدول مجاني {SLW}</span></div>
+<div class="c"><h1>{HOOKS[key]}</h1><span class="pl">{plain_title} · {place}</span></div>
+<div class="dl">{days_html}</div>
+<div class="save"><b>{BOOKMARK}{"احفظيه" if fem else "احفظه"} وارجع له وقت التمرين</b><span>اسحب ←</span></div>'''))
 
     # ---- day slides
     for d in D:
@@ -247,6 +294,7 @@ def build(key):
 <ul><li><i>✓</i>تمرين وتغذية مخصصة لهدفك</li><li><i>✓</i>متابعة أسبوعية بالفيديو أو الصوت</li>
 <li><i>✓</i>تعديلات حسب تقدمك وقياساتك</li><li><i>✓</i>تواصل يومي على واتساب</li></ul>
 <div class="price"><span>الباقات من <b>250</b> ر.س / شهر</span><span>خصم <b>10%</b> للطلاب</span><span>ضمان استرجاع بشروط</span></div></div>
+<div class="pdfl"><b>{DOC}الجدول كامل PDF مجانًا</b><span>navcoaching.com</span></div>
 <div class="cta"><b>{you["start"]} برنامجك ←</b><span>navcoaching.com</span></div>'''))
 
     # ---- assemble
@@ -258,10 +306,11 @@ def build(key):
         import re as _re
         creds = sorted(set(_re.findall(r'data-credit="([^"]+)"', inner)))
         credit = ('Videos: ' + ' | '.join(creds)) if creds else 'navcoaching.com'
-        cls = 's ad' if kind == 'ad' else ('s cv' if kind == 'cover' else 's')
+        cls = 's ad' if kind == 'ad' else ('s hk' if kind == 'cover' else 's')
         out.append(f'<section class="{cls}" id="s{i}">{inner}<div class="foot"><span class="n">{i} / {N}</span>'
                    f'<span class="r">{credit}</span></div></section>')
         spec.append(dict(id=f's{i}', kind=kind, video=live))
+    out.append('<script>document.fonts.ready.then(()=>document.querySelectorAll(".hk h1").forEach(h=>{let f=104;while(h.scrollWidth>h.clientWidth&&f>60){f-=2;h.style.fontSize=f+"px"}}))</script>')
     out.append('</body></html>')
     os.makedirs(os.path.join(HERE, key), exist_ok=True)
     open(os.path.join(HERE, key, 'slides.html'), 'w', encoding='utf8').write('\n'.join(out))
