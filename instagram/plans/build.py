@@ -14,12 +14,27 @@ ANAT = json.load(open(os.path.join(HERE, '../../pdf/anatomy-data.json'), encodin
 
 # exercise -> stock clip (Coverr, free licence). crop = w:h:x:y on the 1920x1080 source
 CLIPS = {
+    'BARBELL BENCH PRESS': dict(f='wg-73_23.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'FLAT DB PRESS': dict(f='wg-75_17.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'INCLINE DB PRESS': dict(f='wg-537_24.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'SEATED ROW': dict(f='wg-512_1.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'ASSISTED PULL UP': dict(f='wg-477_70.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'CABLE FACE PULL': dict(f='wg-222_78.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'DB LATERAL RAISE': dict(f='wg-348_6.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'MACHINE SHOULDER PRESS': dict(f='wg-543_11.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'OVERHEAD DB TRICEPS EXTENSION': dict(f='wg-211_57.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'DB CURL': dict(f='wg-92_48.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'CABLE CURL': dict(f='wg-95_50.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'LEG PRESS': dict(f='wg-371_44.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'LYING LEG CURL': dict(f='wg-365_35.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'SEATED LEG CURL': dict(f='wg-366_37.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'STANDING CALF RAISES': dict(f='wg-622_14.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'DB CALF RAISE': dict(f='wg-622_14.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
+    'HIP THRUST': dict(f='wg-294_72.mp4', ss=1, crop='1280:720:0:0', src='1280:720', credit='Goulart · CC BY-SA 4.0 · wger.de'),
     'LATS PULLDOWN': dict(f='coverr-doing-chest-exercises-in-the-gym-3449.mp4', ss=1, crop='1283:1080:222:0'),
-    'BARBELL BENCH PRESS': dict(f='coverr-weight-lifting-in-the-gym-7769.mp4', ss=2, crop='1283:1080:400:0'),
-    'DB CURL': dict(f='coverr-man-training-in-the-gym-8192.mp4', ss=7, crop='1283:1080:150:0'),
     'MACHINE INCLINE CHEST PRESS': dict(f='coverr-using-the-machines-at-the-gym-1295.mp4', ss=2, crop='1283:1080:318:0'),
+    'ONE ARM DB ROW': dict(f='coverr-arm-workout-in-the-gym-6424.mp4', ss=2, crop='832:700:984:0'),
     'HANGING LEG RAISES': dict(f='wm-leg-raises.webm', ss=0, crop='400:337:0:0', src='854:480', credit='FitnessScape · CC BY 3.0 · Wikimedia Commons'),
-    'LEG PRESS': dict(f='wm-hip-sled.webm', ss=48, crop='571:480:99:0', src='854:480', credit='FitnessScape · CC BY 3.0 · Wikimedia Commons'),
 }
 
 PLANS = {

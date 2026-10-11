@@ -15,3 +15,7 @@
 | LEG PRESS | https://commons.wikimedia.org/wiki/File:Hip_Sled_-_How_to_perform_a_45_degree_leg_press.webm |
 
 Clips were cropped and colour-graded (changes made). All other tiles use the anatomy diagrams from the PDFs (react-body-highlighter, MIT).
+
+## wger.de — CC BY-SA 4.0 (attribution REQUIRED: "Goulart, CC BY-SA 4.0, wger.de"; edited clips shared under the same licence)
+Exercise videos from https://wger.de (API /api/v2/video/): bench press, DB press, incline DB press, seated row, assisted pull-up, face pull, lateral raise, machine shoulder press, overhead DB triceps extension, DB curl, cable curl, leg press, lying/seated leg curl, standing calf raise, hip thrust.
+Licence: https://creativecommons.org/licenses/by-sa/4.0/ — clips were cropped and colour-graded.
