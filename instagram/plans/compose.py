@@ -39,10 +39,11 @@ for k in sys.argv[1:]:
                 cw = round(r['h'] * 1.5) // 2 * 2
                 fc.append(f"[{i}:v]fps=30,split[a{i}][b{i}]")
                 fc.append(f"[a{i}]crop={crop_for(r['crop'], r['w'], r['h'], r.get('src', '1920:1080'))},scale={r['w']}:{r['h']},boxblur=20:2,eq=brightness=-0.08[bg{i}]")
+                g = G if r.get('grade') != '0' else 'null'
                 fc.append(f"[b{i}]crop={crop_for(r['crop'], cw, r['h'], r.get('src', '1920:1080'))},scale={cw}:{r['h']}[fgv{i}]")
-                fc.append(f"[bg{i}][fgv{i}]overlay=(W-w)/2:0,setsar=1,{G}[v{i}]")
+                fc.append(f"[bg{i}][fgv{i}]overlay=(W-w)/2:0,setsar=1,{g}[v{i}]")
             else:
-                fc.append(f"[{i}:v]fps=30,crop={crop_for(r['crop'], r['w'], r['h'], r.get('src', '1920:1080'))},scale={r['w']}:{r['h']},setsar=1,{G}[v{i}]")
+                fc.append(f"[{i}:v]fps=30,crop={crop_for(r['crop'], r['w'], r['h'], r.get('src', '1920:1080'))},scale={r['w']}:{r['h']},setsar=1,{G if r.get('grade') != '0' else 'null'}[v{i}]")
             fc.append(f"{last}[v{i}]overlay={r['x']}:{r['y']}[t{i}]"); last = f'[t{i}]'
         fc.append(f"{last}[{len(rects) + 1}:v]overlay=0:0,format=yuv420p[out]")
         args += ['-filter_complex', ';'.join(fc), '-map', '[out]', '-t', '6', '-r', '30', '-c:v', 'libx264', '-crf', '19',

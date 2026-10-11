@@ -35,7 +35,13 @@ CLIPS = {
     'LATS PULLDOWN': dict(f='coverr-doing-chest-exercises-in-the-gym-3449.mp4', ss=1, crop='1283:1080:222:0'),
     'MACHINE INCLINE CHEST PRESS': dict(f='coverr-using-the-machines-at-the-gym-1295.mp4', ss=2, crop='1283:1080:318:0'),
     'ONE ARM DB ROW': dict(f='coverr-arm-workout-in-the-gym-6424.mp4', ss=2, crop='832:700:984:0'),
-    'HANGING LEG RAISES': dict(f='wm-leg-raises.webm', ss=0, crop='400:337:0:0', src='854:480', credit='FitnessScape · CC BY 3.0 · Wikimedia Commons'),
+    # recovered from the earlier render (already graded) while Wikimedia rate-limits downloads
+    'HANGING LEG RAISES': dict(f='wm-leg-raises-rec.mp4', ss=0, crop='504:334:0:0', src='504:334', grade=False, credit='FitnessScape · CC BY 3.0 · Wikimedia Commons'),
+    # clips supplied by the owner (credit='' keeps them out of the footer credit line)
+    'SQUAT': dict(f='up-squat.mp4', ss=14.5, crop='360:340:0:230', src='360:640', credit=''),
+    'BARBELL RDL': dict(f='up-rdl.mp4', ss=3, crop='360:640:0:0', src='360:640', credit=''),
+    'TRICEPS PUSHDOWN': dict(f='up-pushdown.mp4', ss=0.5, crop='300:360:20:0', src='640:360', credit=''),
+    'CABLE CRUNCHES': dict(f='up-cable-crunch.mp4', ss=17, crop='360:640:0:0', src='360:640', credit=''),
 }
 
 PLANS = {
@@ -166,7 +172,7 @@ def tile(i, r, rl, al):
     reps = reps.replace('<br>', ' ')
     sets_s = f'<em>{sets}</em> جولات' if isinstance(sets, int) else f'<em>{sets}</em>'
     if clip:
-        media = (f'<div class="vid live" data-clip="{clip["f"]}" data-ss="{clip["ss"]}" data-crop="{clip["crop"]}" data-src="{clip.get("src", "1920:1080")}" data-credit="{clip.get("credit", "Coverr")}"><span class="no">{i}</span>'
+        media = (f'<div class="vid live" data-clip="{clip["f"]}" data-ss="{clip["ss"]}" data-crop="{clip["crop"]}" data-src="{clip.get("src", "1920:1080")}" data-credit="{clip.get("credit", "Coverr")}"{' data-grade="0"' if clip.get("grade") is False else ''}><span class="no">{i}</span>'
                  + (f'<span class="vnote">{clip["note"]}</span>' if clip.get('note') else '') + '</div>')
     else:
         media = (f'<div class="vid"><span class="no">{i}</span>'
@@ -251,7 +257,7 @@ def build(key):
         live = 'data-clip=' in inner
         import re as _re
         creds = sorted(set(_re.findall(r'data-credit="([^"]+)"', inner)))
-        credit = ('Videos: ' + ' | '.join(creds)) if live else 'navcoaching.com'
+        credit = ('Videos: ' + ' | '.join(creds)) if creds else 'navcoaching.com'
         cls = 's ad' if kind == 'ad' else ('s cv' if kind == 'cover' else 's')
         out.append(f'<section class="{cls}" id="s{i}">{inner}<div class="foot"><span class="n">{i} / {N}</span>'
                    f'<span class="r">{credit}</span></div></section>')
