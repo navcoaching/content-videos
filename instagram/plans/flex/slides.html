@@ -5,9 +5,11 @@ body{background:#888;font-family:Cairo,"IBM Plex Sans Arabic",sans-serif;color:v
 .s{width:1080px;height:1350px;position:relative;overflow:hidden;margin:0 0 30px;background:var(--paper)}
 .s::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#284da00f 1px,transparent 1px),linear-gradient(90deg,#284da00f 1px,transparent 1px);background-size:56px 56px;pointer-events:none}
 .top{position:absolute;z-index:5;top:44px;right:48px;left:48px;display:flex;justify-content:space-between;align-items:center}
-.top img{height:50px}
+.top>img{height:50px}
 .eb{display:inline-flex;align-items:center;gap:10px;font:700 25px Cairo;color:var(--cyan-ink);background:#fff;border:1.5px solid var(--line);border-radius:99px;padding:7px 22px;white-space:nowrap}
-.mk{height:1.05em;width:auto;display:inline-block;vertical-align:middle}
+.mk{height:.58em;width:auto;display:inline-block;vertical-align:middle;margin-inline-start:4px;padding-inline-start:12px;border-inline-start:1.5px solid #d8e1ea;box-sizing:content-box}
+.lab .mk{border-color:#ffffff30;margin:0;padding:0 0 0 14px;border-inline-start:none;border-inline-end:1.5px solid #ffffff30;padding-inline-end:14px;height:.55em}
+.ebd .mk{border-color:#ffffff30}
 .eb i,.lab i,.sl i{display:inline-block;width:7px;height:20px;background:var(--cyan);transform:skewX(-22deg);margin-left:3px}
 .foot{position:absolute;z-index:6;bottom:38px;right:48px;left:48px;display:flex;justify-content:space-between;align-items:center;font:500 22px "Readex Pro";color:var(--muted)}
 .foot .n{border:1.5px solid var(--line);background:#fff;border-radius:99px;padding:4px 18px;direction:ltr}
