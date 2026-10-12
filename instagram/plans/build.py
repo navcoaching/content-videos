@@ -124,19 +124,20 @@ body{background:#888;font-family:Cairo,"IBM Plex Sans Arabic",sans-serif;color:v
 .vid{flex:1;min-height:0;position:relative;overflow:hidden;border:1.5px solid var(--line);border-bottom:none;border-radius:28px 28px 0 0;
  background:linear-gradient(160deg,#ffffff,#e6eef8)}
 .vid.live{background:transparent}
-.bod{position:absolute;inset:34px 18px 12px;display:flex;justify-content:center;gap:4%}
+.bod{position:absolute;inset:16px 18px 46px;display:flex;justify-content:center;gap:4%}
 .bod svg{height:100%;width:46%}
+.bod.one svg{width:70%}
 .no{position:absolute;z-index:3;top:14px;right:14px;width:50px;height:50px;border-radius:15px;background:var(--cyan);color:var(--ink);font:700 27px "Readex Pro";display:flex;align-items:center;justify-content:center}
-.legend{position:absolute;z-index:3;top:20px;left:16px;display:flex;gap:10px;font:500 17px Cairo;color:var(--muted)}
-.legend b{display:inline-block;width:13px;height:13px;border-radius:4px;margin-left:5px;vertical-align:-1px}
+.legend{position:absolute;z-index:3;bottom:12px;left:16px;display:flex;gap:14px;font:600 20px Cairo;color:var(--muted)}
+.legend b{display:inline-block;width:16px;height:16px;border-radius:4px;margin-left:5px;vertical-align:-1px}
 .vnote{position:absolute;z-index:3;bottom:12px;left:12px;right:12px;text-align:center;font:600 17px Cairo;color:#fff;background:#07142acc;border-radius:99px;padding:4px 10px}
-.cap{background:#fff;border:1.5px solid var(--line);border-top:none;border-radius:0 0 28px 28px;padding:12px 18px 14px}
-.cap b{display:block;font:700 23px "Readex Pro";direction:ltr;text-align:right;color:var(--head);line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.cap .m{font-size:18px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.cap .row{display:flex;gap:8px;margin-top:8px;align-items:center;flex-wrap:nowrap}
-.chip{background:var(--cyan-soft);color:var(--navy);border-radius:10px;padding:3px 10px;font:700 18px Cairo;white-space:nowrap}
+.cap{background:#fff;border:1.5px solid var(--line);border-top:none;border-radius:0 0 28px 28px;padding:14px 20px 16px}
+.cap b{display:block;font:700 34px "Readex Pro";direction:ltr;text-align:right;color:var(--head);line-height:1.2;white-space:nowrap;overflow:hidden}
+.cap .m{font-size:24px;line-height:1.35;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cap .row{display:flex;gap:10px;margin-top:10px;align-items:center;flex-wrap:nowrap}
+.chip{background:var(--cyan-soft);color:var(--navy);border-radius:12px;padding:4px 14px;font:700 26px Cairo;white-space:nowrap}
 .chip em{font-style:normal;font-family:"Readex Pro";direction:ltr;unicode-bidi:isolate}
-.alt{display:block;margin-top:6px;font-size:17px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.alt{display:block;margin-top:8px;font-size:24px;line-height:1.3;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .alt bdi{font-family:"Readex Pro";font-weight:500;color:var(--head)}
 .lab{position:absolute;z-index:4;left:50%;transform:translate(-50%,-50%);background:var(--ink);color:#fff;border-radius:99px;padding:14px 38px;font:900 36px Cairo;display:flex;align-items:center;gap:14px;box-shadow:0 18px 40px #07142a40;white-space:nowrap}
 .lab small{font:500 22px "IBM Plex Sans Arabic";color:#a9d8ec}
@@ -161,7 +162,7 @@ body{background:#888;font-family:Cairo,"IBM Plex Sans Arabic",sans-serif;color:v
 /* ad */
 .ad{background:radial-gradient(70% 50% at 85% 10%,#1f4a8f 0%,transparent 70%),linear-gradient(165deg,#0d1f3c,#07142a 75%);color:#fff}
 .ad::before{background-image:linear-gradient(#4cc5ed12 1px,transparent 1px),linear-gradient(90deg,#4cc5ed12 1px,transparent 1px)}
-.ad .c{position:absolute;z-index:3;top:150px;right:64px;left:64px}
+.ad .c{position:absolute;z-index:3;top:190px;right:64px;left:64px}
 .ad .ebd{display:inline-flex;align-items:center;gap:10px;font:700 26px Cairo;color:var(--cyan)}
 .ad h2{font:900 80px/1.2 Cairo;margin-top:16px}
 .ad h2 em{font-style:normal;color:var(--cyan)}
@@ -193,7 +194,9 @@ body{background:#888;font-family:Cairo,"IBM Plex Sans Arabic",sans-serif;color:v
 .hk .save b svg{color:var(--navy)}
 .hk .save span{font:700 28px Cairo;color:var(--cyan-ink)}
 .hk .foot{color:#a9bad0}.hk .foot .n{background:transparent;border-color:#ffffff40;color:#a9bad0}
-.ad .pdfl{position:absolute;z-index:3;bottom:250px;right:64px;left:64px;display:flex;align-items:center;justify-content:space-between;border:1.5px solid #ffffff40;border-radius:24px;padding:16px 26px}
+.ad .endc{position:absolute;z-index:3;bottom:120px;right:64px;left:64px;display:flex;flex-direction:column;gap:22px}
+.ad .endc .cta{position:static}
+.ad .pdfl{display:flex;align-items:center;justify-content:space-between;border:1.5px solid #ffffff40;border-radius:24px;padding:16px 26px}
 .ad .pdfl b{display:flex;align-items:center;gap:12px;font:700 28px Cairo;color:#fff}
 .ad .pdfl b svg{color:var(--cyan)}
 .ad .pdfl span{font:700 26px Cairo;color:var(--cyan)}
@@ -209,7 +212,7 @@ def esc(s):
     return html.escape(s, quote=False)
 
 
-def tile(i, r, rl, al):
+def tile(i, r, rl, al, show_sets=True, show_reps=True):
     name, _yt, musc, pri, sec, sets, reps, alt = r[:8]
     clip = CLIPS.get(name)
     reps = reps.replace('<br>', ' ')
@@ -218,12 +221,31 @@ def tile(i, r, rl, al):
         media = (f'<div class="vid live" data-clip="{clip["f"]}" data-ss="{clip["ss"]}" data-crop="{clip["crop"]}" data-src="{clip.get("src", "1920:1080")}" data-credit="{clip.get("credit", "Coverr")}"{' data-grade="0"' if clip.get("grade") is False else ''}><span class="no">{i}</span>'
                  + (f'<span class="vnote">{clip["note"]}</span>' if clip.get('note') else '') + '</div>')
     else:
+        views = [v for v in (body('f', pri, sec), body('b', pri, sec)) if '#284da0' in v or '#4cc5ed' in v]
         media = (f'<div class="vid"><span class="no">{i}</span>'
                  '<span class="legend"><span><b style="background:#284da0"></b>أساسية</span><span><b style="background:#4cc5ed"></b>مساعدة</span></span>'
-                 f'<div class="bod">{body("f", pri, sec)}{body("b", pri, sec)}</div></div>')
+                 f'<div class="bod{" one" if len(views) == 1 else ""}">{"".join(views)}</div></div>')
+    chips = (f'<span class="chip">{sets_s}</span>' if show_sets else '') + \
+            (f'<span class="chip">{rl or "العدات"}: <em>{esc(reps)}</em></span>' if show_reps else '')
     return (f'<div class="t">{media}<div class="cap"><b>{esc(name)}</b><div class="m">{" · ".join(musc)}</div>'
-            f'<div class="row"><span class="chip">{sets_s}</span><span class="chip">{rl or "العدات"}: <em>{esc(reps)}</em></span>'
-            f'</div><span class="alt">{al or "البديل"}: <bdi>{esc(alt)}</bdi></span></div></div>')
+            + (f'<div class="row">{chips}</div>' if chips else '')
+            + f'<span class="alt">{al or "البديل"}: <bdi>{esc(alt)}</bdi></span></div></div>')
+
+
+def eyebrow(p):
+    """distinct label per info slide (the PDF groups several panels under one page title)"""
+    sub = p.get('sub', '')
+    if not sub:
+        return 'الأدوات'
+    if sub.startswith(('مجموعة العضلات', 'العضلة')):
+        return 'جولات الأسبوع لكل عضلة'
+    if sub.startswith('المنطقة'):
+        return 'دقائق التمدد بالأسبوع'
+    if sub.startswith('راجعوا'):
+        return 'قبل ما تبدأ'
+    if sub.startswith('وقّفوا'):
+        return 'متى توقّفون التمرين؟'
+    return sub
 
 
 def split(rows):
@@ -254,7 +276,7 @@ def build(key):
 <div class="top">{LOGO_W}<span class="eb ebk">جدول مجاني {SLW}</span></div>
 <div class="c"><h1>{HOOKS[key]}</h1><span class="pl">{plain_title} · {place}</span></div>
 <div class="dl">{days_html}</div>
-<div class="save"><b>{BOOKMARK}{"احفظيه" if fem else "احفظه"} وارجع له وقت التمرين</b><span>اسحب ←</span></div>'''))
+<div class="save"><b>{BOOKMARK}{"احفظيه وارجعي له" if fem else "احفظه وارجع له"} وقت التمرين</b><span>{"اسحبي" if fem else "اسحب"} ←</span></div>'''))
 
     # ---- day slides
     for d in D:
@@ -262,14 +284,23 @@ def build(key):
         idx = 1
         for pi, part in enumerate(parts):
             lay = {4: 'L4', 3: 'L3', 2: 'L2', 1: 'L1'}[len(part)]
-            tiles = ''.join(tile(idx + j, r, d.get('rl'), d.get('al')) for j, r in enumerate(part))
+            same_sets = len({str(r[5]) for r in d['rows']}) == 1
+            same_reps = len({r[6] for r in d['rows']}) == 1
+            tiles = ''.join(tile(idx + j, r, d.get('rl'), d.get('al'), not same_sets, not same_reps) for j, r in enumerate(part))
             idx += len(part)
             lbl = d.get('lbl', 'اليوم')
             more = f' · {pi + 1}/{len(parts)}' if len(parts) > 1 else ''
-            lab_top = '685px' if lay in ('L4', 'L3') else '176px'
+            lab_top = '690px' if lay in ('L4', 'L3') else '176px'
+            r0 = d['rows'][0]
+            common = []
+            if same_sets:
+                common.append(f'{r0[5]} جولات' if isinstance(r0[5], int) else str(r0[5]))
+            if same_reps:
+                common.append(f'{d.get("rl") or "العدات"} <bdi dir="ltr">{r0[6].replace("<br>", " ")}</bdi>')
+            info = ' · '.join(common) if common else f'{len(d["rows"])} تمارين'
             slides.append(('day', f'''<div class="top">{LOGO}<span class="eb">{plain_title} {SL}</span></div>
 <div class="grid {lay}">{tiles}</div>
-<div class="lab" style="top:{lab_top}">{SLW}{lbl} {d["n"]} · {d["title"]}<small>{len(d["rows"])} تمارين{more}</small></div>'''))
+<div class="lab" style="top:{lab_top}">{SLW}{lbl} {d["n"]} · {d["title"]}<small>{info}{more}</small></div>'''))
 
     # ---- info panels (everything else in the PDF)
     for p in PANELS[key]:
@@ -280,10 +311,10 @@ def build(key):
             for part, (a, b) in enumerate(((0, h // 2), (h // 2, h))):
                 fn = p['f'].replace('.png', f'-{part}.png')
                 img.crop((0, a, w, b)).save(fn)
-                slides.append(('info', f'''<div class="top">{LOGO}<span class="eb">{p["title"]} {SL}</span></div>
+                slides.append(('info', f'''<div class="top">{LOGO}<span class="eb">{eyebrow(p)} {SL}</span></div>
 <div class="pw"><img src="{os.path.relpath(fn, os.path.join(HERE, key))}"></div>'''))
             continue
-        slides.append(('info', f'''<div class="top">{LOGO}<span class="eb">{p["title"]} {SL}</span></div>
+        slides.append(('info', f'''<div class="top">{LOGO}<span class="eb">{eyebrow(p)} {SL}</span></div>
 <div class="pw"><img src="{rel}"></div>'''))
 
     # ---- ad
@@ -294,8 +325,8 @@ def build(key):
 <ul><li><i>✓</i>تمرين وتغذية مخصصة لهدفك</li><li><i>✓</i>متابعة أسبوعية بالفيديو أو الصوت</li>
 <li><i>✓</i>تعديلات حسب تقدمك وقياساتك</li><li><i>✓</i>تواصل يومي على واتساب</li></ul>
 <div class="price"><span>الباقات من <b>250</b> ر.س / شهر</span><span>خصم <b>10%</b> للطلاب</span><span>ضمان استرجاع بشروط</span></div></div>
-<div class="pdfl"><b>{DOC}الجدول كامل PDF مجانًا</b><span>من نفس الرابط ↓</span></div>
-<div class="cta"><b>{you["start"]} برنامجك ←</b><span>navcoaching.com</span></div>'''))
+<div class="endc"><div class="pdfl"><b>{DOC}الجدول كامل PDF مجانًا</b><span>من نفس الرابط ↓</span></div>
+<div class="cta"><b>{you["start"]} برنامجك ←</b><span>navcoaching.com</span></div></div>'''))
 
     # ---- assemble
     N = len(slides)
@@ -312,7 +343,7 @@ def build(key):
         out.append(f'<section class="{cls}" id="s{i}">{inner}<div class="foot"><span class="n">{i} / {N}</span>'
                    f'<span class="r">{credit}</span></div></section>')
         spec.append(dict(id=f's{i}', kind=kind, video=live))
-    out.append('<script>document.fonts.ready.then(()=>document.querySelectorAll(".hk h1").forEach(h=>{let f=104;while(h.scrollWidth>h.clientWidth&&f>60){f-=2;h.style.fontSize=f+"px"}}))</script>')
+    out.append('<script>document.fonts.ready.then(()=>{function fit(h,f,m){while(h.scrollWidth>h.clientWidth+1&&f>m){f-=1;h.style.fontSize=f+"px"}}document.querySelectorAll(".hk h1").forEach(h=>fit(h,104,60));document.querySelectorAll(".cap b").forEach(h=>fit(h,34,20));document.querySelectorAll(".cap .m").forEach(h=>fit(h,24,17))})</script>')
     out.append('</body></html>')
     os.makedirs(os.path.join(HERE, key), exist_ok=True)
     open(os.path.join(HERE, key, 'slides.html'), 'w', encoding='utf8').write('\n'.join(out))
