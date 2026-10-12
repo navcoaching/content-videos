@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Instagram carousels for the six free plans (site style, Cairo font).
+"""Instagram carousels for the six free plans (site style, Noto Kufi Arabic font).
 
 Inputs : plans-data.json (DAYS extracted from pdf/prog-*-portrait.html), panels.json (+ panel PNGs)
 Output : <plan>/slides.html  +  <plan>/slides.json (render spec for render.js)
@@ -100,19 +100,19 @@ def body(view, pri, sec):
 CSS = r'''
 :root{--ink:#07142a;--navy:#284da0;--cyan:#4cc5ed;--cyan-ink:#0a6a8f;--cyan-soft:#e4f6fc;--paper:#f3f6fa;--line:#d8e1ea;--muted:#56667a;--head:#0b1a33}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#888;font-family:Cairo,"IBM Plex Sans Arabic",sans-serif;color:var(--head)}
+body{background:#888;font-family:"Noto Kufi Arabic",sans-serif;color:var(--head)}
 .s{width:1080px;height:1350px;position:relative;overflow:hidden;margin:0 0 30px;background:var(--paper)}
 .s::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#284da00f 1px,transparent 1px),linear-gradient(90deg,#284da00f 1px,transparent 1px);background-size:56px 56px;pointer-events:none}
 .top{position:absolute;z-index:5;top:44px;right:48px;left:48px;display:flex;justify-content:space-between;align-items:center}
 .top>img{height:50px}
-.eb{display:inline-flex;align-items:center;gap:10px;font:700 25px Cairo;color:var(--cyan-ink);background:#fff;border:1.5px solid var(--line);border-radius:99px;padding:7px 22px;white-space:nowrap}
+.eb{display:inline-flex;align-items:center;gap:10px;font:700 25px Noto Kufi Arabic;color:var(--cyan-ink);background:#fff;border:1.5px solid var(--line);border-radius:99px;padding:7px 22px;white-space:nowrap}
 .mk{height:.58em;width:auto;display:inline-block;vertical-align:middle;margin-inline-start:4px;padding-inline-start:12px;border-inline-start:1.5px solid #d8e1ea;box-sizing:content-box}
 .lab .mk{border-color:#ffffff30;margin:0;padding:0 0 0 14px;border-inline-start:none;border-inline-end:1.5px solid #ffffff30;padding-inline-end:14px;height:.55em}
 .ebd .mk{border-color:#ffffff30}
 .eb i,.lab i,.sl i{display:inline-block;width:7px;height:20px;background:var(--cyan);transform:skewX(-22deg);margin-left:3px}
-.foot{position:absolute;z-index:6;bottom:38px;right:48px;left:48px;display:flex;justify-content:space-between;align-items:center;font:500 22px "Readex Pro";color:var(--muted)}
+.foot{position:absolute;z-index:6;bottom:38px;right:48px;left:48px;display:flex;justify-content:space-between;align-items:center;font:500 22px "Noto Kufi Arabic";color:var(--muted)}
 .foot .n{border:1.5px solid var(--line);background:#fff;border-radius:99px;padding:4px 18px;direction:ltr}
-.foot .r{font-family:Cairo;font-weight:700}
+.foot .r{font-family:Noto Kufi Arabic;font-weight:700}
 /* grid */
 .grid{position:absolute;z-index:2;top:126px;right:48px;left:48px;bottom:96px;display:grid;column-gap:24px}
 .L4{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;row-gap:96px}
@@ -127,53 +127,53 @@ body{background:#888;font-family:Cairo,"IBM Plex Sans Arabic",sans-serif;color:v
 .bod{position:absolute;inset:16px 18px 46px;display:flex;justify-content:center;gap:4%}
 .bod svg{height:100%;width:46%}
 .bod.one svg{width:70%}
-.no{position:absolute;z-index:3;top:14px;right:14px;width:50px;height:50px;border-radius:15px;background:var(--cyan);color:var(--ink);font:700 27px "Readex Pro";display:flex;align-items:center;justify-content:center}
-.legend{position:absolute;z-index:3;bottom:12px;left:16px;display:flex;gap:14px;font:600 20px Cairo;color:var(--muted)}
+.no{position:absolute;z-index:3;top:14px;right:14px;width:50px;height:50px;border-radius:15px;background:var(--cyan);color:var(--ink);font:700 27px "Noto Kufi Arabic";display:flex;align-items:center;justify-content:center}
+.legend{position:absolute;z-index:3;bottom:12px;left:16px;display:flex;gap:14px;font:600 20px Noto Kufi Arabic;color:var(--muted)}
 .legend b{display:inline-block;width:16px;height:16px;border-radius:4px;margin-left:5px;vertical-align:-1px}
-.vnote{position:absolute;z-index:3;bottom:12px;left:12px;right:12px;text-align:center;font:600 17px Cairo;color:#fff;background:#07142acc;border-radius:99px;padding:4px 10px}
+.vnote{position:absolute;z-index:3;bottom:12px;left:12px;right:12px;text-align:center;font:600 17px Noto Kufi Arabic;color:#fff;background:#07142acc;border-radius:99px;padding:4px 10px}
 .cap{background:#fff;border:1.5px solid var(--line);border-top:none;border-radius:0 0 28px 28px;padding:14px 20px 16px}
-.cap b{display:block;font:700 34px "Readex Pro";direction:ltr;text-align:right;color:var(--head);line-height:1.2;white-space:nowrap;overflow:hidden}
+.cap b{display:block;font:700 34px "Noto Kufi Arabic";direction:ltr;text-align:right;color:var(--head);line-height:1.2;white-space:nowrap;overflow:hidden}
 .cap .m{font-size:24px;line-height:1.35;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.cap .row{display:flex;gap:10px;margin-top:10px;align-items:center;flex-wrap:nowrap}
-.chip{background:var(--cyan-soft);color:var(--navy);border-radius:12px;padding:4px 14px;font:700 26px Cairo;white-space:nowrap}
-.chip em{font-style:normal;font-family:"Readex Pro";direction:ltr;unicode-bidi:isolate}
+.cap .row{display:flex;gap:8px;margin-top:10px;align-items:center;flex-wrap:nowrap;overflow:hidden}
+.chip{background:var(--cyan-soft);color:var(--navy);border-radius:12px;padding:4px 14px;font:700 26px Noto Kufi Arabic;white-space:nowrap}
+.chip em{font-style:normal;font-family:"Noto Kufi Arabic";unicode-bidi:plaintext}
 .alt{display:block;margin-top:8px;font-size:24px;line-height:1.3;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.alt bdi{font-family:"Readex Pro";font-weight:500;color:var(--head)}
-.lab{position:absolute;z-index:4;left:50%;transform:translate(-50%,-50%);background:var(--ink);color:#fff;border-radius:99px;padding:14px 38px;font:900 36px Cairo;display:flex;align-items:center;gap:14px;box-shadow:0 18px 40px #07142a40;white-space:nowrap}
-.lab small{font:500 22px "IBM Plex Sans Arabic";color:#a9d8ec}
+.alt bdi{font-family:"Noto Kufi Arabic";font-weight:500;color:var(--head)}
+.lab{position:absolute;z-index:4;left:50%;transform:translate(-50%,-50%);background:var(--ink);color:#fff;border-radius:99px;padding:14px 38px;font:900 36px Noto Kufi Arabic;display:flex;align-items:center;gap:14px;box-shadow:0 18px 40px #07142a40;white-space:nowrap}
+.lab small{font:500 22px "Noto Kufi Arabic";color:#a9d8ec}
 /* panels */
 .pw{position:absolute;z-index:2;top:130px;right:48px;left:48px;bottom:96px;display:flex;align-items:center;justify-content:center}
 .pw img{max-width:100%;max-height:100%;border-radius:28px;box-shadow:0 16px 36px #284da018}
 /* cover */
-.cv h1{font:900 112px/1.12 Cairo;color:var(--head)}
+.cv h1{font:900 112px/1.12 Noto Kufi Arabic;color:var(--head)}
 .cv h1 em{font-style:normal;color:var(--navy)}
 .cv .c{position:absolute;z-index:3;top:170px;right:64px;left:64px}
-.cv .place{display:inline-block;margin-top:14px;background:var(--cyan);color:var(--ink);font:900 34px Cairo;padding:6px 26px;border-radius:99px}
-.cv .sub{font-size:32px;color:var(--muted);margin-top:18px;line-height:1.6;font-family:"IBM Plex Sans Arabic"}
+.cv .place{display:inline-block;margin-top:14px;background:var(--cyan);color:var(--ink);font:900 34px Noto Kufi Arabic;padding:6px 26px;border-radius:99px}
+.cv .sub{font-size:32px;color:var(--muted);margin-top:18px;line-height:1.6;font-family:"Noto Kufi Arabic"}
 .days{margin-top:44px;display:flex;flex-direction:column;gap:22px}
 .day{background:#fff;border:1.5px solid var(--line);border-radius:28px;padding:24px 28px;display:flex;align-items:center;gap:20px;box-shadow:0 12px 28px #284da012}
-.day .k{flex:0 0 104px;height:104px;border-radius:22px;background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font:900 36px/1 "Readex Pro"}
-.day .k small{font:700 17px Cairo;margin-bottom:3px}
+.day .k{flex:0 0 104px;height:104px;border-radius:22px;background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font:900 36px/1 "Noto Kufi Arabic"}
+.day .k small{font:700 17px Noto Kufi Arabic;margin-bottom:3px}
 .day:nth-child(1) .k{background:var(--cyan);color:var(--ink)}.day:nth-child(3) .k{background:var(--ink)}
-.day h3{font:900 40px/1.3 Cairo}.day p{font-size:24px;color:var(--muted);font-family:"IBM Plex Sans Arabic"}
-.day .cnt{margin-inline-start:auto;font:700 25px Cairo;color:var(--cyan-ink);white-space:nowrap}
+.day h3{font:900 40px/1.3 Noto Kufi Arabic}.day p{font-size:24px;color:var(--muted);font-family:"Noto Kufi Arabic"}
+.day .cnt{margin-inline-start:auto;font:700 25px Noto Kufi Arabic;color:var(--cyan-ink);white-space:nowrap}
 .free{position:absolute;z-index:3;bottom:110px;right:64px;left:64px;background:var(--ink);color:#fff;border-radius:28px;padding:24px 30px;display:flex;align-items:center;justify-content:space-between}
-.free b{font:900 34px Cairo}.free span{font:700 28px "Readex Pro";color:var(--cyan)}
+.free b{font:900 34px Noto Kufi Arabic}.free span{font:700 28px "Noto Kufi Arabic";color:var(--cyan)}
 /* ad */
 .ad{background:radial-gradient(70% 50% at 85% 10%,#1f4a8f 0%,transparent 70%),linear-gradient(165deg,#0d1f3c,#07142a 75%);color:#fff}
 .ad::before{background-image:linear-gradient(#4cc5ed12 1px,transparent 1px),linear-gradient(90deg,#4cc5ed12 1px,transparent 1px)}
 .ad .c{position:absolute;z-index:3;top:190px;right:64px;left:64px}
-.ad .ebd{display:inline-flex;align-items:center;gap:10px;font:700 26px Cairo;color:var(--cyan)}
-.ad h2{font:900 80px/1.2 Cairo;margin-top:16px}
+.ad .ebd{display:inline-flex;align-items:center;gap:10px;font:700 26px Noto Kufi Arabic;color:var(--cyan)}
+.ad h2{font:900 80px/1.2 Noto Kufi Arabic;margin-top:16px}
 .ad h2 em{font-style:normal;color:var(--cyan)}
 .ad ul{list-style:none;margin-top:30px;display:flex;flex-direction:column;gap:16px}
-.ad li{display:flex;align-items:center;gap:18px;font:700 32px Cairo}
+.ad li{display:flex;align-items:center;gap:18px;font:700 32px Noto Kufi Arabic}
 .ad li i{flex:0 0 46px;height:46px;border-radius:14px;background:var(--cyan);color:var(--ink);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:26px}
 .ad .price{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
-.ad .price span{border:1.5px solid #ffffff40;border-radius:99px;padding:8px 22px;font:700 26px Cairo;color:#d4e0f0}
-.ad .price b{font-family:"Readex Pro";color:#fff}
+.ad .price span{border:1.5px solid #ffffff40;border-radius:99px;padding:8px 22px;font:700 26px Noto Kufi Arabic;color:#d4e0f0}
+.ad .price b{font-family:"Noto Kufi Arabic";color:#fff}
 .ad .cta{position:absolute;z-index:3;bottom:120px;right:64px;left:64px;background:var(--cyan);color:var(--ink);border-radius:30px;padding:26px 34px;display:flex;align-items:center;justify-content:space-between}
-.ad .cta b{font:900 44px Cairo}.ad .cta span{font:700 32px "Readex Pro"}
+.ad .cta b{font:900 44px Noto Kufi Arabic}.ad .cta span{font:700 32px "Noto Kufi Arabic"}
 .ad .foot{color:#a9bad0}.ad .foot .n{background:transparent;border-color:#ffffff40;color:#a9bad0}
 /* hook cover */
 .hk{background:#07142a;color:#fff}
@@ -183,23 +183,23 @@ body{background:#888;font-family:Cairo,"IBM Plex Sans Arabic",sans-serif;color:v
 .hk .ebk{background:#ffffff14;border-color:#ffffff40;color:#fff}
 .hk .ebk .mk{border-color:#ffffff40}
 .hk .c{position:absolute;z-index:3;top:150px;right:64px;left:64px}
-.hk h1{white-space:nowrap;font:900 104px/1.16 Cairo;color:#fff;letter-spacing:-.5px;text-shadow:0 4px 30px #07142a80}
+.hk h1{white-space:nowrap;font:900 104px/1.16 Noto Kufi Arabic;color:#fff;letter-spacing:-.5px;text-shadow:0 4px 30px #07142a80}
 .hk h1 em{font-style:normal;color:var(--cyan)}
-.hk .pl{display:inline-block;margin-top:30px;background:var(--cyan);color:var(--ink);font:900 32px Cairo;padding:6px 26px;border-radius:99px}
+.hk .pl{display:inline-block;margin-top:30px;background:var(--cyan);color:var(--ink);font:900 32px Noto Kufi Arabic;padding:6px 26px;border-radius:99px}
 .hk .dl{position:absolute;z-index:3;bottom:236px;right:64px;left:64px;display:flex;gap:12px;flex-wrap:wrap}
-.hk .dl span{background:#ffffff1f;border:1.5px solid #ffffff38;border-radius:16px;padding:8px 18px;font:700 26px Cairo;color:#fff}
-.hk .dl small{font:700 20px Cairo;color:#a9d8ec;margin-left:6px}
+.hk .dl span{background:#ffffff1f;border:1.5px solid #ffffff38;border-radius:16px;padding:8px 18px;font:700 26px Noto Kufi Arabic;color:#fff}
+.hk .dl small{font:700 20px Noto Kufi Arabic;color:#a9d8ec;margin-left:6px}
 .hk .save{position:absolute;z-index:3;bottom:110px;right:64px;left:64px;background:#fff;color:var(--ink);border-radius:28px;padding:22px 30px;display:flex;align-items:center;justify-content:space-between}
-.hk .save b{display:flex;align-items:center;gap:12px;font:900 34px Cairo}
+.hk .save b{display:flex;align-items:center;gap:12px;font:900 34px Noto Kufi Arabic}
 .hk .save b svg{color:var(--navy)}
-.hk .save span{font:700 28px Cairo;color:var(--cyan-ink)}
+.hk .save span{font:700 28px Noto Kufi Arabic;color:var(--cyan-ink)}
 .hk .foot{color:#a9bad0}.hk .foot .n{background:transparent;border-color:#ffffff40;color:#a9bad0}
 .ad .endc{position:absolute;z-index:3;bottom:120px;right:64px;left:64px;display:flex;flex-direction:column;gap:22px}
 .ad .endc .cta{position:static}
 .ad .pdfl{display:flex;align-items:center;justify-content:space-between;border:1.5px solid #ffffff40;border-radius:24px;padding:16px 26px}
-.ad .pdfl b{display:flex;align-items:center;gap:12px;font:700 28px Cairo;color:#fff}
+.ad .pdfl b{display:flex;align-items:center;gap:12px;font:700 28px Noto Kufi Arabic;color:#fff}
 .ad .pdfl b svg{color:var(--cyan)}
-.ad .pdfl span{font:700 26px Cairo;color:var(--cyan)}
+.ad .pdfl span{font:700 26px Noto Kufi Arabic;color:var(--cyan)}
 '''
 
 LOGO = '<img src="../../../brand/logo-color-hd.png">'
@@ -343,7 +343,7 @@ def build(key):
         out.append(f'<section class="{cls}" id="s{i}">{inner}<div class="foot"><span class="n">{i} / {N}</span>'
                    f'<span class="r">{credit}</span></div></section>')
         spec.append(dict(id=f's{i}', kind=kind, video=live))
-    out.append('<script>document.fonts.ready.then(()=>{function fit(h,f,m){while(h.scrollWidth>h.clientWidth+1&&f>m){f-=1;h.style.fontSize=f+"px"}}document.querySelectorAll(".hk h1").forEach(h=>fit(h,104,60));document.querySelectorAll(".cap b").forEach(h=>fit(h,34,20));document.querySelectorAll(".cap .m").forEach(h=>fit(h,24,17))})</script>')
+    out.append('<script>document.fonts.ready.then(()=>{function fit(h,f,m){while(h.scrollWidth>h.clientWidth+1&&f>m){f-=1;h.style.fontSize=f+"px"}}document.querySelectorAll(".hk h1").forEach(h=>fit(h,104,60));document.querySelectorAll(".cap b").forEach(h=>fit(h,34,20));document.querySelectorAll(".cap .m").forEach(h=>fit(h,24,17));document.querySelectorAll(".cap .row").forEach(r=>{let f=26;const cs=r.querySelectorAll(".chip");while(r.scrollWidth>r.clientWidth+1&&f>16){f--;cs.forEach(c=>c.style.fontSize=f+"px")}})})</script>')
     out.append('</body></html>')
     os.makedirs(os.path.join(HERE, key), exist_ok=True)
     open(os.path.join(HERE, key, 'slides.html'), 'w', encoding='utf8').write('\n'.join(out))

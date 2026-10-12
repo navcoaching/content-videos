@@ -2,32 +2,32 @@
 <style>
 :root{--bg:#0b1a33;--bg2:#0e2142;--ink:#07142a;--white:#f4f8fc;--soft:#b9c9de;--cyan:#4cc5ed;--navy:#284da0;--pain:#ff6b6b;--line:#ffffff26}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#555;font-family:"IBM Plex Sans Arabic",Cairo,sans-serif}
+body{background:#555;font-family:"Noto Kufi Arabic",sans-serif}
 .s{width:1080px;height:1350px;position:relative;overflow:hidden;margin:0 0 30px;background:var(--bg);color:var(--white)}
 .s::after{content:"";position:absolute;left:0;right:0;bottom:0;height:520px;background:linear-gradient(180deg,transparent,#07142a99);pointer-events:none}
 .top{position:absolute;z-index:3;top:52px;right:64px;left:64px;display:flex;justify-content:space-between;align-items:center}
 .top img{height:54px}
-.n{font:600 24px "Readex Pro";color:var(--soft);border:1.5px solid var(--line);border-radius:99px;padding:6px 20px;direction:ltr}
+.n{font:600 24px "Noto Kufi Arabic";color:var(--soft);border:1.5px solid var(--line);border-radius:99px;padding:6px 20px;direction:ltr}
 .art{position:absolute;z-index:1;top:150px;left:0;right:0;height:690px}
 .art svg{width:100%;height:100%}
 .tx{position:absolute;z-index:2;right:88px;left:88px;top:860px;text-align:center}
-.tx h1{font:800 58px/1.38 Cairo;letter-spacing:-.5px;text-wrap:balance}
+.tx h1{font:800 58px/1.38 Noto Kufi Arabic;letter-spacing:-.5px;text-wrap:balance}
 .tx h1 em,.tx p em{font-style:normal;color:var(--cyan)}
-.tx p{margin-top:22px;font:500 38px/1.6 "IBM Plex Sans Arabic";color:var(--soft);text-wrap:balance}
+.tx p{margin-top:22px;font:500 38px/1.6 "Noto Kufi Arabic";color:var(--soft);text-wrap:balance}
 .tx p b{color:var(--white);font-weight:700}
-.dose{display:inline-block;margin-top:26px;font:700 30px Cairo;color:var(--ink);background:var(--cyan);border-radius:16px;padding:8px 24px}
-.foot{position:absolute;z-index:3;bottom:46px;right:64px;left:64px;display:flex;justify-content:center;font:500 24px "Readex Pro";color:#7f93b0}
+.dose{display:inline-block;margin-top:26px;font:700 30px Noto Kufi Arabic;color:var(--ink);background:var(--cyan);border-radius:16px;padding:8px 24px}
+.foot{position:absolute;z-index:3;bottom:46px;right:64px;left:64px;display:flex;justify-content:center;font:500 24px "Noto Kufi Arabic";color:#7f93b0}
 /* rules + cta */
 .list{position:absolute;z-index:2;top:330px;right:88px;left:88px;display:flex;flex-direction:column;gap:26px}
-.list .r{display:flex;align-items:flex-start;gap:24px;font:600 38px/1.5 "IBM Plex Sans Arabic"}
-.list .r i{flex:0 0 60px;height:60px;border-radius:18px;background:var(--cyan);color:var(--ink);display:flex;align-items:center;justify-content:center;font:800 32px "Readex Pro";font-style:normal;margin-top:2px}
-.warn{position:absolute;z-index:2;right:88px;left:88px;bottom:150px;border:2px solid #ff6b6b66;border-radius:24px;padding:26px 32px;font:500 30px/1.6 "IBM Plex Sans Arabic";color:var(--soft)}
+.list .r{display:flex;align-items:flex-start;gap:24px;font:600 38px/1.5 "Noto Kufi Arabic"}
+.list .r i{flex:0 0 60px;height:60px;border-radius:18px;background:var(--cyan);color:var(--ink);display:flex;align-items:center;justify-content:center;font:800 32px "Noto Kufi Arabic";font-style:normal;margin-top:2px}
+.warn{position:absolute;z-index:2;right:88px;left:88px;bottom:150px;border:2px solid #ff6b6b66;border-radius:24px;padding:26px 32px;font:500 30px/1.6 "Noto Kufi Arabic";color:var(--soft)}
 .warn b{color:var(--pain)}
 .big{position:absolute;z-index:2;top:200px;right:88px;left:88px}
-.big h1{font:900 92px/1.2 Cairo;letter-spacing:-1px}
+.big h1{font:900 92px/1.2 Noto Kufi Arabic;letter-spacing:-1px}
 .big h1 em{font-style:normal;color:var(--cyan)}
 .cta{position:absolute;z-index:2;right:88px;left:88px;bottom:140px;background:var(--cyan);color:var(--ink);border-radius:28px;padding:30px 36px;display:flex;justify-content:space-between;align-items:center}
-.cta b{font:900 46px Cairo}.cta span{font:700 32px "Readex Pro"}
+.cta b{font:900 46px Noto Kufi Arabic}.cta span{font:700 32px "Noto Kufi Arabic"}
 </style></head><body>
 <script>
 // ---------- geometric capsule figure ----------
@@ -69,8 +69,8 @@ function figure(o){
 }
 function burst(x,y,r){let g=`<circle cx="${x}" cy="${y}" r="${r*.28}" fill="#ff6b6b"/>`;for(let i=0;i<8;i++){const a=i*45*R;g+=`<line x1="${x+Math.cos(a)*r*.48}" y1="${y+Math.sin(a)*r*.48}" x2="${x+Math.cos(a)*r}" y2="${y+Math.sin(a)*r}" stroke="#ff6b6b" stroke-width="6" stroke-linecap="round"/>`}return g}
 const floorLine=(y,x1=180,x2=900)=>`<line x1="${x1}" y1="${y}" x2="${x2}" y2="${y}" stroke="#ffffff33" stroke-width="5" stroke-linecap="round"/>`;
-const arrowDown=(x,y1,y2,label)=>`<line x1="${x}" y1="${y1}" x2="${x}" y2="${y2-18}" stroke="#4cc5ed" stroke-width="7" stroke-linecap="round"/><path d="M${x-18} ${y2-26} L${x} ${y2} L${x+18} ${y2-26}z" fill="#4cc5ed"/>`+(label?`<text x="${x}" y="${y2+52}" text-anchor="middle" font-family="Cairo" font-weight="700" font-size="34" fill="#b9c9de">${label}</text>`:'');
-const label=(x,y,t,c='#b9c9de',sz=32)=>`<text x="${x}" y="${y}" text-anchor="middle" font-family="Cairo" font-weight="700" font-size="${sz}" fill="${c}">${t}</text>`;
+const arrowDown=(x,y1,y2,label)=>`<line x1="${x}" y1="${y1}" x2="${x}" y2="${y2-18}" stroke="#4cc5ed" stroke-width="7" stroke-linecap="round"/><path d="M${x-18} ${y2-26} L${x} ${y2} L${x+18} ${y2-26}z" fill="#4cc5ed"/>`+(label?`<text x="${x}" y="${y2+52}" text-anchor="middle" font-family="Noto Kufi Arabic" font-weight="700" font-size="34" fill="#b9c9de">${label}</text>`:'');
+const label=(x,y,t,c='#b9c9de',sz=32)=>`<text x="${x}" y="${y}" text-anchor="middle" font-family="Noto Kufi Arabic" font-weight="700" font-size="${sz}" fill="${c}">${t}</text>`;
 const box=(x,y,w,h,t)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="10" fill="#1d3358" stroke="#ffffff40" stroke-width="3"/>`+(t?label(x+w/2,y+h/2+12,t,'#b9c9de',30):'');
 
 const F=620; // floor y inside the art box (690 tall)
@@ -92,7 +92,7 @@ const ART={
  chart:()=>{let g='';const x0=250,x1=900,y0=110,y1=600;
    g+=`<line x1="${x0}" y1="${y0}" x2="${x0}" y2="${y1}" stroke="#ffffff55" stroke-width="5"/><line x1="${x0}" y1="${y1}" x2="${x1}" y2="${y1}" stroke="#ffffff55" stroke-width="5"/>`;
    const lv=[['السكوات',230],['الدرج',380],['الجلوس',500]];
-   lv.forEach(([t,y])=>{g+=`<line x1="${x0}" y1="${y}" x2="${x1}" y2="${y}" stroke="#ffffff35" stroke-width="3" stroke-dasharray="12 12"/>`+`<text x="${x0-18}" y="${y+12}" text-anchor="end" direction="ltr" font-family="Cairo" font-weight="700" font-size="36" fill="#b9c9de">${t}</text>`});
+   lv.forEach(([t,y])=>{g+=`<line x1="${x0}" y1="${y}" x2="${x1}" y2="${y}" stroke="#ffffff35" stroke-width="3" stroke-dasharray="12 12"/>`+`<text x="${x0-18}" y="${y+12}" text-anchor="end" direction="ltr" font-family="Noto Kufi Arabic" font-weight="700" font-size="36" fill="#b9c9de">${t}</text>`});
    g+=`<path d="M${x0+10} 135 C 480 150, 640 380, ${x1-20} 585" fill="none" stroke="#4cc5ed" stroke-width="12" stroke-linecap="round"/>`;
    g+=burst(390,230,34)+burst(612,380,34)+burst(766,500,34);
    g+=label(690,118,'قدرة الركبة على التحمّل','#4cc5ed',36)+label((x0+x1)/2,y1+62,'كل ما طالت مدة تجنّب الحمل ←','#b9c9de',36);return g},
@@ -157,7 +157,7 @@ html+=`<section class="s"><div class="top">${LOGO}<span class="n">${N-1} / ${N}<
 <div class="foot">navcoaching.com</div></section>`;
 html+=`<section class="s"><div class="top">${LOGO}<span class="n">${N} / ${N}</span></div>
 <div class="big"><h1>ركبتك تحتاج<br><em>خطة تمشي معك؟</em></h1>
-<p style="margin-top:40px;font:500 40px/1.65 'IBM Plex Sans Arabic';color:#b9c9de">نبني لك برنامج يرجّع الحمل لركبتك بالتدريج، ونعدّله أسبوعيًا حسب إحساسك وتقدّمك.</p></div>
+<p style="margin-top:40px;font:500 40px/1.65 'Noto Kufi Arabic';color:#b9c9de">نبني لك برنامج يرجّع الحمل لركبتك بالتدريج، ونعدّله أسبوعيًا حسب إحساسك وتقدّمك.</p></div>
 <div class="art" style="top:640px;height:440px"><svg viewBox="0 0 1080 440">${floorLine(380,330,750)+figure({x:520,floor:380,t:4,legs:[[-22,-10],[26,12]],arms:[[-26,-12],[28,18]],mood:'happy',s:0.75,twoArms:1}).svg}</svg></div>
 <div class="cta"><b>ابدأ برنامجك ←</b><span>navcoaching.com</span></div>
 <div class="foot" style="color:#b9c9de">احفظ البوست · أرسله لأحد ركبته توجعه</div></section>`;

@@ -1,20 +1,20 @@
 <!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><style>
 *{box-sizing:border-box;margin:0;padding:0}body{background:#555}
-.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:#f4f7fb;font-family:"IBM Plex Sans Arabic",Cairo,sans-serif;color:#0b1a33}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:#f4f7fb;font-family:"Noto Kufi Arabic",sans-serif;color:#0b1a33}
 .top{position:absolute;top:44px;right:56px;left:56px;display:flex;justify-content:space-between;align-items:center;z-index:3}
-.top img{height:50px}.n{font:600 24px "Readex Pro";color:#4b5b72;border:1.5px solid #d3dce7;border-radius:99px;padding:5px 18px;direction:ltr;background:#fff}
+.top img{height:50px}.n{font:600 24px "Noto Kufi Arabic";color:#4b5b72;border:1.5px solid #d3dce7;border-radius:99px;padding:5px 18px;direction:ltr;background:#fff}
 .p{position:absolute;right:56px;left:56px;height:440px;border-radius:28px;overflow:hidden}
 .p svg{width:100%;height:100%}
 .good{top:124px;background:#ffffff;border:1.5px solid #dbe4ee}
 .bad{top:744px;background:#0b1a33}
-.cap{position:absolute;right:56px;left:56px;text-align:center;font:800 54px/1.5 Cairo;word-spacing:.08em}
+.cap{position:absolute;right:56px;left:56px;text-align:center;font:800 54px/1.5 Noto Kufi Arabic;word-spacing:.08em}
 .c1{top:580px}.c2{top:1200px;color:#0b1a33}.c2 em{font-style:normal;color:#284da0}
 .hook,.end{position:absolute;right:80px;left:80px}
-.hook{top:300px}.hook h1{white-space:nowrap;font:900 88px/1.45 Cairo;word-spacing:.08em}.hook h1 em{font-style:normal;color:#284da0}
-.hook p{margin-top:40px;font:500 42px/1.7 "IBM Plex Sans Arabic";color:#4b5b72}
+.hook{top:300px}.hook h1{white-space:nowrap;font:900 88px/1.45 Noto Kufi Arabic;word-spacing:.08em}.hook h1 em{font-style:normal;color:#284da0}
+.hook p{margin-top:40px;font:500 42px/1.7 "Noto Kufi Arabic";color:#4b5b72}
 .cta{position:absolute;right:80px;left:80px;bottom:120px;background:#284da0;color:#fff;border-radius:28px;padding:30px 36px;display:flex;justify-content:space-between;align-items:center}
-.cta b{font:900 46px/1.4 Cairo}.cta span{font:700 32px "Readex Pro"}
-.swipe{margin-top:60px;display:inline-block;font:700 34px Cairo;color:#284da0;border:2px solid #284da0;border-radius:99px;padding:8px 28px}
+.cta b{font:900 46px/1.4 Noto Kufi Arabic}.cta span{font:700 32px "Noto Kufi Arabic"}
+.swipe{margin-top:60px;display:inline-block;font:700 34px Noto Kufi Arabic;color:#284da0;border:2px solid #284da0;border-radius:99px;padding:8px 28px}
 </style></head><body><script>
 const R=Math.PI/180;
 function P(x,y){return {x,y}}
@@ -54,8 +54,8 @@ function figure(o){
 }
 function burst(x,y,r){let g=`<circle cx="${x}" cy="${y}" r="${r*.28}" fill="#ff6b6b"/>`;for(let i=0;i<8;i++){const a=i*45*R;g+=`<line x1="${x+Math.cos(a)*r*.48}" y1="${y+Math.sin(a)*r*.48}" x2="${x+Math.cos(a)*r}" y2="${y+Math.sin(a)*r}" stroke="#ff6b6b" stroke-width="6" stroke-linecap="round"/>`}return g}
 const floorLine=(y,x1=180,x2=900)=>`<line x1="${x1}" y1="${y}" x2="${x2}" y2="${y}" stroke="#ffffff33" stroke-width="5" stroke-linecap="round"/>`;
-const arrowDown=(x,y1,y2,label)=>`<line x1="${x}" y1="${y1}" x2="${x}" y2="${y2-18}" stroke="#4cc5ed" stroke-width="7" stroke-linecap="round"/><path d="M${x-18} ${y2-26} L${x} ${y2} L${x+18} ${y2-26}z" fill="#4cc5ed"/>`+(label?`<text x="${x}" y="${y2+52}" text-anchor="middle" font-family="Cairo" font-weight="700" font-size="34" fill="#b9c9de">${label}</text>`:'');
-const label=(x,y,t,c='#b9c9de',sz=32)=>`<text x="${x}" y="${y}" text-anchor="middle" font-family="Cairo" font-weight="700" font-size="${sz}" fill="${c}">${t}</text>`;
+const arrowDown=(x,y1,y2,label)=>`<line x1="${x}" y1="${y1}" x2="${x}" y2="${y2-18}" stroke="#4cc5ed" stroke-width="7" stroke-linecap="round"/><path d="M${x-18} ${y2-26} L${x} ${y2} L${x+18} ${y2-26}z" fill="#4cc5ed"/>`+(label?`<text x="${x}" y="${y2+52}" text-anchor="middle" font-family="Noto Kufi Arabic" font-weight="700" font-size="34" fill="#b9c9de">${label}</text>`:'');
+const label=(x,y,t,c='#b9c9de',sz=32)=>`<text x="${x}" y="${y}" text-anchor="middle" font-family="Noto Kufi Arabic" font-weight="700" font-size="${sz}" fill="${c}">${t}</text>`;
 const box=(x,y,w,h,t)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="10" fill="#1d3358" stroke="#ffffff40" stroke-width="3"/>`+(t?label(x+w/2,y+h/2+12,t,'#b9c9de',30):'');
 
 function clock(x,y){return `<circle cx="${x}" cy="${y}" r="62" fill="none" stroke="#b9c9de" stroke-width="8"/><line x1="${x}" y1="${y}" x2="${x}" y2="${y-36}" stroke="#b9c9de" stroke-width="8" stroke-linecap="round"/><line x1="${x}" y1="${y}" x2="${x+28}" y2="${y+16}" stroke="#b9c9de" stroke-width="8" stroke-linecap="round"/>`}
