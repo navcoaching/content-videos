@@ -7,10 +7,10 @@ body{background:#555}
 .logo{position:absolute;top:64px;right:80px;height:58px}
 .path{position:absolute;inset:0}
 .t{position:absolute;text-align:right}
-.hook{top:200px;right:80px;font:900 92px/1.22 Cairo;letter-spacing:-.5px}
+.hook{top:180px;right:80px;font:900 90px/1.5 Cairo;word-spacing:.08em;letter-spacing:-.5px}
 .l1{top:540px;right:250px;font:500 50px/1.55 "IBM Plex Sans Arabic";color:var(--muted)}
 .l2{top:760px;right:420px;font:500 50px/1.55 "IBM Plex Sans Arabic";color:var(--muted)}
-.l3{top:970px;right:590px;font:900 66px/1.3 Cairo;color:var(--ink)}
+.l3{top:950px;right:590px;font:900 64px/1.5 Cairo;word-spacing:.18em;color:var(--ink)}
 .l3 em{font-style:normal;color:var(--navy)}
 .foot{position:absolute;bottom:64px;right:80px;left:80px;display:flex;justify-content:space-between;align-items:center;padding-top:26px;border-top:1.5px solid #d3dce7}
 .foot b{font:700 32px Cairo;color:var(--muted)}
@@ -19,7 +19,7 @@ body{background:#555}
 <section class="s" id="s1">
 <img class="logo" src="../../brand/logo-color-hd.png">
 <svg class="path" viewBox="0 0 1080 1350">
- <path id="g1" pathLength="1" d="M1000 430 V565 H860" fill="none" stroke="#4cc5ed" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+ <path id="g1" pathLength="1" d="M1000 455 V565 H860" fill="none" stroke="#4cc5ed" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
  <path id="g2" pathLength="1" d="M860 565 V785 H690" fill="none" stroke="#4cc5ed" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
  <path id="g3" pathLength="1" d="M690 785 V1000 H520" fill="none" stroke="#4cc5ed" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
  <circle id="d1" cx="860" cy="565" r="10" fill="#4cc5ed"/><circle id="d2" cx="690" cy="785" r="10" fill="#4cc5ed"/><circle id="d3" cx="520" cy="1000" r="14" fill="#284da0"/>
@@ -34,7 +34,7 @@ body{background:#555}
 // default state = final frame (fully visible). setT(t) poses the reel at t seconds.
 const ease=x=>1-Math.pow(1-Math.min(Math.max(x,0),1),4); // strong deceleration, close to cubic-bezier(.16,1,.3,1)
 const win=(t,a,d)=>ease((t-a)/d);
-function reveal(el,p,dy){el.style.opacity=p;el.style.transform=`translateY(${(1-p)*dy}px)`;el.style.clipPath=`inset(0 0 ${(1-p)*100}% 0)`}
+function reveal(el,p,dy){el.style.opacity=p;el.style.transform=`translateY(${(1-p)*dy}px)`;}
 function line(id,p){const e=document.getElementById(id);e.style.strokeDasharray='1';e.style.strokeDashoffset=1-p}
 function dot(id,p){const e=document.getElementById(id);e.style.opacity=p;e.style.transformOrigin='center';e.style.transformBox='fill-box';e.style.transform=`scale(${0.4+0.6*p})`}
 window.setT=function(t){
