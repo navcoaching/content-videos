@@ -66,8 +66,9 @@ const FL=400, dark='#0b1a33';window.SC=0.78;
 const W=(svg)=>`<svg viewBox="0 0 968 440">${svg}</svg>`;
 const fl=(c)=>`<line x1="80" y1="${FL}" x2="888" y2="${FL}" stroke="${c}" stroke-width="5" stroke-linecap="round"/>`;
 const G={
- squat:()=>{const f=figure({x:440,floor:FL,t:30,legs:[[74,-24],[80,-22]],arms:[[150,110],[160,115]],mood:'happy',s:0.9});
-   const y=f.head.y+40;return fl('#d3dce7')+`<line x1="${f.H.x-200}" y1="${y}" x2="${f.H.x+240}" y2="${y}" stroke="#4b5b72" stroke-width="12" stroke-linecap="round"/><rect x="${f.H.x-180}" y="${y-48}" width="32" height="96" rx="8" fill="#284da0"/><rect x="${f.H.x+188}" y="${y-48}" width="32" height="96" rx="8" fill="#284da0"/>`+f.svg},
+ squat:()=>{const f=figure({x:470,floor:FL,t:0,legs:[[-6,-6],[6,6]],arms:[[4,115],[8,120]],mood:'happy',s:0.85,twoArms:1});const h=f.hand;
+   const db=(x,y)=>`<circle cx="${x}" cy="${y}" r="26" fill="#284da0"/><circle cx="${x}" cy="${y}" r="9" fill="#4b5b72"/>`;
+   const ax=h.x+14,ay=h.y;return fl('#d3dce7')+f.svg+db(ax,ay)+`<path d="M${ax+60} ${ay+70} A80 80 0 0 0 ${ax+60} ${ay-60}" fill="none" stroke="#4cc5ed" stroke-width="7" stroke-linecap="round"/><path d="M${ax+44} ${ay-56} L${ax+64} ${ay-80} L${ax+78} ${ay-52}z" fill="#4cc5ed"/>`},
  cane:()=>{const st=`<path d="M120 ${FL} L120 ${FL-70} L300 ${FL-70} L300 ${FL-140} L480 ${FL-140} L480 ${FL-210} L860 ${FL-210} L860 ${FL}z" fill="#1d3358" stroke="#ffffff30" stroke-width="3"/>`;
    const f=figure({x:330,floor:FL-70,t:22,legs:[[-24,-8],[50,-6]],arms:[[40,20],[30,10]],pain:[1],mood:'sad',s:0.85,oneArm:1});
    const h=f.hand;return st+f.svg+`<line x1="${h.x}" y1="${h.y}" x2="${h.x+6}" y2="${FL-70}" stroke="#b9c9de" stroke-width="10" stroke-linecap="round"/>`},
