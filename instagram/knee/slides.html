@@ -49,7 +49,7 @@ function figure(o){
  const seg=(a,b,c,w)=>{a=T(a);b=T(b);g+=`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="${c}" stroke-width="${(w||L.w)*s}" stroke-linecap="round"/>`};
  const limbArm=(i,c)=>{const [u,f]=arms[i];const e=add(sh,L.ua,u),h=add(e,L.fa,f);seg(sh,e,c);seg(e,h,c)};
  const limbLeg=(i,c)=>{const p=pts[i];seg(H,p.k,c);seg(p.k,p.an,c);seg(p.an,P(p.an.x+L.ft,p.an.y),c)};
- if(!o.oneArm) limbArm(0,'#7f96b8');limbLeg(0,'#7f96b8');
+ if(o.twoArms) limbArm(0,'#7f96b8');limbLeg(0,'#7f96b8');
  seg(H,neck,'#f4f8fc',L.w*1.9);
  limbLeg(1,'#f4f8fc');
  (o.work||[]).forEach(i=>{const p=pts[i];const a=T(H),b=T(p.k);const mx=(a.x+b.x)/2,my=(a.y+b.y)/2,dx=(b.x-a.x)*.32,dy2=(b.y-a.y)*.32;
@@ -79,7 +79,7 @@ const ART={
  lungePain:()=>floorLine(F)+figure({x:520,floor:F,t:4,legs:[[-38,-92],[80,0]],arms:[[-6,8],[12,20]],pain:[1],mood:'sad',oneArm:1}).svg,
  sitPain:()=>{const f=figure({x:520,floor:F,t:-4,legs:[[86,0],[90,0]],arms:[[30,80],[40,85]],pain:[1],mood:'sad',oneArm:1});
    const seatY=f.H.y+22;return floorLine(F)+`<rect x="${f.H.x-70}" y="${seatY}" width="150" height="18" rx="6" fill="#40597f"/><rect x="${f.H.x-80}" y="${seatY-200}" width="18" height="${200+18}" rx="6" fill="#40597f"/><line x1="${f.H.x-55}" y1="${seatY+18}" x2="${f.H.x-55}" y2="${F}" stroke="#40597f" stroke-width="12"/><line x1="${f.H.x+60}" y1="${seatY+18}" x2="${f.H.x+60}" y2="${F}" stroke="#40597f" stroke-width="12"/>`+f.svg+clock(800,150)},
- confused:()=>floorLine(F)+figure({x:540,floor:F,t:0,legs:[[-4,-4],[4,4]],arms:[[-30,-80],[30,80]],pain:[0,1],mood:'sad',s:1}).svg+label(420,170,'؟','#4cc5ed',80)+label(690,130,'؟','#4cc5ed',64)+label(760,200,'؟','#4cc5ed',48),
+ confused:()=>floorLine(F)+figure({x:540,floor:F,t:0,legs:[[-4,-4],[4,4]],arms:[[-30,-80],[30,80]],pain:[0,1],mood:'sad',s:1,twoArms:1}).svg+label(420,170,'؟','#4cc5ed',80)+label(690,130,'؟','#4cc5ed',64)+label(760,200,'؟','#4cc5ed',48),
  stairs:()=>{const st=`<path d="M200 ${F} L200 ${F-90} L380 ${F-90} L380 ${F-180} L560 ${F-180} L560 ${F-270} L900 ${F-270} L900 ${F}z" fill="#1d3358" stroke="#ffffff40" stroke-width="3"/>`;
    const f=figure({x:390,floor:F-90,t:14,legs:[[-20,-12],[62,-8]],arms:[[30,60],[-20,-10]],pain:[0,1],mood:'sad',s:1});return st+f.svg},
  save:()=>{const f=figure({x:500,floor:F,t:0,legs:[[-4,-4],[4,4]],arms:[[-6,0],[120,130]],mood:'flat',s:1.05});
@@ -112,9 +112,9 @@ const ART={
    return floorLine(F)+box(f.H.x-190,F-220,170,220,'صندوق عالي')+f.svg},
  step5:()=>{const f=figure({x:560,floor:F,t:44,legs:[[100,-40],[104,-38]],arms:[[82,90],[88,96]],work:[1],mood:'happy'});
    return floorLine(F)+f.svg+arrowDown(300,170,500,'أعمق')+label(880,170,'بنفس البطء','#b9c9de',34)},
- step6:()=>{const f=figure({x:480,floor:F,t:10,legs:[[-30,-20],[70,-6]],arms:[[60,150],[-30,-40]],work:[1],mood:'happy',s:1.1});
+ step6:()=>{const f=figure({x:480,floor:F,t:10,legs:[[-30,-20],[70,-6]],arms:[[60,150],[-30,-40]],work:[1],mood:'happy',s:1.1,twoArms:1});
    return floorLine(F,160,920)+box(f.ankle[1].x-60,F-110,240,110)+`<path transform="translate(0,-110)" d="M0 0"/>`+f.svg+[0,1,2].map(i=>`<line x1="190" y1="${280+i*60}" x2="${i==1?300:270}" y2="${280+i*60}" stroke="#4cc5ed" stroke-width="8" stroke-linecap="round"/>`).join('')},
- strong:()=>{const f=figure({x:540,floor:F,t:0,legs:[[-6,-6],[6,6]],arms:[[200,195],[155,150]],mood:'happy',s:1.0});const h=f.hand;
+ strong:()=>{const f=figure({x:540,floor:F,t:0,legs:[[-6,-6],[6,6]],arms:[[200,195],[155,150]],mood:'happy',s:1.0,twoArms:1});const h=f.hand;
    return floorLine(F)+f.svg+[[-34,-30],[0,-46],[34,-30]].map(([dx,dy])=>`<line x1="${h.x+dx*0.6}" y1="${h.y+dy*0.6-20}" x2="${h.x+dx}" y2="${h.y+dy-20}" stroke="#4cc5ed" stroke-width="7" stroke-linecap="round"/>`).join('')},
  step7:()=>{const f=figure({x:520,floor:F,t:8,legs:[[48,-50],[54,-46]],arms:[[-40,-30],[-30,-20]],work:[1],mood:'happy',lift:90,s:1});
    return `<ellipse cx="560" cy="${F}" rx="150" ry="18" fill="#ffffff22"/>`+[0,1,2].map(i=>`<line x1="${520+i*40}" y1="${F-90}" x2="${520+i*40}" y2="${F-40}" stroke="#4cc5ed" stroke-width="7" stroke-linecap="round"/>`).join('')+f.svg+`<polyline points="800,560 860,470 800,380 860,290" fill="none" stroke="#4cc5ed" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M842 270 L880 262 L866 300z" fill="#4cc5ed"/>`},
@@ -158,7 +158,7 @@ html+=`<section class="s"><div class="top">${LOGO}<span class="n">${N-1} / ${N}<
 html+=`<section class="s"><div class="top">${LOGO}<span class="n">${N} / ${N}</span></div>
 <div class="big"><h1>ركبتك تحتاج<br><em>خطة تمشي معك؟</em></h1>
 <p style="margin-top:40px;font:500 40px/1.65 'IBM Plex Sans Arabic';color:#b9c9de">اكتب <b style="font:800 40px Cairo;color:#07142a;background:#4cc5ed;border-radius:12px;padding:0 16px">ركبة</b> في التعليقات، وأرسل لك تفاصيل برنامج يرجّع الحمل لركبتك بالتدريج مع متابعة أسبوعية.</p></div>
-<div class="art" style="top:640px;height:440px"><svg viewBox="0 0 1080 440">${floorLine(380,330,750)+figure({x:520,floor:380,t:4,legs:[[-22,-10],[26,12]],arms:[[-26,-12],[28,18]],mood:'happy',s:0.75}).svg}</svg></div>
+<div class="art" style="top:640px;height:440px"><svg viewBox="0 0 1080 440">${floorLine(380,330,750)+figure({x:520,floor:380,t:4,legs:[[-22,-10],[26,12]],arms:[[-26,-12],[28,18]],mood:'happy',s:0.75,twoArms:1}).svg}</svg></div>
 <div class="cta"><b>ابدأ برنامجك ←</b><span>navcoaching.com</span></div>
 <div class="foot" style="color:#b9c9de">احفظ البوست · أرسله لأحد ركبته توجعه</div></section>`;
 document.write(html);
