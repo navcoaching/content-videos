@@ -81,7 +81,7 @@ const ART={
  lungePain:()=>floorLine(F)+figure({x:520,floor:F,t:4,legs:[[-38,-92],[80,0]],arms:[[-6,8],[12,20]],pain:[1],mood:'sad'}).svg,
  sitPain:()=>{const f=figure({x:520,floor:F,t:-4,legs:[[86,0],[90,0]],arms:[[30,80],[40,85]],pain:[1],mood:'sad'});
    const seatY=f.H.y+22;return floorLine(F)+`<rect x="${f.H.x-70}" y="${seatY}" width="150" height="18" rx="6" fill="#40597f"/><rect x="${f.H.x-80}" y="${seatY-200}" width="18" height="${200+18}" rx="6" fill="#40597f"/><line x1="${f.H.x-55}" y1="${seatY+18}" x2="${f.H.x-55}" y2="${F}" stroke="#40597f" stroke-width="12"/><line x1="${f.H.x+60}" y1="${seatY+18}" x2="${f.H.x+60}" y2="${F}" stroke="#40597f" stroke-width="12"/>`+f.svg+clock(800,150)},
- confused:()=>floorLine(F)+figure({x:540,floor:F,t:0,legs:[[-4,-4],[4,4]],arms:[[-8,0],[150,235]],pain:[0,1],mood:'sad',s:1}).svg+label(420,170,'؟','#4cc5ed',80)+label(690,130,'؟','#4cc5ed',64)+label(760,200,'؟','#4cc5ed',48),
+ confused:()=>floorLine(F)+figure({x:540,floor:F,t:0,legs:[[-4,-4],[4,4]],arms:[[-30,-80],[30,80]],pain:[0,1],mood:'sad',s:1}).svg+label(420,170,'؟','#4cc5ed',80)+label(690,130,'؟','#4cc5ed',64)+label(760,200,'؟','#4cc5ed',48),
  stairs:()=>{const st=`<path d="M200 ${F} L200 ${F-90} L380 ${F-90} L380 ${F-180} L560 ${F-180} L560 ${F-270} L900 ${F-270} L900 ${F}z" fill="#1d3358" stroke="#ffffff40" stroke-width="3"/>`;
    const f=figure({x:390,floor:F-90,t:14,legs:[[-20,-12],[62,-8]],arms:[[30,60],[-20,-10]],pain:[0,1],mood:'sad',s:1});return st+f.svg},
  save:()=>{const f=figure({x:500,floor:F,t:0,legs:[[-4,-4],[4,4]],arms:[[-6,0],[120,130]],mood:'flat',s:1.05});
@@ -91,18 +91,18 @@ const ART={
    g+=`<path d="M${cx+r*Math.cos(35*R)} ${cy-r*Math.sin(35*R)} A${r} ${r} 0 0 1 ${cx+r} ${cy}" fill="none" stroke="#ff6b6b" stroke-width="34" stroke-linecap="round"/>`;
    const a=22*R;g+=`<line x1="${cx}" y1="${cy}" x2="${cx+(r-60)*Math.cos(a)}" y2="${cy-(r-60)*Math.sin(a)}" stroke="#f4f8fc" stroke-width="16" stroke-linecap="round"/><circle cx="${cx}" cy="${cy}" r="26" fill="#f4f8fc"/>`;
    g+=label(cx+r,cy+70,'عالية')+label(cx-r,cy+70,'منخفضة')+label(cx,cy+140,'حساسية الركبة','#f4f8fc',40);return g},
- chart:()=>{let g='';const x0=230,x1=900,y0=110,y1=600;
+ chart:()=>{let g='';const x0=250,x1=900,y0=110,y1=600;
    g+=`<line x1="${x0}" y1="${y0}" x2="${x0}" y2="${y1}" stroke="#ffffff55" stroke-width="5"/><line x1="${x0}" y1="${y1}" x2="${x1}" y2="${y1}" stroke="#ffffff55" stroke-width="5"/>`;
    const lv=[['السكوات',230],['الدرج',380],['الجلوس',500]];
-   lv.forEach(([t,y])=>{g+=`<line x1="${x0}" y1="${y}" x2="${x1}" y2="${y}" stroke="#ffffff35" stroke-width="3" stroke-dasharray="12 12"/>`+`<text x="${x0-18}" y="${y+12}" text-anchor="end" font-family="Cairo" font-weight="700" font-size="30" fill="#b9c9de">${t}</text>`});
+   lv.forEach(([t,y])=>{g+=`<line x1="${x0}" y1="${y}" x2="${x1}" y2="${y}" stroke="#ffffff35" stroke-width="3" stroke-dasharray="12 12"/>`+`<text x="${x0-18}" y="${y+12}" text-anchor="end" direction="ltr" font-family="Cairo" font-weight="700" font-size="36" fill="#b9c9de">${t}</text>`});
    g+=`<path d="M${x0+10} 135 C 480 150, 640 380, ${x1-20} 585" fill="none" stroke="#4cc5ed" stroke-width="12" stroke-linecap="round"/>`;
    g+=burst(390,230,34)+burst(612,380,34)+burst(766,500,34);
-   g+=label(700,120,'قدرة ركبتك على التحمّل','#4cc5ed',32)+label((x0+x1)/2,y1+60,'كل ما طالت مدة تجنّب الحمل ←','#b9c9de',32);return g},
- ladder:()=>{let g='';const n=7,w=96,h=58,base=600,xr=890;const names=['ثبات<br>بالدفع','ثبات<br>بالمقاومة','نزول<br>بطيء','مدى<br>قصير','مدى<br>أعمق','سرعة','قفز<br>واتجاهات'];
+   g+=label(690,118,'قدرة الركبة على التحمّل','#4cc5ed',36)+label((x0+x1)/2,y1+62,'كل ما طالت مدة تجنّب الحمل ←','#b9c9de',36);return g},
+ ladder:()=>{let g='';const n=7,w=112,h=58,base=610,xr=950;const names=['ثبات<br>بالدفع','ثبات<br>بالمقاومة','نزول<br>بطيء','مدى<br>قصير','مدى<br>أعمق','سرعة','قفز<br>واتجاهات'];
    let d=`M${xr} ${base}`;for(let i=0;i<n;i++){const x=xr-i*w;d+=` L${x} ${base-(i+1)*h} L${x-w} ${base-(i+1)*h}`}d+=` L${xr-n*w} ${base} z`;
    g+=`<path d="${d}" fill="#1d3358" stroke="#ffffff40" stroke-width="3"/>`;
-   for(let i=0;i<n;i++){const x=xr-i*w-w/2,y=base-(i+1)*h;g+=label(x,y+44,i+1,'#4cc5ed',34);
-     names[i].split('<br>').forEach((t,j,a)=>{g+=label(x,y-20-(a.length-1-j)*30,t,'#f4f8fc',24)})}
+   for(let i=0;i<n;i++){const x=xr-i*w-w/2,y=base-(i+1)*h;g+=label(x,y+44,i+1,'#4cc5ed',38);
+     names[i].split('<br>').forEach((t,j,a)=>{g+=label(x,y-18-(a.length-1-j)*36,t,'#f4f8fc',30)})}
    return g},
  step1:()=>{const f=figure({x:520,floor:F,t:4,legs:[[-38,-92],[80,0]],arms:[[120,200],[130,215]],work:[1],mood:'flat',sweat:1});
    const by=f.head.y+30;return floorLine(F,160,920)+`<line x1="300" y1="80" x2="300" y2="${F}" stroke="#40597f" stroke-width="16"/><line x1="790" y1="80" x2="790" y2="${F}" stroke="#40597f" stroke-width="16"/><line x1="250" y1="${by}" x2="840" y2="${by}" stroke="#b9c9de" stroke-width="16" stroke-linecap="round"/><rect x="270" y="${by-12}" width="60" height="24" rx="6" fill="#4cc5ed"/><rect x="760" y="${by-12}" width="60" height="24" rx="6" fill="#4cc5ed"/>`+f.svg+lock(870,by-30)+`<line x1="700" y1="${by+150}" x2="700" y2="${by+40}" stroke="#4cc5ed" stroke-width="7"/><path d="M682 ${by+58} L700 ${by+28} L718 ${by+58}z" fill="#4cc5ed"/>`+label(700,by+200,'ادفعي','#4cc5ed',32)},
@@ -124,15 +124,15 @@ function lock(x,y){return `<rect x="${x-26}" y="${y}" width="52" height="44" rx=
 
 const LOGO='<img src="../../brand/logo-white.webp">';
 const S=[
- ['squatPain','ركبة سارة صارت توجعها في السكوات…<br><em>فوقّفت السكوات.</em>'],
+ ['squatPain','ركبة سارة صارت توجعها في السكوات…<br><em>فوقّفت السكوات.</em>','واللي سوّته زاد الألم بدل ما يخففه… والحل بآخر البوست ←'],
  ['lungePain','بعدها صارت توجعها في الطعنات والليق برس…<br><em>فوقّفتهم بعد.</em>'],
  ['sitPain','بعد شهر، صارت توجعها<br><em>إذا طوّلت وهي جالسة.</em>'],
  ['confused','سارة محتارة: ترتاح أكثر،<br>بس الألم <em>يطلع في مواقف أكثر.</em>'],
  ['stairs','وبعد كم أسبوع، صار <em>النزول من الدرج</em><br>يزعجها… <em>والطلوع</em> بعد.'],
- ['save','تحسين إنها قصتك؟<br><em>احفظي البوست</em> عشان يكون الحل عندك.'],
- ['gauge','ركبتها <em>ما تضررت أكثر</em>… صارت أحسس.','كل ما خفّفت الحمل عليها، صار جسمها يتعامل مع الحركات العادية كأنها خطر.'],
+  ['gauge','ركبتها <em>ما تضررت أكثر</em>… صارت أحسس.','كل ما خفّفت الحمل عليها، صار جسمها يتعامل مع الحركات العادية كأنها خطر.'],
  ['chart','العضلات والأوتار <em>تتكيّف مع الحمل</em> اللي تاخذه.','وإذا تجنّبتيه، تقل قدرتها… لين تصير الأشياء اليومية ثقيلة عليها.'],
- ['ladder','الحل مو راحة أكثر…<br><em>رجّع الحمل درجة درجة.</em>'],
+ ['ladder','الحل مو راحة أكثر…<br><em>رجّعي الحمل درجة درجة.</em>'],
+ ['save','تحسين إنها قصتك؟<br><em>احفظي البوست</em> عشان ترجعين للخطوات وقت ما تحتاجينها.'],
  ['step1','الخطوة 1: <em>ثبات بالدفع</em>','ادفعي بقوة في شي ما يتحرك، مثل طعنة تدفعين فيها بار مقفول.','4–5 مرات · 30–45 ثانية'],
  ['step2','الخطوة 2: <em>ثبات بالمقاومة</em>','اثبتي في وضعية والوزن يحاول ينزّلك، مثل الجلوس على الجدار.','4–5 مرات · 30–45 ثانية'],
  ['step3','الخطوة 3: <em>نزول بطيء</em>','انزلي ببطء وتحكّم، واطلعي بالطريقة اللي تريحك.','النزول 3–5 ثواني'],
@@ -157,6 +157,7 @@ html+=`<section class="s"><div class="top">${LOGO}<span class="n">${N-1} / ${N}<
 html+=`<section class="s"><div class="top">${LOGO}<span class="n">${N} / ${N}</span></div>
 <div class="big"><h1>ركبتك تحتاج<br><em>خطة تمشي معك؟</em></h1>
 <p style="margin-top:40px;font:500 40px/1.65 'IBM Plex Sans Arabic';color:#b9c9de">نبني لك برنامج يرجّع الحمل لركبتك بالتدريج، ونعدّله أسبوعيًا حسب إحساسك وتقدّمك.</p></div>
+<div class="art" style="top:640px;height:440px"><svg viewBox="0 0 1080 440">${floorLine(380,330,750)+figure({x:520,floor:380,t:4,legs:[[-22,-10],[26,12]],arms:[[-26,-12],[28,18]],mood:'happy',s:0.75}).svg}</svg></div>
 <div class="cta"><b>ابدئي برنامجك ←</b><span>navcoaching.com</span></div>
 <div class="foot" style="color:#b9c9de">احفظي البوست · أرسليه لوحدة ركبتها توجعها</div></section>`;
 document.write(html);
