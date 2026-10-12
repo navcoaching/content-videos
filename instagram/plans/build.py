@@ -196,7 +196,7 @@ body{background:#888;font-family:Cairo,"IBM Plex Sans Arabic",sans-serif;color:v
 .ad .pdfl{position:absolute;z-index:3;bottom:250px;right:64px;left:64px;display:flex;align-items:center;justify-content:space-between;border:1.5px solid #ffffff40;border-radius:24px;padding:16px 26px}
 .ad .pdfl b{display:flex;align-items:center;gap:12px;font:700 28px Cairo;color:#fff}
 .ad .pdfl b svg{color:var(--cyan)}
-.ad .pdfl span{font:700 24px "Readex Pro";color:var(--cyan)}
+.ad .pdfl span{font:700 26px Cairo;color:var(--cyan)}
 '''
 
 LOGO = '<img src="../../../brand/logo-color-hd.png">'
@@ -288,13 +288,13 @@ def build(key):
 
     # ---- ad
     you = dict(want='تبين' if fem else 'تبي', start='ابدئي' if fem else 'ابدأ', your='لك')
-    slides.append(('ad', f'''<div class="top">{LOGO_W}<span class="ebd" style="font:700 24px Cairo;color:#a9d8ec">navcoaching.com</span></div>
+    slides.append(('ad', f'''<div class="top">{LOGO_W}<span></span></div>
 <div class="c">
 <h2>{you["want"]} نتيجة أسرع؟<br><em>برنامج مصمم {you["your"]}</em></h2>
 <ul><li><i>✓</i>تمرين وتغذية مخصصة لهدفك</li><li><i>✓</i>متابعة أسبوعية بالفيديو أو الصوت</li>
 <li><i>✓</i>تعديلات حسب تقدمك وقياساتك</li><li><i>✓</i>تواصل يومي على واتساب</li></ul>
 <div class="price"><span>الباقات من <b>250</b> ر.س / شهر</span><span>خصم <b>10%</b> للطلاب</span><span>ضمان استرجاع بشروط</span></div></div>
-<div class="pdfl"><b>{DOC}الجدول كامل PDF مجانًا</b><span>navcoaching.com</span></div>
+<div class="pdfl"><b>{DOC}الجدول كامل PDF مجانًا</b><span>من نفس الرابط ↓</span></div>
 <div class="cta"><b>{you["start"]} برنامجك ←</b><span>navcoaching.com</span></div>'''))
 
     # ---- assemble
@@ -306,6 +306,8 @@ def build(key):
         import re as _re
         creds = sorted(set(_re.findall(r'data-credit="([^"]+)"', inner)))
         credit = ('Videos: ' + ' | '.join(creds)) if creds else 'navcoaching.com'
+        if kind == 'ad':
+            credit = ''
         cls = 's ad' if kind == 'ad' else ('s hk' if kind == 'cover' else 's')
         out.append(f'<section class="{cls}" id="s{i}">{inner}<div class="foot"><span class="n">{i} / {N}</span>'
                    f'<span class="r">{credit}</span></div></section>')
