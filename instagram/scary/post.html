@@ -1,29 +1,47 @@
 <!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
 <style>
+:root{--paper:#f4f7fb;--ink:#0b1a33;--muted:#4b5b72;--navy:#284da0;--cyan:#4cc5ed}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#555}
-.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:linear-gradient(200deg,#10264a 0%,#0a1832 45%,#050d1c 100%);color:#f4f8fc;font-family:"IBM Plex Sans Arabic",Cairo,sans-serif}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:linear-gradient(200deg,#ffffff 0%,#f4f7fb 50%,#e9eff6 100%);color:var(--ink);font-family:"IBM Plex Sans Arabic",Cairo,sans-serif}
 .logo{position:absolute;top:64px;right:80px;height:58px}
 .path{position:absolute;inset:0}
 .t{position:absolute;text-align:right}
 .hook{top:200px;right:80px;font:900 92px/1.22 Cairo;letter-spacing:-.5px}
-.l1{top:560px;right:250px;font:500 50px/1.55 "IBM Plex Sans Arabic";color:#b9c9de}
-.l2{top:790px;right:420px;font:500 50px/1.55 "IBM Plex Sans Arabic";color:#b9c9de}
-.l3{top:1030px;right:590px;font:900 66px/1.3 Cairo;color:#f4f8fc}
-.l3 em{font-style:normal;color:#4cc5ed}
-.foot{position:absolute;bottom:64px;right:80px;left:80px;display:flex;justify-content:space-between;align-items:center}
-.foot b{font:800 34px Cairo;color:#4cc5ed}
-.foot span{font:700 30px "Readex Pro";color:#f4f8fc;letter-spacing:.5px}
+.l1{top:540px;right:250px;font:500 50px/1.55 "IBM Plex Sans Arabic";color:var(--muted)}
+.l2{top:760px;right:420px;font:500 50px/1.55 "IBM Plex Sans Arabic";color:var(--muted)}
+.l3{top:970px;right:590px;font:900 66px/1.3 Cairo;color:var(--ink)}
+.l3 em{font-style:normal;color:var(--navy)}
+.foot{position:absolute;bottom:64px;right:80px;left:80px;display:flex;justify-content:space-between;align-items:center;padding-top:26px;border-top:1.5px solid #d3dce7}
+.foot b{font:700 32px Cairo;color:var(--muted)}
+.foot span{font:700 30px "Readex Pro";color:var(--navy);letter-spacing:.5px}
 </style></head><body>
 <section class="s" id="s1">
-<img class="logo" src="../../brand/logo-white.webp">
+<img class="logo" src="../../brand/logo-color-hd.png">
 <svg class="path" viewBox="0 0 1080 1350">
- <path d="M1000 430 V585 H860 V815 H690 V1060 H520" fill="none" stroke="#4cc5ed" stroke-opacity=".55" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
- <circle cx="860" cy="585" r="9" fill="#4cc5ed"/><circle cx="690" cy="815" r="9" fill="#4cc5ed"/><circle cx="520" cy="1060" r="13" fill="#4cc5ed"/>
+ <path id="g1" pathLength="1" d="M1000 430 V565 H860" fill="none" stroke="#4cc5ed" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+ <path id="g2" pathLength="1" d="M860 565 V785 H690" fill="none" stroke="#4cc5ed" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+ <path id="g3" pathLength="1" d="M690 785 V1000 H520" fill="none" stroke="#4cc5ed" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+ <circle id="d1" cx="860" cy="565" r="10" fill="#4cc5ed"/><circle id="d2" cx="690" cy="785" r="10" fill="#4cc5ed"/><circle id="d3" cx="520" cy="1000" r="14" fill="#284da0"/>
 </svg>
-<div class="t hook">تدري وش<br>المخيف فعلًا؟</div>
-<div class="t l1">إنك تكون بنفس<br>مكانك من سنة.</div>
-<div class="t l2">نفس الأعذار.<br>نفس العادات.</div>
-<div class="t l3">وبدون<br><em>أي نتيجة.</em></div>
-<div class="foot"><b>خلّ هالسنة تفرق.</b><span>navcoaching.com</span></div>
-</section></body></html>
+<div class="t hook" id="hook">تدري وش<br>المخيف فعلًا؟</div>
+<div class="t l1" id="l1">إنك تكون بنفس<br>مكانك من سنة.</div>
+<div class="t l2" id="l2">نفس الأعذار.<br>نفس العادات.</div>
+<div class="t l3" id="l3">وبدون<br><em>أي نتيجة.</em></div>
+<div class="foot" id="foot"><b>خلّ هالسنة تفرق.</b><span>navcoaching.com</span></div>
+</section>
+<script>
+// default state = final frame (fully visible). setT(t) poses the reel at t seconds.
+const ease=x=>1-Math.pow(1-Math.min(Math.max(x,0),1),4); // strong deceleration, close to cubic-bezier(.16,1,.3,1)
+const win=(t,a,d)=>ease((t-a)/d);
+function reveal(el,p,dy){el.style.opacity=p;el.style.transform=`translateY(${(1-p)*dy}px)`;el.style.clipPath=`inset(0 0 ${(1-p)*100}% 0)`}
+function line(id,p){const e=document.getElementById(id);e.style.strokeDasharray='1';e.style.strokeDashoffset=1-p}
+function dot(id,p){const e=document.getElementById(id);e.style.opacity=p;e.style.transformOrigin='center';e.style.transformBox='fill-box';e.style.transform=`scale(${0.4+0.6*p})`}
+window.setT=function(t){
+ reveal(document.getElementById('hook'),win(t,0.1,0.6),24);
+ line('g1',win(t,0.8,0.6)); dot('d1',win(t,1.3,0.3)); reveal(document.getElementById('l1'),win(t,1.3,0.6),18);
+ line('g2',win(t,2.1,0.6)); dot('d2',win(t,2.6,0.3)); reveal(document.getElementById('l2'),win(t,2.6,0.6),18);
+ line('g3',win(t,3.4,0.6)); dot('d3',win(t,3.9,0.3)); reveal(document.getElementById('l3'),win(t,3.9,0.7),18);
+ reveal(document.getElementById('foot'),win(t,4.8,0.6),0);
+};
+</script></body></html>
