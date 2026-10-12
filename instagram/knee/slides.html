@@ -49,7 +49,7 @@ function figure(o){
  const seg=(a,b,c,w)=>{a=T(a);b=T(b);g+=`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="${c}" stroke-width="${(w||L.w)*s}" stroke-linecap="round"/>`};
  const limbArm=(i,c)=>{const [u,f]=arms[i];const e=add(sh,L.ua,u),h=add(e,L.fa,f);seg(sh,e,c);seg(e,h,c)};
  const limbLeg=(i,c)=>{const p=pts[i];seg(H,p.k,c);seg(p.k,p.an,c);seg(p.an,P(p.an.x+L.ft,p.an.y),c)};
- limbArm(0,'#7f96b8');limbLeg(0,'#7f96b8');
+ if(!o.oneArm) limbArm(0,'#7f96b8');limbLeg(0,'#7f96b8');
  seg(H,neck,'#f4f8fc',L.w*1.9);
  limbLeg(1,'#f4f8fc');
  (o.work||[]).forEach(i=>{const p=pts[i];const a=T(H),b=T(p.k);const mx=(a.x+b.x)/2,my=(a.y+b.y)/2,dx=(b.x-a.x)*.32,dy2=(b.y-a.y)*.32;
@@ -76,8 +76,8 @@ const box=(x,y,w,h,t)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="1
 const F=620; // floor y inside the art box (690 tall)
 const ART={
  squatPain:()=>floorLine(F)+figure({x:540,floor:F,t:38,legs:[[78,-28],[84,-24]],arms:[[78,88],[84,92]],pain:[1],mood:'sad',sweat:1}).svg,
- lungePain:()=>floorLine(F)+figure({x:520,floor:F,t:4,legs:[[-38,-92],[80,0]],arms:[[-6,8],[12,20]],pain:[1],mood:'sad'}).svg,
- sitPain:()=>{const f=figure({x:520,floor:F,t:-4,legs:[[86,0],[90,0]],arms:[[30,80],[40,85]],pain:[1],mood:'sad'});
+ lungePain:()=>floorLine(F)+figure({x:520,floor:F,t:4,legs:[[-38,-92],[80,0]],arms:[[-6,8],[12,20]],pain:[1],mood:'sad',oneArm:1}).svg,
+ sitPain:()=>{const f=figure({x:520,floor:F,t:-4,legs:[[86,0],[90,0]],arms:[[30,80],[40,85]],pain:[1],mood:'sad',oneArm:1});
    const seatY=f.H.y+22;return floorLine(F)+`<rect x="${f.H.x-70}" y="${seatY}" width="150" height="18" rx="6" fill="#40597f"/><rect x="${f.H.x-80}" y="${seatY-200}" width="18" height="${200+18}" rx="6" fill="#40597f"/><line x1="${f.H.x-55}" y1="${seatY+18}" x2="${f.H.x-55}" y2="${F}" stroke="#40597f" stroke-width="12"/><line x1="${f.H.x+60}" y1="${seatY+18}" x2="${f.H.x+60}" y2="${F}" stroke="#40597f" stroke-width="12"/>`+f.svg+clock(800,150)},
  confused:()=>floorLine(F)+figure({x:540,floor:F,t:0,legs:[[-4,-4],[4,4]],arms:[[-30,-80],[30,80]],pain:[0,1],mood:'sad',s:1}).svg+label(420,170,'؟','#4cc5ed',80)+label(690,130,'؟','#4cc5ed',64)+label(760,200,'؟','#4cc5ed',48),
  stairs:()=>{const st=`<path d="M200 ${F} L200 ${F-90} L380 ${F-90} L380 ${F-180} L560 ${F-180} L560 ${F-270} L900 ${F-270} L900 ${F}z" fill="#1d3358" stroke="#ffffff40" stroke-width="3"/>`;
