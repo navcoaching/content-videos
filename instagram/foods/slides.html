@@ -10,20 +10,23 @@ section.s{width:1080px;height:1350px;position:relative;overflow:hidden;backgroun
 h1{font-size:64px;line-height:1.45;margin:22px 0 6px;word-spacing:4px}
 h1 b{color:#284da0}
 .sub{font-size:26px;color:#4b5b72;line-height:1.6;margin-bottom:34px}
-.row{display:flex;align-items:center;gap:18px;height:100px}
+.row{display:flex;align-items:center;gap:18px;height:92px}
 .ph{width:88px;height:88px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 6px 16px #0b1a3322;flex:none}
 .lb{width:230px;font-size:32px;font-weight:600;line-height:1.5}
 .tr{flex:1;height:58px;background:#284da00f;border-radius:14px;position:relative;overflow:hidden}
 .br{position:absolute;right:0;top:0;bottom:0;border-radius:14px;background:linear-gradient(270deg,#284da0,#4cc5ed)}
-.row:first-child .br{background:linear-gradient(270deg,#0b1a33,#284da0)}
-.v{width:170px;font-size:34px;font-weight:800;text-align:left;white-space:nowrap}
+.rows .row:first-child .br{background:linear-gradient(270deg,#0b1a33,#284da0)}
+.v{position:absolute;top:50%;transform:translateY(-50%);font-size:32px;font-weight:800;white-space:nowrap;line-height:1}
+.v.in{color:#fff}.v.in small{color:#ffffffcc}
+.hero{font-size:96px;line-height:1.25;color:#284da0;margin:0 0 8px}.hero .k{font-size:44px;color:#0b1a33;font-weight:700}
+.rows .row:first-child .ph{width:104px;height:104px}.rows .row:first-child .lb{font-weight:800;width:214px}
 .v small{font-size:20px;color:#4b5b72;font-weight:500}
 .note{margin-top:26px;background:#fff;border-right:8px solid #4cc5ed;border-radius:14px;padding:18px 26px;font-size:26px;line-height:1.65;box-shadow:0 8px 24px #0b1a3310}
 .cover h1{font-size:104px;line-height:1.4;margin-top:60px}
 .cover .sub{font-size:34px}
 .chips{display:flex;flex-wrap:wrap;gap:16px;margin-top:40px}.chips span{background:#fff;border:2px solid #284da033;border-radius:40px;padding:8px 26px;font-size:30px;line-height:1.6}
 .col{display:flex;flex-wrap:wrap;gap:22px;margin-top:60px}.col img{width:200px;height:200px;border-radius:50%;object-fit:cover;border:6px solid #fff;box-shadow:0 10px 26px #0b1a3322}
-.wrap:has(.note) .row{height:88px}.wrap:has(.note) .ph{width:78px;height:78px}
+.wrap:has(.note) .row{height:80px}.wrap:has(.note) .ph{width:78px;height:78px}
 </style></head><body><div id="root"></div><script>
 const D=[
 ['بروتين','أعلى الأطعمة <b>بالبروتين</b>','لكل 100 غرام • اللحوم والأسماك مطبوخة','غ',[['صدر دجاج',31],['تونة مطبوخة',30],['ديك رومي',29],['لحم بقر قليل الدهن',26],['سلمون',25],['روبيان',24],['توفو صلب',17],['بيض',13]]],
@@ -35,9 +38,9 @@ const D=[
 const IM={"صدر دجاج": "chicken", "تونة مطبوخة":"tuna","توفو صلب":"tofu","فشار بدون زيت":"popcorn","سبانخ مطبوخ":"spinach","تونة": "tuna", "ديك رومي": "turkey", "لحم بقر قليل الدهن": "beef", "سلمون": "salmon", "روبيان": "shrimp", "توفو": "tofu", "بيض": "eggs", "بذور الشيا": "chia", "بذور الكتان": "flax", "فشار": "popcorn", "لوز": "almonds", "شوكولاتة داكنة": "choc", "شوفان": "oats", "عدس مطبوخ": "lentils", "عدس": "lentils", "أفوكادو": "avocado", "جوافة": "guava", "فلفل أصفر": "ypep", "فلفل أحمر": "rpep", "كيوي": "kiwi", "بروكلي": "broccoli", "بابايا": "papaya", "فراولة": "straw", "برتقال": "orange", "كاجو": "cashews", "سبانخ": "spinach", "فاصوليا سوداء": "bbeans", "جوز": "walnuts", "ماكريل": "mackerel", "سردين": "sardines", "بلح البحر": "mussels", "كبدة بقر": "liver", "لحم بقر": "beef"};
 const bg=()=>`<div class="grid"></div><div class="sq" style="width:420px;height:420px;top:-120px;left:-140px"></div><div class="sq" style="width:260px;height:260px;bottom:120px;left:-60px;transform:rotate(-8deg)"></div><div class="sq" style="width:180px;height:180px;top:260px;right:-70px;transform:rotate(24deg)"></div>`;
 const foot=i=>`<img class="logo" src="../../brand/logo-color-hd.png"><div class="n">${i} / 8</div>`;
-let h=`<section class="s cover">${bg()}<div class="wrap"><span class="eb">احفظ البوست 📌</span><h1>تاكل كثير…<br><b style="color:#284da0">وجسمك جوعان؟</b></h1><div class="sub">6 عناصر يحتاجها جسمك يوميًا — وأعلى الأكلات فيها بالأرقام</div><div class="chips">${D.map(d=>`<span>${d[0]}</span>`).join('')}</div><div class="col">${['chicken','salmon','avocado','straw','almonds','broccoli','kiwi','eggs'].map(k=>`<img src="img/${k}.jpg">`).join('')}</div></div>${foot(1)}</section>`;
+let h=`<section class="s cover">${bg()}<div class="wrap"><h1>تاكل كثير…<br><b style="color:#284da0">وجسمك جوعان؟</b></h1><div class="sub">6 عناصر يحتاجها جسمك يوميًا — وأعلى الأكلات فيها بالأرقام</div><div class="chips">${D.map(d=>`<span>${d[0]}</span>`).join('')}</div><div class="col">${['chicken','salmon','avocado','straw','almonds','broccoli','kiwi','eggs'].map(k=>`<img src="img/${k}.jpg">`).join('')}</div></div>${foot(1)}</section>`;
 D.forEach((d,k)=>{const m=Math.max(...d[4].map(x=>x[1]));
-h+=`<section class="s">${bg()}<div class="wrap"><span class="eb">${d[0]}</span><h1>${d[1]}</h1><div class="sub">${d[2]}</div>${d[4].map(([n,v])=>`<div class="row"><img class="ph" src="img/${IM[n]}.jpg"><div class="lb">${n}</div><div class="tr"><div class="br" style="width:${Math.max(4,v/m*100)}%"></div></div><div class="v">${v} <small>${d[3]}</small></div></div>`).join('')}${d[5]?`<div class="note">${d[5]}</div>`:''}</div>${foot(k+2)}</section>`});
+h+=`<section class="s">${bg()}<div class="wrap"><h1 class="hero"><span class="k">أعلى ${d[4].length} أكلات في</span><br>${d[1].match(/<b>ب(.*)<\/b>/)[1]}</h1><div class="sub">${d[2]}</div><div class="rows">${d[4].map(([n,v])=>{const w=Math.max(4,v/m*100),inn=w>62;return `<div class="row"><img class="ph" src="img/${IM[n]}.jpg"><div class="lb">${n}</div><div class="tr"><div class="br" style="width:${w}%"></div><div class="v${inn?' in':''}" style="${inn?`left:calc(${100-w}% + 18px)`:`right:calc(${w}% + 14px)`}">${v} <small>${d[3]}</small></div></div></div>`}).join('')}</div>${d[5]?`<div class="note">${d[5]}</div>`:''}</div>${foot(k+2)}</section>`});
 h+=`<section class="s cover">${bg()}<div class="wrap"><h1 style="font-size:68px">احفظ البوست<br><b style="color:#284da0">وارجع له قبل ما تطبخ</b></h1><div class="sub">تبي خطة أكل وتمارين على هدفك؟ اطلبها من موقعنا</div><div class="chips"><span>navcoaching.com</span></div><div class="col">${['guava','shrimp','chia','ypep','walnuts','spinach','lentils','choc'].map(k=>`<img src="img/${k}.jpg">`).join('')}</div></div>${foot(8)}</section>`;
 root.innerHTML=h;
 document.querySelectorAll('.lb').forEach(e=>{let f=32;while(e.scrollHeight>52&&f>22){e.style.fontSize=--f+'px'}});
