@@ -1,0 +1,40 @@
+<!doctype html><html dir="rtl"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0}body{background:#ccc;font-family:'Noto Kufi Arabic';}
+section.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:#f4f7fb;color:#0b1a33;margin-bottom:20px}
+.grid{position:absolute;inset:0;background-image:linear-gradient(#284da00d 1px,transparent 1px),linear-gradient(90deg,#284da00d 1px,transparent 1px);background-size:60px 60px}
+.sq{position:absolute;border:2px solid #284da022;background:#4cc5ed10;transform:rotate(12deg);border-radius:18px}
+.logo{position:absolute;bottom:52px;left:70px;height:60px}
+.n{direction:ltr;position:absolute;bottom:62px;right:70px;font-size:24px;color:#4b5b72}
+.wrap{position:absolute;inset:90px 70px 150px}
+.eb{display:inline-block;background:#284da0;color:#fff;font-size:26px;padding:6px 22px;border-radius:40px;line-height:1.6}
+h1{font-size:64px;line-height:1.45;margin:22px 0 6px;word-spacing:4px}
+h1 b{color:#284da0}
+.sub{font-size:26px;color:#4b5b72;line-height:1.6;margin-bottom:34px}
+.row{display:flex;align-items:center;gap:20px;height:96px}
+.lb{width:250px;font-size:32px;font-weight:600;line-height:1.5}
+.tr{flex:1;height:58px;background:#284da00f;border-radius:14px;position:relative;overflow:hidden}
+.br{position:absolute;right:0;top:0;bottom:0;border-radius:14px;background:linear-gradient(270deg,#284da0,#4cc5ed)}
+.row:first-child .br{background:linear-gradient(270deg,#0b1a33,#284da0)}
+.v{width:170px;font-size:34px;font-weight:800;text-align:left;white-space:nowrap}
+.v small{font-size:20px;color:#4b5b72;font-weight:500}
+.note{margin-top:26px;background:#fff;border-right:8px solid #4cc5ed;border-radius:14px;padding:18px 26px;font-size:26px;line-height:1.65;box-shadow:0 8px 24px #0b1a3310}
+.cover h1{font-size:104px;line-height:1.4;margin-top:300px}
+.cover .sub{font-size:34px}
+.chips{display:flex;flex-wrap:wrap;gap:16px;margin-top:40px}.chips span{background:#fff;border:2px solid #284da033;border-radius:40px;padding:8px 26px;font-size:30px;line-height:1.6}
+</style></head><body><div id="root"></div><script>
+const D=[
+['بروتين','أعلى الأطعمة <b>بالبروتين</b>','لكل 100 غرام • اللحوم والأسماك مطبوخة','غ',[['صدر دجاج',31],['تونة',30],['ديك رومي',29],['لحم بقر قليل الدهن',26],['سلمون',25],['روبيان',24],['توفو',17],['بيض',13]]],
+['ألياف','أعلى الأطعمة <b>بالألياف</b>','لكل 100 غرام','غ',[['بذور الشيا',34],['بذور الكتان',27],['فشار',15],['لوز',13],['شوكولاتة داكنة',11],['شوفان',10],['عدس مطبوخ',8],['أفوكادو',7]]],
+['فيتامين C','أعلى الأطعمة <b>بفيتامين C</b>','لكل 100 غرام','ملغ',[['جوافة',228],['فلفل أصفر',184],['فلفل أحمر',128],['كيوي',93],['بروكلي',89],['بابايا',61],['فراولة',59],['برتقال',53]]],
+['مغنيسيوم','أعلى الأطعمة <b>بالمغنيسيوم</b>','لكل 100 غرام','ملغ',[['بذور الكتان',392],['بذور الشيا',335],['كاجو',290],['لوز',270],['شوكولاتة داكنة',230],['شوفان',138],['سبانخ',87],['فاصوليا سوداء',70]]],
+['أوميغا 3','أعلى الأطعمة <b>بأوميغا 3</b>','لكل 100 غرام','غ',[['بذور الكتان',22.8],['بذور الشيا',17.8],['جوز',9.1],['ماكريل',2.7],['سلمون',2.3],['سردين',1.5]],'⚠ أوميغا 3 النباتي (ALA) يتحول منه 5 إلى 10% فقط إلى EPA/DHA — الأسماك أفضل مصدر مباشر.'],
+['حديد','أعلى الأطعمة <b>بالحديد</b>','لكل 100 غرام','ملغ',[['شوكولاتة داكنة',11.9],['بلح البحر',6.7],['كاجو',6.7],['كبدة بقر',6.5],['توفو',5.4],['سبانخ',3.6],['عدس',3.3],['لحم بقر',2.6]],'⚠ حديد اللحوم يمتصه الجسم أفضل بـ 2 إلى 3 مرات من الحديد النباتي.']];
+const bg=()=>`<div class="grid"></div><div class="sq" style="width:420px;height:420px;top:-120px;left:-140px"></div><div class="sq" style="width:260px;height:260px;bottom:120px;left:-60px;transform:rotate(-8deg)"></div><div class="sq" style="width:180px;height:180px;top:260px;right:-70px;transform:rotate(24deg)"></div>`;
+const foot=i=>`<img class="logo" src="../../brand/logo-color-hd.png"><div class="n">${i} / 8</div>`;
+let h=`<section class="s cover">${bg()}<div class="wrap"><span class="eb">احفظ البوست 📌</span><h1>أعلى الأطعمة<br><b style="color:#284da0">بالعناصر الغذائية</b></h1><div class="sub">6 قوائم مرتبة بالأرقام — لكل 100 غرام</div><div class="chips">${D.map(d=>`<span>${d[0]}</span>`).join('')}</div></div>${foot(1)}</section>`;
+D.forEach((d,k)=>{const m=Math.max(...d[4].map(x=>x[1]));
+h+=`<section class="s">${bg()}<div class="wrap"><span class="eb">${d[0]}</span><h1>${d[1]}</h1><div class="sub">${d[2]}</div>${d[4].map(([n,v])=>`<div class="row"><div class="lb">${n}</div><div class="tr"><div class="br" style="width:${Math.max(4,v/m*100)}%"></div></div><div class="v">${v} <small>${d[3]}</small></div></div>`).join('')}${d[5]?`<div class="note">${d[5]}</div>`:''}</div>${foot(k+2)}</section>`});
+h+=`<section class="s cover">${bg()}<div class="wrap"><h1 style="font-size:80px">الأكل الصح<br><b style="color:#284da0">يبدأ بمعلومة</b></h1><div class="sub">خطط تغذية وتمارين مصممة لك</div><div class="chips"><span>navcoaching.com</span></div></div>${foot(8)}</section>`;
+root.innerHTML=h;
+document.querySelectorAll('.lb').forEach(e=>{let f=32;while(e.scrollHeight>52&&f>22){e.style.fontSize=--f+'px'}});
+</script></body></html>
