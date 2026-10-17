@@ -1,0 +1,32 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}body{background:#555}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;color:#0b1a33;background:linear-gradient(180deg,#ffffff,#eef3f9)!important;font-family:"Noto Kufi Arabic",sans-serif}
+.top{position:absolute;top:56px;right:72px;left:72px;display:flex;justify-content:space-between;align-items:center;z-index:3}
+.top img{height:54px}.n{font:500 24px Noto Kufi Arabic;color:#4b5b72;background:#fff;border:1.5px solid #d3dce7;border-radius:99px;padding:6px 18px;direction:ltr}
+.rows{position:absolute;top:200px;bottom:170px;right:72px;left:72px;display:flex;flex-direction:column;justify-content:center;gap:22px;text-align:center}
+.r{font:600 46px/1.55 Noto Kufi Arabic;color:#0b1a33;opacity:.13;white-space:nowrap}
+.r.on{opacity:1;font-weight:800;font-size:50px;color:#fff;background:#0b1a33;margin:14px -72px;padding:26px 72px;box-shadow:0 18px 40px #0b1a3333}
+.r.on em{font-style:normal;color:#4cc5ed}
+.foot{position:absolute;bottom:64px;right:72px;left:72px;display:flex;justify-content:space-between;align-items:center;font:500 28px Noto Kufi Arabic;color:#4b5b72}
+.foot b{font:700 30px Noto Kufi Arabic;color:#284da0;letter-spacing:.5px}
+.wm{position:absolute;z-index:0;width:820px;opacity:.06;top:330px;left:130px}.rows,.top,.foot{z-index:2}</style></head><body><script>
+const T=[
+ ['ما تقدر تتمرّن','<em>أكثر من أكلك.</em>'],
+ ['طارد العادات،','<em>مو المثالية.</em>'],
+ ['النتايج','<em>ما تجي بليلة.</em>'],
+ ['ما تقدر','<em>تغش الأساسيات.</em>'],
+ ['النتيجة','<em>تبي وقت.</em>'],
+ ['وجبة وحدة','<em>ما خرّبت تقدّمك.</em>'],
+ ['خسارة الدهون بسيطة،','<em>بس مو سهلة.</em>'],
+ ['السعرات السائلة','<em>تنحسب.</em>'],
+ ['الكارب لحاله','<em>ما يسمّنك.</em>'],
+];
+const BG=[[200,'#0b1a33','#284da0'],[30,'#284da0','#0b1a33'],[150,'#0b1a33','#1d3f86'],[240,'#1d3f86','#0b1a33'],[120,'#0b1a33','#284da0'],[60,'#0e2142','#2a5bb8'],[210,'#0b1a33','#284da0'],[330,'#284da0','#0b1a33'],[170,'#0b1a33','#1d3f86']];
+let h='';T.forEach((t,i)=>{const plain=(t[0]+' '+t[1]).replace(/<[^>]+>/g,'');const [a,c1,c2]=BG[i];
+ let rows='';for(let k=0;k<9;k++){rows+= k==4?`<div class="r on">${t[0]} ${t[1]}</div>`:`<div class="r">${plain}</div>`}
+ h+=`<section class="s" style="background:radial-gradient(70% 55% at ${i%2?'15%':'85%'} ${i%3==0?'15%':'85%'},#4cc5ed40,transparent 70%),linear-gradient(${a}deg,${c1},${c2})">
+ <div class="top"><img src="../../brand/logo-color-hd.png"><span class="n">${i+1} / ${T.length}</span></div><img class="wm" src="../../brand/nav-mark-navy.png"><div class="rows">${rows}</div>
+ <div class="foot"><span>احفظها وكرّرها لنفسك</span><b>navcoaching.com</b></div></section>`});
+document.write(h);
+document.fonts.ready.then(()=>document.querySelectorAll('.r').forEach(e=>{let f=parseFloat(getComputedStyle(e).fontSize);while(e.scrollWidth>e.clientWidth+1&&f>24){f--;e.style.fontSize=f+'px'}}));
+</script></body></html>

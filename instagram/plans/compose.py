@@ -25,30 +25,34 @@ for k in sys.argv[1:]:
     for rj in sorted(glob.glob(f'{HERE}/{k}/out/*-rects.json')):
         n = os.path.basename(rj).split('-')[0]
         base = f'{HERE}/{k}/out/{n}'
-        fg = Image.open(base + '.png').convert('RGBA')
-        fg.putalpha(ImageOps.invert(Image.open(base + '-mask.png').convert('L')))
-        fg.save(base + '-fg.png')
+        if not os.path.exists(base + '-fg.png'):
+            fg = Image.open(base + '.png').convert('RGBA')
+            fg.putalpha(ImageOps.invert(Image.open(base + '-mask.png').convert('L')))
+            fg.save(base + '-fg.png')
         rects = json.load(open(rj))
         args = [FF, '-loglevel', 'error', '-y', '-f', 'lavfi', '-i', 'color=c=0xf3f6fa:s=1080x1350:r=30:d=6']
         for r in rects:
-            args += ['-stream_loop', '2', '-ss', str(r['ss']), '-i', f"{HERE}/clips/{r['clip']}"]
+            args += ['-stream_loop', '-1', '-ss', str(r['ss']), '-i', f"{HERE}/clips/{r['clip']}"]
         args += ['-loop', '1', '-i', base + '-fg.png']
         fc, last = [], '[0:v]'
         for i, r in enumerate(rects, 1):
-            if r['w'] / r['h'] > 2:   # wide tile: sharp centre + blurred fill
-                cw = round(r['h'] * 1.5) // 2 * 2
+            SW, SH = map(int, r.get('src', '1920:1080').split(':'))
+            if r['w'] / r['h'] > 2 or SW / SH < 1:   # wide tile or vertical source: sharp centre + blurred fill
+                cw = round(r['h'] * min(1.5, SW / SH)) // 2 * 2
                 fc.append(f"[{i}:v]fps=30,split[a{i}][b{i}]")
                 fc.append(f"[a{i}]crop={crop_for(r['crop'], r['w'], r['h'], r.get('src', '1920:1080'))},scale={r['w']}:{r['h']},boxblur=20:2,eq=brightness=-0.08[bg{i}]")
+                g = G if r.get('grade') != '0' else 'null'
                 fc.append(f"[b{i}]crop={crop_for(r['crop'], cw, r['h'], r.get('src', '1920:1080'))},scale={cw}:{r['h']}[fgv{i}]")
-                fc.append(f"[bg{i}][fgv{i}]overlay=(W-w)/2:0,setsar=1,{G}[v{i}]")
+                fc.append(f"[bg{i}][fgv{i}]overlay=(W-w)/2:0,setsar=1,{g}[v{i}]")
             else:
-                fc.append(f"[{i}:v]fps=30,crop={crop_for(r['crop'], r['w'], r['h'], r.get('src', '1920:1080'))},scale={r['w']}:{r['h']},setsar=1,{G}[v{i}]")
+                fc.append(f"[{i}:v]fps=30,crop={crop_for(r['crop'], r['w'], r['h'], r.get('src', '1920:1080'))},scale={r['w']}:{r['h']},setsar=1,{G if r.get('grade') != '0' else 'null'}[v{i}]")
             fc.append(f"{last}[v{i}]overlay={r['x']}:{r['y']}[t{i}]"); last = f'[t{i}]'
         fc.append(f"{last}[{len(rects) + 1}:v]overlay=0:0,format=yuv420p[out]")
         args += ['-filter_complex', ';'.join(fc), '-map', '[out]', '-t', '6', '-r', '30', '-c:v', 'libx264', '-crf', '19',
                  '-preset', 'medium', '-movflags', '+faststart', base + '.mp4']
         subprocess.run(args, check=True)
         for f in (base + '-fg.png', base + '-mask.png', rj):
-            os.remove(f)
+            if os.path.exists(f):
+                os.remove(f)
         os.remove(base + '.png')
         print('video', k, n)

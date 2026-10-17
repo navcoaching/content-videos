@@ -1,0 +1,165 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<style>
+:root{--bg:#0b1a33;--bg2:#0e2142;--ink:#07142a;--white:#f4f8fc;--soft:#b9c9de;--cyan:#4cc5ed;--navy:#284da0;--pain:#ff6b6b;--line:#ffffff26}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#555;font-family:"Noto Kufi Arabic",sans-serif}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;margin:0 0 30px;background:var(--bg);color:var(--white)}
+.s::after{content:"";position:absolute;left:0;right:0;bottom:0;height:520px;background:linear-gradient(180deg,transparent,#07142a99);pointer-events:none}
+.top{position:absolute;z-index:3;top:52px;right:64px;left:64px;display:flex;justify-content:space-between;align-items:center}
+.top img{height:54px}
+.n{font:600 24px "Noto Kufi Arabic";color:var(--soft);border:1.5px solid var(--line);border-radius:99px;padding:6px 20px;direction:ltr}
+.art{position:absolute;z-index:1;top:150px;left:0;right:0;height:690px}
+.art svg{width:100%;height:100%}
+.tx{position:absolute;z-index:2;right:88px;left:88px;top:860px;text-align:center}
+.tx h1{font:800 58px/1.38 Noto Kufi Arabic;letter-spacing:-.5px;text-wrap:balance}
+.tx h1 em,.tx p em{font-style:normal;color:var(--cyan)}
+.tx p{margin-top:22px;font:500 38px/1.6 "Noto Kufi Arabic";color:var(--soft);text-wrap:balance}
+.tx p b{color:var(--white);font-weight:700}
+.dose{display:inline-block;margin-top:26px;font:700 30px Noto Kufi Arabic;color:var(--ink);background:var(--cyan);border-radius:16px;padding:8px 24px}
+.foot{position:absolute;z-index:3;bottom:46px;right:64px;left:64px;display:flex;justify-content:center;font:500 24px "Noto Kufi Arabic";color:#7f93b0}
+/* rules + cta */
+.list{position:absolute;z-index:2;top:330px;right:88px;left:88px;display:flex;flex-direction:column;gap:26px}
+.list .r{display:flex;align-items:flex-start;gap:24px;font:600 38px/1.5 "Noto Kufi Arabic"}
+.list .r i{flex:0 0 60px;height:60px;border-radius:18px;background:var(--cyan);color:var(--ink);display:flex;align-items:center;justify-content:center;font:800 32px "Noto Kufi Arabic";font-style:normal;margin-top:2px}
+.warn{position:absolute;z-index:2;right:88px;left:88px;bottom:150px;border:2px solid #ff6b6b66;border-radius:24px;padding:26px 32px;font:500 30px/1.6 "Noto Kufi Arabic";color:var(--soft)}
+.warn b{color:var(--pain)}
+.big{position:absolute;z-index:2;top:200px;right:88px;left:88px}
+.big h1{font:900 92px/1.2 Noto Kufi Arabic;letter-spacing:-1px}
+.big h1 em{font-style:normal;color:var(--cyan)}
+.cta{position:absolute;z-index:2;right:88px;left:88px;bottom:140px;background:var(--cyan);color:var(--ink);border-radius:28px;padding:30px 36px;display:flex;justify-content:space-between;align-items:center}
+.cta b{font:900 46px Noto Kufi Arabic}.cta span{font:700 32px "Noto Kufi Arabic"}
+</style></head><body>
+<script>
+// ---------- geometric capsule figure ----------
+const R=Math.PI/180;
+function P(x,y){return {x,y}}
+function add(p,l,deg){return P(p.x+l*Math.sin(deg*R),p.y+l*Math.cos(deg*R))}      // angle from straight down, + = forward (right)
+function up(p,l,deg){return P(p.x+l*Math.sin(deg*R),p.y-l*Math.cos(deg*R))}       // angle from straight up
+const L={t:150,th:128,sh:122,ft:44,ua:96,fa:88,hr:48,w:36};
+function figure(o){
+ // o: {x, floor, t, legs:[[a,b],[a,b]] (back, front), arms:[[u,f],[u,f]], lift, pain:[...'knee0'|'knee1'], work:[0|1], mood, s}
+ const s=o.s||1.25, legs=o.legs, arms=o.arms||[[10,10],[20,20]];
+ let H=P(0,0);
+ const pts=legs.map(([a,b])=>{const k=add(H,L.th,a),an=add(k,L.sh,b);return {k,an}});
+ const low=Math.max(...pts.map(p=>p.an.y));
+ const dy=-low-L.w/2-(o.lift||0);
+ const T=(p)=>P(o.x+p.x*s,o.floor+(p.y+dy)*s);
+ const neck=up(H,L.t,o.t), sh=up(H,L.t-20,o.t), head=up(neck,L.hr+6,o.t);
+ let g='';
+ const seg=(a,b,c,w)=>{a=T(a);b=T(b);g+=`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="${c}" stroke-width="${(w||L.w)*s}" stroke-linecap="round"/>`};
+ const limbArm=(i,c)=>{const [u,f]=arms[i];const e=add(sh,L.ua,u),h=add(e,L.fa,f);seg(sh,e,c);seg(e,h,c)};
+ const limbLeg=(i,c)=>{const p=pts[i];seg(H,p.k,c);seg(p.k,p.an,c);seg(p.an,P(p.an.x+L.ft,p.an.y),c)};
+ if(o.twoArms) limbArm(0,'#7f96b8');limbLeg(0,'#7f96b8');
+ seg(H,neck,'#f4f8fc',L.w*1.9);
+ limbLeg(1,'#f4f8fc');
+ (o.work||[]).forEach(i=>{const p=pts[i];const a=T(H),b=T(p.k);const mx=(a.x+b.x)/2,my=(a.y+b.y)/2,dx=(b.x-a.x)*.32,dy2=(b.y-a.y)*.32;
+   g+=`<line x1="${mx-dx}" y1="${my-dy2}" x2="${mx+dx}" y2="${my+dy2}" stroke="#4cc5ed" stroke-width="${16*s}" stroke-linecap="round"/>`});
+ limbArm(1,'#f4f8fc');
+ const hc=T(head);g+=`<circle cx="${hc.x}" cy="${hc.y}" r="${L.hr*s}" fill="#f4f8fc"/>`;
+ // face looks forward (right)
+ const ex=hc.x+14*s, ey=hc.y-8*s;
+ g+=`<circle cx="${ex}" cy="${ey}" r="${5*s}" fill="#0b1a33"/><circle cx="${ex+20*s}" cy="${ey}" r="${5*s}" fill="#0b1a33"/>`;
+ const my=hc.y+16*s, mx=hc.x+24*s;
+ if(o.mood==='sad') g+=`<path d="M${mx-12*s} ${my+6*s} q${12*s} ${-12*s} ${24*s} 0" stroke="#0b1a33" stroke-width="${4.5*s}" fill="none" stroke-linecap="round"/>`;
+ else if(o.mood==='happy') g+=`<path d="M${mx-12*s} ${my-4*s} q${12*s} ${12*s} ${24*s} 0" stroke="#0b1a33" stroke-width="${4.5*s}" fill="none" stroke-linecap="round"/>`;
+ else g+=`<line x1="${mx-10*s}" y1="${my}" x2="${mx+12*s}" y2="${my}" stroke="#0b1a33" stroke-width="${4.5*s}" stroke-linecap="round"/>`;
+ if(o.sweat){g+=`<path d="M${hc.x-20*s} ${hc.y-78*s} q-9 14 0 20 q9 -6 0 -20z" fill="#4cc5ed"/><path d="M${hc.x+6*s} ${hc.y-90*s} q-9 14 0 20 q9 -6 0 -20z" fill="#4cc5ed"/>`}
+ (o.pain||[]).forEach(i=>{const k=T(pts[i].k);g+=burst(k.x+4*s,k.y,40*s)});
+ return {svg:g, H:T(H), knee:pts.map(p=>T(p.k)), ankle:pts.map(p=>T(p.an)), head:hc, hand:T(add(add(sh,L.ua,arms[1][0]),L.fa,arms[1][1]))};
+}
+function burst(x,y,r){let g=`<circle cx="${x}" cy="${y}" r="${r*.28}" fill="#ff6b6b"/>`;for(let i=0;i<8;i++){const a=i*45*R;g+=`<line x1="${x+Math.cos(a)*r*.48}" y1="${y+Math.sin(a)*r*.48}" x2="${x+Math.cos(a)*r}" y2="${y+Math.sin(a)*r}" stroke="#ff6b6b" stroke-width="6" stroke-linecap="round"/>`}return g}
+const floorLine=(y,x1=180,x2=900)=>`<line x1="${x1}" y1="${y}" x2="${x2}" y2="${y}" stroke="#ffffff33" stroke-width="5" stroke-linecap="round"/>`;
+const arrowDown=(x,y1,y2,label)=>`<line x1="${x}" y1="${y1}" x2="${x}" y2="${y2-18}" stroke="#4cc5ed" stroke-width="7" stroke-linecap="round"/><path d="M${x-18} ${y2-26} L${x} ${y2} L${x+18} ${y2-26}z" fill="#4cc5ed"/>`+(label?`<text x="${x}" y="${y2+52}" text-anchor="middle" font-family="Noto Kufi Arabic" font-weight="700" font-size="34" fill="#b9c9de">${label}</text>`:'');
+const label=(x,y,t,c='#b9c9de',sz=32)=>`<text x="${x}" y="${y}" text-anchor="middle" font-family="Noto Kufi Arabic" font-weight="700" font-size="${sz}" fill="${c}">${t}</text>`;
+const box=(x,y,w,h,t)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="10" fill="#1d3358" stroke="#ffffff40" stroke-width="3"/>`+(t?label(x+w/2,y+h/2+12,t,'#b9c9de',30):'');
+
+const F=620; // floor y inside the art box (690 tall)
+const ART={
+ squatPain:()=>floorLine(F)+figure({x:540,floor:F,t:38,legs:[[78,-28],[84,-24]],arms:[[78,88],[84,92]],pain:[1],mood:'sad',sweat:1}).svg,
+ lungePain:()=>floorLine(F)+figure({x:520,floor:F,t:4,legs:[[-38,-92],[80,0]],arms:[[-6,8],[12,20]],pain:[1],mood:'sad',oneArm:1}).svg,
+ sitPain:()=>{const f=figure({x:520,floor:F,t:-4,legs:[[86,0],[90,0]],arms:[[30,80],[40,85]],pain:[1],mood:'sad',oneArm:1});
+   const seatY=f.H.y+22;return floorLine(F)+`<rect x="${f.H.x-70}" y="${seatY}" width="150" height="18" rx="6" fill="#40597f"/><rect x="${f.H.x-80}" y="${seatY-200}" width="18" height="${200+18}" rx="6" fill="#40597f"/><line x1="${f.H.x-55}" y1="${seatY+18}" x2="${f.H.x-55}" y2="${F}" stroke="#40597f" stroke-width="12"/><line x1="${f.H.x+60}" y1="${seatY+18}" x2="${f.H.x+60}" y2="${F}" stroke="#40597f" stroke-width="12"/>`+f.svg+clock(800,150)},
+ confused:()=>floorLine(F)+figure({x:540,floor:F,t:0,legs:[[-4,-4],[4,4]],arms:[[-30,-80],[30,80]],pain:[0,1],mood:'sad',s:1,twoArms:1}).svg+label(420,170,'؟','#4cc5ed',80)+label(690,130,'؟','#4cc5ed',64)+label(760,200,'؟','#4cc5ed',48),
+ stairs:()=>{const st=`<path d="M200 ${F} L200 ${F-90} L380 ${F-90} L380 ${F-180} L560 ${F-180} L560 ${F-270} L900 ${F-270} L900 ${F}z" fill="#1d3358" stroke="#ffffff40" stroke-width="3"/>`;
+   const f=figure({x:390,floor:F-90,t:14,legs:[[-20,-12],[62,-8]],arms:[[30,60],[-20,-10]],pain:[0,1],mood:'sad',s:1});return st+f.svg},
+ save:()=>{const f=figure({x:500,floor:F,t:0,legs:[[-4,-4],[4,4]],arms:[[-6,0],[120,130]],mood:'flat',s:1.05});
+   const h=f.hand;return floorLine(F)+f.svg+`<path transform="translate(${h.x+10},${h.y-40})" d="M0 0h96v150l-48-38-48 38z" fill="#4cc5ed"/>`},
+ gauge:()=>{let g='';const cx=540,cy=470,r=250;
+   g+=`<path d="M${cx-r} ${cy} A${r} ${r} 0 0 1 ${cx+r} ${cy}" fill="none" stroke="#ffffff30" stroke-width="34" stroke-linecap="round"/>`;
+   g+=`<path d="M${cx+r*Math.cos(35*R)} ${cy-r*Math.sin(35*R)} A${r} ${r} 0 0 1 ${cx+r} ${cy}" fill="none" stroke="#ff6b6b" stroke-width="34" stroke-linecap="round"/>`;
+   const a=22*R;g+=`<line x1="${cx}" y1="${cy}" x2="${cx+(r-60)*Math.cos(a)}" y2="${cy-(r-60)*Math.sin(a)}" stroke="#f4f8fc" stroke-width="16" stroke-linecap="round"/><circle cx="${cx}" cy="${cy}" r="26" fill="#f4f8fc"/>`;
+   g+=label(cx+r,cy+70,'عالية')+label(cx-r,cy+70,'منخفضة')+label(cx,cy+140,'حساسية الركبة','#f4f8fc',40);return g},
+ chart:()=>{let g='';const x0=250,x1=900,y0=110,y1=600;
+   g+=`<line x1="${x0}" y1="${y0}" x2="${x0}" y2="${y1}" stroke="#ffffff55" stroke-width="5"/><line x1="${x0}" y1="${y1}" x2="${x1}" y2="${y1}" stroke="#ffffff55" stroke-width="5"/>`;
+   const lv=[['السكوات',230],['الدرج',380],['الجلوس',500]];
+   lv.forEach(([t,y])=>{g+=`<line x1="${x0}" y1="${y}" x2="${x1}" y2="${y}" stroke="#ffffff35" stroke-width="3" stroke-dasharray="12 12"/>`+`<text x="${x0-18}" y="${y+12}" text-anchor="end" direction="ltr" font-family="Noto Kufi Arabic" font-weight="700" font-size="36" fill="#b9c9de">${t}</text>`});
+   g+=`<path d="M${x0+10} 135 C 480 150, 640 380, ${x1-20} 585" fill="none" stroke="#4cc5ed" stroke-width="12" stroke-linecap="round"/>`;
+   g+=burst(390,230,34)+burst(612,380,34)+burst(766,500,34);
+   g+=label(690,118,'قدرة الركبة على التحمّل','#4cc5ed',36)+label((x0+x1)/2,y1+62,'كل ما طالت مدة تجنّب الحمل ←','#b9c9de',36);return g},
+ ladder:()=>{let g='';const n=7,w=112,h=58,base=610,xr=950;const names=['ثبات<br>بالدفع','ثبات<br>بالمقاومة','نزول<br>بطيء','مدى<br>قصير','مدى<br>أعمق','سرعة','قفز<br>واتجاهات'];
+   let d=`M${xr} ${base}`;for(let i=0;i<n;i++){const x=xr-i*w;d+=` L${x} ${base-(i+1)*h} L${x-w} ${base-(i+1)*h}`}d+=` L${xr-n*w} ${base} z`;
+   g+=`<path d="${d}" fill="#1d3358" stroke="#ffffff40" stroke-width="3"/>`;
+   for(let i=0;i<n;i++){const x=xr-i*w-w/2,y=base-(i+1)*h;g+=label(x,y+44,i+1,'#4cc5ed',38);
+     names[i].split('<br>').forEach((t,j,a)=>{g+=label(x,y-18-(a.length-1-j)*36,t,'#f4f8fc',30)})}
+   return g},
+ step1:()=>{const f=figure({x:520,floor:F,t:4,legs:[[-38,-92],[80,0]],arms:[[120,200],[130,215]],work:[1],mood:'flat',sweat:1});
+   const by=f.head.y+30;return floorLine(F,160,920)+`<line x1="300" y1="80" x2="300" y2="${F}" stroke="#40597f" stroke-width="16"/><line x1="790" y1="80" x2="790" y2="${F}" stroke="#40597f" stroke-width="16"/><line x1="250" y1="${by}" x2="840" y2="${by}" stroke="#b9c9de" stroke-width="16" stroke-linecap="round"/><rect x="270" y="${by-12}" width="60" height="24" rx="6" fill="#4cc5ed"/><rect x="760" y="${by-12}" width="60" height="24" rx="6" fill="#4cc5ed"/>`+f.svg+lock(870,by-30)+`<line x1="700" y1="${by+150}" x2="700" y2="${by+40}" stroke="#4cc5ed" stroke-width="7"/><path d="M682 ${by+58} L700 ${by+28} L718 ${by+58}z" fill="#4cc5ed"/>`+label(700,by+200,'ادفع','#4cc5ed',32)},
+ step2:()=>{const f=figure({x:400,floor:F,t:0,legs:[[88,0],[92,0]],arms:[[30,70],[40,80]],work:[1],mood:'flat',sweat:1});
+   return floorLine(F,240,900)+`<line x1="${f.H.x-62}" y1="60" x2="${f.H.x-50}" y2="${F}" stroke="#40597f" stroke-width="16"/>`+f.svg+label(760,300,'اثبت','#4cc5ed',40)},
+ step3:()=>{const f=figure({x:540,floor:F,t:36,legs:[[78,-26],[82,-24]],arms:[[80,88],[86,92]],work:[1],mood:'flat',sweat:1});
+   return floorLine(F)+box(f.H.x-200,F-150,150,150)+f.svg+arrowDown(900,150,420,'3–5 ثواني')},
+ step4:()=>{const f=figure({x:540,floor:F,t:24,legs:[[52,-18],[56,-18]],arms:[[78,86],[84,92]],work:[1],mood:'happy'});
+   return floorLine(F)+box(f.H.x-190,F-220,170,220,'صندوق عالي')+f.svg},
+ step5:()=>{const f=figure({x:560,floor:F,t:44,legs:[[100,-40],[104,-38]],arms:[[82,90],[88,96]],work:[1],mood:'happy'});
+   return floorLine(F)+f.svg+arrowDown(300,170,500,'أعمق')+label(880,170,'بنفس البطء','#b9c9de',34)},
+ step6:()=>{const f=figure({x:480,floor:F,t:10,legs:[[-30,-20],[70,-6]],arms:[[60,150],[-30,-40]],work:[1],mood:'happy',s:1.1,twoArms:1});
+   return floorLine(F,160,920)+box(f.ankle[1].x-60,F-110,240,110)+`<path transform="translate(0,-110)" d="M0 0"/>`+f.svg+[0,1,2].map(i=>`<line x1="190" y1="${280+i*60}" x2="${i==1?300:270}" y2="${280+i*60}" stroke="#4cc5ed" stroke-width="8" stroke-linecap="round"/>`).join('')},
+ strong:()=>{const f=figure({x:540,floor:F,t:0,legs:[[-6,-6],[6,6]],arms:[[200,195],[155,150]],mood:'happy',s:1.0,twoArms:1});const h=f.hand;
+   return floorLine(F)+f.svg+[[-34,-30],[0,-46],[34,-30]].map(([dx,dy])=>`<line x1="${h.x+dx*0.6}" y1="${h.y+dy*0.6-20}" x2="${h.x+dx}" y2="${h.y+dy-20}" stroke="#4cc5ed" stroke-width="7" stroke-linecap="round"/>`).join('')},
+ step7:()=>{const f=figure({x:520,floor:F,t:8,legs:[[48,-50],[54,-46]],arms:[[-40,-30],[-30,-20]],work:[1],mood:'happy',lift:90,s:1});
+   return `<ellipse cx="560" cy="${F}" rx="150" ry="18" fill="#ffffff22"/>`+[0,1,2].map(i=>`<line x1="${520+i*40}" y1="${F-90}" x2="${520+i*40}" y2="${F-40}" stroke="#4cc5ed" stroke-width="7" stroke-linecap="round"/>`).join('')+f.svg+`<polyline points="800,560 860,470 800,380 860,290" fill="none" stroke="#4cc5ed" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M842 270 L880 262 L866 300z" fill="#4cc5ed"/>`},
+};
+function clock(x,y){return `<circle cx="${x}" cy="${y}" r="62" fill="none" stroke="#b9c9de" stroke-width="8"/><line x1="${x}" y1="${y}" x2="${x}" y2="${y-36}" stroke="#b9c9de" stroke-width="8" stroke-linecap="round"/><line x1="${x}" y1="${y}" x2="${x+28}" y2="${y+16}" stroke="#b9c9de" stroke-width="8" stroke-linecap="round"/>`}
+function lock(x,y){return `<rect x="${x-26}" y="${y}" width="52" height="44" rx="8" fill="#4cc5ed"/><path d="M${x-16} ${y} v-16 a16 16 0 0 1 32 0 v16" fill="none" stroke="#4cc5ed" stroke-width="8"/>`+label(x,y+86,'مقفول','#4cc5ed',28)}
+
+const LOGO='<img src="../../brand/logo-white.webp">';
+const S=[
+ ['squatPain','ركبة فهد صارت توجعه في السكوات…<br><em>فوقّف السكوات.</em>','واللي سوّاه زاد الألم بدل ما يخففه… والحل بآخر البوست ←'],
+ ['lungePain','بعدها صارت توجعه في الطعنات والليق برس…<br><em>فوقّفهم بعد.</em>'],
+ ['sitPain','بعد شهر، صارت توجعه<br><em>إذا طوّل وهو جالس.</em>'],
+ ['confused','فهد محتار: يرتاح أكثر،<br>بس الألم <em>يطلع في مواقف أكثر.</em>'],
+ ['stairs','وبعد كم أسبوع، صار <em>النزول من الدرج</em><br>يزعجه… <em>والطلوع</em> بعد.'],
+  ['gauge','ركبته <em>ما تضررت أكثر</em>… صارت أحسس.','كل ما خفّف الحمل عليها، صار جسمه يتعامل مع الحركات العادية كأنها خطر.'],
+ ['chart','العضلات والأوتار <em>تتكيّف مع الحمل</em> اللي تاخذه.','وإذا تجنّبته، تقل قدرتها… لين تصير الأشياء اليومية ثقيلة عليها.'],
+ ['ladder','الحل مو راحة أكثر…<br><em>رجّع الحمل درجة درجة.</em>'],
+ ['save','تحس إنها قصتك؟<br><em>احفظ البوست</em> عشان ترجع للخطوات وقت ما تحتاجها.'],
+ ['step1','الخطوة 1: <em>ثبات بالدفع</em>','ادفع بقوة في شي ما يتحرك، مثل طعنة تدفع فيها بار مقفول.','4–5 مرات · 30–45 ثانية'],
+ ['step2','الخطوة 2: <em>ثبات بالمقاومة</em>','اثبت في وضعية والوزن يحاول ينزّلك، مثل الجلوس على الجدار.','4–5 مرات · 30–45 ثانية'],
+ ['step3','الخطوة 3: <em>نزول بطيء</em>','انزل ببطء وتحكّم، واطلع بالطريقة اللي تريحك.','النزول 3–5 ثواني'],
+ ['step4','الخطوة 4: <em>مدى قصير</em>','عدّات كاملة، بس لعمق مريح، مثل سكوات على صندوق عالي.'],
+ ['step5','الخطوة 5: <em>زد العمق</em>','شوي شوي انزل أعمق، وخلّك على نفس البطء.'],
+ ['step6','الخطوة 6: <em>أضف سرعة</em>','لما يصير البطء سهل، ابدأ تتحرك أسرع.'],
+ ['step7','الخطوة 7: <em>قفز وتغيير اتجاه</em>','قفزات ونطّات وتغيير اتجاه، عشان ترجع ركبتك جاهزة لحياتك.'],
+ ['strong','فهد ما كان يحتاج <em>يتجنّب أكثر</em>…<br>كان يحتاج <em>يحمّل بذكاء.</em>'],
+];
+let html='';const N=S.length+2;
+S.forEach((d,i)=>{html+=`<section class="s"><div class="top">${LOGO}<span class="n">${i+1} / ${N}</span></div>
+<div class="art"><svg viewBox="0 0 1080 690">${ART[d[0]]()}</svg></div>
+<div class="tx"><h1>${d[1]}</h1>${d[2]?`<p>${d[2]}</p>`:''}${d[3]?`<span class="dose">${d[3]}</span>`:''}</div>
+<div class="foot">navcoaching.com</div></section>`});
+html+=`<section class="s"><div class="top">${LOGO}<span class="n">${N-1} / ${N}</span></div>
+<div class="big" style="top:170px"><h1 style="font-size:72px">متى تنتقل <em>للخطوة اللي بعدها؟</em></h1></div>
+<div class="list" style="top:400px"><div class="r"><i>1</i><span>الألم أثناء التمرين <b style="color:#4cc5ed">3 من 10 أو أقل</b></span></div>
+<div class="r"><i>2</i><span>يهدأ خلال <b style="color:#4cc5ed">24 ساعة</b></span></div>
+<div class="r"><i>3</i><span>ما يزيد صباح اليوم الثاني</span></div>
+<div class="r"><i>4</i><span>كمّل كل خطوة أسبوع إلى أسبوعين قبل ما تنتقل</span></div></div>
+<div class="warn"><b>راجع مختص قبل تبدأ</b> إذا الألم جا بعد إصابة أو سقوط، أو فيه تورّم، أو الركبة تقفل أو تخونك، أو الألم يصحّيك من النوم.</div>
+<div class="foot">navcoaching.com</div></section>`;
+html+=`<section class="s"><div class="top">${LOGO}<span class="n">${N} / ${N}</span></div>
+<div class="big"><h1>ركبتك تحتاج<br><em>خطة تمشي معك؟</em></h1>
+<p style="margin-top:40px;font:500 40px/1.65 'Noto Kufi Arabic';color:#b9c9de">نبني لك برنامج يرجّع الحمل لركبتك بالتدريج، ونعدّله أسبوعيًا حسب إحساسك وتقدّمك.</p></div>
+<div class="art" style="top:640px;height:440px"><svg viewBox="0 0 1080 440">${floorLine(380,330,750)+figure({x:520,floor:380,t:4,legs:[[-22,-10],[26,12]],arms:[[-26,-12],[28,18]],mood:'happy',s:0.75,twoArms:1}).svg}</svg></div>
+<div class="cta"><b>ابدأ برنامجك ←</b><span>navcoaching.com</span></div>
+<div class="foot" style="color:#b9c9de">احفظ البوست · أرسله لأحد ركبته توجعه</div></section>`;
+document.write(html);
+</script></body></html>

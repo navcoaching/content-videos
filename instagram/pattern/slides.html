@@ -1,0 +1,39 @@
+<!doctype html><html dir="rtl"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0}body{background:#ccc;font-family:'Noto Kufi Arabic'}
+section.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:#f4f7fb;color:#0b1a33;margin-bottom:20px}
+.grid{position:absolute;inset:0;background-image:linear-gradient(#284da00d 1px,transparent 1px),linear-gradient(90deg,#284da00d 1px,transparent 1px);background-size:60px 60px}
+.sq{position:absolute;border:2px solid #284da022;background:#4cc5ed10;border-radius:18px}
+.logo{position:absolute;bottom:52px;left:70px;height:60px}.n{direction:ltr;position:absolute;bottom:62px;right:70px;font-size:24px;color:#4b5b72}
+h1{position:absolute;top:120px;right:70px;left:70px;text-align:center;font-size:76px;line-height:1.5;word-spacing:6px}
+h1 b{color:#284da0}
+.it{position:absolute;filter:drop-shadow(0 18px 22px #0b1a3330)}
+.odd{position:absolute;border:4px dashed #4cc5ed;border-radius:50%}
+.tag{position:absolute;background:#284da0;color:#fff;font-size:24px;padding:4px 18px;border-radius:30px;line-height:1.6;white-space:nowrap}
+.big{font-size:70px;line-height:1.75;text-align:center;font-weight:700;position:absolute;inset:250px 70px auto}
+.u{background:linear-gradient(#4cc5ed,#4cc5ed) no-repeat 0 100%/100% 10px;padding-bottom:4px}
+.foot2{position:absolute;bottom:170px;left:0;right:0;text-align:center;font-size:30px;color:#4b5b72;line-height:1.6}
+.foot2 b{color:#284da0}
+</style></head><body><div id="root"></div><script>
+const bg=()=>`<div class="grid"></div><div class="sq" style="width:420px;height:420px;top:-140px;left:-150px;transform:rotate(12deg)"></div><div class="sq" style="width:260px;height:260px;bottom:110px;right:-90px;transform:rotate(-10deg)"></div><div class="sq" style="width:160px;height:160px;top:330px;right:-50px;transform:rotate(24deg)"></div>`;
+const foot=i=>`<img class="logo" src="../../brand/logo-color-hd.png"><div class="n">${i} / 5</div>`;
+const I=(k,x,y,w,r=0)=>`<img class="it" src="img/${k}_c.png" style="left:${x}px;top:${y}px;width:${w}px;transform:rotate(${r}deg)">`;
+const O=(x,y,d)=>`<div class="odd" style="left:${x}px;top:${y}px;width:${d}px;height:${d}px"></div>`;
+const T=(t,x,y)=>`<div class="tag" style="left:${x}px;top:${y}px">${t}</div>`;
+let h='';
+h+=`<section class="s">${bg()}<h1 style="top:250px;font-size:92px">هذي ما راح<br><b>تسمّنك…</b></h1>${I('pizza',130,700,360,-8)}${I('donut',580,720,370,6)}${foot(1)}</section>`;
+h+=`<section class="s">${bg()}<h1>إذا باقي أسبوعك<br><b>كذا:</b></h1>
+${O(80,415,260)}${I('pizza',115,440,190,-8)}
+${I('dumbbell',390,450,220,0)}${I('bottle',690,420,95,12)}${I('apple',820,480,170)}
+${I('bowl',70,760,280)}${I('toast',400,770,260,-6)}
+${O(735,720,270)}${I('donut',765,750,210,6)}
+${I('salmon',190,1000,280)}${I('oats',580,1010,280)}
+${foot(2)}</section>`;
+h+=`<section class="s">${bg()}<h1 style="top:250px;font-size:92px">وهذي ما راح<br><b>تنحّفك…</b></h1>${I('salad',120,720,400)}${I('dumbbell',600,720,330)}${foot(3)}</section>`;
+h+=`<section class="s">${bg()}<h1>إذا باقي أسبوعك<br><b>كذا:</b></h1>
+${I('fried',70,440,280)}${I('chips',400,460,260,-6)}${I('shawarma',720,450,280,8)}
+${I('soda',160,740,95,-8)}${O(360,705,320)}${I('salad',395,740,250)}${I('burger',775,720,150)}
+${I('energy',170,990,80,10)}${I('pizza',420,1030,180,-4)}${O(730,960,230)}${I('dumbbell',760,990,170)}
+${foot(4)}</section>`;
+h+=`<section class="s">${bg()}<div class="big">ولا <span class="u">أكلة وحدة</span> تسمّنك.<br>ولا <span class="u">أكلة وحدة</span> تنحّفك.<br><br><b style="color:#284da0">نمط أكلك</b> طول الأسبوع<br>هو <span class="u">اللي يفرق</span>.</div><div class="foot2">تبي نمط يناسب يومك؟ <b>navcoaching.com</b></div>${foot(5)}</section>`;
+root.innerHTML=h;
+</script></body></html>

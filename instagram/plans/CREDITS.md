@@ -17,5 +17,15 @@
 Clips were cropped and colour-graded (changes made). All other tiles use the anatomy diagrams from the PDFs (react-body-highlighter, MIT).
 
 ## wger.de — CC BY-SA 4.0 (attribution REQUIRED: "Goulart, CC BY-SA 4.0, wger.de"; edited clips shared under the same licence)
-Exercise videos from https://wger.de (API /api/v2/video/): bench press, DB press, incline DB press, seated row, assisted pull-up, face pull, lateral raise, machine shoulder press, overhead DB triceps extension, DB curl, cable curl, leg press, lying/seated leg curl, standing calf raise, hip thrust.
+Exercise videos from https://wger.de (API /api/v2/video/): bench press, DB press, incline DB press, seated row, assisted pull-up, face pull, lateral raise, machine shoulder press, overhead DB triceps extension, DB curl, cable curl, leg press, lying/seated leg curl, standing calf raise, hip thrust, DB Romanian deadlift.
 Licence: https://creativecommons.org/licenses/by-sa/4.0/ — clips were cropped and colour-graded.
+
+## Owner-supplied clips (source/licence held by the account owner; not credited in the footer)
+| Exercise tile | File |
+|---|---|
+| SQUAT | up-squat.mp4 |
+| BARBELL RDL | up-rdl.mp4 |
+| TRICEPS PUSHDOWN | up-pushdown.mp4 |
+| CABLE CRUNCHES | up-cable-crunch.mp4 |
+
+Note: HANGING LEG RAISES is currently rendered from `wm-leg-raises-rec.mp4`, cropped out of the earlier (already graded) render because Wikimedia rate-limited downloads; same FitnessScape CC BY 3.0 source.

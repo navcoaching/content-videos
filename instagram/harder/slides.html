@@ -1,0 +1,102 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}body{background:#555}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:#f4f7fb;font-family:"Noto Kufi Arabic",sans-serif;color:#0b1a33}
+.top{position:absolute;top:44px;right:56px;left:56px;display:flex;justify-content:space-between;align-items:center;z-index:3}
+.top img{height:50px}.n{font:600 24px "Noto Kufi Arabic";color:#4b5b72;border:1.5px solid #d3dce7;border-radius:99px;padding:5px 18px;direction:ltr;background:#fff}
+.p{position:absolute;right:56px;left:56px;height:440px;border-radius:28px;overflow:hidden}
+.p svg{width:100%;height:100%}
+.good{top:124px;background:#ffffff;border:1.5px solid #dbe4ee}
+.bad{top:744px;background:#0b1a33}
+.cap{position:absolute;right:56px;left:56px;text-align:center;font:800 54px/1.5 Noto Kufi Arabic;word-spacing:.08em}
+.c1{top:580px}.c2{top:1200px;color:#0b1a33}.c2 em{font-style:normal;color:#284da0}
+.hook,.end{position:absolute;right:80px;left:80px}
+.hook{top:300px}.hook h1{white-space:nowrap;font:900 88px/1.45 Noto Kufi Arabic;word-spacing:.08em}.hook h1 em{font-style:normal;color:#284da0}
+.hook p{margin-top:40px;font:500 42px/1.7 "Noto Kufi Arabic";color:#4b5b72}
+.cta{position:absolute;right:80px;left:80px;bottom:120px;background:#284da0;color:#fff;border-radius:28px;padding:30px 36px;display:flex;justify-content:space-between;align-items:center}
+.cta b{font:900 46px/1.4 Noto Kufi Arabic}.cta span{font:700 32px "Noto Kufi Arabic"}
+.swipe{margin-top:60px;display:inline-block;font:700 34px Noto Kufi Arabic;color:#284da0;border:2px solid #284da0;border-radius:99px;padding:8px 28px}
+</style></head><body><script>
+const R=Math.PI/180;
+function P(x,y){return {x,y}}
+function add(p,l,deg){return P(p.x+l*Math.sin(deg*R),p.y+l*Math.cos(deg*R))}      // angle from straight down, + = forward (right)
+function up(p,l,deg){return P(p.x+l*Math.sin(deg*R),p.y-l*Math.cos(deg*R))}       // angle from straight up
+const L={t:150,th:128,sh:122,ft:44,ua:96,fa:88,hr:48,w:36};
+function figure(o){
+ // o: {x, floor, t, legs:[[a,b],[a,b]] (back, front), arms:[[u,f],[u,f]], lift, pain:[...'knee0'|'knee1'], work:[0|1], mood, s}
+ const s=(o.s||1.25)*(window.SC||1), legs=o.legs, arms=o.arms||[[10,10],[20,20]];
+ let H=P(0,0);
+ const pts=legs.map(([a,b])=>{const k=add(H,L.th,a),an=add(k,L.sh,b);return {k,an}});
+ const low=Math.max(...pts.map(p=>p.an.y));
+ const dy=-low-L.w/2-(o.lift||0);
+ const T=(p)=>P(o.x+p.x*s,o.floor+(p.y+dy)*s);
+ const neck=up(H,L.t,o.t), sh=up(H,L.t-20,o.t), head=up(neck,L.hr+6,o.t);
+ let g='';
+ const seg=(a,b,c,w)=>{a=T(a);b=T(b);g+=`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="${c}" stroke-width="${(w||L.w)*s}" stroke-linecap="round"/>`};
+ const limbArm=(i,c)=>{const [u,f]=arms[i];const e=add(sh,L.ua,u),h=add(e,L.fa,f);seg(sh,e,c);seg(e,h,c)};
+ const limbLeg=(i,c)=>{const p=pts[i];seg(H,p.k,c);seg(p.k,p.an,c);seg(p.an,P(p.an.x+L.ft,p.an.y),c)};
+ if(o.twoArms) limbArm(0,'#7f96b8');limbLeg(0,'#7f96b8');
+ seg(H,neck,'#f4f8fc',L.w*1.9);
+ limbLeg(1,'#f4f8fc');
+ (o.work||[]).forEach(i=>{const p=pts[i];const a=T(H),b=T(p.k);const mx=(a.x+b.x)/2,my=(a.y+b.y)/2,dx=(b.x-a.x)*.32,dy2=(b.y-a.y)*.32;
+   g+=`<line x1="${mx-dx}" y1="${my-dy2}" x2="${mx+dx}" y2="${my+dy2}" stroke="#4cc5ed" stroke-width="${16*s}" stroke-linecap="round"/>`});
+ limbArm(1,'#f4f8fc');
+ const hc=T(head);g+=`<circle cx="${hc.x}" cy="${hc.y}" r="${L.hr*s}" fill="#f4f8fc"/>`;
+ // face looks forward (right)
+ const ex=hc.x+14*s, ey=hc.y-8*s;
+ g+=`<circle cx="${ex}" cy="${ey}" r="${5*s}" fill="#0b1a33"/><circle cx="${ex+20*s}" cy="${ey}" r="${5*s}" fill="#0b1a33"/>`;
+ const my=hc.y+16*s, mx=hc.x+24*s;
+ if(o.mood==='sad') g+=`<path d="M${mx-12*s} ${my+6*s} q${12*s} ${-12*s} ${24*s} 0" stroke="#0b1a33" stroke-width="${4.5*s}" fill="none" stroke-linecap="round"/>`;
+ else if(o.mood==='happy') g+=`<path d="M${mx-12*s} ${my-4*s} q${12*s} ${12*s} ${24*s} 0" stroke="#0b1a33" stroke-width="${4.5*s}" fill="none" stroke-linecap="round"/>`;
+ else g+=`<line x1="${mx-10*s}" y1="${my}" x2="${mx+12*s}" y2="${my}" stroke="#0b1a33" stroke-width="${4.5*s}" stroke-linecap="round"/>`;
+ if(o.sweat){g+=`<path d="M${hc.x-20*s} ${hc.y-78*s} q-9 14 0 20 q9 -6 0 -20z" fill="#4cc5ed"/><path d="M${hc.x+6*s} ${hc.y-90*s} q-9 14 0 20 q9 -6 0 -20z" fill="#4cc5ed"/>`}
+ (o.pain||[]).forEach(i=>{const k=T(pts[i].k);g+=burst(k.x+4*s,k.y,40*s)});
+ return {svg:g, H:T(H), knee:pts.map(p=>T(p.k)), ankle:pts.map(p=>T(p.an)), head:hc, hand:T(add(add(sh,L.ua,arms[1][0]),L.fa,arms[1][1]))};
+}
+function burst(x,y,r){let g=`<circle cx="${x}" cy="${y}" r="${r*.28}" fill="#ff6b6b"/>`;for(let i=0;i<8;i++){const a=i*45*R;g+=`<line x1="${x+Math.cos(a)*r*.48}" y1="${y+Math.sin(a)*r*.48}" x2="${x+Math.cos(a)*r}" y2="${y+Math.sin(a)*r}" stroke="#ff6b6b" stroke-width="6" stroke-linecap="round"/>`}return g}
+const floorLine=(y,x1=180,x2=900)=>`<line x1="${x1}" y1="${y}" x2="${x2}" y2="${y}" stroke="#ffffff33" stroke-width="5" stroke-linecap="round"/>`;
+const arrowDown=(x,y1,y2,label)=>`<line x1="${x}" y1="${y1}" x2="${x}" y2="${y2-18}" stroke="#4cc5ed" stroke-width="7" stroke-linecap="round"/><path d="M${x-18} ${y2-26} L${x} ${y2} L${x+18} ${y2-26}z" fill="#4cc5ed"/>`+(label?`<text x="${x}" y="${y2+52}" text-anchor="middle" font-family="Noto Kufi Arabic" font-weight="700" font-size="34" fill="#b9c9de">${label}</text>`:'');
+const label=(x,y,t,c='#b9c9de',sz=32)=>`<text x="${x}" y="${y}" text-anchor="middle" font-family="Noto Kufi Arabic" font-weight="700" font-size="${sz}" fill="${c}">${t}</text>`;
+const box=(x,y,w,h,t)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="10" fill="#1d3358" stroke="#ffffff40" stroke-width="3"/>`+(t?label(x+w/2,y+h/2+12,t,'#b9c9de',30):'');
+
+function clock(x,y){return `<circle cx="${x}" cy="${y}" r="62" fill="none" stroke="#b9c9de" stroke-width="8"/><line x1="${x}" y1="${y}" x2="${x}" y2="${y-36}" stroke="#b9c9de" stroke-width="8" stroke-linecap="round"/><line x1="${x}" y1="${y}" x2="${x+28}" y2="${y+16}" stroke="#b9c9de" stroke-width="8" stroke-linecap="round"/>`}
+function lock(x,y){return `<rect x="${x-26}" y="${y}" width="52" height="44" rx="8" fill="#4cc5ed"/><path d="M${x-16} ${y} v-16 a16 16 0 0 1 32 0 v16" fill="none" stroke="#4cc5ed" stroke-width="8"/>`+label(x,y+86,'مقفول','#4cc5ed',28)}
+
+
+const FL=400, dark='#0b1a33';window.SC=0.78;
+const W=(svg)=>`<svg viewBox="0 0 968 440">${svg}</svg>`;
+const fl=(c)=>`<line x1="80" y1="${FL}" x2="888" y2="${FL}" stroke="${c}" stroke-width="5" stroke-linecap="round"/>`;
+const G={
+ squat:()=>{const f=figure({x:470,floor:FL,t:0,legs:[[-6,-6],[6,6]],arms:[[4,115],[8,120]],mood:'happy',s:0.85,twoArms:1});const h=f.hand;
+   const db=(x,y)=>`<circle cx="${x}" cy="${y}" r="26" fill="#284da0"/><circle cx="${x}" cy="${y}" r="9" fill="#4b5b72"/>`;
+   const ax=h.x+14,ay=h.y;return fl('#d3dce7')+f.svg+db(ax,ay)+`<path d="M${ax+60} ${ay+70} A80 80 0 0 0 ${ax+60} ${ay-60}" fill="none" stroke="#4cc5ed" stroke-width="7" stroke-linecap="round"/><path d="M${ax+44} ${ay-56} L${ax+64} ${ay-80} L${ax+78} ${ay-52}z" fill="#4cc5ed"/>`},
+ cane:()=>{const st=`<path d="M120 ${FL} L120 ${FL-70} L300 ${FL-70} L300 ${FL-140} L480 ${FL-140} L480 ${FL-210} L860 ${FL-210} L860 ${FL}z" fill="#1d3358" stroke="#ffffff30" stroke-width="3"/>`;
+   const f=figure({x:330,floor:FL-70,t:22,legs:[[-24,-8],[50,-6]],arms:[[40,20],[30,10]],pain:[1],mood:'sad',s:0.85,oneArm:1});
+   const h=f.hand;return st+f.svg+`<line x1="${h.x}" y1="${h.y}" x2="${h.x+6}" y2="${FL-70}" stroke="#b9c9de" stroke-width="10" stroke-linecap="round"/>`},
+ run:()=>fl('#d3dce7')+figure({x:440,floor:FL,t:14,legs:[[-34,-30],[60,-20]],arms:[[60,150],[-40,-50]],mood:'happy',s:0.95,twoArms:1}).svg+[0,1,2].map(i=>`<line x1="140" y1="${180+i*50}" x2="${i==1?260:230}" y2="${180+i*50}" stroke="#4cc5ed" stroke-width="8" stroke-linecap="round"/>`).join(''),
+ heart:()=>{const f=figure({x:430,floor:FL,t:-4,legs:[[86,0],[90,0]],arms:[[30,80],[40,85]],mood:'sad',s:0.85,oneArm:1});const sy=f.H.y+20;
+   return fl('#ffffff30')+`<rect x="${f.H.x-120}" y="${sy}" width="260" height="22" rx="8" fill="#40597f"/><line x1="${f.H.x-100}" y1="${sy+22}" x2="${f.H.x-100}" y2="${FL}" stroke="#40597f" stroke-width="10"/><line x1="${f.H.x+120}" y1="${sy+22}" x2="${f.H.x+120}" y2="${FL}" stroke="#40597f" stroke-width="10"/>`+f.svg+
+   `<rect x="640" y="70" width="210" height="150" rx="18" fill="#13284a" stroke="#4cc5ed" stroke-width="5"/><polyline points="660,150 700,150 715,110 735,190 755,130 770,150 830,150" fill="none" stroke="#ff6b6b" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><line x1="745" y1="220" x2="745" y2="${FL}" stroke="#40597f" stroke-width="8"/>`},
+ cook:()=>{const f=figure({x:330,floor:FL,t:10,legs:[[-4,-4],[6,6]],arms:[[40,90],[50,95]],mood:'happy',s:0.9,twoArms:1});const ty=f.hand.y+12;
+   let g=fl('#d3dce7')+`<rect x="420" y="${ty}" width="420" height="18" rx="6" fill="#4b5b72"/><line x1="450" y1="${ty+18}" x2="450" y2="${FL}" stroke="#4b5b72" stroke-width="10"/><line x1="810" y1="${ty+18}" x2="810" y2="${FL}" stroke="#4b5b72" stroke-width="10"/>`;
+   [470,580,690].forEach(x=>{g+=`<rect x="${x}" y="${ty-44}" width="96" height="44" rx="10" fill="#e4f6fc" stroke="#284da0" stroke-width="4"/><circle cx="${x+30}" cy="${ty-22}" r="12" fill="#3fae5c"/><circle cx="${x+64}" cy="${ty-22}" r="12" fill="#f2a33a"/>`});return g+f.svg},
+ sugar:()=>{const f=figure({x:420,floor:FL,t:-4,legs:[[86,0],[90,0]],arms:[[40,85],[50,90]],mood:'sad',s:0.85,oneArm:1});const sy=f.H.y+20,h=f.hand;
+   return fl('#ffffff30')+`<rect x="${f.H.x-60}" y="${sy}" width="130" height="18" rx="6" fill="#40597f"/><line x1="${f.H.x-45}" y1="${sy+18}" x2="${f.H.x-45}" y2="${FL}" stroke="#40597f" stroke-width="10"/><line x1="${f.H.x+55}" y1="${sy+18}" x2="${f.H.x+55}" y2="${FL}" stroke="#40597f" stroke-width="10"/>`+f.svg+
+   `<rect x="${h.x-10}" y="${h.y-70}" width="56" height="84" rx="12" fill="#f4f8fc"/><rect x="${h.x-2}" y="${h.y-60}" width="40" height="30" rx="5" fill="#4cc5ed"/><path d="M${h.x+100} ${h.y-80} q-20 30 0 42 q20 -12 0 -42z" fill="#ff6b6b"/>`},
+ jump:()=>{const f=figure({x:450,floor:FL,t:4,legs:[[30,-30],[36,-26]],arms:[[40,40],[50,50]],mood:'happy',s:0.9,lift:50,twoArms:1});
+   return `<ellipse cx="490" cy="${FL}" rx="160" ry="14" fill="#e3e9f1"/>`+`<ellipse cx="490" cy="${(f.head.y+FL)/2+10}" rx="150" ry="${(FL-f.head.y)/2+40}" fill="none" stroke="#284da0" stroke-width="5"/>`+f.svg},
+ walk:()=>{const f=figure({x:440,floor:FL,t:16,legs:[[-16,-6],[26,10]],arms:[[30,20],[20,10]],pain:[1],mood:'sad',s:0.9,oneArm:1});const h=f.hand;
+   return fl('#ffffff30')+f.svg+`<line x1="${h.x}" y1="${h.y}" x2="${h.x+14}" y2="${FL}" stroke="#b9c9de" stroke-width="10" stroke-linecap="round"/>`},
+};
+const LOGO='<img src="../../brand/logo-color-hd.png">';
+const PAIRS=[['squat','رفع الأوزان صعب.','cane','بس <em>فقدان كثافة العظام</em> أصعب.'],
+ ['run','الكارديو صعب.','heart','بس <em>مشاكل القلب</em> أصعب.'],
+ ['cook','الأكل الصحي صعب.','sugar','بس <em>مقاومة الإنسولين</em> أصعب.'],
+ ['jump','التمرين صعب.','walk','بس <em>صعوبة المشي</em> أصعب.']];
+const N=PAIRS.length+2;let h='';
+h+=`<section class="s"><div class="top">${LOGO}<span class="n">1 / ${N}</span></div><div class="hook"><h1>كل شي صحي صعب…<br><em>بس تدري<br>وش الأصعب؟</em></h1><p>اختار صعوبتك اليوم، قبل ما تختارك هي بعدين.</p><span class="swipe">اسحب ←</span></div></section>`;
+PAIRS.forEach((p,i)=>{h+=`<section class="s"><div class="top">${LOGO}<span class="n">${i+2} / ${N}</span></div>
+<div class="p good">${W(G[p[0]]())}</div><div class="cap c1">${p[1]}</div><div class="p bad">${W(G[p[2]]())}</div><div class="cap c2">${p[3]}</div></section>`});
+h+=`<section class="s"><div class="top">${LOGO}<span class="n">${N} / ${N}</span></div><div class="hook" style="top:260px"><h1>اختار<br><em>الصعب الصح.</em></h1><p>نبني لك برنامج تمرين وتغذية يناسب وقتك ومستواك، مع متابعة أسبوعية.</p></div>
+<div class="cta"><b>ابدأ برنامجك ←</b><span>navcoaching.com</span></div></section>`;
+document.write(h);
+</script></body></html>
