@@ -1,0 +1,42 @@
+<!doctype html><html dir="rtl"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0}body{background:#111;font-family:'Noto Kufi Arabic'}
+section.s{width:1080px;height:1350px;position:relative;overflow:hidden;color:#fff;margin-bottom:20px;background:#000 center/cover}
+section.s:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#05101fe6 0%,#05101f99 40%,#05101f88 65%,#05101ff2 100%)}
+.c{position:absolute;z-index:2;left:90px;right:90px;top:150px;bottom:190px;display:flex;flex-direction:column;justify-content:center}
+h1{font-size:84px;line-height:1.35;font-weight:800;word-spacing:4px}
+h1 b,.acc{color:#4cc5ed}
+.sub{font-size:40px;line-height:1.6;color:#dfe7f2;margin-top:24px}
+.big{font-size:54px;line-height:1.5;font-weight:800;margin-top:34px}
+.quote{font-size:58px;font-weight:800;color:#f2b880;margin:30px 0}
+.list{margin-top:30px;background:#05101fb8;border:1px solid #4cc5ed33;border-radius:24px;padding:22px 34px}
+.li{display:flex;gap:22px;align-items:baseline;padding:13px 0;border-bottom:1px solid #ffffff14;font-size:33px;line-height:1.5}
+.li:last-child{border:0}.li .k{color:#4cc5ed;font-weight:800;width:44px;flex:none;direction:ltr;text-align:right}
+.li b{font-weight:800;margin-left:10px}.li span{color:#c9d3e0}
+.eq{direction:ltr;unicode-bidi:isolate;display:flex;align-items:center;justify-content:center;gap:26px;margin:40px 0 18px;font-weight:800}
+.eq div{background:#05101fcc;border:2px solid #4cc5ed55;border-radius:22px;padding:18px 26px;text-align:center;font-size:40px;line-height:1.3}
+.eq small{display:block;font-size:26px;color:#c9d3e0;font-weight:500}
+.eq i{font-style:normal;font-size:70px;color:#f2b880}
+.qa{margin-top:34px}.qa .t{font-size:34px;font-weight:800;margin-bottom:6px}.qa .no{color:#ff8a7a}.qa .yes{color:#4cc5ed}
+.qa .q{font-size:46px;line-height:1.5;margin-bottom:36px}
+.qa .q.s{text-decoration:line-through;text-decoration-color:#ff8a7a;text-decoration-thickness:3px;color:#c9d3e0}
+.cta{margin-top:40px;display:inline-block;align-self:flex-start;background:#4cc5ed;color:#05101f;font-weight:800;font-size:32px;padding:12px 30px;border-radius:40px}
+.logo{position:absolute;z-index:3;bottom:60px;left:50%;transform:translateX(-50%);height:62px}
+.n{position:absolute;z-index:3;top:60px;left:70px;font-size:24px;color:#ffffffaa;direction:ltr}
+</style></head><body><div id="root"></div><script>
+const S=[
+`<h1>التحميل التدريجي<br><b>ما يعني</b><br>تزيد الوزن</h1><div class="big" style="color:#f2b880">وعمره ما كان يعني كذا</div>`,
+`<h1>الفجوة في التدريب</h1><div class="sub">اسأل أغلب المدربين:<br>كيف أتطوّر؟</div><div class="quote">«زِد الوزن.»</div><div class="big">جواب <span class="acc">ناقص</span> بشكل كبير</div>`,
+`<h1>وش هو <b>فعلًا</b>؟</h1><div class="sub">التحميل التدريجي = تعطي جسمك <b class="acc">محفّز جديد</b> يجبره يتكيّف</div><div class="big">الوزن طريقة وحدة…<br><span class="acc">مو الطريقة الوحيدة</span></div>`,
+`<h1 style="font-size:70px">7 طرق <b>تتطوّر</b> فيها</h1><div class="list">
+<div class="li"><span class="k">1</span><div><b>الشدّة</b><span>نسبة من أقصى وزن، أو كم تكرار باقي بخزانك</span></div></div>
+<div class="li"><span class="k">2</span><div><b>الحجم</b><span>جولات × تكرارات × وزن</span></div></div>
+<div class="li"><span class="k">3</span><div><b>التكرار الأسبوعي</b><span>كم مرة تمرّن العضلة</span></div></div>
+<div class="li"><span class="k">4</span><div><b>الراحة</b><span>الوقت بين الجولات</span></div></div>
+<div class="li"><span class="k">5</span><div><b>الإيقاع والسرعة</b><span>سرعة التكرار</span></div></div>
+<div class="li"><span class="k">6</span><div><b>اختيار التمرين</b><span>أصعب أو أدق لهدفك</span></div></div>
+<div class="li"><span class="k">7</span><div><b>مدى الحركة</b><span>أعمق أو أطول</span></div></div></div>`,
+`<h1>التمرين <b>بالسرعة</b></h1><div class="sub">نفس الوزن، سرعة أعلى، محفّز مختلف</div><div class="eq"><div>100 kg<small>0.5 m/s</small></div><i>≠</i><div>100 kg<small>1.0 m/s</small></div></div><div class="big" style="text-align:center">نفس الحمل… <span class="acc">تكيّف مختلف</span></div>`,
+`<h1>غيّر <b>السؤال</b></h1><div class="qa"><div class="t no">لا تسأل:</div><div class="q s">كيف أزيد الوزن؟</div><div class="t yes">اسأل:</div><div class="q">وش المحفّز الجديد<br>اللي أقدر أعطيه لجسمي؟</div></div>`,
+`<h1>صندوق <b>أدوات</b></h1><div class="sub">التحميل التدريجي صندوق أدوات،<br>والوزن أداة وحدة فيه</div><div class="big acc">تعلّم تستخدمها كلها</div><div class="cta">navcoaching.com</div>`];
+root.innerHTML=S.map((s,i)=>`<section class="s" style="background-image:url(bg/${i+1}.jpg)"><div class="n">${i+1} / 7</div><div class="c">${s}</div><img class="logo" src="../../brand/logo-white.webp"></section>`).join('');
+</script></body></html>
