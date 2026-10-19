@@ -1,0 +1,3 @@
+const {chromium}=require('playwright');(async()=>{const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium'});const p=await b.newPage({viewport:{width:1080,height:1920}});await p.goto('file://'+__dirname+'/ov.html');await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(500);
+for(const id of ['hook','end','s1','s2','s3','s4','s5','s6']){await p.evaluate(id=>{document.querySelectorAll('.f').forEach(e=>e.style.display='none');document.getElementById(id).style.display='block'},id);await p.locator('#'+id).screenshot({path:__dirname+'/ov/'+id+'.png',omitBackground:true});}
+await b.close()})();
