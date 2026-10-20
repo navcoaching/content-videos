@@ -1,0 +1,23 @@
+<!doctype html><html dir="rtl"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0}body{background:#111;font-family:'Noto Kufi Arabic'}
+section.s{width:1080px;height:1350px;position:relative;overflow:hidden;color:#fff;margin-bottom:20px;background:#000 center/cover}
+section.s:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 75% 32% at 50% 50%,#05101fb0,transparent),linear-gradient(180deg,#05101fcc 0%,#05101f33 35%,#05101f55 60%,#05101fee 100%)}
+.c{position:absolute;z-index:2;left:90px;right:90px;top:50%;transform:translateY(-50%);text-align:center}
+.no{font-size:30px;font-weight:700;color:#4cc5ed;letter-spacing:2px;margin-bottom:26px;direction:ltr}
+.l1{font-size:46px;line-height:1.6;font-weight:500;color:#e6edf7;word-spacing:3px}
+.l2{font-size:60px;line-height:1.5;font-weight:800;margin-top:18px;word-spacing:4px;text-shadow:0 4px 30px #000a}
+.l2 b{color:#4cc5ed}
+.bar{width:90px;height:6px;background:#4cc5ed;border-radius:3px;margin:34px auto 0}
+.hook{font-size:96px;line-height:1.4;font-weight:800}
+.hook b{color:#4cc5ed}
+.logo{position:absolute;z-index:3;bottom:60px;left:50%;transform:translateX(-50%);height:62px}
+.n{position:absolute;z-index:3;top:60px;left:70px;font-size:24px;color:#ffffffaa;direction:ltr}
+</style></head><body><div id="root"></div><script>
+const S=[
+['hook','قواعد النادي<br>اللي <b>محد</b> قالها لك<br>وأنت مبتدئ'],
+['01','لا تقارن بدايتك بنهاية غيرك','ركّز على <b>تقدّمك أنت</b>'],
+['02','لا تغيّر برنامجك كل أسبوع','التزم بخطة وحدة <b>صح</b><br>قبل ما تحكم على النتيجة'],
+['03','الاستشفاء جزء من التطور','النوم والأكل والراحة<br>مهمة <b>قد التمرين</b>'],
+['04','الحماس مو موجود كل يوم','لا تنتظره<br><b>تعلّم الالتزام</b>']];
+root.innerHTML=S.map((s,i)=>`<section class="s" style="background-image:url(bg/${i+1}.jpg)"><div class="n">${i+1} / 5</div><div class="c">${s[0]=='hook'?`<div class="hook">${s[1]}</div><div class="bar"></div>`:`<div class="no">${s[0]}</div><div class="l1">${s[1]}</div><div class="l2">${s[2]}</div><div class="bar"></div>`}</div><img class="logo" src="../../brand/logo-white.webp"></section>`).join('');
+</script></body></html>
