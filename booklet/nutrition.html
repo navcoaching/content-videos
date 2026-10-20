@@ -1,0 +1,55 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><style>
+:root{--ink:#07142a;--navy:#284da0;--cyan:#4cc5ed;--cyan-ink:#0a6a8f;--soft:#e4f6fc;--paper:#f3f6fa;--line:#d8e1ea;--muted:#56667a;--head:#0b1a33}
+*{margin:0;box-sizing:border-box}body{background:#888;font-family:Cairo,"IBM Plex Sans Arabic",sans-serif;color:var(--head)}
+.s{position:relative;overflow:hidden;background:radial-gradient(60% 50% at 20% 30%,#dff2fb 0,transparent 70%),var(--paper)}
+.s::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#284da00d 1px,transparent 1px),linear-gradient(90deg,#284da00d 1px,transparent 1px);background-size:56px 56px}
+.book{position:absolute;background:var(--ink);border-radius:10px 26px 26px 10px;box-shadow:-30px 40px 80px #07142a40,inset 14px 0 0 #0d1f3c;overflow:hidden;color:#fff}
+.book::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 60% at 80% 10%,#1f4a8f 0,transparent 70%)}
+.book::after{content:"";position:absolute;left:0;top:0;bottom:0;width:26px;background:linear-gradient(90deg,#000a,#0000)}
+.page2{position:absolute;background:#fff;border-radius:10px 22px 22px 10px;box-shadow:-20px 30px 60px #07142a25}
+.bi{position:absolute;inset:0;padding:9% 10% 9% 9%;display:flex;flex-direction:column;z-index:2}
+.bi img{width:38%;align-self:flex-start;filter:brightness(0) invert(1)}
+.bi .k{margin-top:auto;font-weight:700;color:var(--cyan);letter-spacing:.02em}
+.bi h1{font-weight:900;line-height:1.15}
+.bi h1 em{font-style:normal;color:var(--cyan)}
+.bi .sub{color:#a9bad0;margin-top:2%}
+.bi .bar{height:6px;width:28%;background:var(--cyan);margin-top:6%}
+.txt{position:absolute;z-index:3}
+.eb{display:inline-flex;align-items:center;gap:12px;background:#fff;border:1.5px solid var(--line);border-radius:99px;padding:8px 22px;font-weight:700;color:var(--cyan-ink)}
+.eb img{height:.7em}
+h2{font-weight:900;line-height:1.15;color:var(--head)}
+h2 em{font-style:normal;color:var(--navy)}
+.lead{color:var(--muted);font-family:"IBM Plex Sans Arabic";line-height:1.7}
+.list{display:grid;gap:14px}
+.it{display:flex;align-items:center;gap:16px;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:14px 18px;box-shadow:0 10px 24px #284da010}
+.it i{flex:0 0 auto;border-radius:14px;background:var(--soft);color:var(--navy);display:flex;align-items:center;justify-content:center;font-style:normal;font-family:"Readex Pro";font-weight:700}
+.it b{display:block;font-weight:800}.it span{color:var(--muted);font-family:"IBM Plex Sans Arabic"}
+.inc{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;border-radius:99px;font-weight:700}
+.inc b{color:var(--cyan)}
+/* desktop/ipad 1920x1200 */
+#d{width:1920px;height:1200px}
+#d .page2{left:250px;top:200px;width:520px;height:760px;transform:rotate(-8deg)}
+#d .book{left:180px;top:170px;width:540px;height:780px;transform:rotate(-3deg)}
+#d .bi h1{font-size:74px}#d .bi .k{font-size:24px}#d .bi .sub{font-size:24px}
+#d .txt{right:120px;top:150px;width:880px}
+#d .eb{font-size:26px}#d h2{font-size:84px;margin-top:28px}#d .lead{font-size:28px;margin-top:18px;max-width:780px}
+#d .list{grid-template-columns:1fr 1fr;margin-top:40px}
+#d .it i{width:58px;height:58px;font-size:24px}#d .it b{font-size:26px}#d .it span{font-size:19px}
+#d .inc{margin-top:36px;padding:14px 28px;font-size:24px}
+/* iphone 1170x2532 */
+#m{width:1170px;height:2532px}
+#m .txt{right:80px;left:80px;top:200px}
+#m .eb{font-size:40px;padding:12px 30px}#m h2{font-size:132px;margin-top:40px}#m .lead{font-size:46px;margin-top:26px}
+#m .page2{left:250px;top:880px;width:680px;height:960px;transform:rotate(-7deg)}
+#m .book{left:220px;top:840px;width:720px;height:1000px;transform:rotate(-2deg)}
+#m .bi h1{font-size:104px}#m .bi .k{font-size:32px}#m .bi .sub{font-size:34px}
+#m .list2{position:absolute;z-index:3;right:70px;left:70px;top:1940px;grid-template-columns:1fr 1fr;gap:18px}
+#m .it{padding:22px 22px;border-radius:26px}#m .it i{width:76px;height:76px;font-size:32px}#m .it b{font-size:36px}#m .it span{font-size:25px}
+#m .inc2{position:absolute;z-index:3;right:70px;left:70px;justify-content:center;bottom:110px;padding:22px 34px;font-size:34px}
+</style></head><body>
+<template id="bk"><div class="page2"></div><div class="book"><div class="bi"><img src="../brand/logo-color-hd.png"><span class="k">NAV COACHING · GUIDE</span><h1>كتيب<br><em>التغذية</em></h1><div class="sub">دليلك لأكل متوازن يخدم هدفك</div><div class="bar"></div></div></div></template>
+<template id="ls"><div class="it"><i>01</i><div><b>السعرات والماكروز</b><span>احسب احتياجك اليومي</span></div></div><div class="it"><i>02</i><div><b>البروتين ومصادره</b><span>كم تحتاج ومن وين</span></div></div><div class="it"><i>03</i><div><b>بناء الوجبات</b><span>طبقك المتوازن</span></div></div><div class="it"><i>04</i><div><b>الأكل خارج البيت</b><span>اختيارات ذكية بالمطاعم</span></div></div></template>
+<section class="s" id="d"><div class="txt"><span class="eb">مرفق مع برنامجك <img src="../brand/nav-mark-navy.png"></span><h2>كتيب<br><em>التغذية</em></h2><p class="lead">كل اللي تحتاجه عشان تفهم أكلك وتضبط سعراتك بدون حرمان، في دليل واحد ترجع له أي وقت.</p><div class="list"></div><span class="inc">مشمول في باقات <b>المكثفة · المتقدمة · التغذية</b></span></div></section>
+<section class="s" id="m"><div class="txt"><span class="eb">مرفق مع برنامجك <img src="../brand/nav-mark-navy.png"></span><h2>كتيب<br><em>التغذية</em></h2><p class="lead">افهم أكلك واضبط سعراتك بدون حرمان.</p></div><div class="list list2"></div><span class="inc inc2">مشمول في <b>المكثفة · المتقدمة · التغذية</b></span></section>
+<script>document.querySelectorAll('section').forEach(s=>{s.insertAdjacentHTML('afterbegin',document.getElementById('bk').innerHTML);s.querySelector('.list').innerHTML=document.getElementById('ls').innerHTML})</script>
+</body></html>
